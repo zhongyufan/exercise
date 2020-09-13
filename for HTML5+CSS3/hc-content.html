@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Content</title>
+    <meta name="description" content="关于网页的描述">
+    <meta name="author" content="zhongyufan">
+    <meta name="copyright" content="版权所有">
+    <!--<meta name="viewport" content="width=device-width,user-scalable=no">-->
+    <!--<link rel="shortcut icon" href="#">-->
+    <!--<link rel="apple-touch-icon" href="#">-->
+
+</head>
+<body>
+<!--<header>HTML5</header>-->
+<!--<nav>nav</nav>-->
+<!--<section>-->
+<!--内容区域-->
+<!--<aside>左侧导航或者菜单栏</aside>-->
+<!--<article>-->
+<!--主页内容-->
+<!--<section>-->
+<!--<aside>-->
+
+<!--</aside>-->
+<!--<article>-->
+<!--<header></header>-->
+<!--<footer></footer>-->
+<!--</article>-->
+<!--</section>-->
+<!--</article>-->
+<!--</section>-->
+<!--<footer>-->
+<!--底部-->
+<!--</footer>-->
+<!--<nav>-->
+    <!--<ul>-->
+        <!--<li><a href="#">百度一下，你就知道</a></li>-->
+    <!--</ul>-->
+<!--</nav>-->
+<article>
+    <!--<header>-->
+        <!--<hgroup>-->
+            <!--<h1>文章的标题</h1>-->
+            <!--<h2>文章的副标题</h2>-->
+        <!--</hgroup>-->
+        <!--<time pubdate="pubdate">2019-3-27</time>-->
+    <!--</header>-->
+    <!--<p>-->
+        <!--tainsahgnbuhuidiaoxianbing-->
+    <!--</p>-->
+    <!--<footer>-->
+        <!--<address><p>www.zhongyufan.online</p></address>-->
+    <!--</footer>-->
+    <!--<section>-->
+        <!--<h2>评论</h2>-->
+        <!--<article>-->
+            <!--<header>-->
+                <!--<h3>张三</h3>-->
+                <!--<p>wocaonimabigejiba</p>-->
+                <!--<time pubdate datetime="2018-03-27 10:51:20">一小时前</time>-->
+            <!--</header>-->
+            <!--<p>-->
+                <!--ok-->
+            <!--</p>-->
+        <!--</article>-->
+        <!--<article>-->
+            <!--<header>-->
+                <!--<h3>李四</h3>-->
+                <!--<p>wocaonimabigejiba</p>-->
+                <!--<time pubdate datetime="2018-03-27 11:51:20">现在</time>-->
+            <!--</header>-->
+            <!--<p>-->
+                <!--ok-->
+            <!--</p>-->
+        <!--</article>-->
+    <!--</section>-->
+    <!--<form action="#" method="post">-->
+        <!--<input type="datetime-local">-->
+        <!--<input type="submit" value="check">-->
+        <!--<input type="text" placeholder="输入你的姓名">-->
+    <!--</form>-->
+    <video id="videoAttr" style="width: 900px" onmouseover="this.play()" onmouseout="this.pause()">
+        <source src="../video/iphone-8.mp4" type="video/mp4"/>
+        你的浏览器不支持video标签
+    </video>
+    <input type="button" onclick="showInfo()" value="展示">
+    <video autoplay muted>
+        <source src="../video/iphone-xs-design.mp4" type="video/mp4"/>
+        你的浏览器不支持video标签
+    </video>
+</article>
+<footer>
+    <ul>
+        <li><a href="#">粤ICP备19027217号</a></li>
+    </ul>
+</footer>
+<script>
+    // function checkaudio() {
+    //     let myAudio = document.createElement('audio');
+    //     if (myAudio.canPlayType) {
+    //         if ('' != myAudio.canPlayType('audio/mpeg')) {
+    //             console.log('support mp3');
+    //         }
+    //         if(''!=myAudio.canPlayType('audio/ogg;codecs="vorbis"')){
+    //             console.log('support ogg');
+    //         }
+    //         if(''!=myAudio.canPlayType('audio/mp4;codecs="mp4a.40.5"')){
+    //             console.log('support AAC');
+    //         }
+    //         else{
+    //             console.log('not support audio check!');
+    //         }
+    //     }
+    // }
+    // checkaudio();
+
+
+    function checkvideo() {
+        let myVideo = document.createElement('video');
+        if (myVideo.canPlayType) {
+            if ('' != myVideo.canPlayType('video/mp4;codecs="avc1.64001E"')) {
+                console.log('support H.264');
+            }
+            if(''!=myVideo.canPlayType('video/ogg;codecs="vp8"')){
+                console.log('support vp8');
+            }
+            if(''!=myVideo.canPlayType('video/ogg;codecs="theora"')){
+                console.log('support theora');
+            }
+            else{
+                console.log('not support audio check!');
+            }
+        }
+    }
+    checkvideo();
+
+    function showInfo() {
+        let myA =document.getElementById('videoAttr');
+        console.log('currentSrc',myA.currentSrc);
+        console.log('currentTime',myA.currentTime);
+        console.log('duration',myA.duration);
+        console.log('ended',myA.ended);
+        console.log('played',myA.played);
+        console.log('paused',myA.paused);
+        console.log('volume',myA.volume);
+        console.log('seeking',myA.seeking);
+    }
+
+</script>
+</body>
+</html>

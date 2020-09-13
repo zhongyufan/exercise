@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web存储、拖放</title>
+    <!--<script>-->
+        <!--function $(id) {-->
+            <!--return document.getElementById(id);-->
+        <!--}-->
+
+        <!--function setItem() {-->
+            <!--let key = $('key').value;-->
+            <!--let value = $('value').value;-->
+
+            <!--localStorage.setItem(key, value);-->
+            <!--refreshDiv();-->
+        <!--}-->
+
+        <!--function getItem() {-->
+            <!--let key = $('key').value;-->
+
+            <!--refreshDiv();-->
+            <!--alert(localStorage.getItem(key));-->
+        <!--}-->
+
+        <!--function removeItem() {-->
+            <!--let key = $('key').value;-->
+            <!--localStorage.removeItem(key);-->
+            <!--refreshDiv();-->
+        <!--}-->
+
+        <!--function doclear() {-->
+            <!--localStorage.clear();-->
+            <!--refreshDiv();-->
+        <!--}-->
+
+        <!--function getKey() {-->
+            <!--alert(`the 1st key is:${localStorage.key(0)}`);-->
+        <!--}-->
+
+        <!--function getLength() {-->
+            <!--alert(`the Length is : ${localStorage.length}`);-->
+        <!--}-->
+
+        <!--// only ie 弃之-->
+        <!--// function getRemainSpace() {-->
+        <!--//     alert(`the remain is space is :${localStorage.remainingSpace}`);-->
+        <!--// }-->
+
+        <!--function refreshDiv() {-->
+            <!--let res = ['localStorage.length:' + localStorage.length];-->
+            <!--for (let i = localStorage.length; i&#45;&#45;;) {-->
+                <!--var key = localStorage.key(i);-->
+                <!--res.push(`${key}:${localStorage.getItem(key)}`);-->
+            <!--}-->
+            <!--$('showDiv').innerHTML = res.join('<br/>');-->
+        <!--}-->
+
+    <!--</script>-->
+    <!--判断浏览器是否支持-->
+    <!--<script>-->
+
+
+        <!--function checkStorageSupport() {-->
+            <!--if (window.sessionStorage) {-->
+                <!--console.log('support sessionStorage!');-->
+            <!--} else {-->
+                <!--console.log('not support sessionStorage!');-->
+            <!--}-->
+            <!--if (window.localStorage) {-->
+                <!--console.log('support localStorage!');-->
+            <!--} else {-->
+                <!--console.log('not support localStorage!');-->
+            <!--}-->
+        <!--}-->
+
+        <!--window.onload = function () {-->
+            <!--checkStorageSupport();-->
+        <!--}-->
+    <!--</script>-->
+    <!--Web SQL Database-->
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+        const db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
+        let msg;
+        db.transaction(function (tx) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS LOGS (id unique,log)');
+            tx.executeSql('INSERT INTO LOGS(id,log)VALUES(1,"foobar")');
+            tx.executeSql('INSERT INTO LOGS(id,log)VALUES(2,"logmsg")');
+            msg = '<p>success to create table and insert info</p>';
+            $('status').innerHTML += msg;
+        });
+        db.transaction(function (tx) {
+            tx.executeSql('SELECT*FROM LOGS', [], function (tx, results) {
+                let len = results.rows.length;
+                msg = '<p>rows:' + len + '</p>';
+                $('status').innerHTML += msg;
+
+                for (let i = 0; i < len; i++) {
+                    msg = '<p>' + results.rows.item(i).log + '</p>';
+                    $('status').innerHTML += msg;
+                }
+            }, null);
+        })
+    </script>
+</head>
+<body>
+<!--Cookie-->
+
+<!--Web Storage-->
+<!--<label>key: <input id="key" type="text"></label><br>-->
+<!--<label>Value: <input id="value" type="text"></label><br>-->
+<!--<button onclick="setItem()">setItem</button>-->
+<!--<br>-->
+<!--<button onclick="getItem()">getItem</button>-->
+<!--<br>-->
+<!--<button onclick="removeItem()">removeItem</button>-->
+<!--<br>-->
+<!--<button onclick="doclear()">clear</button>-->
+<!--<br>-->
+<!--<button onclick="getKey()">key(0)</button>-->
+<!--<br>-->
+<!--<button onclick="getLength()">length</button>-->
+<!--<br>-->
+<!--<button onclick="getRemainSpace()">remainSpace</button>-->
+<!--<br>-->
+<!--<div id="showDiv">-->
+
+<!--</div>-->
+<!--Web SQL Database-->
+<!--IE、F不支持，C、O、S支持-->
+<!--目前不推荐使用，仅作了解-->
+<div id="status" style="width: 400px;height: 400px;" contenteditable="true"></div>
+<!--可编辑区域-->
+<!--<div id="account_info">-->
+    <!--<p class="mb5">-->
+        <!--<div id="myEditor"></div>-->
+    <!--</p>-->
+<!--</div>-->
+<!--<script>-->
+    <!--var um =UM.getEditor('myEditor');-->
+<!--</script>-->
+<!--拖拽-->
+
+</body>
+</html>

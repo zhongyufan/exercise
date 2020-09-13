@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网页</title>
+    <script>
+        // 监控页面有没有被修改了
+        function storageHandler(e) {
+            e = e || window.storageEvent;
+            console.log(e);
+        }
+
+        window.addEventListener('storage', storageHandler, false);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

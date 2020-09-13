@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myC" width="1980px" height="900px" style="border: 1px skyblue solid">
+    你的浏览器不支持canvas元素！
+</canvas>
+<input type="button" value="clear" onclick="clearC()">
+<script>
+    function load() {
+        let c = document.getElementById('myC');
+        let context = c.getContext('2d');
+
+        // context.fillStyle='#FF0';
+        // context.fillRect(200,200,400,300);
+        //
+        // context.moveTo(20,20);
+        // context.lineTo(150,80);
+        // context.stroke();
+        // context.strokeRect(20,20,130,60);
+
+        // context.beginPath();
+        // context.arc(100,75,50,0,Math.PI/2,true);
+        // context.stroke();
+        // context.closePath();
+        context.fillStyle = '#ffc668';
+        context.strokeStyle = '#ffc668';
+
+        context.beginPath();
+        context.arc(100, 75, 50, 0, Math.PI / 2, false);
+        context.moveTo(100, 125);
+        context.lineTo(100, 75);
+        context.lineTo(150, 75);
+        context.stroke();
+        context.fill();
+        context.closePath();
+
+        context.beginPath();
+        context.arc(200, 150, 50, 0, Math.PI / 2, false);
+        context.moveTo(200, 250);
+        context.lineTo(200, 150);
+        context.lineTo(300, 150);
+        context.lineTo(200, 250);
+        context.stroke();
+        context.fill();
+        context.closePath();
+
+    }
+
+    // 绘制贝塞尔二次曲线
+    function loadExp2() {
+        let c = document.getElementById('myC');
+        let context = c.getContext('2d');
+
+        context.strokeStyle = '#a892ff';
+        context.beginPath();
+        context.globalCompositeOperation = 'source-over';
+        context.moveTo(0, 200);
+        context.quadraticCurveTo(75, 50, 400, 400);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.moveTo(75, 50);
+        context.lineTo(0, 200);
+        context.moveTo(75, 50);
+        context.lineTo(400, 400);
+        context.moveTo(0, 200);
+        context.lineTo(400, 400);
+        context.stroke();
+        context.closePath();
+    }
+
+    // 绘制贝塞尔三次曲线
+    function loadExp3() {
+        let c = document.getElementById('myC');
+        let context = c.getContext('2d');
+
+        context.strokeStyle = '#a892ff';
+        context.beginPath();
+        context.globalCompositeOperation = 'source-over';
+        context.moveTo(0, 200);
+        context.bezierCurveTo(25, 50, 75, 50, 400, 400);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.moveTo(25, 50);
+        context.lineTo(0, 200);
+        context.moveTo(75, 50);
+        context.lineTo(400, 400);
+        context.moveTo(0, 200);
+        context.lineTo(400, 400);
+        context.stroke();
+        context.closePath();
+    }
+
+    // 图形变化
+    function loadT() {
+        let c = document.getElementById('myC');
+        let context = c.getContext('2d');
+
+        context.fillStyle = '#ff47d6';
+        context.strokeStyle = '#000';
+        context.fillRect(20, 20, 100, 100);
+        context.strokeRect(20, 20, 100, 100);
+        context.save();
+
+        context.fillStyle = '#F00';
+        context.strokeStyle = '#0F0';
+        context.strokeRect(140, 20, 100, 100);
+        context.fillRect(140, 20, 100, 100);
+
+        context.restore();
+        context.strokeRect(80, 140, 50, 50);
+        context.fillRect(20, 140, 50, 50);
+        context.fill();
+        context.stroke();
+    }
+
+    // 坐标轴平移
+    function loadG() {
+        let c = document.getElementById('myC');
+        let ctx = c.getContext('2d');
+
+        ctx.translate(80, 80);
+        for (let i = 1; i < 9; i++) {
+            ctx.save();
+            ctx.translate(0, 61 * i);
+            ctx.fillStyle = "rgb(" + (30 * i) + "," + (255 - 30 * i) + ",255)";
+            ctx.fillRect(0, 0, 60, 60);
+            ctx.restore();
+        }
+    }
+
+    // 坐标轴旋转
+    function loadS() {
+        let c = document.getElementById('myC');
+        let ctx = c.getContext('2d');
+
+        // ctx.translate(450, 450);
+        // for (let i = 1; i < 9; i++) {
+        //     ctx.save();
+        //     ctx.rotate(Math.PI * (1 / 2 + i / 4));
+        //     ctx.translate(0,-250);
+        //     ctx.scale((1 - 0.08 * i), (1 - 0.08 * i));// 缩放
+        //     ctx.fillStyle = "rgb(" + (30 * i) + "," + (255 - 30 * i) + ",255)";
+        //     ctx.fillRect(0, 0, 60, 60);
+        //     ctx.restore();
+        // }
+
+        // 裁切
+        ctx.beginPath();
+        ctx.arc(150, 150, 130, 0, Math.PI * 2, true);
+        ctx.clip();
+
+        ctx.translate(200, 20);
+        for (let i = 1; i < 80; i++) {
+            ctx.translate(30, 30);
+            ctx.scale(0.95, 0.95);
+            ctx.rotate(Math.PI / 12);
+
+            ctx.beginPath();
+            ctx.fillStyle = "#F00";
+            ctx.globalAlpha = "0.2";
+            ctx.arc(0, 0, 50, 0, Math.PI * 2, true);
+            ctx.closePath();
+            ctx.fill();
+        }
+    }
+
+    // 高级
+    function loadH() {
+        let c = document.getElementById('myC');
+        let ctx = c.getContext('2d');
+
+
+        ctx.fillStyle = "#F00";
+        ctx.fillRect(50, 25, 100, 100);
+        ctx.fillStyle = '#0F0';
+
+        // 重合部分 source: 后画 destination: 先画
+
+        ctx.globalCompositeOperation = 'destination-over';
+
+        ctx.beginPath();
+        ctx.arc(150, 125, 50, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.fill();
+
+    }
+
+    // 绘制图像
+    function loadI() {
+        let c = document.getElementById('myC');
+        let ctx = c.getContext('2d');
+
+        let img = new Image();
+        img.onload = function () {
+            // 正常绘制
+            // ctx.drawImage(img, 100, 100);
+            // 控制宽高
+            // ctx.drawImage(img, 100, 100, 450, 400);
+            // 绘制部分(前4个参数告诉你怎么在图像上截取，后4个参数告诉你怎么在画布上画)
+            ctx.drawImage(img, 142, 100, 284, 200, 100, 100, 450, 400);
+        };
+        img.src = '../image/Asm2/iphone_8.jpg';
+
+    }
+
+    // 绘制文字
+    function loadText() {
+        let c = document.getElementById('myC');
+        let ctx = c.getContext('2d');
+
+        let txt='加油努力干死前端';
+
+        ctx.font = 'italic 35px 黑体';
+        ctx.fillStyle = '#F00';
+        ctx.fillText('加油努力干死前端', 40, 40);
+
+        // left 缺省
+        // right、center、start、end
+        // ctx.textAlign = '';
+        // alphabetic 缺省
+        // top、middle、bottom
+        // ctx.textBaseline = '';
+
+        // measureText 字符串宽度
+        ctx.strokeStyle = '#0F0';
+        let width = ctx.measureText(txt).width/3;
+
+        ctx.strokeText(txt, 180-width, 80);
+    }
+
+    function checkSupport() {
+        let c = document.getElementById('myC');
+        if (c.getContext) {
+            console.log('support canvas!');
+            return true;
+        } else {
+            console.log('not support canvas!');
+            return false;
+        }
+    }
+
+    if (checkSupport()) {
+        // load();
+        // loadExp2();
+        // loadExp3();
+        // loadT();
+        // loadG();
+        // loadS();
+        // loadH();
+        // loadI();
+        loadText();
+    }
+
+    function clearC() {
+        let c = document.getElementById('myC');
+        let context = c.getContext('2d');
+        context.clearRect(0, 0, 600, 600);
+    }
+</script>
+</body>
+</html>

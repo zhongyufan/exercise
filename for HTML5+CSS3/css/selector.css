@@ -1,0 +1,188 @@
+/*选择器专题*/
+/*标签选择器*/
+/*p{*/
+/*background: #F0F;*/
+/*}*/
+
+/*ID选择器*/
+/*用来构建整体框架的标签，是唯一的，固定的，不重复出现的。*/
+/*#div1{*/
+/*background: rebeccapurple;*/
+/*color: whitesmoke;*/
+/*}*/
+
+/*类选择器*/
+/*容易发生滥用问题*/
+/*.div1{*/
+/*background: #f03b6e;*/
+/*color: beige;*/
+/*}*/
+
+/*伪类选择器*/
+/*减少类的使用*/
+/*:first-child*/
+/*:last-child*/
+/*:first-of-type :last-of-type 每一类的第一个*/
+/*:nth-child() 第几个子元素 odd奇 even偶 固定基数控制余数*/
+/*:focus :link :visited :hover :active*/
+/*p:first-child{*/
+/*background: #FF0;*/
+/*}*/
+/*p:nth-child(odd){*/
+/*background: #F00;*/
+/*}*/
+/*p:nth-child(3n+1){*/
+/*background: #F00;*/
+/*}*/
+/*p:nth-child(3n+2){*/
+/*background: #0F0;*/
+/*}*/
+/*P:nth-child(3n+0){*/
+/*background: #00f;*/
+/*}*/
+/*input:focus{*/
+/*background: red;*/
+/*}*/
+
+/*伪对象选择器*/
+/*直接css即可添加对象*/
+/*p:after{*/
+/*content: '---[weiduixiang after]';*/
+/*background: whitesmoke;*/
+/*}*/
+/*p:before{*/
+/*content: '[weiduixiang before]---';*/
+/*background: whitesmoke;*/
+/*}*/
+
+/*子选择器*/
+/*#content>p:nth-child(2){*/
+/*background: yellow;*/
+/*}*/
+/*相临选择器*/
+/*#content+p{*/
+/*background: #f03b6e;*/
+/*}*/
+/*包含选择器*/
+/*#content p{*/
+/*color: skyblue;*/
+/*}*/
+
+/*属性选择器*/
+/*[title] {*/
+    /*background: wheat;*/
+/*}*/
+
+/*[title='cls1'] {*/
+    /*background: gold;*/
+/*}*/
+
+/*[title^='cls'] {*/
+    /*!*以cls为开头*!*/
+    /*background: royalblue;*/
+/*}*/
+
+/*[title$='1'] {*/
+    /*!*以1结尾*!*/
+    /*background: greenyellow;*/
+/*}*/
+
+/*[title*='ls'] {*/
+    /*!*以ls模糊搜索*!*/
+    /*background: orchid;*/
+/*}*/
+
+/*[title~='cls7']{*/
+    /*!*多个属性的时候 精准搜索*!*/
+    /*background: darkolivegreen;*/
+/*}*/
+/*IE6以下版本，基本不支持*/
+/*!*[class='xxx']*! 使用这个方式在IE显示不出来，其他浏览器可以*/
+
+
+
+/*分组选择器*/
+/*p,div,span{*/
+    /*background: rebeccapurple;*/
+/*}*/
+/*通用选择器*/
+/**{*/
+    /*background: #be4e48;*/
+/*}*/
+/*指定选择器*/
+/*div.clsf{*/
+    /*background: #000;*/
+/*}*/
+
+
+
+/*权重计算*/
+/*最高级别：!important*/
+/*次级别：内联样式>内部样式>外部样式 越近权限越高*/
+/*记分：继承样式0分、标签选择器1分、类选择器10分、ID选择器100分 同分后覆盖前*/
+
+/*body{*/
+    /*background: rgb(25%,24%,44%);*/
+/*}*/
+
+
+/*div{*/
+    /*!*background-color: #000;*!*/
+    /*!*background-image: url("");*!*/
+    /*!*background-repeat: no-repeat;*!*/
+    /*!*background-attachment: fixed;*!*/
+    /*!*background-position: 0 0;*!*/
+    /*background: #000 url("") no-repeat fixed 0 0;*/
+/*}*/
+
+/*body{*/
+    /*font-style: initial;*/
+    /*font-variant: small-caps;*/
+    /*font-weight: bold;*/
+    /*font-size: 14px;*/
+    /*line-height: 140%;*/
+    /*font-family: sans-serif;*/
+/*}*/
+
+/*body{*/
+    /*font: initial small-caps bold 14px/140% sans-serif;*/
+/*}*/
+
+/*li{*/
+    /*list-style-type: square;*/
+    /*list-style-position: inside;*/
+    /*list-style-image: url("");*/
+/*}*/
+/*li{*/
+    /*list-style: square inside url("");*/
+/*}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

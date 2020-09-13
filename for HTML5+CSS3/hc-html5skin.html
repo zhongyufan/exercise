@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--换肤-->
+    <!--<style>-->
+    <!--#divBlock {-->
+    <!--width: 500px;-->
+    <!--height: 500px;-->
+    <!--background-color: #000;-->
+    <!--margin-top: 10px;-->
+    <!--}-->
+    <!--</style>-->
+    <!--<script type="application/javascript">-->
+    <!--function $(id) {-->
+    <!--return document.getElementById(id);-->
+    <!--}-->
+
+    <!--function redSet() {-->
+    <!--let value = '#F00';-->
+    <!--$('divBlock').style.backgroundColor = value;-->
+    <!--window.localStorage.setItem('divBackGroundColor', value);-->
+    <!--}-->
+
+    <!--function greenSet() {-->
+    <!--let value = '#0F0';-->
+    <!--$('divBlock').style.backgroundColor = value;-->
+    <!--window.localStorage.setItem('divBackGroundColor', value);-->
+    <!--}-->
+
+    <!--function blueSet() {-->
+    <!--let value = '#00F';-->
+    <!--$('divBlock').style.backgroundColor = value;-->
+    <!--window.localStorage.setItem('divBackGroundColor', value);-->
+    <!--}-->
+
+
+    <!--function color() {-->
+    <!--let backColor = window.localStorage.getItem('divBackGroundColor');-->
+    <!--if (backColor) {-->
+    <!--$('divBlock').style.backgroundColor = window.localStorage.getItem('divBackGroundColor');-->
+    <!--console.log(`backColor:${backColor}`);-->
+    <!--}-->
+
+    <!--}-->
+
+    <!--window.onload = function () {-->
+    <!--color();-->
+    <!--}-->
+    <!--</script>-->
+    <!--跟踪-->
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        var errorMessage = undefined;
+
+        // 在html中绘制表格
+        function BwTable(wrap) {
+            this.wrap = (wrap === undefined) ? true : wrap;
+            this.rows = new Array();
+            this.header = [];
+
+            this.setHeader = function (row) {
+                this.header = row;
+            };
+
+            this.addRow = function (row) {
+                this.rows.push(row);
+            };
+
+            this.getRow = function (index) {
+                return this.rows[index];
+            };
+
+            this.countRows = function () {
+                return this.rows.length;
+            };
+            // 建表
+            this.getTableHTML = function () {
+                let a = '';
+                if (this.wrap) {
+                    a += '<table>\n';
+                }
+                a += this.getHeaderHTMl();
+
+                for (let row in this.rows) {
+                    a += this.getRowHTML(this.rows[row]);
+                }
+                if (this.wrap) {
+                    a += '</table>\n';
+                }
+                return a;
+            };
+
+            this.getHeaderHTMl = function () {
+                if (this.header.length === 0) return '';
+                let a = '<tr>';
+                for (let cell in this.header) {
+                    a += '<th>' + this.header[cell] + '</th>';
+                }
+                a += '</tr>\n';
+                return a;
+            };
+
+            this.getRowHTML = function (row) {
+                let a = '<tr>';
+                for (let cell in row) {
+                    let v = row[cell];
+                    if (v == null) {
+                        v = '<span style="background-color: red">NULL</span>';
+                    }
+                    a += '<td>' + v + '</td>';
+                }
+                a += '</tr>';
+                return a;
+            };
+
+            this.writeTable = function () {
+                document.write(this.getTableHTML());
+            };
+        }
+
+        // 检测报错机制
+        function getLocalStorage() {
+            try {
+                if (!!window.localStorage)
+                    return window.localStorage;
+            } catch (e) {
+                return undefined;
+            }
+        }
+
+        function disError(message) {
+            errorMessage = '<p class="error">' + message + '</p>';
+        }
+
+        let t = new BwTable();
+        let db = getLocalStorage() || disError('not support local Storage');
+
+        // 展示数据结果
+        function disResults() {
+            if (errorMessage) {
+                $('results').innerHTML = errorMessage;
+                return;
+            }
+            t = new BwTable();
+            t.addRow(['traveler', db.getItem('traveler')]);
+            t.addRow(['destination', db.getItem('destination')]);
+            t.addRow(['transportation', db.getItem('transportation')]);
+
+            $('results').innerHTML = t.getTableHTML();
+
+        }
+
+        function dbGo() {
+
+
+            if (errorMessage) {
+                return;
+            }
+
+            let f = $('travelForm');
+
+            db.setItem('traveler', f.elements['traveler'].value);
+            db.setItem('destination', f.elements['destination'].value);
+            db.setItem('transportation', f.elements['transportation'].value);
+
+            disResults();
+
+
+
+        }
+
+        function dbClear() {
+            if (errorMessage) {
+                return;
+            }
+            db.clear();
+            disResults();
+        }
+
+        window.onload = function () {
+            disResults();
+        }
+    </script>
+</head>
+<body>
+<!--换肤-->
+<!--<section>-->
+<!--<button onclick="redSet()" id="redButton">红色</button>-->
+<!--<button onclick="greenSet()" id="greenButton">绿色</button>-->
+<!--<button onclick="blueSet()" id="blueButton">蓝色</button>-->
+<!--<div id="divBlock"></div>-->
+<!--</section>-->
+<!--跟踪-->
+<section id="content">
+    <h1>localStorage</h1>
+    <form id="travelForm">
+        <table class="form">
+            <tr>
+                <td class="label">Traveler</td>
+                <td><input type="text" name="traveler"></td>
+            </tr>
+            <tr>
+                <td class="label">Destination</td>
+                <td><input type="text" name="Destination"></td>
+            </tr>
+            <tr>
+                <td class="label">Transportation</td>
+                <td><input type="text" name="Transportation"></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="button">
+                    <input type="button" value="Clear" onclick="dbClear() ">
+                    <input type="button" value="Go" onclick="dbGo() ">
+                </td>
+            </tr>
+        </table>
+        <input id="inputAction" type="hidden" name="action" value="add">
+        <input id="inputKey" type="hidden" name="key" value="0">
+    </form>
+</section>
+<section id="results">
+
+</section>
+</body>
+</html>
