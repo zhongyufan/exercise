@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义过滤器</title>
+    <script src="./bower/bower_components/vue/dist/vue.js"></script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app" v-cloak>
+    <!--过滤器-->
+    <!--{{expression|filter}},filter用于格式化输出-->
+    <!--v2.0以后没有缺省过滤器-->
+    <h4>{{price}}</h4>
+    <h4>{{price|myCurrency('¥')}}</h4>
+    <h4>{{price|myCurrency('$')}}</h4>
+    <h4>{{word}}</h4>
+    <h4>{{word|changeWord(true)}}</h4>
+    <h4>{{word|changeWord(false)}}</h4>
+
+
+</div>
+
+<script>
+    var m = {
+        price: 3780,
+        word:'aBcDe'
+    };
+    var vm = new Vue({
+        el: '#app',
+        data: m,
+        methods: {},
+        filters: {
+            myCurrency: function (myInput, arg) {
+                console.log(myInput, arg);
+                var priceTmp = myInput / 100;
+                return arg + '' + priceTmp;
+            },
+            changeWord:function (myInput,arg) {
+                if(arg){
+                    return myInput.toUpperCase();
+                }else {
+                    return myInput.toLowerCase();
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

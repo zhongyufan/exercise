@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件指令</title>
+    <script src="./bower/bower_components/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--冒泡-->
+    <!--<div @click="func($event)">-->
+    <!--<input type="button" value="按钮1">-->
+    <!--<input type="button" value="按钮2">-->
+    <!--<input type="button" value="按钮3">-->
+    <!--</div>-->
+
+
+    <!--冒泡的stop-->
+    <!--<div @click="func2">-->
+    <!--<div @click.stop="func($event)">-->
+    <!--<input type="button" value="按钮1">-->
+    <!--<input type="button" value="按钮2">-->
+    <!--<input type="button" value="按钮3">-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--.prevent 阻止点击-->
+    <a href="http://www.baidu.com" @click.prevent="func3">百度</a>
+
+    <!--.enter 仅回车-->
+    <input type="text" @keyup.13="func4">
+
+    <!--v-model.lazy 只有在回车或者onblur时改动-->
+    {{myVal1}}
+    <br>
+    <input type="text" v-model="myVal1">
+    <input type="text" v-model.lazy="myVal1">
+    <br>
+    {{myVal2}}
+    <input type="text" v-model.number="myVal2">
+
+    {{myVal3}}
+    <!--去除前后空格-->
+    <input type="text" v-model.trim="myVal3">
+
+
+</div>
+
+<script>
+    var m = {
+        myVal1: 0,
+        myVal2: 0,
+        myVal3: 0
+    };
+    var vm = new Vue({
+        el: '#app',
+        data: m,
+        methods: {
+            func: function (event) {
+                console.log(event, event.target);
+                console.log('冒泡中...');
+            },
+            func2: function (event) {
+                console.log('冒泡2中...');
+            },
+            func3: function () {
+                console.log('去百度啦，不想他去！')
+            },
+            func4: function () {
+                console.log('按键了')
+            }
+        }
+    })
+</script>
+</body>
+</html>

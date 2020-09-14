@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板</title>
+    <script src="./bower/bower_components/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="./bower/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="./bower/bower_components/jquery/dist/jquery.js"></script>
+    <script src="./bower/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label for="username" class="col-sm-2 control-label">用户名:</label>
+                <div class="col-sm-8">
+                    <input id="username" name="username" type="text" class="form-control" v-model="username">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="comment" class="col-sm-2 control-label">备注:</label>
+                <div class="col-sm-8"><input id="comment" name="comment" type="text" class="form-control"
+                                             v-model="comment">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-8 text-center">
+                    <input type="button" value="添加" class="btn btn-primary" @click="add(),cancelAdd()">
+                    <input type="button" value="取消" class="btn btn-danger" @click="cancelAdd"></div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!--数据表格-->
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th class="text-center">ID</th>
+            <th class="text-center">用户名</th>
+            <th class="text-center">备注</th>
+            <th class="text-center">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-show="usersList.length==0">
+            <td colspan="4" class="text-center text-danger">
+                暂时没有数据
+            </td>
+        </tr>
+        <tr class="text-center" v-for="(item,index) in usersList">
+            <td>{{index+1}}</td>
+            <td>{{item.username}}</td>
+            <td>{{item.comment}}</td>
+            <td>
+                <input type="button" class="btn btn-warning btn-sm" value="删除" @click="deleteUser(index)">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <script>
+        // 1、需要用户名，备注，缓存的数组
+        // 2、username,comment绑定到input控件
+        // 3、通过v-show来控制'暂时没有数据'
+        // 4、将userList的内容循环展示
+        // 5、点击添加按钮，可以将用户输入的信息加入数据库
+        //    5.1、点击添加按钮把数据添加到usersList
+        //         检验username是否空
+        //         把数据添加到usersList
+        //         成功添加后，username和comment要设定为空
+        //    5.2、table根据usersList更新（这一步不需要我们操作）
+        // 6、删除，点击对应项的删除按钮，把对应数据删掉
+
+        var m = {
+            username: '',
+            comment: '',
+            usersList: []
+        };
+        // var m = require('user.json');
+        var vm = new Vue({
+            el: '.container',
+            data: m,
+            methods: {
+                add: function () {
+                    if (this.username.split(' ').join('').length > 0) {
+                        this.usersList.push({
+                            username: this.username,
+                            comment: this.comment
+                        });
+                    }
+                },
+                cancelAdd: function () {
+                    this.username = '';
+                    this.comment = '';
+                },
+                deleteUser: function (index) {
+                    var t = confirm('Yes Delete?');
+                    if( t){
+                        this.usersList.splice(index, 1);
+                    }
+                }
+            }
+        });
+    </script>
+</div>
+</body>
+</html>

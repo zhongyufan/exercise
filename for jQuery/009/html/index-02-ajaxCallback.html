@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<style type="text/css">
+			table{
+				width: 250px;
+				height: 200px;
+				border-collapse: collapse;
+			}
+			table th{
+				border: 2px solid #069;
+			}
+			body{
+				text-align: center;
+			}
+			th{
+				font-family: "微软雅黑", verdana, sans-serif, "宋体";
+				color: #666;
+				font-weight: bold;
+				margin-bottom: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--AJAX 将按照以下格式插入DOM-->
+		<!--<table>
+			<tr>
+				<th>一行一列</th>
+				<th>一行二列</th>
+			</tr>
+			<tr>
+				<th>二行一列</th>
+				<th>二行二列</th>
+			</tr>
+			<tr>
+				<th>三行一列</th>
+				<th>三行二列</th>
+			</tr>
+			<tr>
+				<th>四行一列</th>
+				<th>四行二列</th>
+			</tr>-->
+		<!--</table>-->
+		<button id="btn">Get JSON</button>
+		<div id="theD"></div>
+		<script type="text/javascript">
+			$(function(){
+				$('#btn').click(function(){
+					
+					$.ajax({
+						url: './data.json',
+						type: 'get',
+						dataType: 'json',
+						// beforeSend: 在发送请求之前
+						//             xhr作为参数
+						beforeSend: function(xhr){
+							// 设定Request的Header
+							xhr.setRequestHeader('Test', 'TestString');
+							// 提高用户体验，禁用按钮
+							$('#btn').prop('disabled', true);
+							console.log('>>>>beforeSend');
+						},
+						// error: 在出错的时候
+						//        xhr, 错误信息，可以抛出的异常
+						error: function(xhr, textStatus, errorThrown){
+							console.log(textStatus);
+							console.log('>>>>error');
+						},
+						// dataFilter: 对原始的数据进行处理
+						//             data,原始的AJAX返回数据，type，dataType
+						dataFilter: function(data, type){
+							console.log(data, type);
+							// 如果调用dataFilter， 必须有返回值
+							console.log('>>>>dataFilter');
+							return data;
+						},
+												
+						success: function(data){
+							$('#theD').append(jsonToHTML(data));
+							console.log('>>>>success');
+						},
+						
+						// complete: 在最后调用函数调用完以后调用
+						//            xhr,textStatus
+						complete: function(xhr, textStatus){
+							$('#btn').prop('disabled', false);
+							console.log('>>>>complete');
+						}
+					});
+				});
+			});
+			
+			// parse JSON
+			function jsonToHTML(json){
+				console.log(typeof json);
+				var $table = $('<table></table>');
+				
+				$(json['LINE']).each(function(){
+					var $tr = $('<tr></tr>').appendTo($table);
+					$(this['COLUMN']).each(function(){
+						var $th = $('<th></th>').html(this['text']).appendTo($tr);
+					});
+				});
+				
+				return $table;
+			}
+		</script>
+	</body>
+</html>

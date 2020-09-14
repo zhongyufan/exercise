@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件</title>
+    <script src="./bower/bower_components/vue/dist/vue.js"></script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app" v-cloak>
+    <my-component></my-component>
+</div>
+
+<!--1、创建组件-->
+<!--   组件命名不是小驼峰，做标签使用，用"-"串联小字母单词-->
+<!--   template中的标记必须在一个根标记下面，不可以多个并列-->
+
+<script>
+    Vue.component('my-component', {
+        template: `
+        <div>
+            <div>
+                <h1>第一个组件</h1>
+                <h2>第二个组件</h2>
+            </div>
+            <div>
+                <h3>第三个组件</h3>
+            </div>
+        </div>`
+    });
+    var m = {};
+    var vm = new Vue({
+        el: '#app',
+        data: m,
+        methods: {}
+    });
+</script>
+</body>
+</html>

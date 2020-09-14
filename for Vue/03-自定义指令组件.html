@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件指令</title>
+    <script src="./bower/bower_components/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--自定义事件 v-change="expression" >0显示，<=0隐藏-->
+    <input type="button" value="➕" @click="countAdd">
+    <h1 v-change="count">如果不➕➕，你看不到我</h1>
+    <br>
+    {{count}}
+    <br>
+    <input type="button" value="➖" @click="countDelete">
+</div>
+
+<script>
+    var m = {
+        count: 0
+    };
+    var vm = new Vue({
+        el: '#app',
+        data: m,
+        methods: {
+            countAdd(){
+                this.count++;
+            },
+            countDelete(){
+                this.count--;
+            }
+        },
+        directives:{
+            change:{
+                bind:function (el,bindings) {
+                    console.log('bind');
+                    console.log(el,bindings);
+                    if(bindings.value>0){
+                        el.setAttribute('style','display:block');
+                    }else{
+                        el.setAttribute('style','display:none');
+                    }
+                },
+                update:function (el,bindings) {
+                    if(bindings.value>0){
+                        el.setAttribute('style','display:block');
+                    }else{
+                        el.setAttribute('style','display:none');
+                    }
+                },
+                unbind:function (el,bindings) {
+                    
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

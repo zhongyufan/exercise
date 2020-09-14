@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板</title>
+    <script src="./bower/bower_components/vue/dist/vue.js"></script>
+</head>
+<body>
+<!--<div class="app">-->
+    <!--<todo v-for="a in array" :to="a"></todo>-->
+<!--</div>-->
+<!--<script>-->
+    <!--Vue.component('todo', {-->
+        <!--template: `-->
+        <!--<li>{{to}}</li>`,-->
+        <!--props: ['to']-->
+    <!--});-->
+    <!--var vm = new Vue({-->
+        <!--el: '.app',-->
+        <!--data: {-->
+            <!--array: ['蔬菜', '奶酪', '随便其他人吃的东西']-->
+        <!--},-->
+    <!--});-->
+<!--</script>-->
+
+<!--<div class="app1">-->
+    <!--<zhong v-for="i in array" :todo="i"></zhong>-->
+<!--</div>-->
+<!--<script>-->
+    <!--Vue.component('zhong', {-->
+        <!--template: `-->
+<!--<ol><li>{{todo}}</li></ol>-->
+       <!--`,-->
+        <!--props: ['todo']-->
+    <!--});-->
+    <!--var vm = new Vue({-->
+        <!--el: '.app1',-->
+        <!--data: {-->
+            <!--array: ['汉堡', '可乐', '随便其他人吃的东西']-->
+        <!--},-->
+    <!--});-->
+<!--</script>-->
+
+<div class="app2">
+    <child p1="p123" str="zhongyufan"></child>
+</div>
+<script>
+    Vue.component('child',{
+        template: `<div>
+        <p :id="p1">{{str}}</p>
+    </div>`,
+        props: ['p1','str']
+    });
+var vm =new Vue({el:'.app2'})
+</script>
+
+<div id="app-7">
+    <ol>
+        <todo
+                v-for="item in array"
+                :item="item"
+        ></todo>
+    </ol>
+</div>
+<script>
+    Vue.component('todo', {
+        props: ['item'],
+        template: '<li>{{ item }}</li>'
+    });
+
+    var app7 = new Vue({
+        el: '#app-7',
+        data: {
+            array: ['蔬菜','水果','肉禽']
+        }
+    })
+</script>
+
+<div id="app-8">
+    <ol>
+        <li v-for="item in array">{{item}}</li>
+    </ol>
+</div>
+<script>
+    var app8 = new Vue({
+        el: '#app-8',
+        data: {
+            array: ['蔬菜','水果','肉禽']
+        }
+    })
+</script>
+
+</body>
+</html>

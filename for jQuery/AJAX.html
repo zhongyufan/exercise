@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <style>
+
+    </style>
+
+</head>
+<body>
+<form action="/login" method="post">
+    用户名：<input id="username" name="username" type="text"><br>
+    密码：<input id="password" name="password" type="password"><br>
+    <input type="submit" value="提交">
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+<script>
+    // HTTP即一问（request）一答（response）
+    // 每个文件一个TCP/多个文件一个TCP（发一个服务器回一个，最后服务器再相应一次）/请求流水线（不等服务器回应，就直接发文件）
+    // HTTP 是火车 TCP 是隧道 有点链路的意思
+    // get 读取一个Web页面 post 附加一个Web页面
+    // 不止一个方法，但是其他方法没啥卵用，给浏览器禁止了
+
+    // HTTP协议是建立在TCP协议之上的一问一答
+    // HTTP协议做了啥 定义数据传输的格式-打包规则/定义数据传输的时序-传递规则
+    // Message 客户端与服务器之间传递的数据块
+
+    // get：向服务器获取资源、没有请求主体（没有body）、依靠地址栏传递数据给服务器
+    // post：向服务器传递数据，同时获取资源、有请求主体（表单内的东西都会封装在body内）
+    // 一个url的长度是有限制的
+
+    // <协议{http:80/https:443/ftp}>://<用户名>:<密码>@<主机名>/<路径>?<查询字符串>
+    // 80 是监听端口
+    // 版本号 0.9已经淘汰 1.0/1.1/NG/2.0
+
+    // 打包规则：
+    // 请求头：
+    // Host：服务器域名或者IP
+    // Connection:keep-alive 持久连接
+    // User-Agent:浏览器类型
+    // Cache-Control:缓存信息 max-age=0 不缓存
+    // Accept-Language: zh-CN 浏览器能接收的自然语言
+    // Accept-Encoding: gzip 浏览器可以接收的压缩类型
+
+    // 请求主体
+    // Form Data
+    // 注意：Query String 不在请求主体中，在URL中
+
+    // Go（更实用） 是编译语言 效能高、语言更像JavaScript
+    // Java、.net、js 都运行在虚拟机上
+</script>
+</body>
+</html>

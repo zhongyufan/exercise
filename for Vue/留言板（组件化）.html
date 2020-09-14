@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板（组件化）</title>
+    <script src="./bower/bower_components/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="./bower/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="./bower/bower_components/jquery/dist/jquery.js"></script>
+    <script src="./bower/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <user-comment-form></user-comment-form>
+    </div>
+    <hr>
+    <!--数据表格-->
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th class="text-center">ID</th>
+            <th class="text-center">用户名</th>
+            <th class="text-center">备注</th>
+            <th class="text-center">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-show="usersList.length==0">
+            <td colspan="4" class="text-center text-danger">
+                暂时没有数据
+            </td>
+        </tr>
+        <tr class="text-center" v-for="(item,index) in usersList">
+            <td>{{index+1}}</td>
+            <td>{{item.username}}</td>
+            <td>{{item.comment}}</td>
+            <td>
+                <input type="button" class="btn btn-warning btn-sm" value="删除" @click="deleteUser(index)">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    Vue.component('my-label', {
+        template: `                <label :for="forStr" class="col-sm-2 control-label">{{str}}</label>
+`,
+        props:['forStr','str']
+    });
+
+    Vue.component('my-input', {
+        template: `<input :id="inputId" :name="inputName" :type="inputText" class="form-control" :v-model="inputData">`,
+        props: ['inputId','inputName','inputType','inputData'],
+        data:function () {
+            return{
+                username:''
+            }
+        }
+    });
+
+
+    Vue.component('group-username', {
+        template:`<div class="form-group">
+                <my-label forStr="username" str="用户名："></my-label>
+                <div class="col-sm-8">
+                    <my-input inputId="username" inputName="username" inputType="text" inputData="username"></my-input>
+                </div>
+            </div>`
+    });
+
+    Vue.component('label-input', {
+        template: `<input id="comment" name="comment" type="text" class="form-control"
+                                             v-model="comment">`
+    });
+
+    Vue.component('group-comment', {
+        template:`<div class="form-group">
+                <my-label forStr="comment" str="备注："></my-label>
+                <div class="col-sm-8">
+                    <label-input></label-input>
+                </div>
+            </div>`
+    });
+
+    Vue.component('button-group',{
+        template:`<div class="form-group">
+                <div class="col-sm-8 text-center">
+                    <input type="button" value="添加" class="btn btn-primary" @click="add(),cancelAdd()">
+                    <input type="button" value="取消" class="btn btn-danger" @click="cancelAdd"></div>
+            </div>`
+    });
+
+    Vue.component('user-comment-form',{
+        template:`<div class="form-horizontal">
+            <group-username></group-username>
+            <group-comment></group-comment>
+            <button-group></button-group>
+        </div>`
+    });
+
+
+    var m = {
+        username: '',
+        comment: '',
+        usersList: []
+    };
+    var vm = new Vue({
+        el: '.container',
+        data: m,
+        methods: {
+            add: function () {
+                if (this.username.split(' ').join('').length > 0) {
+                    this.usersList.push({
+                        username: this.username,
+                        comment: this.comment
+                    });
+                }
+            },
+            cancelAdd: function () {
+                this.username = '';
+                this.comment = '';
+            },
+            deleteUser: function (index) {
+                var t = confirm('Yes Delete?');
+                if (t) {
+                    this.usersList.splice(index, 1);
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+		<script type="text/javascript" src="http://127.0.0.1:9092/html/js/jquery-1.12.4.js"></script>
+		<style type="text/css">
+			table{
+				width: 250px;
+				height: 200px;
+				border-collapse: collapse;
+			}
+			table th{
+				border: 2px solid #069;
+			}
+			body{
+				text-align: center;
+			}
+			th{
+				font-family: "微软雅黑", verdana, sans-serif, "宋体";
+				color: #666;
+				font-weight: bold;
+				margin-bottom: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--AJAX 将按照以下格式插入DOM-->
+		<!--<table>
+			<tr>
+				<th>一行一列</th>
+				<th>一行二列</th>
+			</tr>
+			<tr>
+				<th>二行一列</th>
+				<th>二行二列</th>
+			</tr>
+			<tr>
+				<th>三行一列</th>
+				<th>三行二列</th>
+			</tr>
+			<tr>
+				<th>四行一列</th>
+				<th>四行二列</th>
+			</tr>-->
+		<!--</table>-->
+		<form id="frm">
+			p1: <input type="text" id="p1" name="p1"/><br/>
+			p2: <input type="text" id="p2" name="p2"/><br/>
+		</form>
+		<button id="btn">Get JSON</button>
+		<div id="theD"></div>
+		<script type="text/javascript">
+			$(function(){
+				$('#btn1').click(function(){
+					$.ajax({
+						//url: '../ajax',
+						url: './js.js',
+						type: 'post',
+						// data：用于向服务器传递参数，三种方法
+						//       第一：自己拼写字符串
+//						data: 'p1=2&p2=3',
+						//       第二：用一个对象来实现
+//						data:{
+//							p1: 2,
+//							p2: 3
+//						},
+						//       第三，使用form的serialize来实现
+						// data: $('#frm').serialize(),
+						// dataType: 用于设定返回数据的格式
+						//           text/json/xml
+						//           html:获得html的标签，可以append到DOM上，如果其中有script标签，会自动运行。
+						//dataType: 'html',
+						//           script:获得script，自动运行
+						dataType: 'script',
+						//           jsonp:跨域调用，暂时先不说
+//						dataType: 'json',
+						success: function(data){
+							//$('#theD').append(jsonToHTML(data));
+							//$('#theD').append(data);
+						}
+
+					});
+				});
+				
+				$('#btn').click(function(){
+					// $.get 和 $.post 不用对象的
+//					$.get('../ajax', $('#frm').serialize(), function(data){
+//						$('#theD').append(jsonToHTML(data));
+//					});
+
+//					$.post('../ajax', $('#frm').serialize(), function(data){
+//						$('#theD').append(jsonToHTML(data));
+//					});
+
+//					$.getJSON('../ajax', $('#frm').serialize(), function(data){
+//						$('#theD').append(jsonToHTML(data));
+//					});
+
+//					$.getScript('./js.js');
+
+//					$('#theD').load('./html.html');
+					
+					// 同源政策：
+					//     一个源的Cookie不能被另一个源读取
+					//     除了Cookie，还有LocalStorage，IndexDB，XmlHttpRequest
+					
+					$.getJSON('http://127.0.0.1:9092/ajax', $('#frm').serialize(), function(data){
+						$('#theD').append(jsonToHTML(data));
+					});
+				});
+			});
+			
+			// parse JSON
+			function jsonToHTML(json){
+				return json['SUM'];
+			}
+		</script>
+	</body>
+</html>

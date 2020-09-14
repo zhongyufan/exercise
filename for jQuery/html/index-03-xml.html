@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+		<style type="text/css">
+			table{
+				width: 250px;
+				height: 200px;
+				border-collapse: collapse;
+			}
+			table th{
+				border: 2px solid #069;
+			}
+			body{
+				text-align: center;
+			}
+			th{
+				font-family: "微软雅黑", verdana, sans-serif, "宋体";
+				color: #666;
+				font-weight: bold;
+				margin-bottom: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--AJAX 将按照以下格式插入DOM-->
+		<!--<table>
+			<tr>
+				<th>一行一列</th>
+				<th>一行二列</th>
+			</tr>
+			<tr>
+				<th>二行一列</th>
+				<th>二行二列</th>
+			</tr>
+			<tr>
+				<th>三行一列</th>
+				<th>三行二列</th>
+			</tr>
+			<tr>
+				<th>四行一列</th>
+				<th>四行二列</th>
+			</tr>-->
+		<!--</table>-->
+		<button onclick="loadXMLDoc('./data.xml')">Get JSON</button>
+		<div id="theD"></div> 
+		<script type="text/javascript">
+			// AJAX JS原生 XML
+			
+			var xmlHttp;
+			
+			function loadXMLDoc(url){
+				xmlHttp = null;
+				
+				if(window.XMLHttpRequest){ // for Chrome, FireFox, IE 7+
+					xmlHttp = new XMLHttpRequest();
+				}else if(window.ActiveXObject){ // for IE6, 5
+					xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+				}
+				
+				if(xmlHttp != null){
+					xmlHttp.onreadystatechange = stateChange;
+					xmlHttp.open('POST', url, true);
+					xmlHttp.send();
+				}
+			}
+			
+			function stateChange(){
+				if(xmlHttp.readyState == 4){// 4: loaded
+					if(xmlHttp.status == 200){
+						var theDiv = document.getElementById('theD');
+						theDiv.innerHTML = xmlToHTML(xmlHttp.responseXML);
+					}
+				}
+			}
+			
+			function xmlToHTML(xml){
+				var txt = '<table>';
+				var lines = xml.getElementsByTagName('LINE');
+				
+				for(var i = 0; i < lines.length; i++){
+					var columns = lines[i].getElementsByTagName('COLUMN');
+					txt += '\n\r\t<tr>';
+					txt += '\n\r\t\t<th>\n\r' + columns[0].childNodes[0].nodeValue + '\n\r</th>';
+					txt += '\n\r\t\t<th>\n\r' + columns[1].childNodes[0].nodeValue + '\n\r</th>';
+					txt += '\n\r\t</tr>';
+				}
+				
+				txt += '\n\r</table>';
+				return txt;
+			}
+		</script>
+	</body>
+</html>

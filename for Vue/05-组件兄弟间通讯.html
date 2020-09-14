@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件</title>
+    <script src="./bower/bower_components/vue/dist/vue.js"></script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app" v-cloak>
+    <child-1></child-1>
+    <child-2></child-2>
+</div>
+<script>
+    // 1、创建公共的Vue对象
+    var bridge = new Vue();
+    // 2、创建两个子组件
+    Vue.component('child-1', {
+        template: `
+        <div>
+                <h4>msg-1:{{msg}}</h4>
+    <input type="button" value="1->2" @click="sendData">
+</div>
+        `,
+        data:function(){
+          return{
+              msg:''
+          }
+        },
+        methods: {
+            sendData() {
+                bridge.$emit('OneToTwoEvent', 'Hello 2 , I am 1');
+            }
+        },
+        mounted:function () {
+            var that=this;
+            bridge.$on('TwoToOneEvent', function (msg) {
+                console.log('收到来自2的信息：' + msg);
+                that.msg = msg;
+            })
+        }
+    });
+    Vue.component('child-2', {
+        template: `
+         <div>
+        <h4>msg-2:{{msg}}</h4>
+            <input type="button" value="1->2" @click="sendData">
+    </div>
+        `,
+        data: function () {
+            return {
+                msg: ''
+            }
+        },
+        methods:{
+          sendData(){
+              bridge.$emit('TwoToOneEvent','Hello 1 ,I am 2');
+          }
+        },
+        mounted: function () {
+            // 1、mounted 被调用时，只是定义了回调函数，但是并没有运行
+            // 2、当child-1来触发事件时，引擎来调用回调函数，此时初始化回调函数中的this指向
+            // 注意：此时this并不只是child-2对象，所有，this.msg找不到
+            // 解决：用闭包
+            var that= this;
+            bridge.$on('OneToTwoEvent', function (msg) {
+                console.log('收到来自1的信息：' + msg);
+                that.msg = msg;
+            })
+        }
+    });
+
+    var vm = new Vue({el: '#app'});
+</script>
+</body>
+</html>

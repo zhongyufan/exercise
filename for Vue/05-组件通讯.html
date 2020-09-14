@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件通讯</title>
+    <script src="./bower/bower_components/vue/dist/vue.js"></script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app" v-cloak>
+    <my-login></my-login>
+</div>
+<script>
+    Vue.component('my-input', {
+        template:`
+    <input type="text" :placeholder="placeholderTips">
+        `,
+        props:['placeholderTips'],
+        methods:{},
+        mounted:function () {
+            console.log(this.placeholderTips);
+        }
+    });
+    Vue.component('my-login',{
+        template:`<div>
+        用户名:<my-input placeholderTips="输入用户名"></my-input>
+        <br>
+        密码：<my-input placeholderTips="输入密码"></my-input>
+    </div>`
+    });
+
+    var vm = new Vue({
+        el: '#app'
+    });
+</script>
+</body>
+</html>

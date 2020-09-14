@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>callback</title>
+    <style>
+        table {
+            width: 250px;
+            height: 200px;
+            border-collapse: collapse;
+        }
+
+        table th {
+            border: 2px solid #069;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        th {
+            font-family: "微软雅黑", verdana, sans-serif, "宋体";
+            color: #666;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+</head>
+<body>
+<button id="btn">Get jQuery JSON</button>
+<div id="theD"></div>
+<script>
+    $(function () {
+        $('#btn').click(function () {
+            $.ajax({
+                url: './data.json',
+                type: 'post',
+                // beforeSend：在发送请求之前调用
+                //             xhr作为参数
+                beforeSend: function (xhr) {
+                    // 设定Request的Header
+                    xhr.setRequestHeader('Test', 'TestString');
+                    // 提高用户体验，禁用按钮
+                    $('#btn').prop('disabled', true);
+                },
+                // error：在出错的时候
+                //        xhr，错误信息，可以抛出的异常
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log(textStatus);
+                },
+
+                // dataFilter：对原始的数据进行处理
+                //             data（原始的AJAX返回数据）,type,dataType
+                dataFilter: function (data, type) {
+                    console.log(data, type);
+                    // 如果调用dataFilter，必须有返回值
+                    return data;
+                },
+                success: function (data) {
+                    $('#theD').append(jsonToHTML(data));
+                },
+                // complete：在最后调用函数调用完以后调用
+                //           xhr,textStatus
+                complete: function (xhr, textStatus) {
+                    $('#btn').prop('disabled', false);
+                }
+            });
+        });
+    });
+
+    // parse JSON
+    function jsonToHTML(json) {
+        var $table = $('<table></table>');
+
+        $(json['LINE']).each(function () {
+            var $tr = $('<tr></tr>').appendTo($table);
+            $(this['COLUMN']).each(function () {
+                var $th = $('<th></th>').html(this['text']).appendTo($tr);
+            })
+        });
+        return $table;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件指令</title>
+    <script src="./bower/bower_components/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--计算属性-->
+    <!--{{msg.split('').reverse().join('')}}-->
+
+    <!--改造-->
+    <input type="text" v-model="m1">
+    <!--{{msg()}}-->
+    {{msg}}
+
+
+</div>
+
+<script>
+    var m = {
+        m1: 'hello world!'
+    };
+    var vm = new Vue({
+        el: '#app',
+        data: m,
+        methods: {
+            // msg: function () {
+            //     return this.m1.split('').reverse().join('');
+            // }
+        },
+        // 计算属性
+        computed:{
+            msg:function () {
+                return this.m1.split('').reverse().join('');
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件通讯</title>
+    <script src="./bower/bower_components/vue/dist/vue.js"></script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app" v-cloak>
+    <parent></parent>
+</div>
+<script>
+    // 1、 父组件向子组件传递数据，初始化时 可以
+    // 2、 父组件在运行时更新传递给子组件的数据，可以
+    // 3、 子组件不能把数据回写给父组件吗？可以，但是直接不可以
+    //     必须传递一个对象、且保证只修改对象里的数据，而不修改对象本身。
+
+    Vue.component('child', {
+        template:`
+    <div>[子组件]来自父亲的Value：{{myValue}}
+    <br>
+        <input type="text" v-model="myValue.d">
+    </div>
+
+        `,
+        // 不能回改parentValue
+        props:['myValue'],
+        mounted:function () {
+            console.log('子组件mount'+this.myValue.d);
+        },
+        updated:function () {
+            console.log('子组件update'+this.myValue.d);
+        },
+    });
+    Vue.component('parent',{
+        template:`
+<div>
+          <h4>[父组件]父亲的Value：{{parentValue2.d}}</h4>
+          <input type="text" v-model="parentValue2.d"></input>
+          <hr>
+          <child :myValue="parentValue2"></child>
+    </div>
+        `,
+        data:function () {
+            return{
+                parentValue:'钟育帆～',
+                //     必须传递一个对象、且保证只修改对象里的数据，而不修改对象本身。
+                parentValue2:{
+                    d:'zhongyufan'
+                }
+            }
+        },
+        mounted:function () {
+            console.log('父组件mounted'+this.parentValue2.d);
+        },
+        updated:function () {
+            console.log('父组件update'+this.parentValue2.d);
+        }
+    });
+
+    var vm = new Vue({
+        el: '#app'
+    });
+</script>
+</body>
+</html>

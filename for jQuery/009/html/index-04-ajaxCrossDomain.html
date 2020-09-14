@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<style type="text/css">
+			table{
+				width: 250px;
+				height: 200px;
+				border-collapse: collapse;
+			}
+			table th{
+				border: 2px solid #069;
+			}
+			body{
+				text-align: center;
+			}
+			th{
+				font-family: "微软雅黑", verdana, sans-serif, "宋体";
+				color: #666;
+				font-weight: bold;
+				margin-bottom: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<form id="frm">
+			p1: <input type="text" id="p1" name="p1"/><br/>
+			p2: <input type="text" id="p2" name="p2"/><br/>
+		</form>
+		<button id="btn">Get JSON</button>
+		<div id="theD"></div>
+		<script type="text/javascript">
+			$(function(){				
+			// 同源政策：
+			//     一个源的Cookie不能被另一个源读取
+			//     除了Cookie，还有LocalStorage，IndexDB，XmlHttpRequest
+					
+//					$.getJSON('http://127.0.0.1:9092/ajax', $('#frm').serialize(), function(data){
+//						$('#theD').append(jsonToHTML(data));
+//					});
+//				});
+
+				// 用jQuery的$.ajax实现跨域
+				$('#btn').click(function(){
+					$.ajax({
+						type: 'get',
+						url: 'http:\/\/127.0.0.1:9092/ajaxCrossDomain?callback=run&p1=' + $('#p1').val() + '&p2=' + $('#p2').val(),
+						// json with padding
+						dataType: 'jsonp',
+						success: run
+					});
+				});
+			});
+			
+			// 如何跨域访问
+			//     利用了script标记的src属性可以跨域访问。
+			//     动态的向DOM添加一个script标记，src指向跨域位置，
+			//     在返回的script当中，返回用客户端定义好的函数（比如叫做run）包裹好的json。
+			//     script被加载后，响应的函数会被运行。
+			
+			//  1. 定义一个函数
+			function run(json){
+				$('#theD').append(jsonToHTML(json));
+			}
+			
+			//run('{"SUM": 5}');
+			
+			// 2. 动态添加一个script，src指向跨域位置
+//			$('#btn').click(function(){
+				// 3. 把双方协商的函数名称，变为通过callback参数传递给服务器端
+//				$('body').append('<script type="text\/javascript" src="http:\/\/127.0.0.1:9092/ajaxCrossDomain?callback=run&p1=' + $('#p1').val() + '&p2=' + $('#p2').val() + '"><\/script>');
+//				console.log('<script type="text\/javascript" src="http:\/\/127.0.0.1:9092/ajaxCrossDomain?p1=' + $('#p1').val() + '&p2=' + $('#p2').val() + '"><\/script>');
+
+//				$('body script').last().remove();
+//			});
+			
+			// parse JSON
+			function jsonToHTML(jsonString){
+				var json = JSON.parse(jsonString);
+				return json['SUM'];
+			}
+		</script>
+	</body>
+</html>

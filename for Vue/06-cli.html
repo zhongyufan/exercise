@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-VA-Compatible" content="ie=edge">
+    <title>路由参数传递</title>
+    <script src="./bower/bower_components/vue/dist/vue.js"></script>
+    <script src="./bower/bower_components/vue-resource/dist/vue-resource.js"></script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+        .base{
+            width: 320px;
+            height: 400px;
+            background: #ddd;
+            border: 3px solid #1b6583;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="app" v-cloak>
+
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            list:[]
+        }
+    });
+</script>
+</body>
+</html>

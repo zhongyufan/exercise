@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件指令</title>
+    <script src="./bower/bower_components/vue/dist/vue.js"></script>
+    <style>
+        .active {
+            color: red;
+        }
+
+        .page {
+            list-style-type: none;
+        }
+
+        .page > li {
+            float: left;
+            padding: 5px;
+            margin-right: 10px;
+            border: 1px silver solid;
+            background: #eee;
+            border-radius: 50%;
+        }
+
+        .page li a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <ul class="page">
+        <li><a @click="prev">上一页</a></li>
+        <li v-for="n in pageCount"><a :class="activeNumber==n?'active':''">{{n}}</a></li>
+        <li><a @click="next">下一页</a></li>
+    </ul>
+</div>
+
+<script>
+    var m = {
+        pageCount: 10,
+        activeNumber: 5
+    };
+    var vm = new Vue({
+        el: '#app',
+        data: m,
+        methods: {
+            prev:function () {
+                if(this.activeNumber>1){
+                    this.activeNumber--;
+                }
+            },
+            next:function () {
+                if(this.activeNumber<10){
+                    this.activeNumber++;
+                }
+            }
+
+        }
+    })
+</script>
+</body>
+</html>

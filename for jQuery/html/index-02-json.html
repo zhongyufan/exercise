@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+		<style type="text/css">
+			table{
+				width: 250px;
+				height: 200px;
+				border-collapse: collapse;
+			}
+			table th{
+				border: 2px solid #069;
+			}
+			body{
+				text-align: center;
+			}
+			th{
+				font-family: "微软雅黑", verdana, sans-serif, "宋体";
+				color: #666;
+				font-weight: bold;
+				margin-bottom: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--AJAX 将按照以下格式插入DOM-->
+		<!--<table>
+			<tr>
+				<th>一行一列</th>
+				<th>一行二列</th>
+			</tr>
+			<tr>
+				<th>二行一列</th>
+				<th>二行二列</th>
+			</tr>
+			<tr>
+				<th>三行一列</th>
+				<th>三行二列</th>
+			</tr>
+			<tr>
+				<th>四行一列</th>
+				<th>四行二列</th>
+			</tr>-->
+		<!--</table>-->
+		<button onclick="loadJSONDoc('./data.json')">Get JSON</button>
+		<div id="theD"></div> 
+		<script type="text/javascript">
+			// AJAX JS原生 JSON
+			
+			var xmlHttp;
+			
+			function loadJSONDoc(url){
+				xmlHttp = null;
+				
+				if(window.XMLHttpRequest){ // for Chrome, FireFox, IE 7+
+					xmlHttp = new XMLHttpRequest();
+				}else if(window.ActiveXObject){ // for IE6, 5
+					xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+				}
+				
+				if(xmlHttp != null){
+					xmlHttp.onreadystatechange = stateChange;
+					console.log(xmlHttp.readyState);
+					//xmlHttp.onerror = error;
+					xmlHttp.open('POST', url, true);
+					// beforeSend()
+					xmlHttp.send();
+				}
+			}
+			
+			function stateChange(){
+				// readyState:
+				//  0: 请求未初始化
+				//  1: 服务器已经建立连接 TCP
+				//  2: 请求已接收
+				//  3: 请求已处理
+				//  4: 请求已完成，且响应已经就绪
+				console.log(xmlHttp.readyState);
+				if(xmlHttp.readyState == 4){// 4: loaded
+					if(xmlHttp.status == 200){
+						// dataFilter();
+						// success();
+						var theDiv = document.getElementById('theD');
+						theDiv.innerHTML = jsonToHTML(xmlHttp.responseText);
+					}
+//					else{
+//						error();
+//					}
+					// complete();
+				}
+			}
+			
+			function jsonToHTML(json){
+				var txt = '<table>';
+				var data = JSON.parse(json);
+				var lines = data['LINE'];
+				
+				for(var i = 0; i < lines.length; i++){
+					var columns = lines[i]['COLUMN'];
+					txt += '\n\r\t<tr>';
+					txt += '\n\r\t\t<th>\n\r' + columns[0]['text'] + '\n\r</th>';
+					txt += '\n\r\t\t<th>\n\r' + columns[1]['text'] + '\n\r</th>';
+					txt += '\n\r\t</tr>';
+				}
+				
+				txt += '\n\r</table>';
+				return txt;
+			}
+		</script>
+	</body>
+</html>

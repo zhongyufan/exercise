@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>file</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+</head>
+<body>
+<!--第一种办法-->
+<!--<form action="../upload" id="form1" method="post" enctype="multipart/form-data">-->
+<!--<lable>-->
+<!--选择要上传的文件：<input type="file" name="uploadfile" id="uploadfile" value="choose file">-->
+<!--</lable>-->
+<!--<br>-->
+<!--<input type="submit" name="submit" id="submit" value="提交">-->
+<!--</form>-->
+
+<!--第二种办法 jQuery-->
+<form id="form1">
+    <lable>
+        选择要上传的文件：<input type="file" name="uploadfile" id="uploadfile" value="choose file">
+    </lable>
+    <br>
+    <input type="button" name="submit" id="submit" value="提交">
+</form>
+<script>
+    $(function () {
+        $(':button').click(function () {
+            $.ajax({
+                type: 'post',
+                url: '../upload',
+                data: new FormData($('#form1')[0]),
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    console.log(data)
+                }
+            })
+        })
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DATA>
+	<LINE>
+		<COLUMN>一行一列</COLUMN>
+		<COLUMN>一行二列</COLUMN>
+	</LINE>
+	<LINE>
+		<COLUMN>二行一列</COLUMN>
+		<COLUMN>二行二列</COLUMN>
+	</LINE>
+	<LINE>
+		<COLUMN>三行一列</COLUMN>
+		<COLUMN>三行二列</COLUMN>
+	</LINE>
+	<LINE>
+		<COLUMN>四行一列</COLUMN>
+		<COLUMN>四行二列</COLUMN>
+	</LINE>
+</DATA>

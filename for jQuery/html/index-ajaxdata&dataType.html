@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>callback</title>
+    <style>
+        table {
+            width: 250px;
+            height: 200px;
+            border-collapse: collapse;
+        }
+
+        table th {
+            border: 2px solid #069;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        th {
+            font-family: "微软雅黑", verdana, sans-serif, "宋体";
+            color: #666;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+</head>
+<body>
+<form action="" id="frm">
+    p1: <input type="text" id="p1" name="p1"><br>
+    p2: <input type="text" id="p2" name="p2">
+</form>
+<button id="btn">Get jQuery JSON</button>
+<div id="theD"></div>
+<script>
+    $(function () {
+        $('#btn1').click(function () {
+            $.ajax({
+                url: '../ajax',
+                type: 'get',
+                dataType: 'json',
+                // data 用于向服务器传递参数，三种方法
+                // 第一：自己拼写字符串
+                // data: 'p1=2&p2=3',
+                // 第二：用一个对象来实现
+                // data:{
+                //   p1:2,
+                //   p2:3
+                // },
+                // 第三，使用form的serialize来实现
+                data: $('#frm').serialize(),
+
+                // dataType 用于设定返回出去的格式
+                //          text/json/hml
+                //          html 获取html的标签，可以append到DOM上，如果其中有script标签，会自动运行
+                //          script 获得script，自动运行
+                //          jsonp 跨域调用
+                success: function (data) {
+                    $('#theD').append(jsonToHTML(data));
+                }
+            });
+        });
+        // $.get()
+        $('#btn').click(function () {
+            // $.get() and $.post() 不用对象的
+
+            // $.get('../ajax', $('#frm').serialize(), function (data) {
+            //     $('#theD').append(jsonToHTML(data));
+            // })
+
+            // $.post('../ajax', $('#frm').serialize(), function (data) {
+            //     $('#theD').append(jsonToHTML(data));
+            // })
+
+            // $.getJSON()
+            // $.getJSON('../ajax', $('#frm').serialize(), function (data) {
+            //     $('#theD').append(jsonToHTML(data));
+            // })
+
+            // $.getScript()
+            // $.getScript('./js.js');
+
+            // $(...).load
+            // $('#theD').load('./html.html')
+
+        });
+
+    });
+    // parse JSON
+    // function jsonToHTML(json) {
+    //     return json['SUM:'];
+    // }
+
+
+    // 同源政策
+    //     一个源的Cookie不能被另一个源读取
+    //     除了Cookie，还有LocalStorage，IndexDB，XmlHttpRequest
+
+    // 什么是跨域？
+    //      域名/IP不同
+    //      协议不同
+    //      端口号不同
+    //      二级域名不同
+    // XHR禁止一个域名下的网页，用AJAX方式请求另一个域名下的资源
+
+    // 如何跨域访问
+    // 只要是带src属性的都支持跨域 such as : script
+    // 做法：
+    // 动态的向DOM添加一个script，src指向跨域位置
+    // 在返回的script当中，返回用客户端定义好的函数（比如叫做run）包裹好的json
+    // script被加载后，相应的函数会被运行。
+
+    // 1、定义一个函数
+    function run(json) {
+        $('#theD').append(jsonToHTML(json));
+    }
+
+    // 原生js
+    // // run('{"SUM":5}');
+    // // 2、动态添加一个script，src指向跨域位置
+    // $('#btn').click(function () {
+    //     // 3、把双方协商的函数名称，变为通过callback参数传递给服务器
+    //
+    //     // 记得删除
+    //     $('body script').last().remove();
+    // });
+
+    // 用jQuery的$.ajax实现跨域
+    $(function () {
+        $('#btn').click(function () {
+            $.ajax({
+                type: 'get',
+                url: 'http:\/\/127.0.0.1:9092/ajaxCrossDomain?callback=run&p1=' + $('#p1').val() + '&p2=' + $('#p2').val(),
+                // json with padding
+                dataType: 'jsonp',
+                success: run
+            });
+        });
+    });
+
+
+    // parse JSON
+    function jsonToHTML(jsonString) {
+        var json = JSON.parse(jsonString);
+        return json['SUM'];
+    }
+
+
+</script>
+</body>
+</html>

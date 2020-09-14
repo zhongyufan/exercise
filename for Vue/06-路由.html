@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-VA-Compatible" content="ie=edge">
+    <title>组件</title>
+    <script src="./bower/bower_components/vue/dist/vue.js"></script>
+    <!-- 1、引入路由 -->
+    <script src="./bower/bower_components/vue-router/dist/vue-router.js"></script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+        .base{
+            width: 320px;
+            height: 400px;
+            background: #ddd;
+            border: 3px solid #1b6583;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="app" v-cloak>
+    <!-- 2、调用组件，给你提供的组件，不可改 -->
+    <router-view></router-view>
+</div>
+<script>
+    // 3、组件定义
+    // 登陆页面
+    var login=Vue.component('login',{
+        template:`
+        <div class='base'>
+            <h4>登陆的页面</h4>
+            <input type="button" value="注册 for js" @click="gotoReg">
+            <router-link to="/reg">注册</router-link>
+        </div>
+        `,
+        //  js 跳转
+        methods:{
+            gotoReg:function(){
+                this.$router.push('/reg');
+            }
+        }
+    });
+
+    // 注册页面
+    var reg =Vue.component('reg',{
+        template:`
+        <div class='base'>
+            <h4>注册的页面</h4>
+            <router-link to="/login">返回</router-link>
+        </div>
+        `
+    });
+
+    // 4、配置路由词典
+    // {paht:<Vue的路径，#后面>，component:<组件实例>}
+
+    const myRoutes =[
+        {path:'',component:login},
+        {path:'/login',component:login},
+        {path:'/reg',component:reg},
+    ];
+
+    const myRouter =new VueRouter({
+        routes:myRoutes
+    });
+
+    new Vue({el: '#app',router:myRouter});
+</script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指令</title>
+    <script src="./bower/bower_components/vue/dist/vue.js"></script>
+    <style>
+        div.red {
+            width: 300px;
+            height: 300px;
+            background-color: indianred;
+        }
+
+        div.hasBorder {
+            border: 5px salmon solid;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px silver;
+        }
+    </style>
+</head>
+<body>
+<!--Vue的指令：-->
+<!--{{var}}-->
+<!--v-if,v-show,v-else-->
+<!--v-for-->
+<!--v-model-->
+<!--v-bind-->
+<!--<div id="app">-->
+<!--&lt;!&ndash;条件渲染指令&ndash;&gt;-->
+<!--&lt;!&ndash;v-if&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="button" value="不显示" @click="show">&ndash;&gt;-->
+<!--&lt;!&ndash;只要能写到if中的都能写，且按照boolean进行类型转换&ndash;&gt;-->
+<!--<p v-if="showP">能够被控制显示还是不显示的p标签</p>-->
+<!--<p v-if="num1">如果是{{num1}}}0不显示</p>-->
+<!--<p v-if="num2">如果{{num2}}不是0显示</p>-->
+<!--<p v-if="undefined">1</p>-->
+<!--<p v-if="unll">2</p>-->
+<!--<p v-if="''">3</p>-->
+<!--<p v-if="'123'">4</p>-->
+<!--<p v-if="unll">5</p>-->
+<!--<p v-if="unll">6</p>-->
+<!--&lt;!&ndash;v-show&ndash;&gt;-->
+<!--<p v-show="showP">v-show</p>-->
+<!--&lt;!&ndash;&ndash;&gt;-->
+<!--<p v-if="showP">v-if-show</p>-->
+<!--<p v-else>v-if-hide</p>-->
+<!--&lt;!&ndash;v-else必须跟一个vif/vshow后 不然不能被识别&ndash;&gt;-->
+
+<!--&lt;!&ndash;循环渲染指令&ndash;&gt;-->
+<!--<ul>-->
+<!--&lt;!&ndash;一般循环 数组&ndash;&gt;-->
+<!--<li v-for="val in array">{{val}}</li>-->
+<!--&lt;!&ndash;有下标的循环 数组&ndash;&gt;-->
+<!--<li v-for="(val,index) in array">val={{val}};index={{index}};</li>-->
+<!--&lt;!&ndash;一般的循环 JSON&ndash;&gt;-->
+<!--<li v-for="val in json">{{val}}</li>-->
+<!--&lt;!&ndash;带有key的循环 JSON&ndash;&gt;-->
+<!--<li v-for="(val,key) in json">val={{val}};key={{key}};</li>-->
+<!--&lt;!&ndash;带有key,index的循环 JSON&ndash;&gt;-->
+<!--<li v-for="(val,key,index) in json">val={{val}};key={{key}};index={{index}};</li>-->
+<!--</ul>-->
+
+<!--&lt;!&ndash;双向绑定 v-model &ndash;&gt;-->
+<!--<input type="text" v-model="theValue">-->
+<!--<p>{{theValue}}</p>-->
+<!--</div>-->
+
+<!--v-bind (属性)-->
+<!--特殊的： class、style-->
+
+<div id="app-1">
+    <!--1、v-bind 属性设定src-->
+    <!--<img v-bind:src="imgUrl">-->
+    <!--2、v-bind 简写模式-->
+    <!--<img :src="imgUrl">-->
+
+    <input type="button" value="添加边框" @click="add">
+    <!--3、v-bind 控制class 字符串：麻烦且原始，不推荐使用-->
+    <!--<div :class="divClassStr"></div>-->
+    <!--4、v-bind 控制class 字符串数组：可用-->
+    <!--<div :class="divClassArray"></div>-->
+    <!--5、v-bind 控制class JSON：推荐可用-->
+    <!--<div :class="{red :isRed,hasBorder: hasBorder}"></div>-->
+
+    <!--6、v-bind 控制style 字符串，不推荐-->
+    <!--<div class="red" :style="borderStyleStr"></div>-->
+    <!--7、v-bind 控制style JSON：推荐可用-->
+    <div class="red" :style="{border:borderStr,borderRadius:borderRadiusStr,boxShadow:boxShadowStr}"></div>
+</div>
+<script>
+    // 条件渲染指令
+    // --------------
+    // var m = {
+    //     showP: true,
+    //     num1: 0,
+    //     num2: 5
+    // };
+    //
+    // var vm = new Vue({
+    //     el: '#app',
+    //     data: m,
+    //     methods: {
+    //         show: function () {
+    //             this.showP = !this.showP;
+    //             // this.showP = false;
+    //         }
+    //     }
+    // });
+
+    // 循环渲染指令
+    // --------------
+    // var vm = new Vue({
+    //     el: '#app',
+    //     data: {array: ['Beijing', 'JiNan', 'ShangHai', 'HangZhou', 'Sulawesi'],
+    //     json:{
+    //         firstCity:'Beijing',
+    //         secondCity:'JiNan',
+    //         thirdCity:'ShangHai',
+    //         fourthCity:'HangZhou',
+    //         fifthCity:'Sulawesi'
+    //     }},
+    //     method: {}
+    // })
+
+    // 用户输入
+    // var m = {
+    //     theValue: 'hello world!'
+    // };
+    // var vm = new Vue({
+    //     el: '#app',
+    //     data: m,
+    //     method: {}
+    // });
+
+    // bind
+    var m = {
+        imgUrl: './img/img.jpg',
+        // "3"的字符串变量
+        // divClassStr: 'red'
+        // "4"的字符串数组变量
+        // divClassArray: ['red']
+        // "5"的开关
+        // isRed: true,
+        // hasBorder: false
+
+        // "6"的字符串
+        // borderStyleStr: ''
+        // "7"的JSON
+        borderStr:'',
+        borderRadiusStr:'',
+        boxShadowStr:''
+    };
+    var vm = new Vue({
+        el: '#app-1',
+        data: m,
+        methods: {
+            // "3"的函数
+            // add() {
+            //     if (this.divClassStr.indexOf('hasBorder') < 0)
+            //         this.divClassStr = this.divClassStr + ' hasBorder'
+            // }
+            // "4"的函数
+            // add() {
+            //     if (this.divClassArray.indexOf('hasBorder') < 0) {
+            //         this.divClassArray.push('hasBorder');
+            //     }
+            // }
+            // "5"的函数
+            // add() {
+            //     this.hasBorder = true;
+            // }
+
+            // "6"的函数
+            // add() {
+            //     this.borderStyleStr = 'border: 5px salmon solid;\n' +
+            //         '            border-radius: 10px;\n' +
+            //         '            box-shadow: 10px 10px 10px silver;';
+            // }
+
+            // "7"的函数
+            add() {
+                this.borderStr='5px salmon solid';
+                this.borderRadius='10px';
+                this.boxShadowStr='10px 10px 10px silver';
+            }
+        }
+    });
+</script>
+</body>
+</html>

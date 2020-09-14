@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js</title>
+    <script src="./bower/bower_components/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<!--view-->
+<script type="text/x-tml">
+<!--隐藏起来-->
+
+    <h3>{{word}}</h3>
+
+
+
+
+
+</script>
+<div id="app">
+    <input type="button" value="按钮" v-on:click="show">
+    <input type="button" value="按钮1" @click="hide">
+    <h3>{{word}}</h3>
+    <input type="button" value="原生JS按钮">
+    <input type="button" value="模版按钮">
+</div>
+<script>
+    // Module
+    // var m = {
+    //     word: 'Hello,world~ I am Vue'
+    // }
+
+    // ViewModule
+    var vm = new Vue({
+        el: '#app',// 挂载点
+        data: {
+            word: 'Hello,world~ I am Vue' // Module
+        },
+        // 方法
+        methods: {
+            show() {
+                console.log('Hello,I am here!');
+                this.word = 'Changed by ZhangYufan';
+            },
+            hide() {
+                console.log('Byebye,I am no here!');
+                this.word = 'Hello,world~ I am Vue';
+            }
+        }
+    });
+</script>
+<script>
+    // 1、原生JS
+    // function aaa() {
+    //     var app = document.getElementById('app');
+    //     var div, p;
+    //     div = document.createElement('div');
+    //     p = document.createElement('p');
+    //
+    //     p.innerHTML = 'abc';
+    //     div.appendChild(p);
+    //     app.appendChild(div);
+    // }
+    //
+    // addEventListener('click', aaa);
+
+    // 2、模版方法
+    function changeDirectly() {
+        var app = document.getElementById('app');
+        var html = '';
+        var htmlTmp = '<div><p>%word%</p></div>';
+
+        html = htmlTmp.replace(/%word%/, 'abc');
+        console.log(html);
+        app.innerHTML = html;
+    }
+    addEventListener('click',changeDirectly);
+</script>
+</body>
+</html>

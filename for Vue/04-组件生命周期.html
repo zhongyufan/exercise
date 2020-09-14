@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件</title>
+    <script src="./bower/bower_components/vue/dist/vue.js"></script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app" v-cloak>
+    <input type="button" value="切换" @click="toBe">
+    <my-component v-if="isShow"></my-component>
+</div>
+
+<!--1、创建组件-->
+<!--   组件命名不是小驼峰，做标签使用，用"-"串联小字母单词-->
+<!--   template中的标记必须在一个根标记下面，不可以多个并列-->
+<!--show 和 if 的生命周期完全不一样-->
+<script>
+    Vue.component('my-component', {
+        template: `
+        <div>
+        <input type="button" @click="handleClick" value="点击"></input>
+        <h4>hello {{count}}</h4>
+</div>
+        `,
+        data: function () {
+            return {
+                count: 0
+            }
+        },
+        methods: {
+            handleClick: function () {
+                this.count++;
+            }
+        },
+        beforeCreate:function () {
+            console.log('创建之前');
+        },
+        created:function () {
+            console.log('创建');
+        },
+        beforeMount:function () {
+            console.log('挂载之前');
+        },
+        mounted:function () {
+            console.log('挂载');
+        },
+        beforeUpdate:function () {
+            console.log('更新之前');
+        },
+        updated:function () {
+            console.log('更新');
+        },
+        beforeDestroy:function () {
+            console.log('清理之前');
+        },
+        destroy:function () {
+            console.log('清理');
+        }
+    });
+
+    var m = {
+        isShow: true
+    };
+    var vm = new Vue({
+        el: '#app',
+        data: m,
+        methods: {
+            toBe() {
+                this.isShow =! this.isShow;
+            }
+        }
+    });
+</script>
+</body>
+</html>

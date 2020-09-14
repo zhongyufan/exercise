@@ -1,0 +1,105 @@
+基础标签：
+<h1>（H1~h6 只能有一个H1标签）
+<br>（换行）<p>（分段）<hr>（分割线）
+<!--xxxx-->注释 Ctrl+/
+
+图片：
+·img标签 
+格式：<img src="">
+width宽度 height高度 title悬停内容 alt无法显示
+
+超链接：
+·a标签
+格式：<a href="">xxx</a>
+target控制跳转(_self当前 _blank新建 <base target> 总跳转） title（悬浮文本）
+假链接：#（回顶部）id（定位）跳转新网页id（在目标路径+#+id）注意：跳转无动画
+
+多媒体（HTML5新标签）：
+·video标签
+格式：<video stc=""></video>
+autoplay：自动播放 preload：预加载（preload和autoplay相冲）
+controls：控制条 poster：显示图片 loop：循环播放 muted：静音
+<video><source src="" type=""></source></video>(解决兼容性)
+视频格式（webm mp4 ogg 格式：type="video/webm"）
+·audio标签
+格式：<audio src=""></audio>
+<audio src=""><source src="" type=""></source></audio>
+音频格式（ogg mp3 wav 格式：type="audio/mp3"）
+
+文本；
+·列表标签
+（最多）无序列表<ul> <li></li> </ul> list 
+（最少）有序列表<ol> <li></li> </ol>
+（次之) 定义列表<dl> <dt>数据标题</dt> <dd>数据描述</dd> </dl>
+（快捷）dl>dt+dt ul>li*数字 ul>li*数字>h2+ul>li*数字（li中可以添加语义）
+·表格标签
+格式：<table border=“”> <tr> <td></td> </tr> </table>（table整个表格 tr一行 td单个）
+（外边距cellspacing 内边距cellpadding 框border）
+<caption></caption>隶属table标签（指定标题居中）
+（表格结构默认 thead表头 tbody主体 tfoot页尾）单元格合并（colspan水平 rowspan 垂直）
+·表单标签
+格式：<form><input></form>
+text明文 password暗文 name互斥 checked默认 radio单选框 checkbox多选框
+button按钮 value指定按钮标题 reset重置按钮 submit提交按钮 
+action（form 服务器） hidden隐藏域 输入框与文字绑定Labe
+类型指定 邮箱email 域名url 号码number
+select标签
+格式：<select> <option></option> </select>选定列表 （selected默认 optgroup分组）
+textarea标签
+格式：<textarea></textarea> 
+（cols列 rows行 定义多行输入框 fieldest指定边框 legend指定标题）
+（HTML5）待定选项标签datalist
+格式：<datalist> <option>待选内容</option> </datalist> list（值）
+（HTML5）详情和概要标签details
+格式：<details> <summary>概要信息</summary> 详情信息</details>（整合空间）
+
+另：
+marquee标签
+<marquee>内容</marquee>（可添加img标签）（跑马灯、非w3c，但浏支)
+（direction方向 scrollamount速度 loop滚动次数 behavior滚动类型-slide单边-alternate弹力）
+字符实体
+&nbsp;(空格) &lt;(<)(less than) &gt;(>)(greater than) &copy;(版权符号) 
+
+废（没语义 修改样式 尽量不用 可做CSS的钩子）：
+<br>（p代替）<hr>（分割线）<font>（文字大小）  
+<b>（加粗 strong代替）<u>（下划线 ins代替） <i>（倾斜 em代替） <s>（删除线 del代替）
+strong：定义重要性强调的文字 ins：定义插入的文字 em：定义强调的文字 del：定义被删除的文字
+
+CSS：
+格式：<style type=“text/css”>
+      p{
+}
+</style>
+type=“text/css”(可不写，默认)
+font-style样式、font-weight（bold粗bolder lighter细线）、font-size大小、font-family“字体”
+中文能处理英文 英文不能处理中文 
+中文:宋体simsun、黑体simhei、微软雅黑Microsoft YaHei
+英文:新罗马、Arial
+
+文字属性缩写 font:italic倾斜 bold 100px "微软雅黑";italic bold可省略可交换
+
+underline下划线 text-decoration:underline; line-through删除线 overline上划线 none干净
+水平对齐 text-align  文本缩进text-indent:2em  
+
+颜色属性：color赋值 英文 RGB  RGBA(a透明度) 十六进制颜色值  简写#FFee00=#Fe0
+ 16进制第一位*16+16进制的第二位=10进制
+
+标签选择器
+(了解)id选择器  #  id只能使用字母/数字/下划线  不能以数字开头  id留个JS使用
+类选择器 class .  一个标签可以有多个类名
+后代选择器(大容量修改)指标签群改 一个空格=一个后代  后代标签可用ID 类 选择器
+子元素选择器(用于后代特定) >
+交集选择器(了解)  选择器与选择器之间没有任何连接符号
+并集选择器  使用，连接
+兄弟选择器 相邻(css2): +  通用(css3):~  更改标签后所有
+
+CSS3序选择器
+①同级别: first-child(不区分类型)
+②同类别: first-of-type(区分类型)
+
+
+
+属性选择器:  
+
+
+通配符选择器:*  标签多 性能差 所以一般不使用
