@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .div1 {
+            position: relative;
+        }
+
+        .div1 img {
+            position: absolute;
+            max-width: 600px;
+            max-height: 350px;
+            width: 100%;
+        }
+
+        .div1 :nth-child(1) {
+            z-index: 1;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="div1">
+        <img src="文件1.jpg" alt="">
+        <img src="文件2.jpg" alt="">
+        <img src="文件3.jpg" alt="">
+        <img src="文件4.jpg" alt="">
+        <img src="文件5.jpg" alt="">
+        
+    </div>
+</body>
+<script>
+    var index = 0;
+    setInterval(function () {
+        index++;
+        $(".div1 img").eq(index).css("z-index", 1);
+        if (index == 5) {
+            index = 0;
+            $(".div1 img").css("z-index", 0);
+            $(".div1 img").eq(0).css("z-index", 1);
+
+        }
+    },3000);
+    
+</script>
+
+</html>

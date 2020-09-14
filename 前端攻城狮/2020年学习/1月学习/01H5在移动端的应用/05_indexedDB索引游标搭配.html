@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>indexedDB</title>
+    <script>
+        var request = indexedDB.open('testDB', 1);
+        // 版本号只能往上走
+        request.onsuccess = function () {
+            console.log('数据库创建成功');
+        }
+        request.onerror = function () {
+            console.log('数据库创建失败');
+        }
+        request.onupgradeneeded = function () {
+            console.log('版本号升级了');
+            // DB的详情
+            var db = request.result;
+            // 创建表
+            db.createObjectStore('test3', {
+                // autoIncrement:true,
+                keyPath: 'id'
+            }).createIndex('test3', 'name', {
+                unique: false, // 索引是否唯一 如果出现重复就不写入
+
+            });
+
+        }
+
+        var json = [{
+            "id": 1001,
+            "name": "zhang",
+            "age": 18
+        }, {
+            "id": 1002,
+            "name": "wang",
+            "age": 18
+        }, {
+            "id": 1003,
+            "name": "li",
+            "age": 18
+        }, {
+            "id": 1004,
+            "name": "hi",
+            "age": 18
+        }, {
+            "id": 1005,
+            "name": "a",
+            "age": 18
+        }, {
+            "id": 1006,
+            "name": "chen",
+            "age": 18
+        }]
+        setTimeout(function () {
+            var store = request.result.transaction('test3', 'readwrite').objectStore('test3');
+
+            for (var i = 0; i < json.length; i++) {
+                store.add(json[i]);
+            }
+
+            
+            var index = store.index('test3');
+            var requestNode = index.openCursor(IDBKeyRange.upperBound(1002, true));
+
+
+            requestNode.onsuccess = function () {
+                var cursor = requestNode.result;
+                if (cursor) {
+                    console.log(cursor.value);
+                    // cursor.continue();
+                }
+            }
+            // update 更新
+            // delete 删除
+        }, 300)
+        // 优点
+        // 索引按值搜索+游标范围遍历
+        // 索引排序+游标按序遍历
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

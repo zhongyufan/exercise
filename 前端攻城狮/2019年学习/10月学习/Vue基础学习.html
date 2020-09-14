@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Vue基础学习</title>
+		<!-- 仅能作为展示，数据不能动态修改 -->
+		<!-- <script type="module">
+			import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.esm.browser.js'
+			var app = new Vue({
+			  el: '#app',
+			  data: {
+			    message: 'Hello Vue!'
+			  }
+			})
+		</script> -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	</head>
+	<body>
+		<div id="app">
+			{{message}}
+		</div>
+		<div id="app2">
+			<span :title="message">
+				鼠标悬停几秒钟查看此处动态绑定的提示信息
+			</span>
+		</div>
+		<!-- v-if -->
+		<div id="app3">
+			<p v-if="seen">现在你看到我了</p>
+		</div>
+		<!-- v-for -->
+		<div id="app4">
+			<ol>
+				<li v-for="index in json">{{index}}</li>
+			</ol>
+			<ul>
+				<li v-for="index in array">{{index}}</li>
+			</ul>
+		</div>
+		<!-- v-on -->
+		<div id="app5">
+			<p>{{message}}</p>
+			<button v-on:click="reverMessage">fuck</button>
+		</div>
+		<!-- v-model -->
+		<div id="app6">
+			<p>{{message}}</p>
+			<input v-model="message">
+		</div>
+		
+	</body>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				message: 'Hello Vue!'
+			}
+		})
+		var app2 = new Vue({
+			el: '#app2',
+			data: {
+				message: '页面加载🌧️' + new Date().toLocaleString()
+			}
+		})
+		// v-if
+		var app3 = new Vue({
+			el: '#app3',
+			data: {
+				seen: true
+			}
+		})
+		// v-for (要点一：要给数据取名)
+		var app4 = new Vue({
+			el: '#app4',
+			data: {
+				json: {
+					'text1': '学习JavaScript',
+					'text2': '学习Vue',
+					'text3': '永远相信美好的事情即将发生'
+				},
+				array: ['学习JavaScript', '学习Vue', '干翻huawei'],
+			}
+		})
+		// v-on
+		var app5 = new Vue({
+			el: '#app5',
+			data: {
+				message: 'say your mother!'
+			},
+			methods: {
+				reverMessage: function() {
+					this.message = this.message.split('').reverse().join('')
+				}
+			}
+		})
+		// v-model
+		var app6 =new Vue({
+			el:'#app6',
+			data:{
+				message:'hello world!'
+			}
+		})
+	</script>
+</html>

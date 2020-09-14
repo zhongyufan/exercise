@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>等待加载</title>
+</head>
+
+<body>
+    <script>
+        // 需求：页面中有多个板块，需要多张图片加载完之后才能显示
+        const loading = (src) => {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.src = src;
+                // img加载成功
+                img.onload = () => {
+                    resolve(img);
+                }
+                // img加载失败
+                img.onerror = (e) => {
+                    reject(e);
+                }
+                // 这里不能写成
+                // img.onload = resolve(img);
+                // img.onerror = reject();
+                // 因为这样写直接调用了函数，也就是说在赋值阶段就被调用了 也就是说还没等到图片加载完成就已经被调用了
+
+            })
+        }
+        // 需要加载的图片链接
+        const imgs = [
+            'http://b-ssl.duitang.com/uploads/item/201708/09/20170809002517_mhdLF.thumb.700_0.jpeg',
+            'http://b-ssl.duitang.com/uploads/item/201607/19/20160719124525_fvnYy.thumb.700_0.jpeg',
+            'http://spider.nosdn.127.net/b812c2641c09f6cec92fa2d789d06597.gif',
+        ]
+
+        // 这里不能直接用imgs
+        // 因为Promise.all 虽然接收的是一个数组，但是如果这个数组不是Promise实例的话，就会使用Promise.resolve进行包装，会直接返回地址，而我们需要的是图片的对象
+        // console.log(Promise.all(imgs));
+
+        // map(currentValue, index,arr)方法进行循环 数组中每个元素都会执行这个函数(currentValue)
+        // imgs.map(src => loading(src)) = imgs.map((src) => {
+        //     return loadImg(src); // 返回的实例
+        // })
+
+        Promise.all(imgs.map(src => loading(src))).then((arr) => {
+            // 这样才能返回一个数组
+            // console.log(arr); // (3) [img, img, img]
+            arr.forEach((img) => {
+                document.body.appendChild(img);
+            })
+        }).catch((e)=>{
+            console.log(e);
+        })
+    </script>
+</body>
+
+</html>

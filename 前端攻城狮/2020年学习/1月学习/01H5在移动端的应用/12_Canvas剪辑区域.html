@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas</title>
+    <style>
+        canvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" height="800" width="800">您的浏览器不支持canvas</canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+        
+        ctx.save(); // 保存初始状态
+
+        ctx.arc(400,100,100,0,Math.PI*2,true);
+        ctx.clip(); // 仅在⬆️的区域内进行剪辑
+        ctx.fillStyle = 'red';
+        ctx.fillRect(100,100,300,300);
+
+        ctx.restore(); // 恢复初始状态
+
+        ctx.beginPath();
+        ctx.arc(500,200,100,0,Math.PI*2,true);
+        ctx.fillStyle = 'black';
+        ctx.fill();
+
+
+    </script>
+</body>
+
+</html>

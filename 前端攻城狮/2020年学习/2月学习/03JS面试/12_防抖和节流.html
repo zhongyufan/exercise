@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>防抖和节流</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      button {
+        height: 100px;
+        width: 400px;
+        border: none;
+        border-radius: 50px;
+        background: rgba(232, 122, 144, 0.8);
+        color: white;
+        font-size: 20px;
+        margin-left: 20px;
+        outline: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="demo0">大家好，我叫防抖</button>
+    <button id="demo1">大家好，我叫节流</button>
+    <script>
+      /**
+       * 防抖
+       * 在一段时间结束后执行
+       */
+      var demo0 = document.getElementById("demo0");
+      demo0.addEventListener("click", debounce(tellme));
+      //   防抖函数体
+      function debounce(fn) {
+        // 存放定时器
+        let time = null;
+        return () => {
+          // 清除定时器
+          clearTimeout(time);
+          // 开一个定时器
+          time = setTimeout(() => {
+            fn();
+          }, 1000);
+        };
+      }
+      //   需要执行防抖的事件
+      function tellme() {
+        console.log("我被防抖了，我抖不起来");
+      }
+
+      /**
+       * 节流
+       * 在一段时间内只执行一次
+       */
+      var demo1 = document.getElementById("demo1");
+      demo1.addEventListener("click", throttle(tellme1));
+      function throttle(fn) {
+        // 是否可以执行
+        let canRun = true;
+        return () => {
+          // 判断是否可以执行，不行则返回出去
+          if (!canRun) {
+            return;
+          }
+          // 可以执行并且执行一次，修改命令
+          canRun = false;
+          setTimeout(() => {
+            fn();
+            // 节流完成，恢复执行命令
+            canRun = true;
+          }, 1000);
+        };
+      }
+      //   需要执行节流的事件
+      function tellme1() {
+        console.log("我被节流了，我抖不起来");
+      }
+    </script>
+  </body>
+</html>

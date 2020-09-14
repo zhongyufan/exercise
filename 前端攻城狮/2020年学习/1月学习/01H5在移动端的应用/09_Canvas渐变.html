@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas</title>
+    <style>
+        canvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" height="800" width="800">您的浏览器不支持canvas</canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        // 线性渐变
+        var linearGradient = ctx.createLinearGradient(10, 50, 0, 200); // 第一个点坐标，第二点坐标
+        linearGradient.addColorStop(.041, 'rgba(0,255,239,1)');
+        linearGradient.addColorStop(.47, 'rgba(243,4,251,1)');
+        linearGradient.addColorStop(.89, 'rgba(251,223,0,1)');
+        ctx.fillStyle = linearGradient;
+        ctx.fillRect(10, 10, 200, 200);
+
+        // 径向渐变
+        var radialGradient = ctx.createRadialGradient(400, 400, 0, 400, 400, 100);
+        radialGradient.addColorStop(0.56, 'rgba(250,111,152,1)');
+        radialGradient.addColorStop(0.91, 'rgba(255,189,55,1)');
+        ctx.fillStyle = radialGradient;
+        ctx.beginPath();
+        ctx.arc(400, 400, 100, 0, Math.PI * 2, true);
+        ctx.fill();
+    </script>
+</body>
+
+</html>

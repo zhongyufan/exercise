@@ -1,0 +1,60 @@
+/* 新闻内容 */
+.content-list{
+  margin-top: 20rpx;
+}
+.author{
+  height: 100rpx;
+  display: flex;
+  align-content: center;
+}
+.author image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+  border: 1px solid #ccc;
+  margin-left: 20rpx;
+}
+.author text{
+  color: #aaa;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-left: 10rpx;
+}
+.text-title{
+  display: inline-block;
+  font-size: 38rpx;
+  margin: 20rpx 0 0 20rpx;
+  color: #6c7a89;
+}
+.text-image{
+  width: 100%;
+  margin-top: 20rpx;
+  position: relative;
+}
+.text-bg{
+  width: 100%;
+  background:rgba(242, 241, 239, .8);
+  position: absolute;
+  bottom: 0;
+}
+.text{
+  display: inline-block;
+  font-weight: bold;
+  margin: 20rpx;
+}
+
+.friend-data{
+  height: 40rpx;
+  display: flex;
+  align-content: center;
+  padding: 20rpx 0 20rpx 20rpx;
+  border-bottom: 1px solid rgba(232, 236, 241, 1);
+}
+.friend-data image{
+  width: 40rpx;
+  height: 40rpx;
+  background-size: cover;
+}
+.friend-data text{
+  margin: 0 20rpx;
+}

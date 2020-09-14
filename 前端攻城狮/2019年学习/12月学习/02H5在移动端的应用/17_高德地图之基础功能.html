@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>高德地图</title>
+    <!-- 异步调用 -->
+    <script>
+        // window.init=function(){
+        //     new AMap.Map('container');
+        // }
+    </script>
+    <!-- <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=7f0721bcec24d1bb57f6d6c40b56b673&callback=init"> -->
+    <!-- 动态加载 -->
+    <script>
+        window.onload = function () {
+            // 获取级别，中心点
+            var map = new AMap.Map('container', {
+                zoom: 10,
+                // center:[120,30]
+            });
+            console.log(map.getZoom());
+            console.log(map.getCenter());
+            // 地图移动结束时触发
+            // map.on('moveend', function () {
+            //     console.log(map.getZoom());
+            //     console.log(map.getCenter().toString());
+            // })
+            // 地图级别改变结束时触发
+            map.on('zoomend', function () {
+                console.log(map.getZoom());
+                console.log(map.getCenter().toString());
+            })
+            // 设置级别，中心点
+            // map.setZoom(num)
+            // map.setCenter([])
+            // map.setZoomCenter(num,[])
+
+            // 获取当前地图的行政区
+            map.on('moveend', function () {
+                map.getCity(function (e) {
+                    console.log('当前位置为：' + e.province + e.city + e.district);
+                })
+            })
+            // 设置行政区
+            // map.setCity
+
+            // 获取地图范围
+            // map.getBounds()
+            // .northeast 东北角
+            // .southwest 西南角
+            // 设置地图范围
+            // map.setBounds()
+
+            // 设置显示范围
+            // map.setLimitBounds()
+            // 清除设定的显示范围
+            // map.clearLimitBounds()
+            // map.getBounds().northeast().R = 118
+
+            // 地图的平移x,y个像素
+            // map.panBy(x,y)
+            // 地图会直接平移到这个位置
+            // map.panTo([x,y])
+
+            // 获取鼠标的经纬度
+            map.on('click', function (e) {
+               console.log(e.lnglat);
+            })
+
+            // 设置鼠标样式
+            // map.setDefaultCursor('pointer');
+        }
+        var jMap = document.createElement('script');
+        jMap.src = 'https://webapi.amap.com/maps?v=1.4.15&key=7f0721bcec24d1bb57f6d6c40b56b673';
+        document.head.appendChild(jMap);
+    </script>
+    <style>
+        #container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+</body>
+
+</html>

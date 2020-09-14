@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>地图的拓展</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #search {
+            width: 40%;
+            position: absolute;
+            left: 50%;
+            top: 10%;
+            transform: translate(-50%, 0);
+        }
+
+        #search input {
+            width: 100%;
+            height: 50px;
+            outline: none;
+            text-indent: 2em;
+            font: 18px "微软雅黑";
+            line-height: 40px;
+            color: #ccc;
+            border: none;
+        }
+        .amap-sug-result{
+            border: none;
+            height: 40px;
+            line-height: 40px;
+        }
+        .auto-item {
+            border: none;
+            font-size: 14px;
+            background: white;
+            text-indent: 2em;
+        }
+    </style>
+    <!-- ⚠️加载插件 -->
+    <script src="https://webapi.amap.com/maps?v=1.4.15&key=7f0721bcec24d1bb57f6d6c40b56b673&plugin=AMap.Autocomplete,AMap.PlaceSearch"></script>
+
+</head>
+
+<body>
+    <!-- 地图 -->
+    <div id="container"></div>
+    <!-- 搜索框 -->
+    <div id="search">
+        <input type="text" id="searchText"> 
+    </div>
+</body>
+<script>
+    var map = new AMap.Map('container');
+    var searchText = new AMap.Autocomplete({
+        input:"searchText"
+    });
+    var placeSearch = new AMap.PlaceSearch({
+        map:map
+    })
+
+    // 给搜索提示加上事件
+    AMap.event.addListener(searchText,'select',function(e){
+        // map.setCenter([e.poi.location.lng,e.poi.location.lat]);
+        // map.setZoom(17);
+        placeSearch.search(e.poi.name);
+    });
+</script>
+
+</html>

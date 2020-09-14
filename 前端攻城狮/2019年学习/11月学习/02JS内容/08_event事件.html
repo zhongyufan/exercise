@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event对象常用属性与方法</title>
+</head>
+
+<body>
+    <!-- type -->
+    <button id="mybtn">点击我</button>
+    <!-- target 和 currentTarget -->
+    <div id="father">
+        <div id="son">
+            点击我
+        </div>
+    </div>
+    <!-- preventDefault -->
+    <a href="http://www.baidu.com" id="a">链接</a>
+    <!-- stopPropagation -->
+    <div id="parent">
+        <div id="child">
+            点击我
+        </div>
+    </div>
+    <!-- clientY、pageY、screenY -->
+    <div id="heightDiv" style="background:limegreen ; height: 2000px;"></div>
+    <script>
+        // type 查看事件类型
+        var myBtn = document.getElementById('mybtn');
+        myBtn.addEventListener('click', function (e) {
+            alert(e.type);
+        })
+        // target 和 currentTarget
+        // target 点击谁谁就是
+        // currentTarget 事件绑定者
+        var father = document.getElementById('father');
+        father.addEventListener('click', function (e) {
+            console.log(e.target);
+            console.log(e.currentTarget);
+        })
+        // preventDefault 阻止默认事件
+        var a = document.getElementById('a');
+        a.addEventListener('click', function (e) {
+            e.preventDefault();
+            alert(1);
+        })
+        // stopPropagation 阻止冒泡
+        var parent = document.getElementById('parent');
+        var child = document.getElementById('child');
+
+        parent.addEventListener('click', function (e) {
+            alert('parent');
+        });
+        child.addEventListener('click', function (e) {
+            alert('child');
+            event.stopPropagation();
+        })
+        // clientY、pageY、screenY
+        // clientY 浏览器顶部到鼠标的位置
+        // pageY 浏览器顶部到鼠标的位置（包括滚动条的位置）
+        // screenY 屏幕顶部到鼠标的位置
+        var height =document.getElementById('heightDiv');
+        height.addEventListener('click',function (e) { 
+            alert('clientY:'+e.clientY+';pageY:'+e.pageY+';screenY:'+e.screenY);
+         })
+    </script>
+</body>
+
+</html>

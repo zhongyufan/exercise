@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件冒泡和事件捕获</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .father {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            height: 400px;
+            background: #aaa;
+            margin: 40px;
+        }
+
+        .son {
+            width: 300px;
+            height: 300px;
+            background: #ddd;
+            font-size: 30px;
+            text-align: center;
+            line-height: 300px;
+
+        }
+
+        ul>li {
+            width: 200px;
+            background: #ccc;
+            margin: 0 0 0 40px;
+            border-bottom: 1px solid white;
+            text-align: center;
+            list-style: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            // 冒泡
+            var divF = document.getElementById('father1');
+            var divS = document.getElementById('son1');
+
+            divF.addEventListener('click', function (e) {
+                alert('father 的事件被触发', +this.class);
+            });
+            divS.addEventListener('click', function (e) {
+                alert('Son 的事件被触发', +this.class);
+            });
+            // 捕获
+            var divF = document.getElementById('father2');
+            var divS = document.getElementById('son2');
+
+            divF.addEventListener('click', function (e) {
+                alert('father 的事件被触发', +this.class);
+            }, true);
+            divS.addEventListener('click', function (e) {
+                alert('Son 的事件被触发', +this.class);
+            }, true);
+            // 数据委托
+            var oUl = document.getElementById('ul');
+            oUl.addEventListener('click', function (e) {
+                alert(e.target.innerHTML);
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <section>
+        <div class="father" id="father1">
+            <div class="son" id="son1">
+                冒泡
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="father" id="father2">
+            <div class="son" id="son2">
+                捕获
+            </div>
+        </div>
+    </section>
+    <!-- 举个栗子 数据委托 -->
+    <section>
+        <div class="one">
+            <ul id="ul">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+    </section>
+</body>
+
+</html>

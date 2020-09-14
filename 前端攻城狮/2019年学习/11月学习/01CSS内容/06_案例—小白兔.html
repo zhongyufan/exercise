@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小白兔</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body,.content{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .sky{
+            height: 60%;
+            background: linear-gradient(rgb(196,228,253),rgb(255,255,255));
+        }
+        .grassland{
+            height: 40%;
+            background: linear-gradient(rgb(255,255,255),rgb(148,190,89));
+        }
+        .grassland img{
+            width: 15%;
+            position: absolute;
+            bottom: 50px;
+            right: 200px;
+        }
+        .cloud{
+            width: 100px;
+            height: 100px;
+            background: #fff;
+            margin: 0 auto;
+            border-radius: 70%;
+            position: absolute;
+            top: 15%;
+            left: 10%;
+        }
+        .cloud:before{
+            content: "";
+            height: 80px;
+            width: 80px;
+            border-radius: 100%;
+            position: absolute;
+            top: 15px;
+            left: -40px;
+            background: #fff;         
+        }
+        .cloud:after{
+            content: "";
+            height: 80px;
+            width: 80px;
+            border-radius: 100%;
+            position: absolute;
+            top: 15px;
+            left: 60px;
+            background: #fff;         
+        }
+        .cloud:nth-child(1){
+            animation: go 15s linear infinite;
+        }
+        .cloud:nth-child(2){
+            top: 5%;
+            left: 40%;
+            opacity: .8;
+            animation: go 13s linear infinite;
+
+        }
+        .cloud:nth-child(3){
+            top: 10%;
+            left: 80%;
+            animation: go 10s linear infinite;
+        }
+        .cloud:nth-child(4){
+            top: 20%;
+            left: 60%;
+            opacity: .7;
+            animation: go 8s linear infinite;
+        }
+        .cloud:nth-child(5){
+            top: 30%;
+            left: 500px;
+            opacity: .5;
+            animation: go 5s linear infinite;
+        }
+        @keyframes go {
+            0%{
+                opacity: 0;
+            }
+            10%{
+                opacity: 1;
+            }
+            100%{
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="content">
+        <div class="sky">
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+        </div>
+        <div class="grassland">
+            <img src="../images/案例—小白兔/rabbit.png" alt="">
+        </div>
+    </section>
+</body>
+</html>

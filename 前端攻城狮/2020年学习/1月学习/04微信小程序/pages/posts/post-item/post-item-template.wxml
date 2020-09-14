@@ -1,0 +1,20 @@
+<template name="postItem">
+  <view class="content-list">
+    <view class="author">
+      <image src="{{userImage}}"></image>
+      <text>{{time}}</text>
+    </view>
+    <text class="text-title">{{classify}}</text>
+    <image class="text-image" src="{{contentImage}}">
+      <view class="text-bg">
+          <text class="text">{{title}}</text>
+      </view>
+    </image>
+    <view class="friend-data">
+      <image src="/image/good.png"></image>
+      <text>{{good}}</text>
+      <image src="/image/comment.png"></image>
+      <text>{{comment}}</text>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,21 @@
+<!-- 编写原则：先静后动，先样式后数据 -->
+<view>
+  <image class="coverImage" src="{{contentImage}}"></image>
+  <view class="author">
+    <image class="userIamge" src="{{userImage}}"></image>
+    <text class="userName">{{userName}}</text>
+    <text class="userAction">{{userAction}}</text>
+    <text class="time">{{time}}</text>
+  </view>
+  <view class="details">
+    <text class="title">{{title}}</text>
+    <view class="handle">
+      <image wx:if="{{!star}}" src="../../../image/notstar.png" bind:tap="onStar"></image>
+      <image wx:else src="../../../image/star.png" bind:tap="onStar"></image>
+      <image src="../../../image/share.png" bind:tap="onShare"></image>
+    </view>
+    <text class="content">
+      {{content}}
+    </text>
+  </view>
+</view>

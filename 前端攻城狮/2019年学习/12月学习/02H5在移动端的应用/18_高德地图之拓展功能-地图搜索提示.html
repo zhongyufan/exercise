@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>地图的拓展</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #search {
+            width: 40%;
+            position: absolute;
+            left: 50%;
+            top: 10%;
+            transform: translate(-50%, 0);
+        }
+
+        #search input {
+            width: 100%;
+            height: 50px;
+            outline: none;
+            text-indent: 2em;
+            font: 18px "微软雅黑";
+            line-height: 40px;
+            color: #ccc;
+            border: none;
+        }
+
+        #resultUl {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .resultLi {
+            height: 40px;
+            line-height: 40px;
+            background: white;
+            text-indent: 2em;
+        }
+    </style>
+    <!-- <script src="https://webapi.amap.com/maps?v=1.4.15&key=7f0721bcec24d1bb57f6d6c40b56b673"></script> -->
+    <!-- ⚠️加载插件方式二 -->
+    <script src="https://webapi.amap.com/maps?v=1.4.15&key=7f0721bcec24d1bb57f6d6c40b56b673&plugin=AMap.Autocomplete"></script>
+
+</head>
+
+<body>
+    <!-- 地图 -->
+    <div id="container"></div>
+    <!-- 搜索框 -->
+    <div id="search">
+        <input type="text" id="searchText">
+        <ul id="resultUl">
+            <!-- <li class="resultLi"></li> -->
+        </ul>
+    </div>
+</body>
+<script>
+    var map = new AMap.Map('container');
+    // ⚠️加载插件方式一 Autocomplete地图加载完毕会触发的callback
+    // AMap.plugin('AMap.Autocomplete', function () {
+        // 自带ID检测
+        searchText.oninput = function () {
+            // 每次都清空，防止叠加
+            resultUl.innerHTML = '';
+            new AMap.Autocomplete().search(this.value, function (status, data) {
+                // 只提示10个内容 有点BUG 响应太快，导致清空不及时
+                // console.log(data);
+                var length = data.tips.length;
+                length >= 10 ? length = 10 : length;
+                // 添加提示内容
+                for (var i = 0; i < length; i++) {
+                    var oLi = document.createElement('li');
+                    oLi.className = "resultLi";
+                    // 获取提示地名的名字
+                    oLi.innerHTML = data.tips[i].name;
+                    // 获取提示地名的经纬度
+                    oLi.lng = data.tips[i].location.lng;
+                    oLi.lat = data.tips[i].location.lat;
+                    oLi.addEventListener('click', function () {
+                        // 设置选项城市位置
+                        map.setCenter([this.lng, this.lat]);
+                        map.setZoom(17);
+                        // 清空搜索框内容
+                        searchText.value = '';
+                        // 告知当前城市位置
+                        map.getCity(function (e) {
+                            searchText.setAttribute('placeholder','当前位置：' + e.province + e.city + e
+                                .district);
+                        })
+                        // 选择完区域后清除提示项
+                        resultUl.innerHTML = '';
+                    })
+                    resultUl.appendChild(oLi);
+                }
+            });
+        }
+
+
+    // });
+
+    // 地图搜索输入提示
+</script>
+
+</html>

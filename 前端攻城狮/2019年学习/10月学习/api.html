@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>API应用</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			h1{
+				margin: 40px;
+			}
+			.package{
+				margin: 40px;
+			}
+			.package .num{
+				margin-top: 20px;
+			}
+			.package .num .type{
+				height: 30px;
+				width: 200px;
+				font-size: 14px;
+				text-align: center;
+			}
+			.package .num .query{
+				height: 30px;
+				width: 50px;
+				font-size: 14px;
+				border: none;
+				background: #6495ED;
+				color: white;
+			}
+			.package .show{
+				border: 1px solid #ccc;
+				margin-top: 20px;
+				width: auto;
+				max-width: 960px;
+			}
+			.key{
+				display: none;
+			}
+			.disabled{
+				pointer-events: none;
+				cursor: default;
+				opacity: 0.6;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>API的测试手册</h1>
+		<div class="package">
+			<h2>查快递</h2>
+			<div>
+				<div class="num">
+					<form action="http://v.juhe.cn/exp/index" method="get" enctype="text/plain" >
+						<input name="key" value="fb82e379e34834817f72ec4cc0e0d70d" class="key">
+						<input type="text" placeholder="快递公司名称拼音" class="type disabled" name="com">
+						<input type="text" placeholder="输入快递单号" class="type" name="no">
+						<input type="submit" value="查询" class="query">
+					</form>
+					
+				</div>
+				<div class="show">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

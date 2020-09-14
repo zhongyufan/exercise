@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>面向对象</title>
+    <script>
+        // ⭐️⭐️⭐️面向对象最核心的内容
+        // 无论以何种方式创建对象，彼此之间都是无关联的
+
+        // 声明对象的方式
+        // 字面式
+        var person = {
+            name: 'zhongyufan',
+            age: 21,
+            sex: 'man'
+        }
+
+        // new
+        var box = new Object();
+        box.name = "zhongyufan";
+        box.age = 1000;
+
+        // 原型模式
+        // 核心：函数本身声明为空内容，利用prototype定义一些属性及方法
+        // 优点：让所有实例化的对象都拥有它包含的属性及方法
+        // 写法一：
+        /* function Test(){};
+        Test.prototype.color = 'red';
+        Test.prototype.height ='100px';
+        Test.prototype.content = '无';
+        Test.prototype.run=function(){
+            alert(this.color+'-'+this.height+'-'+this.content);
+        }
+        Test.prototype.go =function(){
+            alert('做泥？');
+        }
+        var box1 = new Test();
+        box1.run();
+        new Test().run();
+        box1.go(); */
+        // 写法二：
+        function Test() {};
+        Test.prototype = {
+            color: 'red',
+            height: '100px',
+            content: '无',
+            run: function () {
+                alert(this.color + '-' + this.height + '-' + this.content);
+            },
+            go: function () {
+                alert('做泥？');
+            }
+        }
+        var box1 = new Test();
+        /* box1.run();
+        new Test().run();
+        box1.go();*/
+
+        // 混合模式（构造➕原型）
+        function Blog(name, url, friend) {
+            this.name = name;
+            this.url = url;
+            this.friend = friend;
+        }
+        Blog.prototype = {
+            test: 'pwd',
+            show: function () {
+                alert(this.name + '-' + this.url);
+            },
+            go: function () {
+                alert('干甚么');
+            }
+        }
+        new Blog('zhangsan', 'http://wwww.zhongyufan.online', 'lisi').show();
+    </script>
+    <script>
+        // for in 对象可以当作数组使用
+        // 构造函数需要是实例化后才能遍历
+        function Ren() {
+            this.name = 'zhangsan';
+            this.age = 18;
+            this.love = 'lisi';
+            this.go = function () {
+                alert('886');
+            }
+        }
+        var ren = new Ren();
+        for (var i in ren) {
+            alert(ren[i]);
+        }
+    </script>
+</head>
+
+<body>
+    面向对象
+    对代码的一种抽象，对外统一提供调用接口的编程思想
+    JS对象（object）是通过构造器（constructor）利用原型（prototype）构造出来的。
+</body>
+
+</html>

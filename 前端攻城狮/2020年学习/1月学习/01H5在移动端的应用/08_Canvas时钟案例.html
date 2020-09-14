@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas</title>
+    <style>
+        canvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" height="800" width="800">您的浏览器不支持canvas</canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+        ctx.translate(400, 400);
+        ctx.arc(0, 0, 200, 0, 2 * Math.PI, true);
+        ctx.strokeStyle = 'red';
+        ctx.stroke();
+        ctx.beginPath();
+        for (var i = 0; i < 12; i++) {
+            ctx.rotate(Math.PI / 6);
+            ctx.moveTo(150, 0);
+            ctx.lineTo(200, 0);
+        }
+        ctx.stroke();
+    </script>
+</body>
+
+</html>

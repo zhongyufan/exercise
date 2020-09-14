@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>变量与作用域</title>
+    <script>
+        // 变量
+        // 变量的本质是保存数据的容器
+        var xm = {
+            age: 18
+        };
+        var xh = {
+            age: 18
+        };
+        // 浅拷贝 仅仅是简单的复制了基础类型
+        function copy(obj) {
+            var newObj = {};
+            for (var p in obj) {
+                newObj[p] = obj[p]
+            }
+            return newObj;
+        }
+        // 深拷贝 既能复制基础类型，又能复制对象类型
+
+        // 既能浅拷贝，又能深拷贝
+        // $.extend()
+
+        // typeof
+        // a instanceof b
+        // a引用类型是否是b的实例
+
+        // 预解析
+        // 不要在if() for() 中定义函数，某些老版本的浏览器会无法执行与解析
+
+        // 内存管理
+        // 设置null  全局可解除引用，函数自带解除
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

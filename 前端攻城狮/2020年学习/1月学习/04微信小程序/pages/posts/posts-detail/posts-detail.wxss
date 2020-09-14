@@ -1,0 +1,63 @@
+/* 封面图 */
+.coverImage{
+  width: 100%;
+}
+/* 作者信息 */
+.author{
+  display: flex;
+  margin-top: 20rpx;
+}
+.userIamge{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100%;
+  border:1px solid #ccc;
+  margin-left: 20rpx;
+}
+.userName{
+  height: 100rpx;
+  font-size: 32rpx;
+  line-height: 100rpx;
+  margin-left: 20rpx;
+}
+.userAction{
+  font-size: 26rpx;
+  color: #aaa;
+  line-height: 100rpx;
+  margin-left: 20rpx;
+}
+.time{
+  font-size: 26rpx;
+  color: #aaa;
+  line-height: 100rpx;
+  margin-left: 20rpx;
+}
+/* 正文 */
+.title{
+  display: inline-block;
+  font-size: 40rpx;
+  margin: 20rpx;
+  position: relative;
+}
+.handle{
+  padding: 20rpx;
+  position: relative;
+}
+.handle image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 20rpx;
+  position: absolute;
+  top: 0;
+}
+.handle image:nth-child(1){
+  right: 130rpx;
+}
+.handle image:nth-child(2){
+  right: 40rpx;
+}
+.content{
+  display: flex;
+  margin:20rpx;
+}
+

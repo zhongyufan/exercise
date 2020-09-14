@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数</title>
+    <script>
+        // 对象
+        // in 查询 x 在不在 {}
+        // for in 遍历对象的属性
+
+        // 函数的本质
+        // 调用
+        // ⭐️ 对象 (定义、添加属性和方法、赋值、做参数、做返回值)
+
+        // 不同定义的区别
+        // 预加载
+        // 不会影响
+        console.log(add());
+        function add(){return 1};
+        // add = undefined
+        console.log(add());
+        var add =function(){return 1};
+
+        // ⚠️ 不要在if/for（块级）中定义函数 容易出错
+
+        // 匿名函数调用 - 只要不是function起头就好
+        var a = function(){console.log(0)}();
+        (function(){console.log(1)}());
+        (function(){console.log(2)})();
+        ~function(){console.log('~')}();
+        +function(){console.log('+')}();
+        -function(){console.log('-')}();
+        !function(){console.log('!')}();
+        // 递归调用
+        // 阶乘
+        // 5!= 5*4*3*2*1 = 5*4! 
+        function factorial(num){
+            if(num<=1)return 1;
+            return num*factorial(num-1);
+        }
+        console.log(factorial(5));
+
+        // 模拟事件（点击）
+        document.onclick=function(){
+            console.log('你点击了我！');
+        }
+        document.onclick();
+
+        // 构造函数
+        // new Object()
+        // new Array()
+
+        // 间接调用
+        // call(window, , ) 改变this的值 单一传参
+        // apply(window,[]) 数组传参
+
+        // typeof 判断基本对象类型
+        // instanceof 判断引用数据类型 是不是它的实例
+
+        // arguments 类数组的对象
+        // arguments.callee 指函数本身  严格模式下禁止使用
+        // 搭配递归更香
+        function factorialPro(num){
+            if(num<=1)return 1;
+            return num*arguments.callee(num-1);
+        }
+        "use strict"
+        // 小名的用处～
+        var factorialPro =function fn(num){
+            if(num<=1)return 1;
+            return num*fn(num-1);
+        }
+
+        // 🤔️什么可以做参数？
+        // 空、数字、字符串、布尔值、undefined、null
+        // 数组、对象、函数
+
+        // 返回值
+        // return、continue（跳出本次循环）、break（跳出循环）
+
+        // 🤔️什么可以做返回值？
+        // 数字、字符串、布尔值、undefined、null
+        // 数组、对象、函数
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

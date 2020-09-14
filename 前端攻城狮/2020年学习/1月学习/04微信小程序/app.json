@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/posts/posts",
+    "pages/posts/posts-detail/posts-detail",
+    "pages/welcome/welcome"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#405f80"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#405f80",
+    "list": [
+      {
+        "pagePath": "pages/posts/posts",
+        "text": "看点",
+        "iconPath": "/image/new.png",
+        "selectedIconPath": "/image/newing.png"
+      },
+      {
+        "pagePath": "pages/welcome/welcome",
+        "text": "个人信息",
+        "iconPath": "/image/user.png",
+        "selectedIconPath": "/image/usering.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

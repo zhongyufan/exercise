@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>手势解锁</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        canvas {
+            border: 1px solid red;
+        }
+
+        section {
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        section p {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <p>请解锁🔓</p>
+        <canvas id="myCanvas" height="400" width="400">您的浏览器不支持canvas！</canvas>
+    </section>
+    <script>
+        // 调用画布
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+        // 画空心圆
+        for (var i = 75; i <= 325; i += 125) {
+            for (var j = 75; j <= 325; j += 125) {
+                ctx.beginPath();
+                ctx.arc(i, j, 50, 0, Math.PI * 2, true);
+                ctx.stroke();
+            }
+        }
+        // 拖拽后画实心圆
+
+        // 获得当前点击坐标
+        var po = {}
+        setInterval(() => {
+            
+        }, 100);
+        canvas.addEventListener('touchstart', function (e) {
+            var rect = e.currentTarget.getBoundingClientRect(); // 画布在页面的位置
+            po = {
+                x: e.touches[0].clientX - rect.left, // 圆圈相对于画布x的位置
+                y: e.touches[0].clientY - rect.top // 圆圈相对于画布y的位置
+            }
+            return po;
+            // arr 代表所有圆的外框矩形范围
+            // for (var i = 0; i < this.arr.length; i++) {
+            //     if (Math.abs(po.x - this.arr[i].x) < this.r && Math.abs(po.y - this.arr[i].y) < this.r) {
+            //         this.touchFlag = true;
+            //         // lastPoint存放的就是选中的圆圈的x/y坐标值
+            //         this.lastPoint.push(this.arr[i]);
+            //         this.restPoint.splice(i, 1);
+            //         break;
+            //     }
+            // }
+        },true);
+
+        canvas.addEventListener('touchend',function(e){
+            ctx.moveTo(75,75);
+            ctx.lineTo(po.x,po.y);
+            ctx.stroke();
+            ctx.closePath();
+        });
+    </script>
+</body>
+
+</html>

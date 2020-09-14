@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>前端学习</title>
+		<script type="text/javascript">
+			// 笔记
+			// 视图上考虑 渲染内容与外观两者是否不同
+		</script>
+		<script>
+			window.onload=function(){
+				// 导入猫图和猫名的数据
+				var obj = {'url':['https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1733855182,4108120951&fm=26&gp=0.jpg',
+				'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568627885457&di=f8d7c8c889779a227f4d21cf31b54137&imgtype=0&src=http%3A%2F%2Fimg02.tooopen.com%2Fimages%2F20150702%2Ftooopen_sy_132674572589.jpg',
+				'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568632933947&di=c783aadae255efdb9c3faa8f22c80556&imgtype=0&src=http%3A%2F%2Fimgq.duitang.com%2Fuploads%2Fblog%2F201505%2F15%2F20150515014759_Qz5Tw.thumb.700_0.jpeg',
+				'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568632933941&di=737c680ee95ca4a3d86546ea09b1c6c0&imgtype=0&src=http%3A%2F%2Fbaiducdn.pig66.com%2Fuploadfile%2F2017%2F0511%2F20170511074507399.jpg',
+				'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568979990324&di=0f9b2364b44255ef15feb07261f4f7ab&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F1%2F56499364ed765.jpg',
+				],
+				'catname':['xiaomei','misou','changer','fanfan','baobao']
+				}
+				var oChooes = document.getElementById('chooes');
+				
+				
+				for(var i=0; i<obj.url.length;i++){
+					// 添加标签
+					var elem = document.createElement('li');
+					var img =document.createElement('img');
+					elem.appendChild(img);
+					oChooes.appendChild(elem);
+					
+					var index;
+					elem.index=i;
+					
+					// 导入图片链接
+					var getimg = document.getElementsByTagName('img')[i];
+					getimg.src=obj.url[i];
+					
+					// 增加点击事件
+					elem.addEventListener('click',function(){
+						var clickNum = this.index;
+						show(clickNum);
+					});
+				}
+				// show
+				var catName = document.getElementById('catname');
+				var catPhoto = document.getElementById('catphoto');
+				var catCall =document.getElementById('catcall');
+				
+				var num = 0;
+				var show = function(clickNum){
+					// 展示猫的内容
+					catName.innerHTML = obj.catname[clickNum];
+					catPhoto.src = obj.url[clickNum];
+					catPhoto.addEventListener('click',(function(numCopy){
+						// 保证每个猫叫都是独立对应的
+						return function(){
+							numCopy++;
+							catCall.innerHTML=numCopy;
+						}
+					})(num))
+					// 重置猫叫
+					if(catCall!=0){
+						catCall.innerHTML=0;
+					}
+				}
+				
+				
+			};
+			
+		</script>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				font-size: 16.5px;
+			}
+			html,body{
+				height: 100%;
+				overflow: auto;
+			}
+			li{
+				width: 200px;
+				list-style-type: none;
+				margin: 0 auto;
+				padding: 20px;
+			}
+			li img{
+				width: auto;
+				height: auto;
+				max-width: 100%;
+			}
+			.chooes{
+				width: 30%;
+				height: 100%;
+				border-right: 0.3rem rgba(0,0,0,0.2) solid;
+				float: left;
+			}
+			.show {
+				width: 69.7%;
+				float: left;
+			}
+			
+			.show p{
+				color: cornflowerblue;
+				font-size: 88px;
+				width: 100%;
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+				padding-top: 100px;
+			}
+			.show div{
+				text-align: center;
+				padding-top: 100px;
+			}
+			.show img{
+				width: auto;
+				height: auto;
+				max-height: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="chooes" id="chooes">
+			
+		</div>
+		<div class="show">
+			<p id="catname">catName</p>
+			<div><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568690363449&di=974621ba6a0e6ed94771f9e4336896bb&imgtype=0&src=http%3A%2F%2Fimgup04.iefans.net%2Fiefans%2F2019-02%2F11%2F11%2F15498570716693_1.jpg" alt="" id="catphoto"></div>
+			<p id="catcall">0</p>
+		</div>
+	</body>
+</html>

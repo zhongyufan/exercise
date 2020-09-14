@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>用户登陆</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            font-family: montserrat;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(120deg, #3498db, #8e44ad);
+        }
+
+        .login-form {
+            width: 360px;
+            background: #f1f1f1;
+            height: 580px;
+            padding: 80px 40px;
+            border-radius: 10px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .login-form h1 {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .login-form p {
+            opacity: .5;
+            color: #3498db;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .login-form p:hover {
+            animation: textColor 5s infinite;
+        }
+
+        @keyframes textColor {
+            0% {
+                opacity: 1;
+                color: #3498db;
+            }
+
+            50% {
+                opacity: 1;
+                color: #8e44ad;
+
+            }
+
+            100% {
+                opacity: 1;
+                color: #3498db;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <form action="//zhongyufan.online" class="login-form" method="get">
+        <h1>注册成功</h1>
+        <p>欢迎👏加入大家庭～</p>
+        <p>正在自动跳转到主页🐷～</p>
+    </form>
+</body>
+<script>
+    $(".txtb input").on("focus", function () {
+        $(this).addClass("focus");
+    });
+    $(".txtb input").on("blur", function () {
+        if ($(this).val() == "")
+            $(this).removeClass("focus");
+    })
+    setTimeout(function () {
+        $(location).attr('href',
+            './用户登陆成功页.html'
+        );
+    }, 2000);
+</script>

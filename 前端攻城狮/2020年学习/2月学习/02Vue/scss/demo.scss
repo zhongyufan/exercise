@@ -1,0 +1,143 @@
+// 数组的使用
+$list:(100px, 200px, 300px, 400px);
+$map:(top:1px, left:2px, bottom:3px, right:4px);
+
+// list
+.div {
+    width: nth($list, 2); // 从1开始
+    zoom: index($list, 400px); // 找到400px所在的下标
+}
+
+// map
+.div1 {
+    top: map-get($map, top);
+
+    // 遍历数组
+    @each $key,
+    $value in $map {
+        #{$key}: $value
+    }
+}
+
+// 颜色运算
+$color1 : #010234;
+$color2 : #242100;
+$color3 : #111234;
+
+.div2 {
+    // 不建议直接加，建议使用mix
+    color: mix($color1, $color2);
+    color: red($color2);
+    color: rgb(red($color1), green($color2), blue($color3));
+}
+
+// mixin and include
+@mixin name {
+    display: block;
+}
+
+.div3 {
+    @include name;
+}
+
+@mixin name1($col, $wid) {
+    width: $wid;
+    border: 1px solid $col;
+}
+
+.div4 {
+    @include name1(red, 100px);
+}
+
+// 继承（支持关联属性继承、链式继承、伪类继承）
+.div5 {
+    border: 1px solid red;
+}
+
+.div6 {
+    @extend .div5;
+    color: red;
+}
+
+// 条件判断
+// if
+$type: 'good';
+
+.div7 {
+    @if $type=='a' {
+        color: red;
+    }
+
+    @else if $type=='good' {
+        color: green;
+    }
+}
+
+// for
+// to -> 1、2
+// through -> 1、2、3
+// 也可以循环数组 length($list)
+@for $i from 1 through 3 {
+    .item#{$i} {
+        width: 1px *$i;
+    }
+}
+
+// while
+$i:6;
+
+@while $i>0 {
+    .cl#{$i} {
+        width: 100px*$i;
+    }
+
+    $i:$i - 1;
+}
+
+// 函数方法
+// number：
+// percentage($number: 0) // 转换成百分比
+// round($number: 0) // 四舍五入
+// ceil($number: 0) // 向上舍入
+// floor($number: 0) // 向下舍入
+// abs($number: 0) // 获取绝对值
+// min($numbers: ) // 获取最小值
+// max($numbers: ) // 获取最大值
+// random($limit: 1) //获取随机数
+
+// array：
+// length($list: ) // 获取数组长度
+// nth($list: , $n: ) // 获取指定下标元素
+// set-nth($list: , $n: , $value: ) // 替换指定下标元素
+// join($list1: , $list2: , $separator: ) // 拼接数组
+// append($list1: , $val: , $separator: ) // 添加元素
+// index($list: , $value: ) // 返回指定元素的下标
+
+// string：
+// unquote($string: "") // 去除引号
+// quote($string: "") // 添加引号
+// str-length($string: "") // 获取字符串长度
+// str-insert($string: "", $insert: , $index: ) // 在指定位置插入字符
+// str-index($string: "", $substring: "s") // 返回指定字符的下标
+// to-upper-case($string: "") // 转换成大写
+// to-lower-case($string: "") // 转换成小写
+
+// map：
+// map-get($map: , $key: ) // 根据key值返回map中的值
+// map-merge($map1: , $map2: ) // 将两个map合并
+// map-remove($map: , $keys: ) // 从map中删除一个key，返回一个新map
+// map-keys($map: ) // 返回map中所有的key
+// map-values($map: ) // 返回map中所有的values
+// map-has-key($map: , $key: ) // 根据给定的key判断map中是否存在
+// keywords($args: ) // 返回一个函数的参数，这个参数可以动态的设置key和value
+
+// 自定义函数
+$rem1 :100px;
+@function px2rem($px) {
+    $rem: 37.5px;
+    @debug $px;
+    @return ($px/$rem)+rem;
+}
+.div8{
+    width: px2rem($rem1);
+}

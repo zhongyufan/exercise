@@ -1,0 +1,10 @@
+/* 新闻 */
+@import "./post-item/post-item-template.wxss";
+
+/* 轮播图 */
+.header-swiper{
+  height: 480rpx;
+}
+.header-swiper image{
+  width: 100%;
+}

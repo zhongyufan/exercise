@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>indexedDB</title>
+    <script>
+        var request = indexedDB.open('testDB', 3);
+        // 版本号只能往上走
+        request.onsuccess = function () {
+            console.log('数据库创建成功');
+        }
+        request.onerror = function () {
+            console.log('数据库创建失败');
+        }
+        request.onupgradeneeded = function () {
+            console.log('版本号升级了');
+            // DB的详情
+            var db = request.result;
+            // 创建表
+            db.createObjectStore('test1', {
+                // autoIncrement:true,
+                keyPath: 'id'
+            });
+        }
+        // ------------------------------------------
+        var json = {
+            "id": 1001,
+            "name": "zhang",
+            "age": 18
+        }
+        setTimeout(function () {
+            // request.result.transaction('test1','readwrite').objectStore('test1').add(json);
+            // 确定哪个数据库
+            var db = request.result;
+            // 确定哪个表，需要做什么事情
+            var transaction = db.transaction('test1', 'readwrite');
+            // 对哪个表做什么事情
+            var store = transaction.objectStore('test1');
+            // 对这个表写入数据
+            store.add(json);
+        }, 300)
+
+        // 设置自增主键
+        // autoIncrement:true
+        // 取数据中字段作为主键
+        // {keyPath:字段名}
+        request.onupgradeneeded = function () {
+            request.result.createObjectStore('test2', {
+                keyPath: 'id'
+            });
+        }
+        setTimeout(function () {
+            request.result.transaction('test2', 'readwrite').objectStore('test2').add(json);
+        }, 300)
+
+        // 事务的模式
+        //  'readonly'(default) // 只读
+        //  'readwrite'         // 读写
+
+        // 增删查改
+        //  IDBObjectStore.add // readonly会报错
+        //  IDBObjectStore.get // 搭配key一起使用
+        //  IDBObjectStore.getAll // 获取所有数据
+        //  IDBObjectStore.put // 继续添加数据
+        //  IDBObjectStore.delete // 删除某条数据
+        //  IDBObjectStore.clear // 删除所有数据
+
+        // IDBObjectStore.onsuccess // 成功执行callback
+        // IDBObjectStore.onerror // 失败执行callback
+        // IDBObjectStore.result // 可以看到相关数据
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

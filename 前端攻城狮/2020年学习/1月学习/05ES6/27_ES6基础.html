@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6</title>
+</head>
+
+<body>
+    <!-- let、const -->
+    <script>
+        // {} 快作用域 let作用于块级作用域
+        // {
+        //     var a = 1;
+        //     let b = 2;
+        // }
+        // console.log(a);
+        // console.log(b);
+
+        // {
+        //     let a = 1;
+        //     {
+        //         let b = 1;
+        //         console.log(a);
+        //     }
+        // }
+
+        // 使用let 、const声明的变量 不能再被重新声明
+        // let a = 1;
+        // let a;
+        // console.log(a); // Uncaught SyntaxError: Identifier 'a' has already been declared
+
+        // let 不存在变量提升
+
+        // 暂存死区
+        // let a = 1;
+        // {   
+        //     // 如果快级作用域中存在let、const声明的变量（同名），那么会行程封闭的作用域
+        //     console.log(a); // Uncaught ReferenceError: Cannot access 'a' before initialization
+        //     let a = 2;
+        // }
+        // console.log(a);
+
+        // const 常量必须在声明的时候赋值
+        // 与let的区别 不可改变
+        // 引用类型可以被修改
+        // const xiaoming ={
+        //     age:14,
+        //     sex:"boy"
+        // };
+        // console.log(xiaoming);
+        // xiaoming.age = 21;
+        // console.log(xiaoming);
+        // xiaoming={};    // Uncaught TypeError: Assignment to constant variable.
+
+        // 防止引用类型被修改
+        // Object.freeze()
+        // const xiaoming ={
+        //     age:14,
+        //     sex:"boy"
+        // };
+        // Object.freeze(xiaoming);
+        // console.log(xiaoming);
+        // xiaoming.age = 21;
+        // console.log(xiaoming);
+
+        // ES6之前是怎样添加常量的？
+        // var CST = {};
+        // Object.defineProperty(CST, 'NMAE', {
+        //     value: 'xiaoming',
+        //     writable: false // 修改为只读
+        // })
+        // Object.seal(CST); // 防止内容被拓展
+
+        // 封装
+        // Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。
+        /*
+        Object.defineProperty(Object, 'freezePolyfill', {
+            value: function (obj) {
+                var i;
+                for (i in obj) {
+                    // hasOwnProperty 判断是否自身的属性
+                    if (obj.hasOwnProperty(i)) {
+                        Object.defineProperty(obj, i, {
+                            writable: false
+                        });
+                    }
+                }
+                // 如果内部还有｛｝，则需要一个递归函数 问题是怎么写？
+                Object.seal(obj);
+            }
+        })
+        */
+        // const xiaoming = {
+        //     age: 14,
+        //     sex: "boy",
+        //     a:{}
+        // };
+        // Object.freezePolyfill(xiaoming);
+        // console.log(xiaoming);
+        // xiaoming.age = 21;
+        // xiaoming.a = 1;
+        // console.log(xiaoming);
+    </script>
+    <!-- 解构赋值 -->
+    <script>
+        // 解构赋值就是将值从数组或对象中取值给变量
+
+        // 数组
+        // 简单
+        // const arr = [1, 2, 3, 4];
+        // let [a, b, c, d] = arr;
+
+        // 复杂
+        // const arr = ['a', 'b', ['c', 'd', ['e', 'f', 'g']]];
+        // let [, , [, , [, , g]]] = arr;
+
+        // 扩展运算符 ...
+        // const arr = [1, 2, 3];
+        // const arr1 = [4, 5, 6];
+        // const arr2 = ['a', 'b', 'c'];
+        // const arr4 = [...arr, ...arr1, ...arr2]; // (9) [1, 2, 3, 4, 5, 6, "a", "b", "c"]
+        // const arr = ["a", "b", "c", "d"];
+        // const [a, b, ...c] = arr; // c -> (2) ["c", "d"]  获取后面所有的值
+
+        // 匹配不到 默认 undefined
+        // const arr = [1, undefined, null];
+        // const [a, b = 2, c = 3, d] = arr; // a = 1 , b = 2 , c = null , d = undefined
+
+        // 交换变量
+        // let a = 10;
+        // let b = 20;
+        // [a, b] = [b, a];
+
+        // 接收多个函数返回值
+        // function getUser(id) {
+        //     // ... ajax
+        //     return [
+        //         true, {
+        //             name: 'xiaoming',
+        //             id: id
+        //         },
+        //         '请求成功'
+        //     ]
+        // }
+        // const [status, data, msg] = getUser(123);
+        // ---------------------------------------
+
+        // 对象
+        // 简单
+        // const obj = {
+        //     saber: '123',
+        //     archer: 'abc'
+        // }
+        // const {
+        //     saber,
+        //     archer
+        // } = obj; // 属性名要对应
+
+        // 复杂
+        // const player = {
+        //     name: 'game over',
+        //     skill: [{
+        //         skillName: '江疏影',
+        //         time: 'NO'
+        //     }, {
+        //         skillName: '姜晓彤',
+        //         time: 'YES'
+        //     }, {
+        //         skillName: '鸡你太美',
+        //         time: 'YES'
+        //     }]
+        // }
+        // const {
+        //     name
+        // } = player;
+        // const { // 保持括号对应即可
+        //     skill: [skill1, // 获取第一个的所有信息
+        //         {
+        //             skillName // 获取姜晓彤
+        //         },
+        //         {
+        //             skillName: sklName
+        //         }
+        //     ]
+        // } = player;
+
+        // 结合扩展运算符
+        // const obj = {
+        //     saber: '123',
+        //     archer: '456',
+        //     add: '789',
+        // }
+        // const {
+        //     saber,
+        //     ...oth // oth -> {archer: "456", add: "789"}
+        // } = obj
+        // const obj = {
+        //     saber: '123',
+        //     ...{
+        //         archer: '456',
+        //         add: '789',
+        //     }
+        // }
+
+        // 对已经申明了的变量进行对象的解构赋值
+        // let age;
+        // const obj = {
+        //     name: '小明',
+        //     age: 22
+        // };
+        // ({age} = obj); // 需要先声明 or 一并声明了再解构
+        // let {age} = obj;
+
+        // 默认值 与数组的规则一致
+
+        // 使用对象传入乱序的函数参数
+        /*  // 普通做法
+        function ajax(option) {
+            var type = option.type || 'get';
+            console.log(type);
+        };
+        ajax({
+            url:'/getinfo',
+            data:{
+                a:1
+            }
+        });
+        */
+        /*  // 高级做法
+        function AJAX({
+            url,
+            data,
+            type = 'get',
+        }) {
+            console.log(url);
+            console.log(data);
+            console.log(type);
+        }
+        AJAX({
+            url: '/getinfo',
+            data: {
+                a: 1,
+            },
+        })
+        */
+
+        // 获取多个函数返回值
+        // function getUser(id) {
+        //     // ...ajax
+        //     return {
+        //         status: true,
+        //         data: {
+        //             name: 'xiaohong'
+        //         },
+        //         msg: '请求成功',
+        //     }
+        // }
+        // const {
+        //     status,
+        //     data,
+        //     msg: message
+        // } = getUser(123);
+        // ---------------------------------------
+
+        // 字符串
+        const str = 'I am the boy';
+        // const [a, b, c, ...oth] = str;
+        /* // 结果都一致
+        const [...spStr] = str;
+        const spStr1 = str.split('');
+        const spStr2 = [...str];
+        */
+        // 也可以获取属性方法
+        // const {
+        //     length,
+        //     split
+        // } = str;
+        // ---------------------------------------
+
+        // 数值和布尔值
+        // 将1、false进行了包装对象
+        // const {
+        //     valueOf: vf
+        // } = 1;
+        // const {
+        //     toString: ts
+        // } = false;
+        // ---------------------------------------
+
+        // 函数参数
+        // function swap([x, y]) {
+        //     return [y, x];
+        // }
+        // let arr = [1,2];
+        // arr = swap(arr);
+
+        // function Computer({
+        //     cpu,
+        //     memory,
+        //     software = ['edge'],
+        //     OS = 'windows 10'
+        // }) {
+        //     console.log(cpu);
+        //     console.log(memory);
+        //     console.log(software);
+        //     console.log(OS);
+        // }
+        // new Computer({
+        //     cpu: 'A13X',
+        //     memory:'512Gb'
+        // });
+        // new Computer('A12');
+    </script>
+</body>
+
+</html>

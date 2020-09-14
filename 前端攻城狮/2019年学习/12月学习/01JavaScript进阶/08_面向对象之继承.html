@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // js 继承
+        // 通过原型链层层找
+        var person = function () {
+            // p.name = '123';
+            // 如果p.name不存在，就去__proto__去查找 --> 而__proto__里面又有__proto__ 
+            //                                                  👆 这就是原型链
+        };
+        // var p = new person();
+        // alert(p.__proto__ instanceof Object);
+        // alert(p.__proto__ == person.prototype);
+    </script>
+    <!-- <script>
+        var person1 = function () {};
+        person1.prototype.say = function () {
+            alert('天气好冷');
+        }
+        person1.prototype.gongzi = 500;
+
+        var person2 = function () {};
+        person2.prototype = new person1();
+        person2.prototype.pwd = function () {
+            alert('明天天气也很差');
+        }
+        person2.prototype.gongzi = 1000;
+
+        var p = new person2();
+        p.say();// 天气好冷
+        p.pwd();// 明天天气也很差
+        alert(p.gongzi);
+    </script> -->
+    <script>
+    // call 
+    // obj.call(方法,var1,var2,var3,...)
+    // apply
+    // obj.apply(方法,[var1,var2,var3,...])
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

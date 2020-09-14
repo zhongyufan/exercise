@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery基础</title>
+    <style>
+        p {
+            width: 100px;
+            height: 20px;
+            border: 1px solid red;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            console.log($('.li').siblings());
+
+            var long = function () {
+                $('.li').animate({
+                    'width': '200px'
+                }, 2000).animate({'width':'100px'},2000);
+            }
+
+            $('.li').hover(function () {
+                long();
+            })
+        })
+        // mouseover mouseout 每个子元素都会触发
+        // mouseenter mouseleave (hover)只会触发一次
+        // scroll
+        // keypress 必须是实在的内容
+
+        // 其他事件
+        // resize 调整浏览器窗口大小
+        // focus（blur） 获得（失去）焦点
+        // change 值发生变化 外界刺激才进行检测
+        // select 输入框内文本被选择时触发
+        // submit 提交表单时触发 回调为false即阻止提交
+
+        // event 所有事件都会传入event对象作为参数
+
+        // on 绑定一个或多个事件函数
+        // bind、delegate、live（消耗性能） 1.7 删掉了
+        // $(document).on('mouseover','a',function(){})
+        // 这样就可以获取动态生成的a
+
+        // off 移除一个或多个事件函数
+        // one 绑定一次性的事件函数
+
+        // show ➕ hide = toggle
+        // fadeIn ➕ fadeOut = fadeToggle
+        // slideUp ➕ slideDown = slideToggle
+
+        // 计时器
+        // setTimeout
+        // setInterval
+    </script>
+</head>
+
+<body>
+    <div>
+        <p class="li">1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+    </div>
+</body>
+
+</html>

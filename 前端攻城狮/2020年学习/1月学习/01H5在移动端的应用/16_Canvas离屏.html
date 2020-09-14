@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas</title>
+    <style>
+        canvas {
+            border: 1px solid red;
+        }
+        #offCanvas{
+            /* 离屏 */
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 离屏技术为了提高性能 -->
+
+    
+    <canvas id="myCanvas" height="800" width="800">您的浏览器不支持canvas</canvas>
+    <!-- 背景 -->
+    <canvas id="offCanvas" height="800" width="800">您的浏览器不支持canvas</canvas>
+
+    <script>
+        // 上层画布
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        // 背景画布
+        var offCanvas = document.getElementById('offCanvas');
+        var offCtx = offCanvas.getContext('2d');
+
+        var posx = 0,
+            posy = 0;
+
+        function drawBg() {
+            var linearGradient = offCtx.createLinearGradient(0, 200, 800, 400);
+            linearGradient.addColorStop(.056, 'rgba(250,111,152,1)');
+            linearGradient.addColorStop(.915, 'rgba(255,189,55,1)');
+            offCtx.fillStyle = linearGradient;
+            offCtx.fillRect(0, 0, 800, 800);
+        };
+        drawBg();
+
+        setInterval(() => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            // 拷贝过来 (拷贝目标，目标范围，目的地坐标)
+            ctx.drawImage(offCanvas,0,0,offCanvas.width,offCanvas.height,0,0,canvas.width,canvas.height);
+            if (posx == canvas.width - 50 && posy < canvas.height - 50) {
+                posy += 10;
+                ctx.fillRect(posx, posy, 50, 50);
+            } else if (posy == canvas.height - 50) {
+                posx -= 10;
+                ctx.fillRect(posx, posy, 50, 50);
+            } else {
+                posx += 10;
+                ctx.fillRect(posx, posy, 50, 50);
+            }
+        }, 17);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式</title>
+    <script>
+        var str = 'I love JS';
+        var pattern = /jS/i;
+        console.log(pattern.test(str)); // 返回布尔值
+        console.log(pattern.exec(str)); // 返回[]
+        /* 
+            修饰词 （注意不要喧宾夺主）（支持随意组合）
+            i ignoreCase 忽略大小写
+            g global 全局
+            m multiline 多行匹配
+        */
+        /*
+            /jS/i（写死） = new RegExp('js','i')（可更改）
+        */
+    </script>
+    <script>
+        // 转义字符
+        // \ 转义
+        // 如果是通过构造函数，那么需要双重转义 \\ 
+        var str1 = '\\\\';
+        var pattern1 = /\\\\/;
+        console.log(str1); // \\
+        console.log(pattern1.exec(str1)); // [\\]
+        // \n (\x0A) 匹配换行
+        // \t 匹配table键
+        // \x61 = a
+        // \u4e00-\u9fa5 中文字符的范围
+    </script>
+    <script>
+        // []
+        var str2 = 'javascript';
+        var pattern2 = /[js]/; // 匹配到[]拥有的即可
+        console.log(pattern2.exec(str2));
+        // [^] 取反
+        var str3 = 'javascript';
+        var pattern3 = /[^js]/; // 匹配到[]拥有的即可
+        console.log(pattern3.exec(str3));
+        // [a-zA-Z0-9] 从小到大 不可反过来
+
+        // . -> [^\n] 除了换行符都能匹配 
+
+        // \w -> /[a-zA-Z0-9_]/
+        // \W -> /[^a-zA-Z0-9_]/
+
+        // \d -> /[0-9]/
+        // \D -> /[^0-9]/
+
+        // \s 匹配空格和制表符和空白字符
+        // \S 反过来
+
+        // {3} 匹配数量 {1,2}指定范围 {1,}匹配大于1个
+        var str4 = '119';
+        var pattern4 = /\d{3}/;
+        console.log(pattern4.exec(str4));
+        // ? -> {0,1}
+        // + -> {1,}
+        // * -> {0,}
+
+        // 贪婪匹配只与量词相关，默认采用贪婪匹配
+        // ****？ -> 将贪婪匹配转换成非贪婪匹配(最后加个？)
+        // 正则的工作理念是选中第一个可能匹配的
+    </script>
+    <script>
+        // | -> 或
+
+        // () -> 分组
+        var str5 = 'ababcd';
+        var pattern5 = /(ab)+/;
+        var pattern6 = /(ab)c/; // 捕获
+        var pattern7 = /(?:ab)c/; // 非捕获
+        var pattern8 = /(ab)(c)/;
+        var str9 = 'ab cd ab';
+        var pattern9 = /(ab) cd \1/; // 引用第一个分组(ab)
+        console.log(pattern5.exec(str5));
+        console.log(pattern6.exec(str5));
+        console.log(pattern7.exec(str5));
+        console.log(pattern8.exec(str5));
+        console.log(pattern9.exec(str9));
+
+        var str10 = '<p><a>测试下</a></p>';
+        var pattern10 = /<([a-zA-Z]+)>(.*?)<\/\1>/;
+        console.log(pattern10.exec(str10));
+    </script>
+    <script>
+        // 指定匹配位置
+        // ^ 首匹配
+        var str11 = 'js';
+        var pattern11 = /^js/;
+        console.log(pattern11.exec(str11));
+        // $ 尾匹配
+        // \b 单词的边界
+        var str12 = 'js html';
+        var pattern12 = /js\b/;
+        console.log(pattern12.exec(str11));
+        // 前瞻性匹配
+        var str13 = 'javascript';
+        var pattern13 = /java(?=script)/; //必须是script 才能匹配出 java
+        console.log(pattern13.exec(str13));
+        // 反前瞻性匹配
+        var str14 = 'javascript';
+        var pattern14 = /java(?!script)/; //必须不是script 才能匹配出 java
+        console.log(pattern14.exec(str14));
+    </script>
+    <script>
+        // RegExp对象 注意要双重转义
+
+        // RegExp实例方法
+        var pattern15 = /js/; // = 👇
+        //                         ||
+        var pattern16 = new RegExp('js');
+
+        // exec() 带有lastIndex属性
+        // 如果不是全局匹配，exec会一直找第一个 就是说 lastIndex 一直为0
+        // 全局匹配这回找完全部
+        // 匹配的时候，lastIndex会变化 当str找完了之后，会重置
+
+        // test() 和 exec() 差不多
+    </script>
+    <script>
+        // String 对象中与正则表达式相关的方法
+        var str16 = 'html js';
+        var pattern16 = /js/;
+        console.log(str16.search(pattern16)); // 5
+        console.log(str16.search('js')); // 5
+        // search 使用正则来匹配 
+
+        // match 与 exec 比较
+        // match 全局匹配的时候 一次性返回 干净利落～
+        // exec 无论如何 都只是返回当前匹配到的一个内容 磨磨唧唧～
+
+        // split 用什么来分割
+
+        // replace
+        var str17 ='I love it js';
+        var pattern17 = /js/g;
+        console.log(str17.replace('js','html'));
+        console.log(str17.replace(pattern17,'html'));
+
+        // 粗口消词
+        var str18 = '我草泥马哥逼';
+        var pattern18 = /草泥马|逼/g;
+        console.log(str18.replace(pattern18,'*'));
+        console.log(str18.replace(pattern18,function(e){
+            var result = "";
+            for(var i=0;i<e.length;i++){
+                result+="*";
+            }
+            return result;
+        }))
+    </script>
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>地图的拓展</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #search {
+            width: 400px;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            /* transform: translate(-50%, 0); */
+        }
+
+        #search input {
+            width: 100%;
+            height: 50px;
+            outline: none;
+            text-indent: 2em;
+            font: 18px "微软雅黑";
+            line-height: 40px;
+            color: #ccc;
+            border: none;
+        }
+    </style>
+    <!-- ⚠️加载插件 -->
+    <script src="https://webapi.amap.com/maps?v=1.4.15&key=7f0721bcec24d1bb57f6d6c40b56b673&plugin=AMap.Autocomplete">
+    </script>
+
+</head>
+
+<body>
+    <!-- 地图 -->
+    <div id="container"></div>
+    <!-- 搜索框 -->
+    <div id="search">
+
+    </div>
+</body>
+<script>
+    // POI（Point of Interest）兴趣点
+    var map = new AMap.Map('container');
+    new AMap.Autocomplete({
+        input: "searchText"
+    });
+    // AMap.service(['AMap.PlaceSearch'],function(){
+    //     new AMap.PlaceSearch({
+    //         pageIndex: 2, // 显示第几页
+    //         pageSize:5, //显示几条
+    //         city:'0757', //搜索哪个城市
+    //         citylimit:true, //是否强制在限制的城市搜索
+    //         map:map, //展示到哪个地图
+    //         panel:'search' //放在哪个元素下
+    //     }).search('电影院');
+    //     // 必须在服务器下 才能展示搜索到的图片
+    // })
+
+    AMap.service(['AMap.PlaceSearch'], function () {
+        new AMap.PlaceSearch({
+            type: '餐饮', // 搜索结果类型
+            pageIndex: 2, // 显示第几页
+            city: '0757', //搜索哪个城市
+            citylimit: true, //是否强制在限制的城市搜索
+            map: map, //展示到哪个地图
+            panel: 'search' //放在哪个元素下
+        }).searchNearBy('', [113.291619, 22.79831], 1000, function () {});
+        // searchNearBy(‘city’,[lng,lat],范围,callback)
+    })
+</script>
+
+</html>

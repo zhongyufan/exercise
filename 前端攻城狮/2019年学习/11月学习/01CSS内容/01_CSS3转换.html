@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3转换</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: #000;
+            transition: .5s;
+            margin-top: 10px;
+        }
+
+        .div1:hover {
+            transform: translate(40px, 40px) scale(1.3) rotate(20deg) skew(20deg, 20deg);
+            background: red;
+        }
+    </style>
+    <style>
+        .div2:hover {
+            transform: rotate3D(1, 1, 1, 45deg) translate3d(5px, 5px, 5px) scale3d(1.2, 1.2, 1.2);
+        }
+    </style>
+    <style>
+        .div3:hover {
+            transform: rotate(120deg);
+            transform-origin: left top;
+            
+        }
+    </style>
+    <style>
+        .div4:hover{
+            /* 位移 */
+            /* transform: matrix(1,0,0,1,70,70); */
+            /* 缩放 */
+            /* transform: matrix(.5,0,0,.5,0,0); */
+            /* 旋转 */
+            /* transform: matrix(.7071,.7071,-.7071,.7071,0,0); */
+            /* 拉伸 */
+            /* transform: matrix(1,0.5774,0.5774,1,0,0); */
+            /* 镜像 */
+            /* transform: matrix(0,1,1,0,0,0); */
+            /* 嵌套效果 或者说 多图层融合 */
+            transform-style: preserve-3d;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 2D转换 -->
+    <div class="div1"></div>
+    <!-- 3D转换 -->
+    <div class="div2"></div>
+    <!-- origin 基准点-->
+    <div class="div3"></div>
+    <!-- 矩阵 -->
+    <div class="div4"></div>
+</body>
+
+</html>

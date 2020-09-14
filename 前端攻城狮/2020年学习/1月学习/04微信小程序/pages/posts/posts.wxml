@@ -1,0 +1,24 @@
+<import src="post-item/post-item-template.wxml" />
+
+
+
+<view>
+  <!-- 轮播图 -->
+  <swiper class="header-swiper" indicator-dots="true" autoplay="true">
+    <swiper-item>
+      <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1579324000730&di=c37400b40b64396a8a367b6d4c79ce62&imgtype=0&src=http%3A%2F%2Fwww.lovehhy.net%2Flib%2Fimg%2F5064415%2F827051_1251324815.jpg"></image></swiper-item>
+    <swiper-item>
+      <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1579324000727&di=4bd4a78761253f834097433b983c48ba&imgtype=0&src=http%3A%2F%2Fwww.lovehhy.net%2Flib%2Fimg%2F6195332%2F917900_1612085795.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4252259543,2428981932&fm=26&gp=0.jpg"></image>
+    </swiper-item>
+  </swiper>
+
+  <!-- 文章 -->
+  <block wx:for="{{posts}}">
+    <view bind:tap="onPostTap" data-index="{{item.postsId}}">
+      <template is="postItem" data="{{...item}}"></template>
+    </view>  
+  </block>
+</view>

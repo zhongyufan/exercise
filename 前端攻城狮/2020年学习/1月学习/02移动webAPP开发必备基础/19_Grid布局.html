@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .test1 {
+            display: grid;
+            /* grid-template-columns:10% 10% 10% 10% 10% 10% 10% 10% 10% 10%; */
+            /* 等同于 */
+            grid-template-columns: repeat(10, 10%);
+            grid-template-rows: 100px;
+        }
+
+        .col-1 {
+            text-align: center;
+            line-height: 100px;
+            border: 1px #aaa solid;
+            background: #ccc;
+        }
+
+        .test2 {
+            display: grid;
+            /* 自动填充 */
+            grid-template-columns: repeat(auto-fill, 300px);
+            grid-template-rows: 100px;
+        }
+
+        .test3 {
+            display: grid;
+            /* 倍数关系 可以配合绝对宽度一起使用*/
+            grid-template-columns: 100px 1fr 2fr 3fr;
+            grid-template-rows: 100px;
+        }
+
+        .test4 {
+            display: grid;
+            /* 不大于不小于 auto浏览器自由决定 []命名网格线*/
+            grid-template-columns: 200px auto minmax(100px, 200px);
+            grid-template-rows: [frist-line]100px;
+        }
+
+        .test5 {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-template-rows: 100px;
+            /* 间距 新版本不需要添加grid前缀*/
+            /* grid-row-gap:20px;
+            grid-column-gap:20px; */
+            /* grid-gap: 20px 20px; */
+            /* grid-gap: 20px; */
+            gap: 20px;
+        }
+
+        .test6 {
+            display: grid;
+            grid-template-columns: repeat(6, 100px);
+            grid-template-rows: repeat(2, 100px);
+            /* 定义区域 */
+            grid-template-areas: 'a a a a a c'
+                'a a a a a c';
+        }
+
+        .test7 {
+            /* 先行后列 */
+            grid-auto-flow: row;
+            /* 先列后行 */
+            grid-auto-flow: column;
+            /* 先行后列 紧密填满 */
+            grid-auto-flow: row dense;
+            /* 先列后行 紧密填满 */
+            grid-auto-flow: column dense;
+            /* 水平 */
+            justify-items: center;
+            /* 垂直 */
+            align-items: center;
+            /* 简写：垂直 水平 */
+            place-items: center center;
+            /* 内容 */
+            justify-content: center;
+            align-content: center;
+            place-content: center center;
+            /* 用于指定定位于哪根网格线 */
+            /* grid-column-start 属性， grid-column-end 属性， grid-row-start 属性， grid-row-end 属性 */
+            grid-column-start: 4;
+            /* grid-column:grid-column-start/grid-column-end;
+            grid-row:grid-row-start/grid-row-end; */
+
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="test1">
+            <div class="col-1">1</div>
+            <div class="col-1">2</div>
+            <div class="col-1">3</div>
+            <div class="col-1">4</div>
+            <div class="col-1">5</div>
+            <div class="col-1">6</div>
+            <div class="col-1">7</div>
+            <div class="col-1">8</div>
+            <div class="col-1">9</div>
+            <div class="col-1">10</div>
+        </div>
+    </section>
+    <section>
+        <div class="test2">
+            <div class="col-1">1</div>
+            <div class="col-1">2</div>
+            <div class="col-1">3</div>
+            <div class="col-1">4</div>
+            <div class="col-1">5</div>
+            <div class="col-1">6</div>
+            <div class="col-1">7</div>
+            <div class="col-1">8</div>
+            <div class="col-1">9</div>
+            <div class="col-1">10</div>
+        </div>
+    </section>
+    <section>
+        <div class="test3">
+            <div class="col-1">1</div>
+            <div class="col-1">2</div>
+            <div class="col-1">3</div>
+            <div class="col-1">4</div>
+            <div class="col-1">5</div>
+            <div class="col-1">6</div>
+            <div class="col-1">7</div>
+            <div class="col-1">8</div>
+            <div class="col-1">9</div>
+            <div class="col-1">10</div>
+        </div>
+    </section>
+    <section>
+        <div class="test4">
+            <div class="col-1">1</div>
+            <div class="col-1">2</div>
+            <div class="col-1">3</div>
+            <div class="col-1">4</div>
+            <div class="col-1">5</div>
+            <div class="col-1">6</div>
+            <div class="col-1">7</div>
+            <div class="col-1">8</div>
+            <div class="col-1">9</div>
+            <div class="col-1">10</div>
+        </div>
+    </section>
+    <section>
+        <div class="test5">
+            <div class="col-1">1</div>
+            <div class="col-1">2</div>
+            <div class="col-1">3</div>
+            <div class="col-1">4</div>
+            <div class="col-1">5</div>
+            <div class="col-1">6</div>
+            <div class="col-1">7</div>
+            <div class="col-1">8</div>
+            <div class="col-1">9</div>
+            <div class="col-1">10</div>
+            <div class="col-1">11</div>
+            <div class="col-1">12</div>
+        </div>
+    </section>
+    <section>
+        <div class="test6">
+            <div class="col-1">1</div>
+            <div class="col-1">2</div>
+            <div class="col-1">3</div>
+            <div class="col-1">4</div>
+            <div class="col-1">5</div>
+            <div class="col-1">6</div>
+            <div class="col-1">7</div>
+            <div class="col-1">8</div>
+            <div class="col-1">9</div>
+            <div class="col-1">10</div>
+            <div class="col-1">11</div>
+            <div class="col-1">12</div>
+        </div>
+    </section>
+</body>
+
+</html>

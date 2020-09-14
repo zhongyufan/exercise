@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas</title>
+    <style>
+        canvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" height="800" width="800">您的浏览器不支持canvas</canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        ctx.arc(100, 100, 50, 0, Math.PI / 2, true);
+        ctx.stroke();
+
+        // 二次贝塞尔曲线
+        ctx.lineWidth = 6;
+        ctx.strokeStyle = "#333";
+        ctx.beginPath();
+        ctx.moveTo(60, 41); // 初始位置
+        ctx.quadraticCurveTo(307, 99, 424, 405); // (第二点位置，最终位置)
+        ctx.stroke();
+
+        // 三次贝塞尔曲线
+        ctx.strokeStyle = "#451";
+        ctx.beginPath();
+        ctx.moveTo(100, 250); // 初始位置
+        ctx.bezierCurveTo(225, 49, 434, 114, 109, 374); // (第二点位置，第三点位置，最终位置)
+        ctx.stroke();
+    </script>
+</body>
+
+</html>

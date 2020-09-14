@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>通用适配原理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .div1 {
+            width: 100%;
+            height: 6.25rem;
+            background: rgba(222, 24, 27, .9);
+            /* .0625rem边框 */
+            border-bottom: .0625rem solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1"></div>
+    <script>
+        (function () {
+            'use strict'
+
+            // 获取html
+            var docEl = document.documentElement,
+                //  查找meta标签
+                viewportEl = document.querySelector('meta[name="viewport"]'),
+                // 没有获取到dpr 默认为1
+                dpr = window.devicePixelRatio || 1,
+                maxWidth = 0,
+                minWidth = 0;
+
+            // 保证dpr 只有 1， 2， 3
+            dpr = dpr >= 3 ? 3 : (dpr >= 2 ? 2 : 1);
+
+            // 记录dpr值 maxwidth值 minwidth值
+            docEl.setAttribute('data-dpr', dpr);
+            docEl.setAttribute('max-width', maxWidth);
+            docEl.setAttribute('min-width', minWidth);
+
+            // 缩放比
+            var scale = 1 / dpr,
+                content = 'width=device-width, initial-scale=' + scale + ',maximum-scale=' + scale +
+                ',minimum-scale=' + scale + ',user-scalable=no';
+
+            // 如果有就替换
+            if (viewportEl) {
+                // 写了就改content
+                viewportEl.setAttribute('content', content);
+            } else {
+                // 没有写就创建写一个
+                viewportEl = document.createElement('meta');
+                viewportEl.setAttribute('name', 'viewport');
+                viewportEl.setAttribute('content', content);
+                document.head.appendChild(viewportEl);
+            }
+            // 初始化来一次
+            setRemUnit();
+            // 每次触发来一次
+            window.addEventListener('resize', setRemUnit);
+
+            function setRemUnit() {
+                var ratio = 46.875;
+                var viewWidth = docEl.getBoundingClientRect().width || window.innerWidth;
+
+                // 将变动范围限制在 maxWidth 和 minWidth 之间 如果值为0 则没有限制
+                if (maxWidth && (viewWidth / dpr > maxWidth)) {
+                    viewWidth = maxWidth * dpr;
+                } else if (minWidth && (viewWidth / dpr < minWidth)) {
+                    viewWidth = minWidth * dpr;
+                }
+                docEl.style.fontSize = viewWidth / ratio + 'px';
+            }
+        })();
+    </script>
+</body>
+
+</html>

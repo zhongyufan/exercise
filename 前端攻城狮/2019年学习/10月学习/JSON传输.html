@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JSON传输</title>
+
+</head>
+
+<body>
+    <div id="demo"></div>
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                myObj = JSON.parse(this.responseText);
+                for (var i in myObj.url) {
+                    document.getElementById("demo").innerHTML += myObj.url[i] + "<br>";
+                }
+            }
+        };
+        xmlhttp.open("GET", "app.json", "true");
+        xmlhttp.send();
+    </script>
+</body>
+
+</html>

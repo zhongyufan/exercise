@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>用户登陆</title>
+  <link
+    rel="stylesheet"
+    href="http://at.alicdn.com/t/font_1484857_vjeyct6ui3.css"
+  />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="./js/md5.js"></script>
+  <script>
+    $(function() {
+      var userReg = /\w+$/,
+        pwdReg = /\w{5,12}$/,
+        isRepeat = false; // 记录用户名是否被占用
+      // 检测用户是否注册过
+      $("#user").blur(function() {
+        var userVal = $("#user").val();
+        if (userReg.test(userVal)) {
+          $("#userTips").removeClass("icon-jingshi1");
+          $("#userTips").addClass("icon-zhengquetishi");
+        } else {
+          $("#userTips").removeClass("icon-zhengquetishi");
+          $("#userTips").addClass("icon-jingshi1");
+        }
+      });
+      // 检测用户密码
+      $("#pwd").blur(function() {
+        var pwdVal = $("#pwd").val();
+        if (!pwdReg.test(pwdVal)) {
+          $("#pwdTips").removeClass("icon-zhengquetishi");
+          $("#pwdTips").addClass("icon-jingshi1");
+        } else {
+          $("#pwdTips").removeClass("icon-jingshi1");
+          $("#pwdTips").addClass("icon-zhengquetishi");
+        }
+      });
+
+      // 登陆
+      $("#sub").click(function() {
+        var user_val = $("#user").val(),
+          pwd_val = hex_md5($("#pwd").val());
+        // 手机号密码有效才发起请求
+        if (
+          userReg.test(user_val) &&
+          pwdReg.test($("#pwd").val()) &&
+          !isRepeat
+        ) {
+          // 发起请求，验证登陆
+          $.ajax({
+            url: "./server/isUserRepeat.php",
+            method: "post",
+            data: {
+              username: user_val,
+              userpwd: pwd_val
+            },
+            success: function(data) {
+              console.log(data);
+              if (data.code == 0) {
+                // 带上用户识别码
+                $(location).attr(
+                  "href",
+                  "./用户登陆成功页.html" + "?" + user_val
+                );
+              } else if (data.code == 1) {
+                alert("😯 噢，出问题了，检查下密码有没有输错～");
+              } else {
+                alert("👿 这个账号还没注册呢，点击注册加入新家庭～");
+              }
+            }
+          });
+        }
+      });
+    });
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      font-family: montserrat;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(120deg, #3498db, #8e44ad);
+    }
+
+    .login-form {
+      width: 360px;
+      background: #f1f1f1;
+      height: 580px;
+      padding: 80px 40px;
+      border-radius: 10px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .login-form h1 {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .txtb {
+      border-bottom: 2px solid #adadad;
+      position: relative;
+      margin: 30px 0;
+    }
+
+    .txtb input {
+      font-size: 15px;
+      color: #333;
+      border: none;
+      width: 100%;
+      background: none;
+      outline: none;
+      padding: 0 5px;
+      height: 40px;
+    }
+
+    .txtb span::before {
+      content: attr(data-placeholder);
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      color: #adadad;
+      transform: translateY(-50%);
+      z-index: -1;
+      transition: 0.5s;
+    }
+
+    .txtb span::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(120deg, #3498db, #8e44ad);
+      transition: 0.5s;
+    }
+
+    .txtb i {
+      position: absolute;
+      top: 12px;
+      right: 10px;
+    }
+
+    .icon-zhengquetishi {
+      font-size: 18px;
+      color: green;
+    }
+
+    .icon-jingshi1 {
+      color: #ffa631;
+    }
+
+    .focus + span::before {
+      top: -5px;
+    }
+
+    .focus + span::after {
+      width: 100%;
+    }
+
+    .logbtn {
+      display: block;
+      width: 100%;
+      height: 50px;
+      border: none;
+      background: linear-gradient(120deg, #3498db, #8e44ad, #3498db);
+      background-size: 300%;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.5s;
+      font-size: 16px;
+    }
+
+    .logbtn:hover {
+      background-position: right;
+    }
+
+    .bottom-text {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .moreLog {
+      margin-top: 80px;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .moreLog :first-child {
+      font-size: 40px;
+      color: rgb(78, 186, 25);
+    }
+
+    .moreLog :nth-child(2) {
+      font-size: 40px;
+      color: rgb(38, 38, 38);
+    }
+
+    .moreLog :last-child {
+      font-size: 40px;
+      color: rgb(68, 160, 230);
+    }
+
+    .moreLog a {
+      opacity: 0.5;
+      transition: 0.5s;
+    }
+
+    .moreLog a:hover {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-form">
+    <h1>登陆</h1>
+    <div class="txtb">
+      <input type="text" id="user" name="username" required />
+      <span data-placeholder="用户名"></span>
+      <i class="iconfont" id="userTips"></i>
+    </div>
+    <div class="txtb">
+      <input type="password" id="pwd" name="userpwd" required />
+      <span data-placeholder="密码"></span>
+      <i class="iconfont" id="pwdTips"></i>
+    </div>
+    <input type="submit" class="logbtn" id="sub" value="登陆" />
+    <div class="bottom-text">
+      还没有账号？<a href="./用户注册页.html">注册</a>
+    </div>
+    <div class="moreLog">
+      <a href="#" class="iconfont icon-wechat"></a>
+      <a href="#" class="iconfont icon-pingguo"></a>
+      <a href="#" class="iconfont icon-qq"></a>
+    </div>
+  </div>
+</body>
+<script>
+  $(".txtb input").on("focus", function() {
+    $(this).addClass("focus");
+  });
+  $(".txtb input").on("blur", function() {
+    if ($(this).val() == "") $(this).removeClass("focus");
+  });
+</script>
+<!-- <script src="./js/ajax.html"></script> -->

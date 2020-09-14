@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>常用正则</title>
+    <script>
+        // QQ号
+        // 1、全是数字
+        // 2、首位不能为0
+        // 3、最少5位
+        // 4、最多11位 ?
+
+        var reg = /^[^0]\d{4,}$/;
+        var str = 12345678912;
+        console.log(reg.test(str));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

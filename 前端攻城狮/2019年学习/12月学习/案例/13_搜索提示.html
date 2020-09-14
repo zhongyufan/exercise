@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>搜索提示</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        div {
+            display: inline-block;
+        }
+
+        .query {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .query input {
+            width: 40%;
+            height: 40px;
+            border: 1px solid red;
+            font-size: 16px;
+            text-indent: 20px;
+        }
+
+        .query input:focus {
+            outline: none;
+        }
+
+        .query div {
+            width: 10%;
+            height: 40px;
+            text-align: center;
+            background: red;
+            border: 1px solid red;
+            color: white;
+            line-height: 40px;
+
+        }
+
+        .query ul {
+            list-style: none;
+            margin-left: 415px;
+            width: 40%;
+            border: 1px solid rgba(255, 0, 0, .4);
+        }
+
+        .query ul li {
+            text-indent: 20px;
+            padding-right: 20px;
+            height: 40px;
+            line-height: 40px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .query ul li:hover {
+            background: rgba(255, 0, 0, .1);
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            // 数据缓存 原理就是 将获取的数据找个东西存起来，然后新获取的数据与已有的数据库数据进行比对，没有就发送请求，有就直接调用数据
+            var cache = {
+                data:{},
+                count:0,
+                addDate:function(key,data){
+                    if(!this.data[key]){
+                        this.data[key] = data;
+                        this.count++;
+                    }
+                },
+                readDate:function(key){
+                    return this.data[key];
+                },
+                deleteDataByKey:function(key){
+                    delete this.data[key];
+                    this.count--;
+                },
+                deleteDataByOrder:function(num){
+                    var count=0;
+                    for(var p in this.data){
+                        if(count>=num){
+                            break;
+                        }
+                        count++;
+                        this.deleteDataByKey(p);
+                    }
+                }
+            }
+
+            $query = $('.query');
+            $input = $query.find('input');
+            $btn = $query.find('div');
+            $ul = $query.find('ul');
+
+            // 自动完成
+            $input.on('input', function () {
+                // 使用淘宝的热词源
+                var url =
+                    "https://suggest.taobao.com/sug?code=utf-8&_ksTS=1575633056474_528&callback=jsonp529&k=1&area=c2c&bucketid=17&q=" +
+                    encodeURIComponent($.trim($input.val())); // 进行必要的编码以及词语筛选
+                $.ajax({
+                    url: url,
+                    timeout: 1000, // 等待时间
+                    dataType: 'jsonp',
+                }).done(function (data) { // 成功
+                    console.log(data);
+                    var html = "",
+                        maxNum = 5;
+                    for (var i in data['result']) {
+                        if (i >= maxNum) {
+                            break;
+                        }
+                        html += '<li class="li">' + data['result'][i][0] + '</li>';
+                        $ul.html(html).show();
+                    }
+                    // 将热词放到输入框
+                    $('.li').on('click', function () {
+                        $input.val($(this).html());
+                    });
+                }).fail(function () { // 失败
+                    // 清空内容
+                    $ul.hide().html('');
+                }).always(function () { // 一直
+                    console.log('why always me!');
+                })
+                if ($input.val() === '') {
+                    $ul.hide().html('');
+                }
+
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <section class="query">
+        <input type="text" placeholder="🔍 随意搜搜试试看～" autocomplete="off">
+        <div>搜一下</div>
+        <ul class="box">
+            <!-- <li>111</li> -->
+        </ul>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas</title>
+    <style>
+        canvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" height="800" width="800">您的浏览器不支持canvas</canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        var str = "hello world"; // 文本内容
+        ctx.font = "50px 微软雅黑"; // 文本设置
+        ctx.textAlign = "center"; // 水平对齐方式
+        ctx.textBaseline = "top"; // 垂直对齐方式
+        ctx.fillText(str, 400, 400);
+        ctx.strokeText(str, 0, 200);
+
+        console.log(ctx.measureText(str).width); // 获取文本宽度
+    </script>
+</body>
+
+</html>

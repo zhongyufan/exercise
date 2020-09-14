@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>浏览器兼容</title>
+    <style>
+        .text{
+            /* 文字溢出 */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // if (requestAnimationFrame) {
+        //     console.log(1);
+        // }
+        // 不要使用浏览器检测，用特性检测
+        var requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window
+            .mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame;
+
+        // double click 双击 导致300ms延迟
+        // meta 如果写了 width=device-width 就会禁掉 double-click
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js"></script>
+</body>
+
+</html>

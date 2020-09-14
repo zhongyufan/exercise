@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象与工厂</title>
+    <script>
+        // 构造函数
+        // this代表当前的对象 obj1 和 obj2 两者是独立的 函数内部只能用this访问属性和方法
+        function Person(name, sex, age) {
+            this.name = name;
+            this.sex = sex;
+            this.age = age;
+            this.show = function () {
+                alert(this.name + '-' + this.sex + '-' + this.age);
+            }
+        }
+        var obj1 = new Person('zhongyufan', 'man', 19);
+        // obj1.show();
+        var obj2 = new Person('zhangjieying', 'girl', 20);
+        // obj2.show();
+
+        // 工厂函数
+        // 不断声明对象
+        // 工厂模式不需要new，内部已经new 仅需要return
+        function createObject(name, age) {
+            var obj = new Object();
+            obj.name = name;
+            obj.age = age;
+            obj.run = function () { // 在obj对象中，调用obj对象属性需使用this
+                return this.name + '-' + this.age
+            }
+            obj.say = function () {
+                return "今天天气真冷！！";
+            }
+            return obj; // 必须返回对象本身
+        }
+        var box1 = createObject('张三', 21);
+        alert(box1.run());
+
+        // 构造 和 工厂 的区别
+        // 1、构造方式不会显示创建对象，将属性赋值给 this，不需要 return 对象
+        // 2、工厂方式在内部创建Object ，并且返回Object ，属性和方法都是赋值给object对象
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

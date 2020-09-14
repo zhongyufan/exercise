@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简单适配原理</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* 第一种办法 需要配合media*/
+        /* html{
+            font-size: 62.5%;
+        } */
+        /* .div1{
+            width: 100%;
+            height: 5rem;
+            background: rgba(222,24,27,.9);
+        } */
+        /* 第二种办法 简单适用方案 */
+        .div1{
+            width: 100%;
+            height: 6.25rem;
+            background: rgba(222,24,27,.9);
+        }
+    </style>
+</head>
+
+<body> 
+    <div class="div1"></div>
+    <script>
+        (function () {
+            'use strict'
+            setRemUnit();
+            // 容器变化触发
+            window.addEventListener('resize', setRemUnit);
+
+            function setRemUnit() {
+                var docEl = document.documentElement;
+                var ratio = 46.875; // 这个系数是 设计稿宽度 / 默认16px单位
+                // 1rem = 16 px 是设计稿的要求
+                // 动态变化是指随着适口变大变小，fontsize 的大小也跟着变， 由于是成比例关系，所以符合设计稿要求
+                // 兼容
+                var viewWidth = docEl.getBoundingClientRect().width || window.innerWidth;
+
+                docEl.style.fontSize = viewWidth / ratio + 'px';
+            }
+        })();
+    </script>
+</body>
+
+</html>

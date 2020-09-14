@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BOM</title>
+</head>
+
+<body>
+    <!-- confirm 弹出确认对话框 -->
+    <!-- prompt 弹出输入框 -->
+
+    <!-- location对象 既是window对象属性，也是document对象属性 -->
+    <!-- location.href
+    location.hash
+    location.host
+    location.hostname
+    location.pathname
+    location.port
+    location.protocol
+    location.search
+    location.reaplace()
+    location.reload()
+
+    history.back() = history.go(-n)
+    history.forward() = history.go(n) -->
+
+    
+
+    <input type="button" id="btn" value="返回顶部">
+    <script>
+        console.log(location.href);
+    </script>
+    <script>
+        console.log(navigator.userAgent);
+
+        function getBrowser() {
+            var explorer = navigator.userAgent.toLowerCase(),
+                browser;
+            if (explorer.indexOf("msie") > -1) {
+                browser = "IE";
+            } else if (explorer.indexOf("chrome") > -1) {
+                browser = "Chrome";
+            } else if (explorer.indexOf("spera") > -1) {
+                browser = "Opera";
+            } else if (explorer.indexOf("safari") > -1) {
+                browser = "Safari";
+            }
+            return browser;
+        };
+        var explorer = getBrowser();
+        console.log('您当前的浏览器为：' + explorer);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>touch事件类型</title>
+</head>
+<body>
+    <button id="mybtn">点击我</button>
+    <script>
+        var myBtn = document.getElementById('mybtn');
+        // touchstart
+        // myBtn.addEventListener('touchstart',function (e) {
+        //     alert('touchstart');
+        // })
+
+        // touchmove
+        // myBtn.addEventListener('touchmove',function (e) {
+        //     console.log(1);
+        // })
+
+        // touchmove
+        // myBtn.addEventListener('touchmove',function (e) {
+        //     alert('touchend');
+        // })
+
+        // touchcancel 当系统停止跟踪触摸时触发
+
+        // 多手势
+        myBtn.addEventListener('touchstart',function (e) {
+            console.log('当前触摸屏幕的触摸点数组：'+e.touches);
+            console.log('数组中只包含引起事件的触点信息：'+e.changedTouches);
+            console.log('只包含放在元素上的触摸信息：'+e.targetTouches);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery-Ajax</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        // ajax() get() post() getJson()
+        $(function () {
+            function renderDataToDom(data) {
+                var old1 = $('p:nth-child(2)').text();
+                old1 += data.fristname;
+                $('p:nth-child(2)').text(old1);
+
+                var old2 = $('p:nth-child(3)').text();
+                old2 += data.lastname;
+                $('p:nth-child(3)').text(old2);
+
+                var old3 = $('p:nth-child(4)').text();
+                old3 += data.age;
+                $('p:nth-child(4)').text(old3);
+
+                var old4 = $('p:nth-child(5)').text();
+                old4 += data.happy[1].love;
+                $('p:nth-child(5)').text(old4);
+            }
+
+            $.ajax({
+                url: "./server/slider.json",
+                type: "post",
+                async: true,
+                dataType: "json",
+                success: function (data) {
+                    $('input').click(function () {
+                        renderDataToDom(data);
+                    });
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div>
+        <input type="button" value="获取信息">
+        <p>姓：<span></span></p>
+        <p>名：<span></span></>
+        <p>年龄：<span></span></p>
+        <p>爱好：<span></span></p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Vue模版语法</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<!-- v-once -->
+		<span id="app" v-once>Message:{{msg}}</span>
+		<!-- v-html -->
+		<div id="app2">
+			<p @click="go">没有使用：{{msg}}</p>
+			<p>使用VH：<span v-html="rawHtml"></span></p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		// v-once
+		var vm = new Vue({
+			el: '#app',
+			data:{
+				msg: 'gogogo'
+			}
+		})
+		vm.msg ='quququ';
+		
+		// v-html
+		var vm2 = new Vue({
+			el:'#app2',
+			data:{
+				msg:'<span style="color:red>没有使用的时候的样子</span>',
+				rawHtml:'<span style="color:red">使用了代码展示之后的样子</span>',
+			},
+			methods:{
+				go:function(){
+					alert(1);
+				}
+			}
+		})
+		
+		
+	</script>
+</html>

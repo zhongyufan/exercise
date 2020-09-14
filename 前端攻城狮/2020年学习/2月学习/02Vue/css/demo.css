@@ -1,0 +1,80 @@
+.div {
+  width: 200px;
+  zoom: 4;
+}
+
+.div1 {
+  top: 1px;
+  top: 1px;
+  left: 2px;
+  bottom: 3px;
+  right: 4px;
+}
+
+.div2 {
+  color: #13121a;
+  color: 36;
+  color: #012134;
+}
+
+.div3 {
+  display: block;
+}
+
+.div4 {
+  width: 100px;
+  border: 1px solid red;
+}
+
+.div5, .div6 {
+  border: 1px solid red;
+}
+
+.div6 {
+  color: red;
+}
+
+.div7 {
+  color: green;
+}
+
+.item1 {
+  width: 1px;
+}
+
+.item2 {
+  width: 2px;
+}
+
+.item3 {
+  width: 3px;
+}
+
+.cl6 {
+  width: 600px;
+}
+
+.cl5 {
+  width: 500px;
+}
+
+.cl4 {
+  width: 400px;
+}
+
+.cl3 {
+  width: 300px;
+}
+
+.cl2 {
+  width: 200px;
+}
+
+.cl1 {
+  width: 100px;
+}
+
+.div8 {
+  width: 2.66667rem;
+}
+/*# sourceMappingURL=demo.css.map */

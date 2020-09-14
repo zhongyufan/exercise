@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象冒充</title>
+    <script>
+        function person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.sayhi = function () {
+                alert('hi');
+            }
+        }
+        person.prototype.walk = function () {
+            alert('MD / KFC');
+        }
+
+        function Stu(name, age, grade) {
+            this.newMethod = person; // 冒充person对象
+            this.newMethod(name,age); // 冒充person对象
+            this.grade =grade;
+        }
+        var s1 = new Stu('张三','18','👏'); // 可以继承person的特权方法和属性，但不能继承共有方法和属性（也就是walk）
+        alert(s1.name); // 张三
+        alert(s1.age); // 18
+        alert(s1.grade); // 👏
+        s1.sayhi(); // hi
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

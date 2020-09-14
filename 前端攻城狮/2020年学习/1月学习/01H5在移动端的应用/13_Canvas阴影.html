@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas</title>
+    <style>
+        canvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" height="800" width="800">您的浏览器不支持canvas</canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        ctx.shadowOffsetX = 10; // x偏移
+        ctx.shadowOffsetY = 10; // y偏移
+        ctx.shadowColor = 'rgba(0,0,0,.5)'; // 阴影颜色
+        ctx.shadowBlur = 50; // 模糊程度
+        ctx.fillRect(100, 100, 200, 200);
+    </script>
+</body>
+
+</html>

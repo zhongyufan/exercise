@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>indexedDB</title>
+    <script>
+        // 索引的优势
+        // 1、可以使用存储记录中的值进行检索
+        // 2、索引自动更新
+        // 3、索引数据自动排序
+        var request = indexedDB.open('testDB', 1);
+        // 版本号只能往上走
+        request.onsuccess = function () {
+            console.log('数据库创建成功');
+        }
+        request.onerror = function () {
+            console.log('数据库创建失败');
+        }
+        request.onupgradeneeded = function () {
+            console.log('版本号升级了');
+            // DB的详情
+            var db = request.result;
+            // 创建表
+            db.createObjectStore('test3', {
+                // autoIncrement:true,
+                keyPath: 'id'
+            }).createIndex('test3', 'name', {
+                unique: false, // 索引是否唯一 如果出现重复就不写入
+
+            });
+
+        }
+
+        var json = [{
+            "id": 1001,
+            "name": "zhang",
+            "age": 18
+        }, {
+            "id": 1002,
+            "name": "wang",
+            "age": 18
+        }, {
+            "id": 1003,
+            "name": "li",
+            "age": 18
+        }]
+        setTimeout(function () {
+            var store = request.result.transaction('test3', 'readwrite').objectStore('test3');
+            for (var i = 0; i < json.length; i++) {
+                store.add(json[i]);
+            }
+
+            // 哪个表的索引
+            var index = store.index('test3');
+            // 使用索引进行查询
+            index.get('wang').onsuccess = function (e) {
+                console.log(e.target.result.name);
+            }
+        }, 300)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

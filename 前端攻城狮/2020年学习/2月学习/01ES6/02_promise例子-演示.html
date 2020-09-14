@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多层嵌套</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #el {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            transition: all 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="el"></div>
+    <button id="btn">开始</button>
+    <script>
+        // 回调实现的方法
+        /*
+            function moveTo(el, x, y, cb) {
+                el.style.transform = `translate(${x}px,${y}px)`;
+                setTimeout(function () {
+                    cb && cb();
+                }, 1000)
+            }
+            let el = document.querySelector('div');
+            document.querySelector('button').addEventListener('click', e => {
+                moveTo(el, 100, 100, function () {
+                    console.log('第一个位置');
+                    moveTo(el, 200, 200, function () {
+                        console.log('第二个位置');
+                        moveTo(el, 600, 100, function () {
+                            console.log('第三个位置');
+                            moveTo(el, 100, 210, function () {
+                                console.log('第四个位置');
+                                moveTo(el, 0, 0, function () {
+                                    console.log('第五个位置');
+                                })
+                            })
+                        })
+                    })
+                })
+            })
+        */
+        // promise实现方式
+
+        function moveTo(el, x, y) {
+            return new Promise(resolve => {
+                el.style.transform = `translate(${x}px,${y}px)`;
+                setTimeout(function () {
+                    resolve();
+                }, 1000)
+            })
+        }
+
+        let el = document.querySelector('div');
+        document.querySelector('button').addEventListener('click', e => {
+            moveTo(el, 0, 0)
+                .then(function () {
+                    console.log(1);
+                    return moveTo(el, 200, 200);
+                })
+                .then(function () {
+                    console.log(2);
+                    return moveTo(el, 400, 300);
+                })
+                .then(function () {
+                    console.log(3);
+                    return moveTo(el, 300, 0);
+                })
+                .then(function () {
+                    console.log(4);
+                    return moveTo(el, 200, 200);
+                })
+                .then(function () {
+                    console.log(5);
+                    return moveTo(el, 0, 0);
+                })
+                .then(function () {
+                    console.log('继续往下走');
+                })
+        })
+    </script>
+</body>
+
+</html>

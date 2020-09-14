@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax跨域</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        // 同源：域名、协议、端口均相同
+        // 跨域方案：
+        // 1、跨域资源共享（CORS）
+        // 2、使用JSONP - JSON width Padding 填充式JSON
+        // 3、修改document.domain
+        // 4、使用window.name
+
+        // JSONP 原理利用了 可以访问其他域名的属性实现的 （src 、 href）
+
+        // 封装JSONP
+        function getJSONP(url, callback) {
+            if (!url) {
+                return;
+            }
+            // 声明数组用来随机生成函数名
+            var a = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'i', 'h', 'j'],
+                r1 = Math.floor(Math.random() * 10),
+                r2 = Math.floor(Math.random() * 10),
+                r3 = Math.floor(Math.random() * 10),
+                name = 'getJSONP' + a[r1] + a[r2] + a[r3],
+                cbname = 'getJSONP.' + name;
+
+            // 判断url地址中是否有？
+            url.indexOf('?') === -1 ? url += '?jsonp=' + cbname : url += '&jsonp=' + cbname;
+
+            // 动态创建script标签
+            var script = document.createElement('script');
+
+            //定义被脚本执行的callback
+            getJSONP[name] = function (data) {
+                try {
+                    callback && callback(data);
+                } catch (e) {
+
+                } finally {
+                    // 最后删除该函数及script标签
+                    delete getJSONP[name];
+                    script.parentNode.removeChild(script);
+                }
+            }
+
+            // 定义script的src
+            script.src = url;
+            $('head').append(script);
+        }
+        getJSONP("http://class.imooc.com/api/jsonp", function (data) {
+            console.log(data);
+        });
+    </script>
+</head>
+
+<body>
+    <!-- <img src="https://gw.alicdn.com/tfs/TB1ZLCUQgHqK1RjSZFEXXcGMXXa-750-1334.gif" alt=""> -->
+</body>
+
+</html>

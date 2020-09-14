@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>移动性能优化</title>
+    <style>
+        section {
+            width: 400px;
+            height: 400px;
+            border: 1px solid red;
+        }
+
+        .slider {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            background: red;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+        }
+        img{
+            display: block;
+            width: 400px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1、DOM操作 -->
+    <script>
+        // // 创建文档碎片
+        // var indicatorItemFragment = document.createDocumentFragment();
+        // // 创建节点
+        // var spanEl = document.createElement('span');
+        // // 查询一次长度
+        // var length = sliderItem.length;
+        // for (var a = 0; a < length; a++) {
+        //     // 克隆创建的节点
+        //     indicatorItem = spanEl.cloneNode(true);
+        //     indicatorItem.className = 'slider';
+        //     // 将节点添加到文档碎片中
+        //     indicatorItemFragment.appendChild(indicatorItem);
+        // }
+        // // 循环完成后将整个碎片扔到文档中再进行渲染
+        // indicatorContainer.appendChild(indicatorItemFragment);
+    </script>
+    <!-- 2、事件操作 -->
+    <section>
+        <div class="slider">1</div>
+        <div class="slider">2</div>
+        <div class="slider">3</div>
+        <div class="slider">4</div>
+        <div class="slider">5</div>
+    </section>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script>
+        // jQuery/Zepto 事件代理
+        // $('section').on('click','.slider',function(e){
+        //     console.log($(this).text());
+        // })
+        // 原生
+        var oDiv = document.getElementsByTagName('section')[0];
+        oDiv.addEventListener('click', function (e) {
+            if (e.target && e.target.className) {
+                console.log(e.target.innerText);
+            }
+        })
+    </script>
+    <!-- 3、按需加载 -->
+    <img src="../image/girl.jpeg">
+    <img src="../image/loading.gif" data-src="../image/girl1.jpg" alt="" class="lazy">
+    <img src="../image/loading.gif" data-src="../image/girl2.jpeg" alt="" class="lazy">
+    <img src="../image/loading.gif" data-src="../image/girl3.jpeg" alt="" class="lazy">
+    <script>
+        // 将类数组转换成数组
+        var aImg = Array.prototype.slice.call(document.querySelectorAll('.lazy'));
+        console.log(aImg);
+
+        // 设置定时器
+        var timer = null;
+        // 滚动触发函数
+        window.addEventListener('scroll', function () {
+            // 触发即清除定时器
+            clearTimeout(timer);
+            // 新建定时器
+            timer = setTimeout(function () {
+                lazyLoadImgs();
+            }, 100)
+        })
+        // 懒加载函数
+        function lazyLoadImgs() {
+            // debugger
+            for (var i in aImg) {
+                // 如果不再可视区才进行
+                if (isInVisibleArea(aImg[i])) {
+                    // 将data-src的数据返回给真实的src
+                    aImg[i].src = aImg[i].getAttribute('data-src');
+                    // 更改后减少删除当前的数据
+                    aImg.splice(i, 1);
+                    // 保持i同步减少
+                    i--;
+                }
+            }
+        }
+        // 可视区范围
+        function isInVisibleArea(el) {
+            // 获取CSS边框集合
+            var rect = el.getBoundingClientRect();
+            console.log(rect)
+            // 满足这个要求即不在可视区范围
+            return rect.bottom > 0 && rect.top < window.innerHeight && rect.right > 0 && rect.left < window.innerWidth;
+        }
+    </script>
+    <!-- 4、预加载 -->
+    <script>
+        var img = new Image();
+        img.src = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1579170777817&di=88a523946e065c44c167d0f25e865a14&imgtype=0&src=http%3A%2F%2Fimg.1327.net%2Fdata%2Fattachment%2Fforum%2F201710%2F17%2F131843sxx156cd5t4zehx3.jpg";
+    </script>
+</body>
+
+</html>

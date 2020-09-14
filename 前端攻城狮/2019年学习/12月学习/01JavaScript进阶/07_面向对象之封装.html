@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>封装</title>
+    <script>
+        // function demo(){
+        //     var n =1;
+        //     function test(){
+        //         n++;
+        //     }
+        //     test();
+        //     return n;
+        // }
+        // alert(demo());
+
+        function demo() {
+            var n = 1;
+
+            function test() { // 特权方法
+                return ++n;
+            }
+            /*
+                this.test =function(){
+                    return ++n;
+                }
+            */
+            return test();
+        }
+        alert(demo());
+
+        // 缺陷：
+        // 1、占用内存
+        // 2、不利于继承
+        function A(){
+            function x(){alert(11)};
+            this.xx =function(){
+                return x;
+            }
+        }
+        A.prototype ={
+            oth:function(){
+                return '普通方法';
+            }
+        }
+        var a = new A();
+        console.log(a.xx());
+        console.log(a.oth());
+
+    </script>
+</head>
+
+<body>
+    封装（Encapsulation）
+    把对象内部数据与操作细节进行隐藏
+    接口一般为调用方法
+    一般会有private关键字，但JS中没有，so 我们要用闭包来实现
+</body>
+
+</html>

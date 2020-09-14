@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6</title>
+</head>
+
+<body>
+    <!-- let、const -->
+    <script>
+        // {} 快作用域 let作用于块级作用域
+        // {
+        //     var a = 1;
+        //     let b = 2;
+        // }
+        // console.log(a);
+        // console.log(b);
+
+        // {
+        //     let a = 1;
+        //     {
+        //         let b = 1;
+        //         console.log(a);
+        //     }
+        // }
+
+        // 使用let 、const声明的变量 不能再被重新声明
+        // let a = 1;
+        // let a;
+        // console.log(a); // Uncaught SyntaxError: Identifier 'a' has already been declared
+
+        // let 不存在变量提升
+
+        // 暂存死区
+        // let a = 1;
+        // {   
+        //     // 如果快级作用域中存在let、const声明的变量（同名），那么会行程封闭的作用域
+        //     console.log(a); // Uncaught ReferenceError: Cannot access 'a' before initialization
+        //     let a = 2;
+        // }
+        // console.log(a);
+
+        // const 常量必须在声明的时候赋值
+        // 与let的区别 不可改变
+        // 引用类型可以被修改
+        // const xiaoming ={
+        //     age:14,
+        //     sex:"boy"
+        // };
+        // console.log(xiaoming);
+        // xiaoming.age = 21;
+        // console.log(xiaoming);
+        // xiaoming={};    // Uncaught TypeError: Assignment to constant variable.
+
+        // 防止引用类型被修改
+        // Object.freeze()
+        // const xiaoming ={
+        //     age:14,
+        //     sex:"boy"
+        // };
+        // Object.freeze(xiaoming);
+        // console.log(xiaoming);
+        // xiaoming.age = 21;
+        // console.log(xiaoming);
+
+        // ES6之前是怎样添加常量的？
+        // var CST = {};
+        // Object.defineProperty(CST, 'NMAE', {
+        //     value: 'xiaoming',
+        //     writable: false // 修改为只读
+        // })
+        // Object.seal(CST); // 防止内容被拓展
+
+        // 封装
+        // Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。
+        /*
+        Object.defineProperty(Object, 'freezePolyfill', {
+            value: function (obj) {
+                var i;
+                for (i in obj) {
+                    // hasOwnProperty 判断是否自身的属性
+                    if (obj.hasOwnProperty(i)) {
+                        Object.defineProperty(obj, i, {
+                            writable: false
+                        });
+                    }
+                }
+                // 如果内部还有｛｝，则需要一个递归函数 问题是怎么写？
+                Object.seal(obj);
+            }
+        })
+        */
+        // const xiaoming = {
+        //     age: 14,
+        //     sex: "boy",
+        //     a:{}
+        // };
+        // Object.freezePolyfill(xiaoming);
+        // console.log(xiaoming);
+        // xiaoming.age = 21;
+        // xiaoming.a = 1;
+        // console.log(xiaoming);
+    </script>
+    <!-- 解构赋值 -->
+    <script>
+        // 解构赋值就是将值从数组或对象中取值给变量
+
+        // 数组
+        // 简单
+        // const arr = [1, 2, 3, 4];
+        // let [a, b, c, d] = arr;
+
+        // 复杂
+        // const arr = ['a', 'b', ['c', 'd', ['e', 'f', 'g']]];
+        // let [, , [, , [, , g]]] = arr;
+
+        // 扩展运算符 ...
+        // const arr = [1, 2, 3];
+        // const arr1 = [4, 5, 6];
+        // const arr2 = ['a', 'b', 'c'];
+        // const arr4 = [...arr, ...arr1, ...arr2]; // (9) [1, 2, 3, 4, 5, 6, "a", "b", "c"]
+        // const arr = ["a", "b", "c", "d"];
+        // const [a, b, ...c] = arr; // c -> (2) ["c", "d"]  获取后面所有的值
+
+        // 匹配不到 默认 undefined
+        // const arr = [1, undefined, null];
+        // const [a, b = 2, c = 3, d] = arr; // a = 1 , b = 2 , c = null , d = undefined
+
+        // 交换变量
+        // let a = 10;
+        // let b = 20;
+        // [a, b] = [b, a];
+
+        // 接收多个函数返回值
+        // function getUser(id) {
+        //     // ... ajax
+        //     return [
+        //         true, {
+        //             name: 'xiaoming',
+        //             id: id
+        //         },
+        //         '请求成功'
+        //     ]
+        // }
+        // const [status, data, msg] = getUser(123);
+        // ---------------------------------------
+
+        // 对象
+        // 简单
+        // const obj = {
+        //     saber: '123',
+        //     archer: 'abc'
+        // }
+        // const {
+        //     saber,
+        //     archer
+        // } = obj; // 属性名要对应
+
+        // 复杂
+        // const player = {
+        //     name: 'game over',
+        //     skill: [{
+        //         skillName: '江疏影',
+        //         time: 'NO'
+        //     }, {
+        //         skillName: '姜晓彤',
+        //         time: 'YES'
+        //     }, {
+        //         skillName: '鸡你太美',
+        //         time: 'YES'
+        //     }]
+        // }
+        // const {
+        //     name
+        // } = player;
+        // const { // 保持括号对应即可
+        //     skill: [skill1, // 获取第一个的所有信息
+        //         {
+        //             skillName // 获取姜晓彤
+        //         },
+        //         {
+        //             skillName: sklName
+        //         }
+        //     ]
+        // } = player;
+
+        // 结合扩展运算符
+        // const obj = {
+        //     saber: '123',
+        //     archer: '456',
+        //     add: '789',
+        // }
+        // const {
+        //     saber,
+        //     ...oth // oth -> {archer: "456", add: "789"}
+        // } = obj
+        // const obj = {
+        //     saber: '123',
+        //     ...{
+        //         archer: '456',
+        //         add: '789',
+        //     }
+        // }
+
+        // 对已经申明了的变量进行对象的解构赋值
+        // let age;
+        // const obj = {
+        //     name: '小明',
+        //     age: 22
+        // };
+        // ({age} = obj); // 需要先声明 or 一并声明了再解构
+        // let {age} = obj;
+
+        // 默认值 与数组的规则一致
+
+        // 使用对象传入乱序的函数参数
+        /*  // 普通做法
+        function ajax(option) {
+            var type = option.type || 'get';
+            console.log(type);
+        };
+        ajax({
+            url:'/getinfo',
+            data:{
+                a:1
+            }
+        });
+        */
+        /*  // 高级做法
+        function AJAX({
+            url,
+            data,
+            type = 'get',
+        }) {
+            console.log(url);
+            console.log(data);
+            console.log(type);
+        }
+        AJAX({
+            url: '/getinfo',
+            data: {
+                a: 1,
+            },
+        })
+        */
+
+        // 获取多个函数返回值
+        // function getUser(id) {
+        //     // ...ajax
+        //     return {
+        //         status: true,
+        //         data: {
+        //             name: 'xiaohong'
+        //         },
+        //         msg: '请求成功',
+        //     }
+        // }
+        // const {
+        //     status,
+        //     data,
+        //     msg: message
+        // } = getUser(123);
+        // ---------------------------------------
+
+        // 字符串
+        const str = 'I am the boy';
+        // const [a, b, c, ...oth] = str;
+        /* // 结果都一致
+        const [...spStr] = str;
+        const spStr1 = str.split('');
+        const spStr2 = [...str];
+        */
+        // 也可以获取属性方法
+        // const {
+        //     length,
+        //     split
+        // } = str;
+        // ---------------------------------------
+
+        // 数值和布尔值
+        // 将1、false进行了包装对象
+        // const {
+        //     valueOf: vf
+        // } = 1;
+        // const {
+        //     toString: ts
+        // } = false;
+        // ---------------------------------------
+
+        // 函数参数
+        // function swap([x, y]) {
+        //     return [y, x];
+        // }
+        // let arr = [1,2];
+        // arr = swap(arr);
+
+        // function Computer({
+        //     cpu,
+        //     memory,
+        //     software = ['edge'],
+        //     OS = 'windows 10'
+        // }) {
+        //     console.log(cpu);
+        //     console.log(memory);
+        //     console.log(software);
+        //     console.log(OS);
+        // }
+        // new Computer({
+        //     cpu: 'A13X',
+        //     memory:'512Gb'
+        // });
+        // new Computer('A12');
+    </script>
+    <!-- ES6扩展 -->
+    <script>
+        // 字符串扩展
+
+        // 模板字符串
+        /*
+        const xiaoming ={
+            name:'xiaoming',
+            age:14,
+            say1:function(){
+                console.log('我叫'+this.name+',我今年'+this.age+'岁！');
+            },
+            say2:function(){
+                console.log(`我叫`+this.name+`,我今年`+this.age+`岁！`);
+            },
+            say3:function(){
+                console.log(`我叫${this.name},我今年${this.age}岁!`);
+            }
+        }
+        xiaoming.say1();
+        xiaoming.say2();
+        xiaoming.say3();
+        */
+        // ---------------------------------------
+
+        // 部分新方法
+        // padStart padEnd 复制添加
+        // {
+        //     let str ='i';
+        //     let str1 = str.padStart(9,'mooc');
+        //     console.log("TCL: str1", str1);
+        //     // TCL: str1 moocmooci
+        //     let str2 = str.padEnd(9,'mooc');
+        //     console.log("TCL: str2", str2)
+        //     // TCL: str2 imoocmooc
+        // }
+
+        // repeat 复制
+        // {
+        //     console.log('i'.repeat(10));
+        // }
+
+        // startsWith endsWith 判断首尾
+        // {
+        //     const str ='A promise is a promise';
+        //     console.log(str.startsWith('A')); // true
+        //     console.log(str.endsWith('E')); // false
+        // }
+
+        // includes 是否存在
+        // {
+        //     const str = 'A promise is a promise';
+        //     // if(str.indexOf('promise')!==-1){ // 等同与
+        //     // ~x = -(x+1)
+        //     if (~str.indexOf('promise')) {
+        //         console.log('存在1');
+        //     }
+        //     if (str.includes('promise')) {
+        //         console.log('存在2');
+        //     }
+        // }
+        // ---------------------------------------
+
+        // for...of
+        // {
+        // 遍历字符串的方式
+        // let str = 'PRONASDU';
+        // 1、使用for循环
+        // 2、转换成数组
+        // var oStr = Array.prototype.slice.call(str);
+        // console.log("TCL: oStr", oStr);
+        // var oStr1 = str.split('');
+        // console.log("TCL: oStr1", oStr1);
+        // var oStr2 = [...str];
+        // console.log("TCL: oStr2", oStr2);
+        // const [...oStr3] = str;
+        // console.log("TCL: oStr3", oStr3);
+        // oStr.forEach(function (word) {
+        //     console.log("TCL: word", word);
+        // })
+        // 3、for...of
+        // for (let word of str) {
+        //     console.log("TCL: word", word);
+        // }
+        // }
+
+        // Unicode
+        // 🐶 \u{1f436}
+        // ---------------------------------------
+
+        // 正则表达式扩展
+        // const regexp1 = /^a/g;
+        // const regexp2 = new RegExp('^a', 'g');
+        // const regexp3 = new RegExp(/^a/g);
+
+        // ES6支持
+        // const regexp4 = new RegExp(/^a/g, 'i');
+
+        // u修饰符 将后面的结果当做一个字符
+        // console.log(/^\ud83d/.test('\ud83d\udc36'));
+        // console.log(/^\ud83d/u.test('\ud83d\udc36'));
+
+        // y修饰符 粘连
+        // {
+        //     // 区别在于 g匹配完了 可以接着模糊匹配 y匹配完了需要严格匹配
+        //     const r1 = /imooc/g;
+        //     const r2 = /imooc/y;
+        //     const str = 'imoocimooc-iomooc';
+        //     console.log(r1.exec(str));
+        //     console.log(r1.exec(str));
+        //     console.log(r1.exec(str));
+        //     console.log(r1.exec(str));
+        //     console.log('---------------------------');
+        //     console.log(r2.exec(str));
+        //     console.log(r2.exec(str));
+        //     console.log(r2.exec(str));
+        // }
+
+        // 数值扩展
+        // console.log(Number.MAX_SAFE_INTEGER);
+        // console.log(Number.MIN_SAFE_INTEGER);
+        // console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGE+1)); // 安全数
+
+        // 幂运算
+        // let a = (2 ** 10) ** 0; // 运算是从右到左
+        // console.log("TCL: a", a)；
+        // ---------------------------------------
+
+        // ...
+        // function sum(...numbers) {
+        //     // reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。
+        //     return numbers.reduce(function (a, b) {
+        //         return a + b;
+        //     });
+        // }
+        // console.log(sum(1, 2, 3, 4));
+        // ---------------------------------------
+
+        // 箭头函数
+        /* 
+        const add = (a, b) => a + b;
+        const add1 = function (a, b) {
+            return a + b;
+        }
+        console.log("TCL: add", add(2, 2));
+        console.log("TCL: add1", add1(2, 2));
+
+        // 多行的时候
+        const add2 = (a, b) => {
+            a += 1;
+            return a + b;
+        }
+        console.log("TCL: add2", add2(2, 2));
+
+        // 不要返回值
+        const pop = arr => void arr.pop();
+        console.log(pop([1, 2, 3]));
+        */
+        // 区别
+
+        // 1、箭头函数是没有arguments的
+        // const log = () => {
+        //     console.log(arguments);
+        // }
+        // log(1, 2, 3); // Uncaught ReferenceError: arguments is not defined
+
+        // 如果需要arguments，则用...
+        // const log1 = (...arg) => {
+        //     console.log(arg);
+        // }
+        // log1(1, 2, 3);
+
+        // 2、 箭头函数没有自己的this 而是受限于环境影响
+        // const xiaoming = {
+        //     name: 'xiaoming',
+        //     say1: function () {
+        //         console.log(this);
+        //     },
+        //     say2: () => console.log(this)
+        // }
+        // xiaoming.say1();
+        // xiaoming.say2();
+        // ---------------------------------------
+
+        // 对象扩展
+        // 对象简洁表示法
+        // name:name => name
+        // 属性名表达式
+        // const obj = {
+        //     a:1,
+        //     $abc:2,
+        //     "FAFDASFAE^$%$%#!":3
+        // }
+        // const key = 'age';
+        // const xiaoming = { // {name: "xiaoming", age: 14}
+        //     name: 'xiaoming',
+        //     [key]: 14
+        // }
+        // ...复制、合并对象的时候是浅拷贝
+
+        // 部分新的方法和属性
+        // Object.is 与 === 差不多
+        // 区别在于 +0 -0、NAN
+        // console.log(+0 === -0); // true
+        // console.log(Object.is(+0, -0)); // false
+        // console.log(NaN === NaN); // false
+        // console.log(Object.is(NaN, NaN)); // true
+
+        // Object.assign 浅拷贝合并所有的对象
+        // const obj = Object.assign({
+        //     a: 1
+        // }, {
+        //     b: 2
+        // }, {
+        //     c: 3
+        // }, {
+        //     d: 4
+        // });
+        // console.log("TCL: obj", obj);
+
+        /*
+        {
+            const obj = {
+                a: 1,
+                b: 2,
+                c: 3,
+                d: 4
+            };
+            // Object.keys
+            console.log(Object.keys(obj)); // (4) ["a", "b", "c", "d"]
+            // Object.values
+            console.log(Object.values(obj)); // (4) [1, 2, 3, 4]
+            // Object.entries
+            console.log(Object.entries(obj)); // (4) [Array(2), Array(2), Array(2), Array(2)]
+            // 配合 for...of 一起使用
+            for (let [k, v] of Object.entries(obj)) {
+                console.log(k, v);
+            }
+        }
+        */
+
+        // __proto__ 原型
+
+        // Object.setPrototypeOf 修改原型
+        // const obj1 = {
+        //     a: 1
+        // }
+        // const obj2 = {
+        //     b: 2
+        // }
+        // const obj = Object.create(obj1);
+        // console.log(obj.__proto__);
+        // Object.setPrototypeOf(obj, obj2);
+        // console.log(obj.__proto__);
+
+        // Object.getPrototypeOf 读取原型
+        // const obj1 = {
+        //     a: 1
+        // }
+        // const obj = Object.create(obj1);
+        // console.log(obj.__proto__);
+        // console.log(Object.getPrototypeOf(obj));
+        // console.log(obj.__proto__===Object.getPrototypeOf(obj));
+
+        // super 关键字 访问原型对象的属性和方法
+        // const obj = {
+        //     name: 'xiaoming'
+        // };
+        // const cObj = {
+        //     say() { // 只有使用了对象的简写方式才能够使用关键字
+        //         console.log(`My name is ${super.name}`);
+        //     },
+        //     // say:function() { // ✖
+        //     //     console.log(`My name is ${super.name}`);
+        //     // },
+        //     // say: () => { // ✖
+        //     //     console.log(`My name is ${super.name}`);
+        //     // }
+        // }
+        // Object.setPrototypeOf(cObj, obj);
+        // cObj.say();
+        // ---------------------------------------
+
+        // 数组的扩展
+        // 结合扩展运算符
+        // const user = ['xiaoming', 21, ['eat', 'game'], 'i have a girlfriend'];
+        // function say(name, age, hobby, desc) {
+        //     console.log(`My name is ${name},my age is ${age},i like ${hobby.join(' and ')},${desc}`);
+        // }
+        // say(user[0],user[1],user[2],user[3]); // My name is xiaoming,my age is 21,i like eat and game,i have a girlfriend
+        // say(...user); // My name is xiaoming,my age is 21,i like eat and game,i have a girlfriend
+
+        // apply 配合数组使用
+        // say.apply(null, user); // My name is xiaoming,my age is 21,i like eat and game,i have a girlfriend
+
+        // * 生成器函数
+        // function *g() {  }
+        // function* g() {
+        //     console.log(1);
+        //     yield 'hi'; // 遇到yield 会停止执行 可以解决回调地狱
+        //     console.log(2);
+        //     yield 'imooc~';
+        // }
+        // const arr = [...g()];
+        // console.log("TCL: arr", arr);
+
+        // set方法去重
+        // let set = new Set([1,2,2,4]);
+        // console.log("TCL: set", [...set]);
+
+        // 新方法
+        // Array.from
+        // const obj = {
+        //     0: 1,
+        //     1: 'daag',
+        //     2: 'false',
+        //     length: 2 // 可以自动隐藏多余的对象
+        // }
+        // console.log("TCL: obj", Array.from(obj, item => item * 2));
+
+        // 把类数组的对象转换成数组的方法 不过都不能回调 from方法可以回调
+        // Array.prototype.slice.call();
+        // [].splice.call();
+        // [...]
+
+        // Array.of // 把多个参数合成一个数组
+
+        // Array.fill // 填充数组
+        // let arr = new Array(10).fill(0,0,3);
+        // console.log("TCL: arr", arr)
+
+        // Array.includes // 检测是否存在
+
+        // Array.keys // 下标 迭代器接口 可以使用 for...of 进行遍历 
+
+        // Array.values // 值
+
+        // Array.entries // 下标，值
+
+        // Array.find
+        // 根据条件（回调）按顺序遍历数组，当回调返回true时，就返回当前遍历到的值
+        // const res = [1, 2, 3, 4, 5, 6, 7].find((value, index, arr) => value * 2 > 10);
+        // console.log("TCL: res", res); // 6
+
+        // Array.findIndex
+        // 根据条件（回调）按顺序遍历数组，当回调返回true时，就返回当前遍历到的下标
+        // const res = [1, 2, 3, 4, 5, 6, 7].findIndex((value, index, arr) => value * 2 > 10);
+        // console.log("TCL: res", res); // 5
+        // --- indexOf 是无法判断NaN 而通过 findIndex可以
+        // const res = [1, 2, NaN, 4, 5, 6, 7].findIndex((value, index, arr) => Number.isNaN(value));
+        // console.log("TCL: res", res); // 2
+    </script>
+    <!-- ES6 Promise -->
+    <script src="./01_promise.js"></script>
+    <!-- ES6 class -->
+    <script src="./04_class.js"></script>
+    <!-- babel -->
+    <script src="./entry-ok.js"></script>
+</body>
+
+</html>

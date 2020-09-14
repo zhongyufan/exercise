@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>整数反转</title>
+    <script>
+        var reverse = function (x) {
+            const edeg = 2 ** 31
+            const max = edeg - 1
+            const min = -edeg
+
+            const result = (x > 0 ? 1 : -1) * String(x).split('').filter(x => x !== '-').reverse().join('');
+            return result > max || result < min ? 0 : result
+        };
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

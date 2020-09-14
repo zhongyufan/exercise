@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>终端检测</title>
+</head>
+
+<body>
+    <script>
+        setTimeout(function () {
+            console.log(navigator.userAgent);
+            // 检测是否是移动设备
+            var isMobile = navigator.userAgent.match(/android|iphone|ipad|ipod/i);
+            if(isMobile){
+                // 跳转移动端页面
+                console.log('跳转到移动页面');
+                location.href = 'https://www.m.baidu.com';
+            }else{
+                // 跳转正常页面
+                console.log('跳转到终端页面');
+                // location.href = 'https://www.baidu.com';
+            }
+        }, 300)
+    </script>
+</body>
+
+</html>

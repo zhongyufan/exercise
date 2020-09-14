@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单验证</title>
+    <style>
+        input{
+            outline: none;
+        }
+        input:valid{
+            border: 1px solid green;
+        }
+        input:invalid{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <label for="uesr">用户名：</label>
+        <input type="text" id='uesr' required>
+        <label for="pws">密码：</label>
+        <input type="password" id='pws' required>
+        <label for="em">邮箱：</label>
+        <input type="email" name="" id="em">
+        <input type="submit" value="提交">
+        <input type="submit" value="不用验证提交" formnovalidate>
+    </form>
+    <script>
+        console.log(uesr.validity);
+        // H5新特性
+        // console.log(document.getElementById('uesr')==uesr);
+        
+    </script>
+</body>
+</html>

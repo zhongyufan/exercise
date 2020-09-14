@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>BA实现视差滚动</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .toolMan {
+            width: 100%;
+            height: auto;
+            text-align: center;
+            line-height: 500px;
+            border-top: 1px solid #aaa;
+            border-bottom: 1px solid #aaa;
+            color: white;
+            background: black;
+            font-size: 100px;
+            overflow: hidden;
+
+        }
+
+        .img0 {
+            width: 100%;
+            height: 500px;
+            background: rgb(0, 0, 0) url(https://www.apple.com/v/home/ep/images/heroes/airpods-pro-takeover/airpods_pro__fok8ao5xkga6_large.jpg) no-repeat center center;
+            background-attachment: fixed;
+        }
+
+        .img1 {
+            width: 100%;
+            height: 500px;
+            background: rgb(0, 0, 0) url(https://www.apple.com/105/media/us/airpods-pro/2019/1299e2f5_9206_4470_b28e_08307a42f19b/anim/sequence/large/04-explode-tips/0090.jpg) no-repeat center center;
+            background-attachment: fixed;
+        }
+    </style>
+    <script>
+        // window.onload = function () {
+        //     var articleHeight = 900;
+        //     var section0 = document.getElementsByClassName('Man0'),
+        //         section1 = document.getElementsByClassName('Man1'),
+        //         section2 = document.getElementsByClassName('Man2'),
+        //         section3 = document.getElementsByClassName('Man3');
+        //     window.addEventListener('scroll', scrollHandler);
+
+        //     function scrollHandler(e) {
+        //         var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        //         if (scrollTop > 0 && scrollTop < articleHeight) {
+        //             console.log(scrollTop);
+
+        //         } 
+        //         // else if (scrollTop >= articleHeight && scrollTop < articleHeight * 2) {
+
+        //         //     console.log(scrollTop);
+
+        //         // } else if (scrollTop >= articleHeight * 2 && scrollTop < articleHeight * 3) {
+
+        //         //     console.log(scrollTop);
+
+        //         // } else if (scrollTop >= articleHeight * 2 && scrollTop < articleHeight * 4) {
+
+        //         //     console.log(scrollTop);
+        //         // }
+        //     }
+        // }
+        window.onload = function () {
+            var Height = 300;
+
+            // 获取需要添加动画的元素
+            var Man2 = document.getElementById('Man2');
+            var Man3 = document.getElementById('Man3');
+
+            window.addEventListener('scroll', scrollHandler);
+
+            function scrollHandler(e) {
+                // 获取当前高度
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+                if (scrollTop > Height*2 && scrollTop < Height*4) { 
+                    Man2.className += " bounceIn";
+                }else if(scrollTop > Height*4){
+                    Man3.className += " bounceIn";
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="toolMan Man0">
+        <p class="animated fadeInDown">AirPods Pro</p>
+    </div>
+    <div class=" toolMan Man1 animated">
+        <p class="animated bounceIn">😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄</p>
+    </div>
+    <div class="img0"></div>
+    <div class="toolMan animated" id="Man2">
+        😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂
+    </div>
+    <div class="img1"></div>
+    <div class="toolMan animated" id="Man3">
+        🐂🍺🐂🍺🐂🍺🐂🍺🐂🍺🐂🍺🐂🍺🐂🍺🐂🍺🐂🍺🐂🍺
+    </div>
+
+</body>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas</title>
+    <style>
+        canvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" height="800" width="800">您的浏览器不支持canvas</canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        var posx = 0,
+            posy = 0;
+        setInterval(() => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            // alert(canvas.height);    
+            if (posx == canvas.width - 50 && posy < canvas.height - 50) {
+                posy += 10;
+                ctx.fillRect(posx, posy, 50, 50);
+            } else if (posy == canvas.height - 50) {
+                posx -= 10;
+                ctx.fillRect(posx, posy, 50, 50);
+            }else {
+                posx += 10;
+                ctx.fillRect(posx, posy, 50, 50);
+            }
+        }, 17);
+
+        // 通过 定时器 配合 清除画布 实现动画
+    </script>
+</body>
+
+</html>

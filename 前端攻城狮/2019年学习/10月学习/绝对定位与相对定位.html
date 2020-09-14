@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>绝对定位与相对定位</title>
+    <style>
+        .box {
+            background: lightgreen;
+            width: 100px;
+            height: 100px;
+            float: left;
+            color: white;
+            border: 1px solid #ccc;
+        }
+
+        #three {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        #outer {
+            position: relative;
+            margin: 0 auto;
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <!--总结：-->
+    <!--相对定位没有脱离文档流，绝对定位脱离文档流，而且参照物为最近的非 static 祖先元素定位-->
+    <div id="outer">
+
+        <div class="box" id="one">One</div>
+        <div class="box" id="two">Two</div>
+        <div class="box" id="three">Three</div>
+        <div class="box" id="four">Four</div>
+    </div>
+</body>
+
+</html>

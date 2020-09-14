@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>JavaScrip-Ajax</title>
+</head>
+
+<body>
+    <!-- <script>
+        // 封装通用的 xhr 对象，兼容各种版本
+        function createXHR() {
+            // 判断浏览器是否将XMLHttpRequest作为本地对象实现，针对IE7、firefox、opera等
+            if (typeof XMLHttpRequest != "undefined") {
+                return new XMLHttpRequest();
+            } else if (typeof ActiveXObject != "undefined") {
+                // 将所有可能出现的ActiveXObject版本放在一个数组中
+                var xhrArr = ['Microsoft.XMLHTTP', 'MSXML2.XMLHTTP.6.0', 'MSXML2.XMLHTTP.5.0', 'MSXML2.XMLHTTP.4.0',
+                    'MSXML2.XMLHTTP.3.0', 'MSXML2.XMLHTTP.2.0'
+                ]
+                // 遍历创建XMLHttpRequest对象
+                var len = xhrArr.length,
+                    xhr;
+                for (var i = 0; i < len; i++) {
+                    try {
+                        // 创建XMLHttpRequest对象
+                        xhr = new ActiveXObject(xhrArr[i]);
+                        break;
+                    } catch (ex) {
+
+                    }
+                }
+                return xhr;
+            } else {
+                throw new Error('No XHR object availabel.');
+            }
+        }
+        // 或者是使用更简单的
+        function createXHR2() {
+            var xmlhttp;
+            // XMLHttpRequest code for IE7+ , Firefox , Chrome , Opear , Safari
+            // ActiveXObject code for IE6 , IE5
+            window.XMLHttpRequest ? xmlhttp = new XMLHttpRequest() : xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+        }
+
+        // var xhr = createXHR();
+        // var xhr2 = createXHR2();
+        // console.log(xhr);
+        // console.log(xhr2);
+
+        // ☝️第一步
+        // 创建对象
+        var xhr = createXHR(),
+            data = null;
+
+        // ☝️第二步
+        // -----------------------------------------
+        // open 建立请求 而不是发布请求
+        // 必须使用POST的情况
+        // 1、无法使用缓存文件（更新服务器上的文件或数据库）
+        // 2、向服务器发送大量请求（POST没有数据量限制)
+        // 3、发送包含未知字符的用户输入时，POST更稳
+        // true 异步 false 同步
+        // -----------------------------------------
+
+        // ☝️第三步
+        // 响应对象状态码
+        // onreadystatechange在onreadystatechange属性发生改变时触发
+        xhr.onreadystatechange = function () {
+            // 异步调用成功，响应内容解析完成，可以在客户端调用
+            if (xhr.readyState === 4) {
+                if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304) {
+
+                    // ☝️第五步
+                    // 获得服务返回的数据
+
+                    // responseText 数据为字符串
+                    // responseXML 数据为对象
+                    
+                    // 将数组转换成对象
+
+                    // 不推荐使用eval()
+                    // data = eval("("+xhr.responseText+")");
+                    // console.log(data.fristname);
+                    // 推荐使用parse()
+                    data = JSON.parse(xhr.responseText);
+                    // console.log(data.fristname);
+
+                    // JSON对象的方法
+                    // parse() 用于将JSON字符串转换为对象
+                    // stringify() 用于将一个值转为JSON字符串
+
+                    // ☝️第六步
+                    // 渲染数据到页面中
+                    $('input').click(function () {
+                        renderDataToDom();
+                    })
+                }
+            }
+        };
+
+        // ☝️第二步 
+        // 创建请求
+        xhr.open("get", "./server/slider.json", true);
+
+        // ☝️第四步
+        // 发送请求
+        xhr.send();
+        // 举例子： xhr.send({user:'zhongyufan',id:6})
+        // 如果需要像表单那样POST数据，需要添加http头，然后在send中规定希望发送的数据
+        //xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+
+        function renderDataToDom() {
+            var old1 = $('p:nth-child(2)').text();
+            old1 += data.fristname;
+            $('p:nth-child(2)').text(old1);
+
+            var old2 = $('p:nth-child(3)').text();
+            old2 += data.lastname;
+            $('p:nth-child(3)').text(old2);
+
+            var old3 = $('p:nth-child(4)').text();
+            old3 += data.age;
+            $('p:nth-child(4)').text(old3);
+
+            var old4 = $('p:nth-child(5)').text();
+            old4 += data.happy[1].love;
+            $('p:nth-child(5)').text(old4);
+        }
+    </script> -->
+    <script>
+        function createXHR() {
+            var xmlhttp;
+            window.XMLHttpRequest ? xmlhttp = new XMLHttpRequest() : xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+            return xmlhttp;
+        }
+        var xhr = createXHR(),
+            data = null;
+        xhr.open("get", "./server/slider.json", true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status == 200) {
+                    data = JSON.parse(xhr.responseText);
+                    $('input').click(function () {
+                        renderDataToDom();
+                    });
+                }
+            }
+        };
+        xhr.send();
+
+        function renderDataToDom() {
+            var old1 = $('p:nth-child(2)').text();
+            old1 += data.fristname;
+            $('p:nth-child(2)').text(old1);
+
+            var old2 = $('p:nth-child(3)').text();
+            old2 += data.lastname;
+            $('p:nth-child(3)').text(old2);
+
+            var old3 = $('p:nth-child(4)').text();
+            old3 += data.age;
+            $('p:nth-child(4)').text(old3);
+
+            var old4 = $('p:nth-child(5)').text();
+            old4 += data.happy[1].love;
+            $('p:nth-child(5)').text(old4);
+        }
+    </script>
+</body>
+<div>
+    <input type="button" value="获取信息">
+    <p>姓：<span></span></p>
+    <p>名：<span></span></>
+    <p>年龄：<span></span></p>
+    <p>爱好：<span></span></p>
+</div>
+
+</html>

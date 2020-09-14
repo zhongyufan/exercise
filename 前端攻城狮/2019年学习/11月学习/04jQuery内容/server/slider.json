@@ -1,0 +1,16 @@
+{
+    "fristname":"zhong",
+    "lastname":"yufan",
+    "age":"18",
+    "happy":[{
+        "love":"dance",
+        "time":"1"
+    },{
+        "love":"code",
+        "time":"18"
+    },{
+        "love":"games",
+        "time":"8"
+    }]
+
+}

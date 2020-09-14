@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小球球</title>
+    <style>
+        .ball {
+            background: linear-gradient(#ff9b9b 50%, #106dbb 50%);
+            width: 150px;
+            height: 150px;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ball"></div>
+    <script>
+        // 单一动画（一次只能做一个动画）
+        // 形变类
+        class Transform {
+            constructor(selector) {
+                // 选出DOM对象
+                this.el = document.querySelector(selector);
+                // 队列 用于存放每一个动画需求
+                this._queue = [];
+                // 存放已经形变的要求
+                this._transform = {
+                    rotate: '',
+                    translate: '',
+                    scale: ''
+                }
+                // 如果没有设置，就使用默认时间
+                this.defaultTime = Transform.config.defaultTime;
+                // 设置动画效果
+                this.el.style.transition = `all ${this.defaultTime/1000}s`;
+            }
+            // 添加动画
+            _add(type, value, time = this.defaultTime) {
+                this._queue.push({
+                    type,
+                    value,
+                    time
+                })
+                return this;
+            }
+            // 位移
+            translate(value, time) {
+                return this._add('translate', value, time);
+            }
+            // 缩放
+            scale(value, time) {
+                return this._add('scale', value, time);
+            }
+            // 形变
+            rotate(value, time) {
+                return this._add('rotate', value, time);
+            }
+
+            // 添加完成，可以开始执行
+            done() {
+                this._start();
+            }
+            // 开始动 把队列中的动画一个个拿出来
+            _start() {
+                if (!this._queue.length) return; // 当队列清空之后结束
+                // 先进先出
+                // 做一个删一个
+                // 将第一个动画需求传递过去
+                setTimeout(() => { // 防止不够时间渲染
+                    const info = this._queue.shift();
+                    // 修改自定义时间
+                    this.el.style.transition = `all ${info.time/1000}s`;
+                    // 修改形变
+                    this.el.style.transform = this._getTransform(info);
+                    // 执行完，再执行下一个任务
+                    setTimeout(() => {
+                        this._start();
+                    }, info.time); // 这里结束的时间由上一个动画时间决定
+                })
+
+            }
+            // 开始判断形变
+            _getTransform({
+                type,
+                value,
+                time
+            }) {
+                // 将执行过的动画放入_transform
+                const _tfs = this._transform;
+                switch (type) {
+                    case 'translate':
+                        _tfs.translate = `translate(${value})`;
+                        break;
+                    case 'scale':
+                        _tfs.scale = `scale(${value})`;
+                        break;
+                    case 'rotate':
+                        _tfs.rotate = `rotate(${value}deg)`;
+                        break;
+                    default:
+                        break;
+                }
+                // 这里要的是最终的值，所以无论添加多少次都没问题
+                return `${_tfs.translate} ${_tfs.scale} ${_tfs.rotate}`;
+            }
+        }
+        // 默认值
+        Transform.config = {
+            defaultTime: 300
+        };
+        var tf = new Transform('.ball');
+
+        tf
+            .translate('100px,100px')
+            .scale(2)
+            .rotate(180)
+            .translate('200px,400px')
+            .scale(3)
+            .rotate(360, 5000)
+            .scale(1,1000)
+            .done();
+        console.log(tf);
+    </script>
+</body>
+
+</html>

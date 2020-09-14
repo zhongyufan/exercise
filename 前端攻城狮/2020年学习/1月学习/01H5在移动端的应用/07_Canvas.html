@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas</title>
+    <style>
+        canvas {
+            border: 1px solid red;
+            /*          
+            在css无法控制canvas的width、height   
+            width: 100px;
+            height: 100px;
+            */
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" height="400" width="800">您的浏览器不支持canvas</canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+        // 先在画布完成绘画，再扔给样式进行缩放
+        // canvas.height=100;
+        // canvas.width=100;
+        ctx.moveTo(0, 0); // 拿起笔
+        ctx.lineTo(100, 100);
+        ctx.lineTo(100, 200);
+        // ctx.lineWidth = 10; // 线的粗细
+        ctx.strokeStyle = 'red';
+        ctx.stroke(); // 描边绘画
+
+        ctx.beginPath(); // 重新开始路径
+
+        ctx.moveTo(100, 0);
+        ctx.lineTo(200, 100);
+        ctx.lineTo(200, 200);
+        ctx.closePath(); // 闭合路径
+        ctx.fillStyle = 'rgba(0,255,0,.5)';
+        ctx.fill(); // 填充绘画
+
+        ctx.beginPath();
+        // arc(x,y,r,起始角,结束角)
+        ctx.arc(300, 300, 50, 0, 2 * Math.PI, true); // 弧线
+        ctx.strokeStyle = 'black';
+        ctx.stroke();
+
+        ctx.strokeRect(300, 100, 200, 100); // 矩形
+        ctx.fillRect(400, 200, 300, 200); // 矩形
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animation 动画</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            margin: 0 auto;
+            margin-top: 400px;
+            width: 800px;
+            height: 20px;
+            border: 1px solid #aaa;
+        }
+        .content{
+            width: 0;
+            height: 20px;
+            background: #aaa;
+            animation: long 5s 2s linear backwards;
+        }
+
+        @keyframes long {
+            0%{
+                width: 20%;
+            }
+            100%{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="content">
+            
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas</title>
+    <style>
+        canvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" height="800" width="800">您的浏览器不支持canvas</canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+        var img =new Image();
+        img.src="../image/cainiao.gif"; // 加载图片
+        img.onload=function(){ // 等图片加载完成再绘制
+            // 在(0,0)点绘制
+            // ctx.drawImage(img,0,0);
+            // 在(0,0)点缩小一倍绘制
+            // ctx.drawImage(img,0,0,450,320.5);
+            // 获取img图像在(100,100)点处200x200区域，绘制在(0,0)处放大一倍
+            // ctx.drawImage(img,100,100,200,200,0,0,400,400);
+
+            // 图形画刷
+            var pattern = ctx.createPattern(img,'no-repeat'); //不重复
+            var pattern = ctx.createPattern(img,'repeat'); //重复
+            var pattern = ctx.createPattern(img,'repeat-x'); //x方向重复
+            var pattern = ctx.createPattern(img,'repeat-y'); //y方向重复
+            ctx.fillStyle = pattern;
+            ctx.fillRect(0,0,canvas.width,canvas.height);
+        }
+    </script>
+</body>
+
+</html>
