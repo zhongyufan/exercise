@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片切换</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .show {
+            height: 400px;
+            width: 500px;
+            border: 10px solid #ccc;
+            margin: 60px auto 0;
+            position: relative;
+        }
+
+        .showImg {
+            height: 400px;
+            width: 500px;
+        }
+
+        a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 5px solid black;
+            background: #fff;
+            text-decoration: none;
+            color: black;
+            line-height: 40px;
+            text-align: center;
+            font-size: 40px;
+            position: absolute;
+            top: 175px;
+            filter: alpha(opacity:30);
+            opacity: 0.3;
+        }
+
+        a:hover {
+            filter: alpha(opacity:90);
+            opacity: 0.9;
+        }
+
+        .next {
+            top: 175px;
+            right: 0;
+        }
+
+        .p, .span {
+            height: 40px;
+            width: 500px;
+            background: #000;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            position: absolute;
+            filter: alpha(opacity:50);
+            opacity: 0.5;
+        }
+
+        .p {
+            bottom: 0;
+        }
+
+        .span {
+            top: 0;
+        }
+        .div1{
+            text-align: center;
+            height: 75px;
+            line-height: 75px;
+         }
+    </style>
+    <script>
+        window.onload = function () {
+
+            var oImg = document.getElementById('showImg');
+            var oPerv = document.getElementById('perv');
+            var oNext = document.getElementById('next');
+            var oP = document.getElementById('p');
+            var oSpan = document.getElementById('span');
+            var oDiv1=document.getElementById('but1');
+            var oDiv2=document.getElementById('but2');
+
+
+            var arrUrl = ['../image/UNIQCL-1.jpg', '../image/UNIQCL-2.jpg', '../image/UNIQCL-3.jpg', '../image/UNIQCL-4.jpg'];
+            var arrText = ['UNIQCL正门', 'UNIQCL收银台', 'UNIQCL展示台', 'UNIQCL侧门'];
+            var num = 0;
+
+            //初始化
+            function fnTab() {
+                oSpan.innerHTML = num + 1 + '/' + arrUrl.length;
+                oImg.src = arrUrl[num];
+                oP.innerHTML = arrText[num];
+            }
+
+            fnTab();
+            on();
+            //点击事件
+            function on() {
+                oPerv.onclick = function () {
+                    num--;
+                    if (num == -1) {
+                        num = arrUrl.length - 1;
+                    }
+                    fnTab();
+                }
+                oNext.onclick = function () {
+                    num++;
+                    if (num == arrUrl.length) {
+                        num = 0;
+                    }
+                    fnTab();
+                }
+            }
+            function onno(){
+                oPerv.onclick = function () {
+                    num--;
+                    if (num == -1) {
+                        num = 0;
+                        fnTab();
+                    }
+                    else if(num == 0){
+                        alert("这是第一张啦，请往后翻");
+                    }
+
+                }
+                oNext.onclick = function () {
+                    num++;
+                    if (num == arrUrl.length) {
+                        num = arrUrl.length-1;
+                        fnTab();
+                    }
+                    else if(num == 3){
+                        alert("这是最后一张啦，请往前翻");
+                    }
+                }
+            }
+            oDiv1.onclick=function () {
+                onno();
+            }
+            oDiv2.onclick=function () {
+                on();
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="div1">
+    <input type="button" id="but1" value="顺序切换" class="console">
+    <input type="button" id="but2" value="循环切换" class="console">
+</div>
+<div class="show">
+    <img id="showImg" class="showImg">
+    <a href="" id="perv" class="perv"><</a>
+    <a href="" id="next" class="next">></a>
+    <p id="p" class="p">加载中...</p>
+    <span id="span" class="span">加载中...</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>粘性定位</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 100%;
+            /* position: absolute;
+            transform: scale(1,1); */
+        }
+
+        nav{
+            width: 100%;
+            height: 1200px;  
+            background: green;
+            
+        }
+
+        section {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            position: fixed;
+        }
+
+        section:nth-child(1) {
+            z-index: 99;
+            background: black;
+        }
+
+        section:nth-child(2) {
+            z-index: 88;
+            background: white;
+        }
+
+        section:nth-child(3) {
+            z-index: 77;
+            background: #940e1e;
+        }
+
+        img {
+            margin-top: 400px;
+            height: 100vh;
+            display: block;
+        }
+
+        span {
+            position: absolute;
+            top: 30%;
+        }
+
+        section:nth-child(1) span {
+            color: white;
+            font-size: 44px;
+        }
+
+        section:nth-child(2) span {
+            color: black;
+            font-size: 44px;
+        }
+
+        section:nth-child(3) span {
+            color: white;
+            font-size: 44px;
+        }
+    
+    </style>
+</head>
+
+<body>
+    <!-- <nav></nav> -->
+    
+    <div id="div">
+        <section>
+            <span>黑的</span>
+            <img src="https://www.apple.com.cn/v/iphone-se/b/images/overview/finishes_black__b06syayq94wi_large_2x.png"
+                alt="">
+        </section>
+        <section>
+            <span>白的</span>
+            <img src="https://www.apple.com.cn/v/iphone-se/b/images/overview/finishes_white__drv9fwq9vzwy_large_2x.png"
+                alt="">
+        </section>
+        <section>
+            <span>红的</span>
+            <img src="https://www.apple.com.cn/iphone-se/images/overview/finishes_red__eqfv1ongy282_large_2x.png"
+                alt="">
+        </section>
+    </div>
+
+    <!-- clip-path:inset(20% 0px 0px); -->
+    <script>
+        // console.log("显示器屏幕高度："+window.screen.height);
+        // console.log("显示器屏幕宽度："+window.screen.width);
+        // console.log("可用屏幕高度："+window.screen.availHeight);
+        // console.log("可用屏幕宽度："+window.screen.availWidth);
+        // console.log("文档可视高度："+window.innerHeight);
+        // console.log("文档可视宽度："+window.innerWidth);
+        // console.log("浏览器高度："+window.outerHeight);
+        // console.log("浏览器宽度："+window.outerWidth);
+        // console.log("文档相对于左上角的x轴的距离："+window.pageXOffset);
+        // console.log("文档相对于左上角的Y轴的距离："+window.pageYOffset);
+        // console.log("浏览器相对于屏幕左边的距离"+window.screenLeft); // 等同 window.screenX
+        // console.log("浏览器相对于屏幕顶部的距离"+window.screenTop); // 等同 window.screenY
+
+
+        // 可视区域高度
+        let showHeight = window.innerHeight;
+        // 获取展示模块
+        let oDiv = document.getElementById('div');
+        // 设置展示区域的高度
+        oDiv.style.height = showHeight * 3 + 'px';
+        // 获取需要修改的展示
+        let oShow = document.getElementsByTagName('section');
+        // 白苹果是否到位
+        let wPlace = false;
+        // 滚动距离
+        let scrolled = null;
+        // 裁剪比例
+        let cutScale = null;
+        // 滚动占比
+        let scrolledScale = null;
+        // 获取当前模块所处的位置
+        let lacation = oDiv.offsetTop; 
+        // 模块实际滚动距离
+        let factScrolled = null;
+        // 太耗性能了
+        document.addEventListener('scroll', () => {
+            scrolled = window.pageYOffset;
+            console.log(scrolled+':'+lacation);
+            
+            if(scrolled >= lacation){
+                factScrolled = scrolled - lacation;
+                scrolledScale = factScrolled / showHeight;
+            
+
+            scrolledScale < 0.99 ? cutScale = scrolledScale * 100 : cutScale = 100;
+            oShow[0].style.clipPath = `inset(${0} ${0} ${cutScale}%)`;
+            }
+            
+        });
+        // if(scrolledScale>1&&scrolledScale!=2){          
+        //         (scrolledScale%1) < 0.99 ? cutScale = (scrolledScale%1) * 100 : cutScale = 100;
+        //         (scrolledScale%1) < 0.1  ? cutScale =0 : cutScale=cutScale;
+        //         oShow[1].style.clipPath = `inset(${0} ${0} ${cutScale}%)`;
+        //     }
+    </script>
+</body>
+
+</html>

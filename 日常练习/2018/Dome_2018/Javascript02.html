@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var  oTx1=document.getElementById('tx1');
+            var  oTx2=document.getElementById('tx2');
+            var  oAnd=document.getElementById('and');
+
+            oAnd.onclick=function () {
+                var n1=parseInt(oTx1.value);
+                var n2=parseInt(oTx2.value);
+
+                if (isNaN(n1)){
+                    alert('你所输入的一个数字有误，请重新输入！');
+                }
+                else if(isNaN(n2)){
+                    alert('你所输入的第二个数字有误，请重新输入！');
+                }
+                else{
+                    alert(n1+n2);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+请输入：<br>
+第一个数字:<input type="text" id="tx1"><br>
+第二个数字:<input type="text" id="tx2">
+<br>
+<br>
+<input type="button" value="求和" id="and">
+</body>
+</html>

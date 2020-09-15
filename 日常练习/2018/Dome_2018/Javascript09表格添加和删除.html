@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var oTab=document.getElementById('tab1');
+            var oBtn=document.getElementById('btn1');
+            var oName=document.getElementById('name');
+            var oSex=document.getElementById('sex');
+            var id=oTab.tBodies[0].rows.length+1;
+
+            oBtn.onclick=function () {
+                var oTr=document.createElement('tr');
+
+
+                var oTd=document.createElement('td');
+                oTd.innerHTML=id++;
+                oTr.appendChild(oTd);
+
+                var oTd=document.createElement('td');
+                oTd.innerHTML=oName.value;
+                oTr.appendChild(oTd);
+
+                var oTd=document.createElement('td');
+                oTd.innerHTML=oSex.value;
+                oTr.appendChild(oTd);
+
+                var oTd=document.createElement('td');
+                oTd.innerHTML='<a  href="javascript:;">删除</a>';
+                oTr.appendChild(oTd);
+
+                oTd.getElementsByTagName('a')[0].onclick=function () {
+                    oTab.tBodies[0].removeChild(this.parentNode.parentNode);
+                }
+
+                oTab.tBodies[0].appendChild(oTr);
+            }
+        }
+    </script>
+</head>
+<body>
+姓名：<input type="text" id="name">
+性别：<input type="text" id="sex">
+<input type="button" value="添加" id="btn1">
+<table id="tab1" border="1" width="600">
+    <thead>
+        <td>ID</td>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>操作</td>
+    </thead>
+    <tbody>
+    <tr>
+        <td>001</td>
+        <td>老王</td>
+        <td>女</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>002</td>
+        <td>老黄</td>
+        <td>女</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>003</td>
+        <td>老黑</td>
+        <td>男</td>
+        <td></td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="4">总结</td>
+    </tr>
+    </tfoot>
+</table>
+</body>
+</html>

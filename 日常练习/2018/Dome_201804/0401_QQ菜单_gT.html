@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div, ul, li, h2 {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        #block {
+            width: 200px;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+
+        #block .list {
+
+        }
+
+        #block .active {
+            background: url("../image/sub.png") no-repeat 5px center #e1ff2b;
+            -webkit-background-size: 20px;
+            background-size: 20px;
+        }
+
+        #block h2 {
+            font: 25px '微软雅黑';
+            height: 40px;
+            line-height: 40px;
+            text-indent: 30px;
+            background: url("../image/add.png") no-repeat 5px center greenyellow;
+            -webkit-background-size: 20px;
+            background-size: 20px;
+        }
+
+        #block ul {
+            display: none;
+
+        }
+
+        #block ul li {
+            height: 40px;
+            line-height: 40px;
+            text-indent: 40px;
+            border: 1px solid bisque;
+        }
+
+        #block ul .hover {
+            background: #eb504e;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oUl = document.getElementById('block');
+            var aH2 = oUl.getElementsByTagName('h2');
+            var aUl = oUl.getElementsByTagName('ul');
+            var aLi = null;
+            var oldLi = null;
+            var arrLi = [];
+            var oldclik=null;
+
+            //点击事件
+            for (var i = 0; i < aH2.length; i++) {
+                aH2[i].index = i;
+                oldclik = aH2[0];
+                aH2[i].onclick = function () {
+                    for (var i = 0; i < aUl.length; i++) {
+                        aUl[i].style.display = 'none';
+
+                        if (this.className == '') {
+                            aUl[this.index].style.display = 'block';
+                            this.className = 'active';
+                        }
+                        else{
+                            aUl[this.index].style.display = 'none';
+                            this.className = '';
+                        }
+                        oldclik.className = 'active';
+                        oldclik = this;
+                        this.className = '';
+                    }
+                }
+            }
+            //点击高亮
+            //找出所有li
+            for (var i = 0; i < aUl.length; i++) {
+                aLi = aUl[i].getElementsByTagName('li');
+                for (var j = 0; j < aLi.length; j++) {
+                    arrLi.push(aLi[j]);
+                }
+            }
+            oldLi = arrLi[0];
+            //添加事件
+            for (var i = 0; i < arrLi.length; i++) {
+                arrLi[i].onclick = function () {
+                    //清除上一个
+                    if (this.className != '') {
+                        this.className = '';
+                    }
+                    else {
+                        oldLi.className = '';
+                        oldLi = this;
+                        this.className = 'hover';
+                    }
+
+                    //清除本身
+
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<ul id="block">
+    <li class="list">
+        <h2>我的好友</h2>
+        <ul>
+            <li>你好</li>
+            <li>我好</li>
+            <li>大家好</li>
+        </ul>
+    </li>
+    <li>
+        <h2>陌生人</h2>
+        <ul>
+            <li>忘了爱</li>
+            <li>要深爱</li>
+            <li>我心碎</li>
+        </ul>
+    </li>
+    <li>
+        <h2>黑名单</h2>
+        <ul>
+            <li>张全蛋</li>
+            <li>我苦苦</li>
+            <li>邦邦</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

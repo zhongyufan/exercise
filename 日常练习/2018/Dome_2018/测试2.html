@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #news {
+            background: #f5f5f5;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #news #news-content{
+            width: 1360px;
+            height: 456px;
+            display: flex;
+            justify-content: space-around;
+        }
+        #news #news-content div{
+            width: 440px;
+            height: 456px;
+            background: white;
+            border-radius: 20px;
+            position: relative;
+        }
+        #news #news-content div .news-text {
+            position: absolute;
+            left: 20px;
+            font-weight: normal;
+            font-size: 22px;
+            color: #222;
+            line-height: 44px;
+        }
+        #news #news-content div .news-data{
+            position: absolute;
+            left: 20px;
+            top: 44px;
+            width: 400px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        #news #news-content div .news-data a{
+            color: #eb504e;
+            text-decoration: none;
+
+        }
+        .hover-underline-animation {
+            display: inline-block;
+            position: relative;
+            color: #eb504e;
+        }
+        .hover-underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #eb504e;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .hover-underline-animation:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    </style>
+</head>
+<body>
+<div id="news">
+    <form id="form1" runat="server">
+    <div id="news-content">
+        <div id="news-left">
+            <table>
+                <tr>
+                    <td class="news-text">商品排行榜</td>
+                </tr>
+                <tr>
+                    <td class="news-data hover-underline-animation"><%=x %>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="news-center">
+            <table>
+                <tr>
+                    <td class="news-text">发现好货</td>
+                </tr>
+                <tr>
+                    <td class="news-data hover-underline-animation"><%=x %></td>
+                </tr>
+            </table>
+        </div>
+        <div id="news-right">
+            <table>
+                <tr>
+                    <td class="news-text ">领券中心</td>
+                </tr>
+                <tr>
+                    <td class="news-data hover-underline-animation"><%=x %></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </form>
+</div>
+</body>
+</html>

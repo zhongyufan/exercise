@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX JSON</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        table {
+            width: 240px;
+            height: 200px;
+            border-collapse: collapse;
+        }
+
+        table th {
+            border: 2px solid #069;
+
+        }
+
+        th {
+            font-family: "微软雅黑", Verdana, sans-serif, "宋体";
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+    </style>
+</head>
+<body>
+<!--AJAX 将按照以下格式插入DOM-->
+<!--<table>-->
+<!--<tr>-->
+<!--<th>一行一列</th>-->
+<!--<th>一行二列</th>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<th>二行一列</th>-->
+<!--<th>二行二列</th>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<th>三行一列</th>-->
+<!--<th>三行二列</th>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<th>四行一列</th>-->
+<!--<th>四行二列</th>-->
+<!--</tr>-->
+<!--</table>-->
+<button onclick="loadJSONDoc('json/data.json')">Get JSON</button>
+<div id="theD"></div>
+<script src="js/16-1.js"></script>
+</body>
+</html>

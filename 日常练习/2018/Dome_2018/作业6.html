@@ -1,0 +1,359 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 980px;
+            height: 1386px;
+            margin: 0px auto;
+        }
+
+        /*导航栏开始*/
+        #header, #content, #content1, #content2, #footer {
+            margin: 0px auto;
+            width: 892px;
+        }
+
+        #header {
+            height: 61px;
+            border-bottom: 2px solid #4CB9D2;
+        }
+
+        #bar {
+            width: 110px;
+            height: 61px;
+            background-color: rgba(120, 128, 211, 0.5);
+            display: inline-block;
+        }
+
+        #header span {
+            font: 12px "黑体";
+        }
+
+        #header .lefter {
+            float: left;
+            color: #fff;
+            margin-top: 45px;
+            margin-left: 5px;
+        }
+
+        #header .righter {
+            float: right;
+            color: rgb(120, 128, 211);
+            margin-top: 45px;
+        }
+
+        /*导航栏结束*/
+        /*第一段内容开始*/
+        #content {
+            height: 360px;
+            margin-top: 30px;
+        }
+
+        #content .contentleft {
+            width: 641px;
+            position: relative;
+            float: left;
+        }
+
+        #content .contentleft img {
+            width: 641px;
+            height: 360px;
+        }
+
+        #content .contentleft .pictureleft {
+            width: 191px;
+            /*height: 360px;*/
+            height: 570px;
+            border: 1px solid rgba(76, 185, 210, 0);
+            border-radius: 0px 0px 15px 15px;
+            background-color: rgba(76, 185, 210, 0.5);
+            position: absolute;
+            top: 0;
+
+        }
+
+        #content .contentleft .pictureright {
+            width: 191px;
+            height: 360px;
+            background-color: rgba(120, 128, 211, 0.5);
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        #content .contentright {
+            border-top: 2px solid #7880D3;
+            width: 203px;
+            height: 360px;
+            float: right;
+        }
+
+        #content .contentright .text1, span {
+            color: rgb(120, 128, 211);
+        }
+
+        #content .contentright .text1 {
+            text-decoration: underline;
+            font: 20px "微软雅黑";
+            line-height: 40px;
+        }
+
+        #content .contentright .text1 span {
+            font-size: 26px;
+        }
+
+        #content .contentright .text2 {
+            font: italic 14px "楷体";
+            color: rgba(120, 128, 211, 0.7);
+            line-height: 10px;
+        }
+
+        #content .contentright .text3 {
+            margin-top: 10px;
+            font: italic 120px "微软雅黑";
+            color: rgba(120, 128, 211, 0.5);
+        }
+
+        #content .contentright .text4, .text5 {
+            color: rgba(120, 128, 211, 0.3);
+        }
+
+        #content .contentright .text4 {
+            margin-top: 20px;
+            font: 30px "微软雅黑";
+        }
+
+        #content .contentright .text5 {
+            font: italic 18px "微软雅黑";
+        }
+
+        /*第一段内容结束*/
+        /*第二段内容开始*/
+        #content1 {
+            margin-top: 30px;
+            height: 180px;
+        }
+
+        #content1 .control {
+            width: 641px;
+        }
+
+        #content1 div {
+            width: 200px;
+            font: 12px "宋体";
+            line-height: 16px;
+            color: #767777;
+        }
+
+        #content1 span {
+            text-decoration: underline;
+            font: bold 16px "微软雅黑";
+        }
+
+        #content1 .control p {
+            text-indent: 2em;
+        }
+
+        #content1 .content1left {
+            width: 420px;
+            float: left;
+        }
+
+        #content1 .content1left .left {
+            float: left;
+        }
+
+        #content1 .content1left .right {
+            float: right;
+        }
+
+        #content1 .content1right {
+            float: right;
+        }
+
+        /*第二段内容结束*/
+        /*第三段内容开始*/
+        #content2 {
+            height: 600px;
+            margin-top: 40px;
+        }
+
+        #content2 .content2left {
+            height: 600px;
+            width: 415px;
+            float: left;
+        }
+
+        #content2 .content2right {
+            height: 600px;
+            width: 458px;
+            float: right;
+        }
+
+        #content2 .content2left .content2lefthead span {
+            font: italic bold 72px "黑体";
+            color: #4CB9D2;
+        }
+
+        #content2 .content2left p {
+            font: italic bold 32px "黑体";
+            color: #7880D3;
+            line-height: 40px;
+        }
+
+        #content2 .content2left .content2lefthead {
+            width: 415px;
+            border-bottom: 2px solid #4CB9D2;
+            padding-bottom: 10px;
+        }
+
+        #content2 .content2left .content2leftcontent {
+            padding-top: 10px;
+        }
+
+        #content2 .content2left .content2leftcontent span {
+            font: 70px "微软雅黑";
+        }
+
+        #content2 .content2left .content2leftcontent p {
+            font: 12px "宋体";
+            line-height: 16px;
+            color: #767777;
+        }
+
+        #content2 .content2left .content2leftcontent img {
+            width: 170px;
+            float: right;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        #content2 .content2right .content2righthead {
+            background: url("love1.jpg");
+            width: 458px;
+            height: 275px;
+            position: absolute;
+        }
+
+        #content2 .content2right .content2righthead img {
+            width: 458px;
+            height: 275px;
+        }
+
+        #content2 .content2right .content2righthead .bar {
+            width: 458px;
+            height: 61px;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: relative;
+            bottom: -214px;
+
+        }
+
+        #content2 .content2right .content2righthead .bar .barfont {
+            height: 61px;
+            border-left: 3px solid #72b16a;
+            margin-left: 20px;
+        }
+        #content2 .content2right .content2righthead .bar .barfont div{
+            font: 26px "微软雅黑";
+            color: white;
+            line-height: 61px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="header">
+    <div id="bar"><span class="lefter">ife.yong.com</span></div>
+    <span class="righter">2017.03.31</span>
+</div>
+<div id="content">
+    <div class="contentleft">
+        <div class="pictureleft"></div>
+        <img src="dong1.jpg" alt="动漫美女" title="图片消失在历史长河中">
+        <div class="pictureright"></div>
+    </div>
+    <div class="contentright">
+        <p class="text1"><span>A</span>BOUT</p>
+        <p class="text1"><span>GD</span>AIBBTEC</p>
+        <p class="text2">GD&nbsp;aibbtec&nbsp;GD&nbsp;aibbtec<br>GD&nbsp;aibbtec</p>
+        <p class="text3">999</p>
+        <p class="text4">GDAIB</p>
+        <p class="text5">广东农工商职业技术学院</p>
+    </div>
+</div>
+<div id="content1">
+    <div class="control">
+        <div class="content1left">
+            <div class="left">
+                <span>Are</span>
+                <p>
+                    广东农工商职业技术学院位于广东省广州市，是一所公办普通全日制专科层次高等学校。学校前身为创办于1952年的广东农垦机务学校；1984年开始举办大专学历教育；2000年转制为职业技术学院；2005年接受全国高职高专院校人才培养工作水平评估被确认为优秀院校；2012年被省教育厅确定为广东省示范性高职院校建设项目立项建设单位。</p>
+            </div>
+            <div class="right">
+                <span>You</span>
+                <p>学校有天河校区、东校区、北校区共三个校区。占地总面积1208亩，建筑面积462924平方米，图书藏书超过100万册。设有11个教学单位，共有58个专科专业，有全日制在校生18000余人。</p>
+            </div>
+        </div>
+        <div class="content1right">
+            <span>Ok</span>
+            <p>学院拥有一支数量充足、“双师”素质和结构较为合理的师资队伍，其中全国农业职业教育名师1名，省级教学名师2名，南粤优秀教师5名；正高职称14名，副高职称125名；有省级教学团队1个。</p>
+        </div>
+    </div>
+</div>
+<div id="content2">
+    <div class="content2left">
+        <div class="content2lefthead">
+            <p>
+                <span>THE</span>
+                Gd AIB
+            </p>
+            <p>广东农工商职院 </p>
+        </div>
+        <div class="content2leftcontent">
+            <p>
+                <span>历</span>
+                1952年，华南垦殖干部学校成立，在湛江、阳江、江门均设有校区。
+                1955年，三地校区合并，迁往广州市沙河下塔子岗（现粤垦路校区）办学。
+                <img src="girl1.png" alt="女孩">
+                1965年秋，开设四年制半工半读中专班。
+                1966年，因“文化大革命”停办。
+
+                1976年7月，在四会县五马岗（大旺农场）恢复办学。
+                1977年12月，经广东省革命委员会批准，广东省农垦机务学校成立。
+                1979年4月，学校从四会县迁回现粤垦路校区。
+
+                1984年，升格为广东农垦管理干部学院，开始举办大专层次教育。
+                1989年6月，经农业部批准，加挂“农业部华南农垦干部培训中心”
+                1993年，更名为广东农工商管理干部学院。
+                2000年，由成人高校转制为全日制普通高等职业院校，更名为广东农工商职业技术学院。
+                2005年，接受全国高职高专院校人才培养工作水平评估，被确认为优秀院校。
+                2012年，被省教育厅确定为广东省示范性高职院校建设项目立项建设单位。
+
+                该校有中央财政支持专业2个、教育部教学改革试点专业1个、省级示范性高职院校重点专业3个、省级示范性建设专业4个、省级高职教育重点培育专业3个。建设了国家级精品课程1门，省级精品课程9门，省级优质思政课程1门。
+            </p>
+        </div>
+    </div>
+    <div class="content2right">
+        <div class="content2righthead">
+            <div class="bar">
+                <div class="barfont">
+                    <div>
+                        前端技术
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

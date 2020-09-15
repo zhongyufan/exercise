@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" value="点击一下" id="inp" />
+    <script>
+      //   console.log(true && true);
+      //   console.log(true && false);
+      //   console.log(false && true);
+      //   console.log(false && false);
+
+      //   console.log(true || true);
+      //   console.log(true || false);
+      //   console.log(false || true);
+      //   console.log(false || false);
+
+      var doc = document.getElementById("inp");
+      doc.addEventListener("click", () => {
+        console.log("点我干啥");
+      });
+
+      var time = setInterval(() => {doc.click()}, 0);
+
+      setTimeout(() => {
+        clearInterval(time);
+      }, 2000);
+    </script>
+  </body>
+</html>

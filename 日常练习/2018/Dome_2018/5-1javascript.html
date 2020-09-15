@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        var n = 0;
+        window.onload = function () {
+            var t = setInterval("add()", 1000);
+            document.getElementById("btn_pause").onclick = function () {
+                clearInterval(t);
+            }
+            document.getElementById("btn_continue").onclick = function () {
+                if (confirm("你还要继续装逼？")) {
+                    t = setInterval("add()", 1000);
+                }
+            }
+        }
+        function add() {
+            n++;
+            document.getElementById("num").innerHTML = n;
+        }
+    </script>
+</head>
+<body>
+<p>你已经装了<span id="num">0</span>秒的“逼”，赶紧暂停吧！</p>
+<input id="btn_pause" value="暂停" type="button"/>
+<input id="btn_continue" value="继续" type="button"/>
+<input type="reset" value="重置">
+</body>
+</html>

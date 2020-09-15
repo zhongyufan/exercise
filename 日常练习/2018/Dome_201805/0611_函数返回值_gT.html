@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../../logo/cat.ico"/>
+    <title>Plan Task</title>
+    <script>
+        var timer = null;
+        i = 0;
+
+        function fn1() {
+            i++;
+            document.title = i;
+
+            if (i === 10) {
+                clearInterval(timer);
+            }
+        }
+
+        timer = setInterval(fn1, 200);
+    </script>
+</head>
+<body>
+<input type="button" value="按钮" id="btn1">
+<div id="div1">123</div>
+
+<script>
+    var arr =[1,"10"];
+    console.log();
+</script>
+</body>
+</html>～

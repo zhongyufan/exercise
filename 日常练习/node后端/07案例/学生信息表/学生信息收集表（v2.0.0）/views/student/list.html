@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>学员信息</title>
+    <meta name="viewport"
+        content="width=device-width,heght=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="../css/list.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link href="https://fonts.font.im/css?family=Indie+Flower" rel="stylesheet">
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/vue.js"></script>
+    <script src="../js/axios.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="col-md-10 offset-md-1">
+            <ul class="nav">
+                <li class="nav-item dropdown">
+                    <div class="userinfo nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false">
+                        <img class="userImage img-thumbnail" :src="userInfo.image" alt="" v-if="show">
+                        <span class="userName">{{userInfo.name}}</span>
+                    </div>
+                    <div class="menu dropdown-menu dropdown-menu-right text-center">
+                        <a class="dropdown-item" href="/stu">学生信息</a>
+                        <a class="dropdown-item" href="#">个人资料</a>
+                        <a class="dropdown-item" href="/user/list" v-if="power">用户管理</a>
+                        <a class="dropdown-item" href="/log/logout">退出登陆</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="table-content col-md-10 offset-md-1">
+            <div class="table-responsive">
+                <table class="table table-hover text-center">
+                    <caption>学员信息</caption>
+                    <thead>
+                        <tr class="center">
+                            <th scope="col" v-for="item in title">{{item}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="item in info">
+                            <th scope="row">#</th>
+                            <td>{{item.name}}</td>
+                            <td>{{item.age}}</td>
+                            <td>{{item.sex==0?'男':'女'}}</td>
+                            <td>{{item.email}}</td>
+                            <td>
+                                <span class="direction" v-for="res in item.direction">{{res}}</span>
+                            </td>
+                            <td>{{item.class}}</td>
+                            <td>{{item.date | dateFormat}}</td>
+                            <td>
+                                <button class="btn btn-outline-primary btn-sm"
+                                    @click="location.href='/stu/updata?id='+item._id">修改</button>
+                                <button class="btn btn-outline-danger btn-sm"
+                                    @click="location.href='/stu/deleteInfo?id='+item._id" :disabled="isDis"
+                                    disshow>删除</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-4 offset-md-4 add">
+            <input type="submit" onclick="location.href='/stu/add'" value="添加" class="btn btn-primary"
+                style="width:100%;">
+        </div>
+    </div>
+    <script>
+        $('.dropdown-toggle').dropdown();
+    </script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                title: ['学号', '姓名', '年龄', '性别', '邮箱地址', '发展方向', '报名课程', '学习日期', '更多操作'],
+                info: [],
+                userInfo: {},
+                isDis: true
+            },
+            mounted() {
+                const _this = this;
+                axios.get('http://localhost/stu/listresult')
+                    .then((res) => {
+                        _this.userInfo = res.data.userInfo;
+                        _this.info = res.data.result;
+                        // 非管理员禁止删除数据
+                        _this.userInfo.role == "admin" ? _this.isDis = false : _this.isDis = true;
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
+            },
+            computed: {
+                // 识别用户
+                power() {
+                    return this.userInfo.role == "admin" ? true : false;
+                },
+                // 非管理员无头像
+                show() {
+                    return this.userInfo.image != "" ? true : false;
+                },
+            },
+            methods: {
+
+            },
+            filters: {
+                dateFormat: function (value) {
+                    if (value == null) {
+                        return '';
+                    }
+                    return value.replace(/[A-Z]\d\d:\d\d:\d\d.\d\d\d[A-Z]/, '');
+                },
+            }
+        });
+    </script>
+</body>
+
+</html>

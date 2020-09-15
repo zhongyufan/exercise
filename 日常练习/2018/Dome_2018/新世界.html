@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>新世界</title>
+    <style>
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+            margin: 0;
+            padding: 0;
+        }
+
+        #header, #main1, #main2, #main3, #main4, #main5, #main6, #main7, #main8, #main9, #footer {
+            overflow: hidden;
+        }
+
+        .container {
+            height: 4554px;
+        }
+
+        /*导航栏开始*/
+        #header {
+            height: 55px;
+            width: 1280px;
+            margin: 0 auto;
+        }
+
+        /*标志*/
+        #header img {
+            padding-top: 13px;
+            padding-left: 59px;
+            float: left;
+        }
+
+        #header #sign {
+            display: inline;
+            height: 57px;
+        }
+
+        #header #sign span {
+            font: 21px "黑体";
+            line-height: 57px;
+        }
+
+        /*导航栏*/
+        #header #nav {
+            float: right;
+        }
+
+        #header #nav li {
+            display: inline-block;
+            text-align: center;
+            width: 65px;
+            height: 57px;
+            margin-right: 29px;
+            font: 14px "微软雅黑";
+            line-height: 57px;
+        }
+
+        #header #nav li a {
+            padding-bottom: 1em;
+            text-decoration: none;
+            color: black;
+        }
+
+        #header #nav li a span {
+            color: #ea6f6e;
+        }
+
+        #header #nav li img {
+            position: absolute;
+            top: 8px;
+            right: 21%;
+        }
+
+        #header #nav a:hover {
+            border-bottom: 3px solid #e74f4d;
+        }
+
+        /*导航栏结束*/
+        /*第一部分内容*/
+        #main1 {
+            height: 695px;
+            background: url("Images/background1.jpg") no-repeat center;
+            position: relative;
+        }
+
+        #main1 #txt1 {
+            position: absolute;
+            top: 230px;
+            left: 20%;
+            width: 460px;
+            height: 200px;
+        }
+
+        #main1 #txt1 span {
+            color: white;
+            font: 60px "微软雅黑";
+        }
+
+        #main1 #txt1 div {
+            font: 21px "微软雅黑";
+            color: white;
+            margin-top: 8px;
+            margin-left: 10px;
+        }
+
+        #main1 #comelink {
+            width: 330px;
+            height: 63px;
+            background-color: #e74f4d;
+            position: absolute;
+            top: 430px;
+            left: 20%;
+        }
+
+        #main1 #comelink a {
+            /*border: 1px solid;*/
+            color: white;
+            text-decoration: none;
+            font: 30px "微软雅黑";
+            line-height: 2em;
+            width: 330px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        /*第一部分结束*/
+        /*第二部分开始*/
+
+        #main2 {
+            height: 250px;
+            width: 1280px;
+            margin: 0 auto;
+        }
+
+        #main2maxleft, #main2con1, #main2con2, #main2maxright {
+            width: 153px;
+            text-align: center;
+        }
+
+        #main2left, #main2maxleft, #main2con2 {
+            width: 50%;
+            float: left;
+        }
+
+        #main2right, #main2con1, #main2maxright {
+            width: 50%;
+            float: right;
+        }
+
+        #main2 #main2img1, #main2img2, #main2img3, #main2img4 {
+            margin-top: 45px;
+        }
+
+        #main2 #write1, #write2, #write3 {
+            margin-top: 45px;
+            border-right: 2px solid #bbb;
+        }
+
+        #main2 #write4 {
+            margin-top: 45px;
+        }
+
+        /*第二部分结束*/
+        /*第三部分开始*/
+        #main3 {
+            height: 360px;
+            width: 1280px;
+            background-color: #ededed;
+            margin: 0px auto;
+        }
+
+        #main3logo, #main3write {
+            text-align: center;
+        }
+
+        #main3logo {
+            padding-top: 90px;
+        }
+
+        #main3write {
+            margin-top: 50px;
+            font: 54px "黑体";
+            color: #a1a1a1;
+        }
+
+        /*第三部分结束*/
+        /*第四部分开始*/
+
+        #main4 {
+            height: 340px;
+            width: 1280px;
+            margin: 0 auto;
+            background: url("Images/map.jpg") no-repeat center;
+        }
+
+        #main4 #choose, #main4write1, #main4write2 {
+            text-align: center;
+            color: white;
+
+        }
+
+        #main4write1 {
+            padding-top: 55px;
+            font: 21px "微软雅黑";
+        }
+
+        #main4 span:hover {
+            padding-bottom: 10px;
+            border-bottom: 2px solid white;
+        }
+
+        #main4write2 {
+            padding-top: 30px;
+            padding-bottom: 50px;
+            font: 12px "微软雅黑";
+        }
+
+        #main4 select {
+            width: 235px;
+            height: 35px;
+            margin-right: 30px;
+            border: 1px solid #be4e48;
+        }
+
+        #main4 select option {
+            background: #e3e3e4;
+        }
+
+        #main4 select:hover {
+            background: #be4e48;
+        }
+
+        #main4 #search {
+            width: 235px;
+            height: 35px;
+            background: #be4e48;
+            display: inline-block;
+        }
+
+        #main4 #search a {
+            border: 1px solid #be4e48;
+            display: inline-block;
+            width: 234px;
+            height: 33px;
+            text-decoration: none;
+            color: white;
+            font: 14px "微软雅黑";
+            line-height: 34px;
+        }
+
+        /*第四部分结束*/
+        /*第五部分开始*/
+        #main5 {
+            height: 605px;
+            width: 1280px;
+            margin: 0px auto;
+            background-color: #f7f7f7;
+        }
+
+        #main5left, #activity1, #activity3 {
+            float: left;
+            width: 50%;
+        }
+
+        #main5right, #activity2, #activity4 {
+            float: right;
+            width: 50%;
+        }
+
+        #main5 #activity1, #activity2, #activity3, #activity4 {
+            margin-top: 100px;
+        }
+
+        #main5 .p1 {
+            margin-left: 50px;
+        }
+
+        #main5 span {
+            display: block;
+            font: 14px "微软雅黑";
+            text-align: center;
+            color: #9f9f9f;
+            line-height: 26px;
+        }
+
+        #main5 span:hover {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0);
+        }
+
+        #main5 .write1 {
+            margin-top: 10px;
+            font: 18px "黑体";
+            font-weight: 500;
+            color: #4c4c4c;
+        }
+
+        /*第五部分结束*/
+        /*第六部分开始*/
+        #main6 {
+            position: relative;
+            height: 567px;
+            width: 1280px;
+            margin: 0px auto;
+            background: url("Images/people.jpg") no-repeat;
+        }
+
+        /*图片左侧*/
+        #main6 #main6left {
+            float: left;
+            width: 70%;
+        }
+
+        #main6 #main6left span {
+            display: block;
+            color: white;
+            text-align: center;
+
+        }
+
+        #main6 #main6left .bigwrite {
+            margin-top: 2em;
+            font: 50px "微软雅黑";
+        }
+
+        #main6 #main6left .maxwrite {
+            font: 158px "微软雅黑";
+        }
+
+        #main6 #main6left .litterwrite {
+            font: 22px "微软雅黑";
+        }
+
+        /*图片右侧*/
+        #main6 #main6right {
+            text-align: center;
+            float: right;
+            width: 30%;
+            background-color: #ffffff;
+        }
+
+        #main6 #main6right #main6write {
+            padding: 10% 0;
+            margin: 0px auto;
+            font: bold 22px "宋体";
+        }
+
+        #main6 #main6right #main6write span {
+            color: #e74f4d;
+        }
+
+        #main6 #main6right #main6think {
+            padding-bottom: 10%;
+            margin: 0px auto;
+            width: 310px;
+        }
+
+        #main6 #main6right #main6think span {
+            font: 15px "微软雅黑";
+            color: #b0b0b0;
+            line-height: 30px;
+        }
+
+        #main6 #main6right #main6link {
+            margin: 0px auto;
+            width: 110px;
+            height: 35px;
+            border: 2px solid #e6797c;
+        }
+
+        #main6 #main6right #main6link a {
+            line-height: 35px;
+            text-decoration: none;
+            color: #e6797c;
+        }
+
+        /*箭头*/
+        #main6 #arrow1 {
+            position: absolute;
+            top: 50%;
+            left: 64%;
+            border-top: 20px solid rgba(255, 255, 255, 0);
+            border-right: 40px solid #ffffff;
+            border-bottom: 20px solid rgba(255, 255, 255, 0);
+        }
+
+        /*第六部分结束*/
+        /*第七部分开始*/
+
+        #main7 {
+            position: relative;
+            height: 520px;
+            width: 1280px;
+            margin: 0 auto;
+        }
+
+        #main7 #main7left {
+            float: left;
+            width: 850px;
+        }
+
+        #main7 #main7leftcon1 {
+            float: left;
+            height: 520px;
+            width: 50%;
+            background-color: #e7504d;
+            color: white;
+        }
+
+        #main7 #main7leftcon2 {
+            height: 520px;
+            float: right;
+            width: 50%;
+        }
+
+        #main7 #precision1, #precision2 {
+            margin-top: 55px;
+        }
+
+        #main7 #link1, #link2 {
+            margin: 0 auto;
+            width: 170px;
+            height: 45px;
+            border: 2px solid white;
+        }
+
+        #main7 #link2 {
+            border: 2px solid #e7504d;
+        }
+
+        #main7 #link2 a {
+            color: #e7504d;
+        }
+
+        #main7 a {
+            display: inline-block;
+            width: 170px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+        }
+
+        #main7 #main7left span {
+            display: inline-block;
+            font: 21px "微软雅黑";
+        }
+
+        #main7 #main7left #mian7leftwrite, #mian7rightwrite {
+            margin-top: 175px;
+            text-align: center;
+        }
+
+        #main7 #main7right img {
+            float: right;
+            width: 430px;
+        }
+
+        #main7 #arrow2 {
+            position: absolute;
+            top: 50%;
+            left: 66%;
+            width: 0;
+            border-top: 20px solid rgba(255, 255, 255, 0);
+            border-left: 40px solid #ffffff;
+            border-bottom: 20px solid rgba(255, 255, 255, 0);
+        }
+
+        /*第七部分结束*/
+
+        /*第八部分开始*/
+
+        #main8 {
+            height: 750px;
+            width: 1280px;
+            margin: 0px auto;
+        }
+
+        /*上部分*/
+        #main8 #main8head {
+            height: 300px;
+        }
+
+        #main8 #main8head #main8txt {
+            text-align: center;
+            font: 12px "微软雅黑";
+            line-height: 18px;
+            color: #b0b0b0;
+            padding-top: 120px;
+        }
+
+        #main8 #main8head #main8txt span {
+            font: 21px "黑体";
+            color: #000;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /*下部分*/
+        #main8 #main8foot {
+            height: 450px;
+        }
+
+        /*下左*/
+        #main8 #main8foot #main8left {
+            float: left;
+            width: 430px;
+            height: 285px;
+        }
+
+        #main8 #main8foot #main8left #mian8write {
+            float: right;
+            width: 290px;
+            height: 280px;
+        }
+
+        #main8 #main8foot #main8left .main8write1 {
+            margin: 15px 0;
+        }
+
+        #main8 #main8foot #main8left .main8write2 {
+            font: 12px "宋体";
+            line-height: 21px;
+        }
+
+        #main8 #main8foot #main8left .main8write3 {
+            display: inline-block;
+            width: 290px;
+            text-align: right;
+        }
+
+        #main8 #main8foot #main8left .main8write3 a {
+            text-decoration: none;
+            color: #adabab;
+        }
+
+        #main8 #main8foot #main8left .main8write1, .main8write2 {
+            display: block;
+        }
+
+        #main8 #main8foot #main8left .main8write1 {
+            font: 14px "黑体";
+        }
+
+        #main8 #main8foot #main8left .main8write2, .main8write3 {
+            color: #adabab;
+        }
+
+        /*下右*/
+        #main8 #main8foot #main8right {
+            float: right;
+            width: 840px;
+            height: 285px;
+        }
+
+        #main8 #main8foot #main8right #main8bigwall {
+            width: 670px;
+            height: 285px;
+            margin: 0px auto;
+        }
+
+        #main8 #main8foot #main8right .table1, .table2, .table3 {
+            display: inline-block;
+        }
+
+        #main8 #main8foot #main8right .table1 input {
+            border: 1px solid #edecee;
+            background: #edecee;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            width: 310px;
+            height: 40px;
+            color: #838080;
+            padding: 0 0 0 10px;
+        }
+
+        #main8 #main8foot #main8right .table2 textarea {
+            border: 1px solid #edecee;
+            background: #edecee;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            width: 645px;
+            height: 120px;
+            color: #838080;
+            padding: 10px 0 0 10px;
+        }
+
+        #main8 #main8foot #main8right .table3 input {
+            border: 1px solid #edecee;
+            background: #edecee;
+            width: 658px;
+            height: 40px;
+            color: #838080;
+        }
+
+        /*第八部分结束*/
+        /*第九部分开始*/
+        #main9 {
+            width: 1280px;
+            height: 360px;
+            background: #33363f;
+            margin: 0px auto;
+        }
+
+        #main9 #main9one {
+            height: 180px;
+            width: 510px;
+            margin: 0 auto;
+        }
+
+        #main9 #main9one span {
+            display: block;
+            text-align: center;
+            font: 12px "宋体";
+            color: #cacaca;
+            line-height: 2em;
+        }
+
+        #main9 #main9one .txt {
+            font: 21px "黑体";
+            padding-top: 90px;
+        }
+
+        #main9 #main9two {
+            height: 80px;
+            margin: 0 auto;
+        }
+
+        #main9 #main9two #main9centre {
+            width: 515px;
+            margin: 0px auto;
+        }
+
+        #main9 #main9two .main9txt {
+            float: left;
+            width: 430px;
+            height: 40px;
+            color: #bdbdbd;
+            text-align: center;
+        }
+
+        #main9 #main9two .main9ok {
+            float: right;
+            width: 80px;
+            height: 44px;
+            background: #6f7278;
+            border: 1px solid #6f7278;
+            color: white;
+        }
+
+        #main9 #main9three {
+            height: 100px;
+            background: url("Images/cooperative.jpg") no-repeat center top;
+        }
+
+        /*第九部分结束*/
+        /*页尾开始*/
+        #footer {
+            width: 1280px;
+            height: 60px;
+            background: #303030;
+            margin: 0px auto;
+            color: #cacaca;
+        }
+
+        #footer span {
+            display: inline-block;
+            margin: 1.5em 0 0 2em;
+        }
+
+        #footer a {
+            float: right;
+            margin: 1.5em 2em 0 0;
+            color: #cacaca;
+            text-decoration: none;
+        }
+
+        /*页尾结束*/
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <div id="header">
+        <img src="Images/nav1.jpg" alt="新世界">
+        <div id="sign"><span>&nbsp;新世界</span></div>
+        <ul id="nav">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">最新活动</a></li>
+            <li><a href="#">项目介绍</a></li>
+            <li><a href="#">爱心社区</a></li>
+            <li><a href="#">关于我们</a></li>
+            <li><a href="#"><img src="../Images/nav2.jpg" alt="登录"><span>登录</span></a></li>
+        </ul>
+    </div>
+    <div id="main1">
+        <div id="txt1">
+            <span>Time of new life</span>
+            <div>新时代的，年轻的人们让我们一起</div>
+            <div>体验新生活，享受新生活</div>
+        </div>
+        <div id="comelink">
+            <a href="#">开始体验</a>
+        </div>
+    </div>
+    <div id="main2">
+        <div id="main2left">
+            <div id="main2maxleft">
+                <div id="main2img1">
+                    <img src="Images/txt2.1.jpg" alt="圆">
+                </div>
+                <div id="write1">
+                    <span>打造全新世界观，让你更</span>
+                    <br>
+                    <span>爱你的生活</span>
+                </div>
+            </div>
+            <div id="main2con1">
+                <div id="main2img2">
+                    <img src="Images/txt2.2.jpg" alt="旗">
+                </div>
+                <div id="write2">
+                    <span>丰富多彩的公益活动，发</span>
+                    <br>
+                    <span>挥新世界的主人公</span>
+                </div>
+            </div>
+        </div>
+        <div id="main2right">
+            <div id="main2con2">
+                <div id="main2img3">
+                    <img src="Images/txt2.3.jpg" alt="花">
+                </div>
+                <div id="write3">
+                    <span>时尚的新理念，超前体验</span>
+                    <br>
+                    <span>未知的生活</span>
+                </div>
+            </div>
+            <div id="main2maxright">
+                <div id="main2img4">
+                    <img src="Images/txt2.4.jpg" alt="方块">
+                </div>
+                <div id="write4">
+                    <span>完善的培养机制，培养你</span>
+                    <br>
+                    <span>全新的世界观</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main3">
+        <div id="main3logo">
+            <img src="Images/logo.jpg" alt="图标">
+        </div>
+        <div id="main3write">
+            关于新世界，你不知道的还有什么？
+        </div>
+    </div>
+    <div id="main4">
+        <div id="main4write1"><span>查找新世界城市活动信息</span></div>
+        <div id="main4write2">每个城市的不同的活动信息，请自主查询您所需要了解的城市</div>
+        <div id="choose">
+            <select name="choose1" id="country">
+                <option value="China">中国</option>
+                <option value="country" selected="selected">国家</option>
+            </select>
+            <select name="choose2" id="province">
+                <option value="none">无</option>
+                <option value="Guangdong">广东省</option>
+                <option value="Shandong">山东省</option>
+                <option value="Zejiang">浙江省</option>
+                <option value="Hunan">湖南省</option>
+                <option value="Taiwan">台湾省</option>
+                <option value="province" selected="selected">省份</option>
+            </select>
+            <select name="choose3" id="city">
+                <option value="Beijing">北京市</option>
+                <option value="Shanghai">上海市</option>
+                <option value="Guangzhou">广州市</option>
+                <option value="Shenzhen">深圳市</option>
+                <option value="Taibei">台北市</option>
+                <option value="Taibei">香港特别行政区</option>
+                <option value="city" selected="selected">城市</option>
+            </select>
+            <div id="search"><a href="#">搜索</a></div>
+        </div>
+    </div>
+    <div id="main5">
+        <div id="main5left">
+            <div id="activity1">
+                <div>
+                    <img src="Images/activity1.jpg" alt="北京活动" class="p1">
+                    <span class="write1">北京活动</span>
+                    <span>新社区大联盟</span>
+                </div>
+            </div>
+            <div id="activity2">
+                <div>
+                    <img src="Images/activity2.jpg" alt="上海活动" class="p1">
+                    <span class="write1">上海活动</span>
+                    <span>夜上海新景观探索</span>
+                </div>
+            </div>
+        </div>
+        <div id="main5right">
+            <div id="activity3">
+                <div>
+                    <img src="Images/activity3.jpg" alt="深圳活动" class="p1">
+                    <span class="write1">深圳活动</span>
+                    <span>全新海岸线观点站</span>
+                </div>
+            </div>
+            <div id="activity4">
+                <div>
+                    <img src="Images/activity4.jpg" alt="香港活动" class="p1">
+                    <span class="write1">香港活动</span>
+                    <span>奢华消费大派送</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main6">
+        <div id="main6left">
+
+            <span class="bigwrite">新世界</span>
+            <span class="maxwrite">TIME</span>
+            <span class="litterwrite">@新世界-北京
+            <br>2017.05.18
+        </span>
+        </div>
+        <div id="main6right">
+            <div id="main6write">新世界&nbsp;/&nbsp;<span>01</span></div>
+            <div id="main6think">
+                <span>每次失望一次，我就少做一件爱你的事，知道最后备注改成全名、取消特别关注、上线不主动找你、收起你送的东西、删掉你所有的照片、再也不偷偷看你的时候，就是该说再见的时候了。多年后你会不会记得，曾经有一个人很努力的珍惜过你。——失望是一天天积累的，离开时很长的决定......告诫自己，有一种落差是，你配不上自己的野心也辜负了所受的苦难，也别让自己最无能为力的事儿就是在最没有能力的年纪，碰见了，最想照顾一生的姑娘。</span>
+            </div>
+            <div id="main6link">
+                <a href="#">更多详情</a>
+            </div>
+        </div>
+        <div id="arrow1">
+
+        </div>
+    </div>
+    <div id="main7">
+        <div id="main7left">
+            <div id="main7leftcon1">
+                <div id="mian7leftwrite"><span>新时代
+            <br>
+            关于爱生活的我们</span></div>
+                <div id="precision1">
+                    <div id="link1">
+                        <a href="#">查看更多</a>
+                    </div>
+                </div>
+            </div>
+            <div id="main7leftcon2">
+                <div id="mian7rightwrite"><span>新时代
+            <br>
+            关于爱生活的我们</span></div>
+                <div id="precision2">
+                    <div id="link2">
+                        <a href="#">查看更多</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="main7right">
+            <img src="Images/subway.jpg" alt="地铁">
+            <div id="arrow2">
+            </div>
+        </div>
+
+    </div>
+    <div id="main8">
+        <div id="main8head">
+            <div id="main8txt">
+                <span>成为我们的志愿者</span>
+                <div>新世界的大家庭需要每一个爱生活的人加入，如果你够年轻，有激情 <br>
+                    那就不要犹豫，快来加入我们，成为改变所有人生活的人
+                </div>
+            </div>
+        </div>
+        <div id="main8foot">
+            <div id="main8left">
+                <div id="mian8write">
+                    <div>
+                        <span class="main8write1">新世界志愿者协议</span>
+                        <span class="main8write2">加入新世界志愿者的人员必须遵守中华人民共和国的相关法律，并且本着平等自愿的原则.....</span>
+                        <span class="main8write3"><a href="#">∨&nbsp;more</a></span>
+                    </div>
+                    <div>
+                        <span class="main8write1">新世界志愿者权利</span>
+                        <span class="main8write2">新世界志愿者享受新世界内部所有资源共享的权利，并且享受所在地的新世界活动的优先参与资格</span>
+                        <span class="main8write3"><a href="#">∨&nbsp;more</a></span>
+                    </div>
+                    <div>
+                        <span class="main8write1">更多条款</span>
+                        <span class="main8write3"><a href="#">∨&nbsp;more</a></span>
+                    </div>
+                </div>
+            </div>
+            <div id="main8right">
+                <div id="main8bigwall">
+                    <form action="#" method="get" enctype="multipart/form-data">
+                        <div class="table1">
+                            <input type="text" value=" 姓名：" onfocus="this.value=''"
+                                   onblur="if(this.value==''){this.value=' 姓名：'}">
+                        </div>
+                        <div class="table1">
+                            <input type="text" value=" 年龄：" onfocus="this.value=''"
+                                   onblur="if(this.value==''){this.value='年龄：'}">
+                        </div>
+                        <div class="table1">
+                            <input type="text" value=" 联系方式：" onfocus="this.value=''"
+                                   onblur="if(this.value==''){this.value=' 联系方式：'}">
+                        </div>
+                        <div class="table1">
+                            <input type="text" value=" 联系地址：" onfocus="this.value=''"
+                                   onblur="if(this.value==''){this.value='联系地址：'}">
+                        </div>
+                        <div class="table2">
+                            <textarea name="" id="" cols="80" rows="8" value="请简单描述您的梦想生活：" onfocus="this.value=''"
+                                      onblur="if(this.value==''){this.value='请简单描述您的梦想生活：'}">
+
+                            </textarea>
+                        </div>
+                        <div class="table3">
+                            <input type="submit" value="提交申请">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main9">
+        <div id="main9one">
+            <span class="txt">联系我们</span>
+            <span>为了更好的获取我们最新的产品资讯，您可以留下您的电子邮箱快速订阅我们的产品资讯</span>
+            <span>也可以通过以下任何方式关注我们动态</span>
+        </div>
+        <div id="main9two">
+            <form action="#">
+                <div id="main9centre">
+                    <div>
+                        <input type="text" class="main9txt" value="someone@email.com" onfocus="this.value=''"
+                               onblur="if(this.value==''){this.value='someone@email.com'}">
+                    </div>
+                    <div>
+                        <input type="submit" value="提交" class="main9ok">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="main9three">
+
+        </div>
+    </div>
+    <div id="footer">
+        <span>@2017新世界</span>
+        <a href="#">Back to top</a>
+    </div>
+</div>
+</body>
+</html>

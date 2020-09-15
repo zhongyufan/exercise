@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>调整字体大小</title>
+</head>
+<style>
+    .red {
+        width: 600px;
+        background: red;
+        color: yellow;
+        padding: 20px;
+        border: 10px solid #ccc;
+    }
+</style>
+<script>
+    window.onload = function () {
+        var oBut1 = document.getElementById('but1');
+        var oBut2 = document.getElementById('but2');
+        var oBut3 = document.getElementById('but3');
+        var oP = document.getElementById('content');
+        var sizenum = 15;
+
+        oBut1.onclick = function () {
+            if (sizenum < 20) {
+                sizenum++;
+            }
+            oP.style.fontSize = sizenum + "px";
+
+        }
+        oBut2.onclick = function () {
+            if (sizenum > 10) {
+                sizenum--;
+            }
+            oP.style.fontSize = sizenum + "px";
+        }
+        oBut3.onclick = function () {
+            oP.className = 'red';
+        }
+    }
+</script>
+<body>
+<input type="button" id="but1" value="+">
+<input type="button" id="but2" value="-">
+<input type="button" id="but3" value="主题一">
+<p id="content">
+    萨拉黑哟-Mrs.zhang/
+    萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/萨拉黑哟-Mrs.zhang/
+
+</p>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D3数据可视化</title>
+  </head>
+  <body>
+    <svg></svg>
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script>
+      console.log(typeof undefined);
+      console.log(typeof "abc");
+      console.log(typeof 123);
+      console.log(typeof null);
+      console.log(typeof true);
+      console.log(typeof Object);
+      console.log(typeof Symbol("123"));
+
+      console.log([] instanceof Array);
+      var b = new Date();
+      console.log(b instanceof Date);
+      console.log(typeof b);
+      console.log(Object.prototype.toString.call(b));
+      var x1 = new Object(); // 一个新的 Object 对象
+      var x2 = new String(); // 一个新的 String 对象
+      var x3 = new Number(); // 一个新的 Number 对象
+      var x4 = new Boolean(); // 一个新的 Boolean 对象
+      var x5 = new Array(); // 一个新的 Array 对象
+      var x6 = new RegExp(); // 一个新的 RegExp 对象
+      var x7 = new Function(); // 一个新的 Function 对象
+      var x8 = new Date(); // 一个新的 Date 对象
+
+      var x1 = {}; // 新对象
+      var x2 = ""; // 新的原始字符串
+      var x3 = 0; // 新的原始数值
+      var x4 = false; // 新的原始逻辑值
+      var x5 = []; // 新的数组对象
+      var x6 = /()/; // 新的正则表达式对象
+      var x7 = function() {}; // 新的函数对象
+    </script>
+  </body>
+</html>

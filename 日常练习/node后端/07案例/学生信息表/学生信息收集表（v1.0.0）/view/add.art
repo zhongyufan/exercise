@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>学生档案</title>
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<script src="../js/jquery.js"></script>
+	<script src="../js/bootstrap.js"></script>
+</head>
+
+<body>
+	<header class="col-md-6 offset-md-3">
+		<h1 class="title">新建档案</h1>
+	</header>
+	<section class="col-md-6 offset-md-3">
+		<form action="/add" method="POST">
+			<div class="row">
+				<div class="form-group col-md">
+					<label for="name">姓名</label>
+					<input class="form-control" id="name" type="text" autofocus placeholder="请输入姓名" name="name">
+				</div>
+				<div class="form-group col-md">
+					<label for="age">年龄</label>
+					<input class="form-control" id="age" type="text" autofocus placeholder="请输入年龄" name="age">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col">
+					<label>邮箱地址</label>
+					<input class="form-control" type="text" placeholder="请输入邮箱地址" name="email">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-2">
+					<label>性别</label>
+					<div>
+						<div class="form-check-inline">
+							<input class="form-check-input" type="radio" name="sex" id="man" value="0">
+							<label class="form-check-label" for="man">
+								男
+							</label>
+						</div>
+						<div class="form-check-inline">
+							<input class="form-check-input" type="radio" name="sex" id="women" value="1">
+							<label class="form-check-label" for="women">
+								女
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group col-md-10">
+					<label>发展方向</label>
+					<div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="checkbox" id="good-0" value="前端" name="direction">
+							<label class="form-check-label" for="good-0">
+								前端
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="checkbox" id="good-1" value="后端" name="direction">
+							<label class="form-check-label" for="good-1">
+								后端
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="checkbox" id="good-2" value="全栈" name="direction">
+							<label class="form-check-label" for="good-2">
+								全栈
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="checkbox" id="good-3" value="架构师" name="direction">
+							<label class="form-check-label" for="good-3">
+								架构师
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="checkbox" id="good-4" value="大数据" name="direction">
+							<label class="form-check-label" for="good-4">
+								大数据
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="checkbox" id="good-5" value="UI设计" name="direction">
+							<label class="form-check-label" for="good-5">
+								UI设计
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="checkbox" id="good-6" value="产品经理" name="direction">
+							<label class="form-check-label" for="good-6">
+								产品经理
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="checkbox" id="good-7" value="AI算法" name="direction">
+							<label class="form-check-label" for="good-7">
+								AI算法
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md">
+					<label for="chooes">
+						报名课程
+					</label>
+					<div class="form-group">
+						<select class="form-control" id="chooes" name="class">
+							<option value="前端与移动开发">前端与移动开发</option>
+							<option value="PHP">PHP</option>
+							<option value="JAVA">JAVA</option>
+							<option value="Android">Android</option>
+							<option value="IOS">IOS</option>
+							<option value="UI设计">UI设计</option>
+							<option value="C++">C++</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group col">
+					<div class="form-group">
+						<label for="date">学习日期</label>
+						<input type="date" name="date" id="date" class="form-control">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<input type="submit" value="提交" class="btn btn-primary clo-md-6 offset-3" style="width: 50%;">
+			</div>
+		</form>
+	</section>
+</body>
+
+</html>

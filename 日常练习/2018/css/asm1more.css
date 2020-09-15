@@ -1,0 +1,201 @@
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#navcontent, #headercontent {
+    overflow: auto;
+}
+
+#header #headercontent li, #navleft, #nav #navleft #navbutton1 .navbuttona1, #search #more #morethan #tex {
+    float: left;
+}
+
+#header {
+    height: 90px;
+    width: 100%;
+    background: #000000;
+}
+
+#header #headercontent {
+    width: 1600px;
+    margin: 0 auto;
+    height: 90px;
+}
+
+#header #headercontent ul {
+    float: right;
+    color: white;
+    list-style-type: none;
+}
+
+#header #headercontent li {
+    font: 18px "微软雅黑";
+    width: 150px;
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+}
+
+#header #headercontent a {
+    display: inline-block;
+    width: 150px;
+    height: 90px;
+    color: white;
+    text-decoration: none;
+}
+
+#header #headercontent a:hover {
+    background-color: white;
+    color: black;
+}
+
+#header #headercontent span {
+    color: black;
+}
+
+/*导航栏结束*/
+#search {
+
+    background: #eceff1;
+    height: 450px;
+    width: 100%;
+}
+
+#search #more {
+    width: 1600px;
+    height: 450px;
+    margin: 0 auto;
+}
+
+#search #more #morethan {
+    width: 1200px;
+    height: 50px;
+    margin: 0 auto;
+    padding-top: 200px;
+}
+
+#search #more #morethan #tex {
+    height: 50px;
+    width: 85%;
+    border: none;
+    font: 18px "微软雅黑";
+    text-indent: 1em;
+}
+
+#search #more #morethan #sub {
+    height: 50px;
+    width: 15%;
+    float: right;
+    background: #3385ff;
+    border: none;
+    color: white;
+    font: 18px "微软雅黑";
+}
+
+/*搜索框结束*/
+#footer {
+    width: 100%;
+    height: 80px;
+    background: black;
+}
+
+#footer p {
+    color: #cccccc;
+    text-align: center;
+    padding-top: 40px;
+}
+
+#footer p a {
+    color: #cccccc;
+    text-decoration: none;
+}
+
+#content1 {
+    width: 100%;
+    height: 550px;
+}
+
+
+
+#content1 #contentwith #contentright img {
+    border-radius: 20px;
+    height: 300px;
+    width: 215px;
+}
+
+
+
+#content1 #contentwith #contentleft h1 {
+    color: black;
+    text-indent: 1em;
+    padding: 30px 0px 20px 40px;
+}
+
+#content1 #contentwith #contentleft p {
+    text-indent: 2em;
+    font: 18px "微软雅黑";
+    line-height: 1.5em;
+    padding-top: 10px;
+    padding-left: 40px;
+}
+
+/*内容介绍完成*/
+#morecontent {
+    width: 100%;
+    height: 500px;
+}
+
+#morecontent #character {
+    width: 1600px;
+    height: 550px;
+    margin: 0 auto;
+}
+#morecontent .morecontentwall1 {
+    width: 1000px;
+    height: 30px;
+}
+
+#morecontent #character #characterwall #charactercontent {
+    height: 450px;
+    width: 1600px;
+
+}
+
+#morecontent #character #characterwall #charactercontent #character1, #character2, #character3, #character4 {
+    width: 350px;
+    height: 450px;
+    float: left;
+    margin-left: 40px;
+}
+
+#morecontent #character #characterwall #charactercontent .charactername {
+    width: 350px;
+    height: 50px;
+    transition: all 0.4s;
+}
+
+#morecontent #character #characterwall #charactercontent .charactername:hover {
+    margin-top: -50px;
+    transform: scale(1.1);
+    color: rgba(0, 0, 0, 0);
+}
+
+#morecontent #character #characterwall #charactercontent span {
+    font: 18px "微软雅黑";
+    line-height: 50px;
+    width: 350px;
+    height: 50px;
+    display: inline-block;
+    text-align: center;
+}
+
+#morecontent #character #characterwall #charactercontent img {
+    width: 300px;
+    height: 400px;
+    margin-left: 25px;
+    border-radius: 20px;
+}
+
+/*演员介绍完成*/

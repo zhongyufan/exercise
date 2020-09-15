@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>账户管理</title>
+    <meta name="viewport"
+        content="width=device-width,heght=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="../css/list.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="https://fonts.font.im/css?family=Indie+Flower">
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/vue.js"></script>
+    <script src="../js/axios.js"></script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div class="col-md-10 offset-md-1">
+            <ul class="nav">
+                <li class="nav-item dropdown">
+                    <div class="userinfo nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false">
+                        <img class="userImage img-thumbnail" :src="userInfo.image" alt="">
+                        <span class="userName">{{userInfo.name}}</span>
+                    </div>
+                    <div class="menu dropdown-menu dropdown-menu-right text-center">
+                        <a class="dropdown-item" href="/stu">学生信息</a>
+                        <a class="dropdown-item" href="#">个人资料</a>
+                        <a class="dropdown-item" href="/user/list">用户管理</a>
+                        <a class="dropdown-item" href="/log/logout">退出登陆</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="table-content col-md-10 offset-md-1">
+            <div class="table-responsive">
+                <table class="table table-hover text-center">
+                    <caption>账户管理</caption>
+                    <thead>
+                        <tr class="center">
+                            <th scope="col" v-for="item in title">{{item}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="item in info">
+                            <td>{{item._id}}</td>
+                            <td>{{item.username}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.role=="admin"?"管理员":'普通用户'}}</td>
+                            <td>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" :id="item._id"
+                                        v-model="item.state" @click="change(item._id,item.state)">
+                                    <label class="custom-control-label" :for="item._id"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <button class="btn btn-outline-primary btn-sm"
+                                    @click="location.href='/updata?id='+item._id">修改</button>
+                                <button class="btn btn-outline-danger btn-sm"
+                                    @click="location.href='/deleteInfo?id='+item._id">删除</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-4 offset-md-4 add">
+            <input type="submit" onclick="location.href='/user/add'" value="添加" class="btn btn-primary"
+                style="width:100%;">
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                title: ['ID', '用户名', '邮箱地址', '角色', '状态', '更多操作'],
+                info: [],
+                user: {
+                    userName: 'xxx',
+                    userImage: 'http://img1.imgtn.bdimg.com/it/u=3170379310,1742401393&fm=11&gp=0.jpg'
+                },
+                userInfo: {}
+            },
+            methods: {
+                change(id, state) {
+                    axios.get('http://localhost/user/stateChange', {
+                            params: {
+                                id: id,
+                                state: state
+                            }
+                        })
+                        .then((res) => {
+                            console.log(res);
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        })
+                }
+            },
+            mounted() {
+                const _this = this;
+                axios.get('http://localhost/user/userList')
+                    .then((res) => {
+                        _this.info = res.data.result;
+                        _this.userInfo = res.data.userInfo;
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
+            },
+        });
+    </script>
+</body>
+
+</html>

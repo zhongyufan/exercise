@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background: #cccccc;
+        }
+    </style>
+    <script>
+        var timer=null;
+        function startMove() {
+            var oDiv =document.getElementById('div1');
+            clearInterval(timer); //关闭旧的定时器 开启新的定时器 保证只有一个定时器在工作
+            timer=setInterval(function () {
+                var speed=1;
+                if (oDiv.offsetLeft>=300){
+                    clearInterval(timer);
+                }
+                else{
+                    oDiv.style.left=oDiv.offsetLeft+speed+'px';
+                }
+            },30);
+        }
+        //运动框架
+    </script>
+</head>
+<body>
+<input type="button" id="bnt1" value="开始运动" onclick="startMove()">
+<div id="div1"></div>
+</body>
+</html>

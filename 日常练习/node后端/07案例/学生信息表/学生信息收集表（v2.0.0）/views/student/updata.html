@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>学生档案</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/vue.js"></script>
+    <script src="../js/axios.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header class="col-md-6 offset-md-3">
+            <h1 class="title">修改档案</h1>
+        </header>
+        <section class="col-md-6 offset-md-3">
+            <form :action="url" method="POST">
+                <div class="row">
+                    <div class="form-group col-md">
+                        <label for="name">姓名</label>
+                        <input :value="stuInfo.name" class="form-control" id="name" type="text" autofocus
+                            placeholder="请输入姓名" name="name">
+                    </div>
+                    <div class="form-group col-md">
+                        <label for="age">年龄</label>
+                        <input :value="stuInfo.age" class="form-control" id="age" type="text" placeholder="请输入年龄"
+                            name="age">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label>邮箱地址</label>
+                        <input :value="stuInfo.email" class="form-control" type="text" placeholder="请输入邮箱地址"
+                            name="email">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-2">
+                        <label>性别</label>
+                        <div>
+                            <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="sex" id="man" v-model="stuInfo.sex"
+                                    :value="0">
+                                <label class="form-check-label" for="man">
+                                    男
+                                </label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="sex" id="women" v-model="stuInfo.sex"
+                                    :value="1">
+                                <label class="form-check-label" for="women">
+                                    女
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-10">
+                        <label>发展方向</label>
+                        <div>
+                            <div class="form-check form-check-inline" v-for="item in direction">
+                                <input class="form-check-input" type="checkbox" v-model="stuInfo.direction"
+                                    :value="item" name="direction">
+                                <label class="form-check-label">
+                                    {{item}}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md">
+                        <label for="chooes">
+                            报名课程
+                        </label>
+                        <div class="form-group">
+                            <select class="form-control" id="chooes" name="class" v-model="stuInfo.class">
+                                <option>前端与移动开发</option>
+                                <option>PHP</option>
+                                <option>JAVA</option>
+                                <option>Android</option>
+                                <option>IOS</option>
+                                <option>UI设计</option>
+                                <option>C++</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md">
+                        <div class="form-group">
+                            <label for="date">学习日期</label>
+                            <input type="date" :value="stuInfo.date|dateFormat" name="date" id="date"
+                                class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="submit" value="提交" class="btn btn-primary clo-md-6 offset-3" style="width: 50%;">
+                </div>
+            </form>
+        </section>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                stuInfo: [],
+                direction: ['前端', '后端', '全栈', '架构师', '大数据', 'UI设计', '产品经理', 'AI算法'],
+                stuclass: {},
+            },
+            methods: {
+                get: function () {
+                    console.log(this.stuInfo.class);
+                }
+            },
+            computed: {
+                url: function () {
+                    return '/stu/updataStuInfo?id=' + this.stuInfo._id;
+                }
+            },
+            mounted() {
+                const _this = this;
+                axios.get('http://localhost/stu/updataresult' + window.location.search)
+                    .then((res) => {
+                        _this.stuInfo = res.data;
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    })
+            },
+            filters: {
+                // 处理日期
+                dateFormat: function (value) {
+                    if (value == null) {
+                        return '';
+                    }
+                    return value.replace(/[A-Z]\d\d:\d\d:\d\d.\d\d\d[A-Z]/, '');
+                },
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>看你想看的</title>
+    <style>
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        body {
+            background-color: #eeebeb;
+        }
+
+        img {
+            width: 120px;
+            height: 100px;
+        }
+
+        h3 {
+            color: #cccccc;
+        }
+
+        span {
+            color: #eee;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        p {
+            text-indent: 2em;
+        }
+
+        h2, h3, span {
+            line-height: 2em;
+        }
+        #header,#content,#footer{
+            font-size: 15px;
+            line-height: 1.4em;
+        }
+        #box1, #box2, #box3, #box4, #box5{
+            background-color: white;
+            border: 2px solid #cccccc;
+            margin: 20px;
+            padding: 20px;
+            width: 60%;
+            box-sizing: border-box;
+            zoom: 1;
+        }
+
+        #header {
+            background-color: #333;
+            width: 100%;
+            height: 60px;
+            text-align: right;
+            line-height: 60px;
+        }
+
+        #content {
+            position: relative;
+        }
+
+        #footer {
+
+        }
+
+        #header ul li {
+            display: inline-block;
+            padding-right: 20px;
+        }
+
+        #header ul a {
+            text-decoration: none;
+            color: white;
+        }
+
+        #header ul .bar1 {
+            color: #ccc;
+        }
+
+        #content #box3 .picture1 div {
+            border: 1px solid #ccc;
+            width: 120px;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            line-height: 2em;
+            display: inline-block;
+        }
+
+        #content #box4 .entry1 {
+            margin-left: 30px;
+        }
+
+        #content #box5 {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 35%;
+            margin-top: 0px;
+        }
+
+        #content #box4 table {
+            width: 100%;
+            border-collapse: collapse;
+
+        }
+
+        #content #box4 table tr, td {
+            border: 1px solid #ccc;
+        }
+
+        #content #box4 table thead {
+            background-color: #333;
+            color: white;
+        }
+
+        #content #box4 table tfoot {
+            background-color: #ccc;
+            color: white;
+        }
+
+        #content #box5 .head1 {
+            border-left: 2px solid #cccccc;
+            padding: 10px;
+        }
+
+        #content #box5 .from1 {
+            line-height: 1.5em;
+        }
+
+        #content #box5 .from1 span {
+            display: inline-block;
+            width: 30%;
+            text-align: right;
+            line-height: 14px;
+            font-size: 14px;
+        }
+
+        #content #box5 .from1 div {
+            display: inline-block;
+            width: 55%;
+            font-size: 12px;
+            color: #ccc;
+            margin-left: 10px;
+        }
+
+        #content #box5 span, label {
+            color: black;
+        }
+        #content #box5 .from1 div textarea{
+            width: 100%;
+        }
+        #content #box5 #sure{
+            width: 100%;
+            height: 30px;
+            background-color: #3355d0;
+            border: 1px #3355d0 solid;
+            color: white;
+            border-radius: 5px;
+            margin: 10px 0px -10px 0px;
+        }
+        #footer{
+            background: #2B2B2B;
+            position: absolute;
+            right: 0px;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: white;
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+<div id="header">
+    <ul>
+        <li><a href="#">导航链接一</a></li>
+        <li><a href="#">导航链接二</a></li>
+        <li><a href="#">导航链接三</a></li>
+        <li><a href="#" class="bar1">导航链接四</a></li>
+    </ul>
+</div>
+<div id="content">
+    <div id="box1">
+        <h2>文章一级标题</h2>
+        <h3>文章二级标题</h3>
+        <span>文章作者 文章发布时间</span>
+        <p>
+            这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br>这是一个很长很长的段落，这是一个很长很长的段落，<a
+            href="htt是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这p://ife,baidu.com">这里有个链接链接到http://ife,baidu.com</a>这是一个很长很长的段落，这是一个很长很长的段落，<strong>这里有个粗体字</strong>这是一个很长很长的段落。
+        </p>
+        <img src="braum_01_.jpg" alt="图片">
+        <p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br>这是一个很长很长的段落，这是一个很长很长的段落，<strong>这里有个粗体字</strong>这是一个很长很长的段落，这是一个很长很长的段落，<a
+            href="http://ife,baidu.com">这里有一个链点击后打开新窗口链接到http://ife,baidu.com</a>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。
+        </p>
+    </div>
+    <div id="box2">
+        <h2>另一篇文章一级标题</h2>
+        <h3>文章二级标题</h3>
+        <span>文章作者 文章发布时间</span>
+        <p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，<strong>这里有个粗体字</strong>这是一个很长很长的段落，这是一个很长很长的段落，<a
+            href="http://ife,baidu.com">这里有个链接链接到http://ife,baidu.com</a>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落,这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。
+        </p>
+        <img src="braum_01_.jpg" alt="图片">
+        <ul class="ui2">
+            <li>列表项目一</li>
+            <li>列表项目二</li>
+            <li>列表项目三</li>
+        </ul>
+    </div>
+    <div id="box3">
+        <h2>图片</h2>
+        <div class="picture1">
+            <div>
+                好看的图片
+                <br><img src="braum_01_.jpg" alt="图片">
+            </div>
+            <div>
+                好看的图片
+                <br><img src="braum_01_.jpg" alt="图片">
+            </div>
+            <div>
+                好看的图片
+                <br><img src="braum_01_.jpg" alt="图片">
+            </div>
+            <div>
+                好看的图片
+                <br><img src="braum_01_.jpg" alt="图片">
+            </div>
+            <div>
+                好看的图片
+                <br><img src="braum_01_.jpg" alt="图片">
+            </div>
+            <div>
+                好看的图片
+                <br><img src="braum_01_.jpg" alt="图片">
+            </div>
+            <div>
+                好看的图片
+                <br><img src="braum_01_.jpg" alt="图片">
+            </div>
+            <div>
+                好看的图片
+                <br><img src="braum_01_.jpg" alt="图片">
+            </div>
+            <div>
+                好看的图片
+                <br><img src="braum_01_.jpg" alt="图片">
+            </div>
+            <div>
+                好看的图片
+                <br><img src="braum_01_.jpg" alt="图片">
+            </div>
+            <div>
+                好看的图片
+                <br><img src="braum_01_.jpg" alt="图片">
+            </div>
+            <div>
+                好看的图片
+                <br><img src="braum_01_.jpg" alt="图片">
+            </div>
+        </div>
+    </div>
+    <div id="box4">
+        <h2>最后一篇文章一级标题</h2>
+        <h3>文章二级标题</h3>
+        <span>文章作者 文章发布时间</span>
+        <ol class="entry1">
+            <li>排名1</li>
+            <li>排名2</li>
+            <li>排名3</li>
+        </ol>
+        <br>
+        下面是一个表格，给表格加一个border="1"好让你看出是一个表格
+        <br>
+        <table>
+            <thead>
+            <tr>
+                <td>表头</td>
+                <td>表头</td>
+                <td>表头</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>表内容单元格</td>
+                <td>表内容单元格</td>
+                <td><a href="#">操作</a></td>
+            </tr>
+            <tr>
+                <td>表内容单元格</td>
+                <td>表内容单元格</td>
+                <td><a href="#">操作</a></td>
+            </tr>
+            <tr>
+                <td>表内容单元格</td>
+                <td>表内容单元格</td>
+                <td><a href="#">操作</a></td>
+            </tr>
+            <tr>
+                <td>表内容单元格</td>
+                <td>表内容单元格</td>
+                <td><a href="#">操作</a></td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td>总计</td>
+                <td colspan="2">1000</td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div id="box5">
+        <div class="head1">这里以后是一个侧栏，这是侧栏的标题</div>
+        <div class="from1">
+            <span>请输入邮箱地址</span>
+            <div><input type="text" value="这是一个文本输入框"></div>
+        </div>
+        <div class="from1">
+            <span></span>
+            <div>邮箱地址请按要求格式输入</div>
+        </div>
+        <div class="from1">
+            <span>请输入密码</span>
+            <div><input type="text" value="这是一个文本输入框"></div>
+        </div>
+        <div class="from1">
+            <span>请重复输入密码</span>
+            <div><input type="text" value="这是一个文本输入框"></div>
+        </div>
+        <div class="from1">
+            <span></span>
+            <div>密码请为6-16位英文数字</div>
+        </div>
+        <div class="from1">
+            <span>性别</span>
+            <div>
+                <label>
+                    <input type="radio" name="Q1" value="boy" checked="checked" style="color: blue">男
+                </label>
+                <label>
+                    <input type="radio" name="Q1" value="girl">女
+                </label>
+            </div>
+        </div>
+        <div class="from1">
+            <span>城市</span>
+            <div>
+                <select size="1">
+                    <option value="GuangZhou">广州</option>
+                    <option value="BeiJing" selected="selected">北京</option>
+                    <option value="ShangHai">上海</option>
+                </select>
+            </div>
+        </div>
+        <div class="from1">
+            <span>爱好</span>
+            <div style="color: black">
+                <input type="checkbox" name="checkbox1" value="checkbox">运动
+                <input type="checkbox" name="checkbox2" value="checkbox">艺术
+                <input type="checkbox" name="checkbox3" value="checkbox">科学
+            </div>
+        </div>
+        <div class="from1">
+            <span>个人描述</span>
+            <div>
+                <textarea cols="30" rows="4">这是一个多行输入框，输入您的个人描述</textarea>
+            </div>
+        </div>
+        <div>
+            <input type="submit" value="确认提交" id="sure">
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <p class="copy">版权所有 &copy;</p>
+</div>
+</body>
+</html>

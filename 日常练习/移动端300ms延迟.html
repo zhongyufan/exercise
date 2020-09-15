@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+    <script>
+        /**
+         * 解决方案 hack：
+         * 禁用缩放 user-scalable=no
+         * 样式设置 touch-action: manipulation(只允许进行滚动和持续缩放操作)
+         * 添加 width=device-width
+         * FastClick原理
+         * 在touchstart/touchend 添加event.preventDefault()取消出发后续事件
+         */
+    </script>
+</head>
+
+<body>
+
+    <div></div>
+    <script>
+        let oDiv = document.querySelector('div');
+        oDiv.addEventListener('touchstart', function () {
+            // event.preventDefault(); 
+            console.log('touchstart');
+        })
+        oDiv.addEventListener('touchmove', function () {
+            console.log('touchmove');
+        })
+        oDiv.addEventListener('touchend', function () {
+            console.log('touchend');
+            // event.preventDefault();
+            // 然后再触发绑定
+            // document.createEvent('MouseEvents',function () { })
+            // EventTarget.dispatchEvent()
+        })
+        oDiv.addEventListener('mousemove', function () {
+            console.log('mousemove');
+        })
+        oDiv.addEventListener('mousedown', function () {
+            console.log('mousedown');
+        })
+        oDiv.addEventListener('mouseup', function () {
+            console.log('mouseup');
+        })
+        oDiv.addEventListener('click', function () {
+            console.log('click');
+        })
+    </script>
+</body>
+
+</html>

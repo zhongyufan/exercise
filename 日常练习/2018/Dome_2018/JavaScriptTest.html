@@ -1,0 +1,104 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<title>IFE JavaScript Task 01</title>-->
+<!--<style>-->
+<!--#div1 .active {-->
+<!--background: yellow;-->
+<!--}-->
+
+<!--#div1 div {-->
+<!--width: 200px;-->
+<!--height: 300px;-->
+<!--background: #cccccc;-->
+<!--border: 1px solid black;-->
+<!--display: none;-->
+<!--}-->
+<!--</style>-->
+<!--<script>-->
+
+<!--</script>-->
+<!--<body>-->
+<!--<div id="div1">-->
+<!--<input type="button" value="教育" class="active">-->
+<!--<input type="button" value="培训">-->
+<!--<input type="button" value="睡觉">-->
+<!--<input type="button" value="吃饭">-->
+<!--<div style=" display: block;">1111</div>-->
+<!--<div>2222</div>-->
+<!--<div>3333</div>-->
+<!--<div>4444</div>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+    <style>
+        #div1 .active {
+            color: green;
+        }
+
+        #div1 div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            background: greenyellow;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            var aBtn = oDiv.getElementsByTagName('input');
+            var aDiv = oDiv.getElementsByTagName('div');
+
+            for (var i = 0; i < aBtn.length; i++) {
+                aBtn[i].indexen = i;
+                aBtn[i].onclick = function () {
+                    for (var i = 0; i < aBtn.length; i++) {
+                        aBtn[i].className = '';
+                        aDiv[i].style.display = 'none';
+                    }
+                    this.className = 'active';
+                    aDiv[this.indexen].style.display = 'block';
+                };
+
+            }
+        }
+        //        window.onload = function () {
+        //            var oDiv1 = document.getElementById('div1');
+        //            var aBnt = oDiv1.getElementsByTagName('input');
+        //            var aDiv = oDiv1.getElementsByTagName('div');
+        //
+        //            for (var i = 0; i < aBnt.length; i++) {
+        //                aBnt[i].index = i;
+        //                aBnt[i].onclick = function () {
+        //                    for (var i = 0; i < aBnt.length; i++) {
+        //                        aBnt[i].className = '';
+        //                        aDiv[i].style.display = 'none';
+        //                    }
+        //                    this.className = 'active';
+        //                    aDiv[this.index].style.display = 'block';
+        //                }
+        //            }
+        //        }
+    </script>
+<body>
+<div id="div1">
+    <input type="button" value="睡">
+    <input type="button" value="你">
+    <input type="button" value="妹">
+    <input type="button" value="妹">
+    <input type="button" value="可以吗？">
+    <div>你想睡谁?</div>
+    <div>想睡我？</div>
+    <div>啊！好好说话啊！别骂人</div>
+    <div>噢！原来你是想睡我妹</div>
+    <div>不给，滚蛋，肥水不留外人田</div>
+</div>
+</body>
+</html>

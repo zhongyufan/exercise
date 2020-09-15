@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹性框布局（移动端WEB）</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .flex_container{
+            width:95%;
+            padding:20px;
+            border: 1px solid red;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+        .flex_container .flex_itemOne, .flex_itemTwo, .flex_itemThree{
+            width:150px;
+            padding:20px;
+            border:1px solid #f00;
+            list-style: none;
+        }
+        .flex_itemOne{
+            height:120px;
+        }
+        .flex_itemTwo{
+            height:100px;
+        }
+        .flex_itemThree{
+            height:40px;
+        }
+        .flex_container .flex_itemFour{
+            width: 150px;
+            list-style: none;
+            border:1px solid blue;
+            height:200px;
+        }
+        @media screen and (max-width:640px){
+            .flex_container{
+                flex-wrap:wrap;
+            }
+            .flex_itemFour{
+                order:-1;
+            }
+        }
+    </style>
+</head>
+<body>
+<ul class="flex_container">
+    <li class="flex_itemOne"></li>
+    <li class="flex_itemTwo"></li>
+    <li class="flex_itemThree"></li>
+    <li class="flex_itemFour"></li>
+</ul>
+</body>
+</html>

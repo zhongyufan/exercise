@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过滤器</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{msg | up }}</p>
+        <p>{{msg | up('元') }}</p>
+        <p>{{msg | up | add }}</p>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                msg: 'abc'
+            },
+            filters: {
+                up: function (e, y = '') {
+                    return e.toUpperCase() + y;
+                },
+                add: function (e) {
+                    return e + '----- 哈哈哈';
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

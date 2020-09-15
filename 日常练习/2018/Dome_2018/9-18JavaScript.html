@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类型转换-字符串转数字</title>
+</head>
+<script>
+    window.onclick = function () {
+        var oTx1 = document.getElementById('tx1');
+        var oTx2 = document.getElementById('tx2');
+        var oBtn = document.getElementById('btn1');
+        var oTx3 = document.getElementById('tx3');
+        var oBtn1 = document.getElementById('btn2');
+        var oBtn2 = document.getElementById('btn3');
+        var oBtn3 = document.getElementById('btn4');
+
+
+
+        oBtn.onclick = function () {
+            var a = parseInt(oTx1.value);
+            var b = parseInt(oTx2.value);
+
+            if (oBtn1.onclick=function () {
+                     oTx3.value=a+b;
+                }){
+                oTx3.value=a+b;
+            }
+            else if (oBtn2.onclick=function () {
+                    oTx3.value=a-b;
+                }){
+                oTx3.value=a-b;
+            }
+            else if (oBtn3.onclick=function () {
+                    oTx3.value=a*b;
+                }){
+                oTx3.value=a*b;
+            }
+            else ( oTx3.value=a/b);
+
+
+
+//            else if (oBtn2.onclick) {
+//                oTx3.value = a - b;
+//
+//            }
+//            else if (oBtn3.onclick) {
+//                oTx3.value = a * b;
+//            }
+//            else(oTx3.value = a / b);
+
+        }
+
+    }
+</script>
+<body>
+<form action="">
+<input type="text" id="tx1">
+
+<input type="button" value="+" id="btn2">
+<input type="button" value="-" id="btn3">
+<input type="button" value="*" id="btn4">
+<input type="button" value="/" id="btn5">
+
+<input type="text" id="tx2">
+<input type="button" value="得" id="btn1">
+<input type="text" id="tx3">
+    <input type="reset" value="重置">
+</form>
+
+</body>
+</html>

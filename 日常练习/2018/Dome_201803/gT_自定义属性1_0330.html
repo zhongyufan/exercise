@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义属性</title>
+    <style>
+        input{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var aInput=document.getElementsByTagName('input');
+            var aText=['1','2','3','4'];
+            for(var i=0;i<aText.length;i++){
+                aInput[i].num=0;
+                aInput[i].onclick=function () {
+                    this.value=aText[this.num];
+                    this.num++;
+                    if(this.num===aText.length){
+                        this.num=0;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="0">
+<input type="button" value="0">
+<input type="button" value="0">
+</body>
+</html>

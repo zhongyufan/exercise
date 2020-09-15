@@ -1,0 +1,266 @@
+
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    border: 0;
+}
+
+
+#header #nav li {
+    float: left;
+}
+
+#header {
+
+    height: 50px;
+    width: 100%;
+    min-width: 1360px;
+    background: #333333;
+}
+
+#header #nav {
+    width: 1360px;
+    margin: 0 auto;
+    height: 50px;
+}
+
+#header #nav ul {
+    float: right;
+    color: white;
+    list-style-type: none;
+}
+
+#header #nav li {
+    font: 15px "微软雅黑";
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+#header #nav a {
+    display: inline-block;
+    width: 120px;
+    height: 50px;
+    color: white;
+    text-decoration: none;
+}
+
+#header #nav a:hover {
+    background: #eb504e;
+    color: white;
+}
+
+#header #nav span {
+    color: black;
+}
+
+
+/*导航栏结束*/
+
+#goods1{
+    width: 100%;
+    min-width: 1360px;
+    text-align: center;
+}
+#goods1 #show{
+    width: 1360px;
+    height: 510px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    display: inline-block;
+    background: url("../image/Asm2/xiaomi8.jpg") no-repeat;
+    background-size: 1360px;
+    transition: all 0.4s;
+}
+#show:hover{
+    transform: scale(1.02);
+    box-shadow: 2px 2px 10px #afc1cb;
+}
+#show a{
+    display: inline-block;
+    width: 1360px;
+    height: 510px;
+}
+/*商品栏1完成*/
+#goods2{
+    width: 100%;
+    min-width: 1360px;
+    text-align: center;
+    height: 450px;
+    background: #f5f5f5;
+}
+#show1{
+    width: 1360px;
+    height: 410px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+#show1Left{
+    border-radius: 20px;
+    width: 650px;
+    height: 410px;
+    float: left;
+    transition: all 0.4s;
+    background: url("../image/Asm2/IPAD.jpg") no-repeat;
+    background-size: 660px;
+}
+
+#show1Right{
+    border-radius: 20px;
+    width: 650px;
+    height: 410px;
+    float: right;
+    transition: all 0.4s;
+    background: url("../image/Asm2/elegant_black_large.jpg") no-repeat;
+    background-size: 650px;
+}
+#show1Left:hover{
+    transform: scale(1.02);
+    box-shadow: 2px 2px 10px #afc1cb;
+}
+#show1Right:hover{
+    transform: scale(1.02);
+    box-shadow: 2px 2px 10px #afc1cb;
+}
+/*商品栏2完成*/
+#goods3{
+    width: 100%;
+    min-width: 1360px;
+    text-align: center;
+    height: 450px;
+    background: #f5f5f5;
+}
+#show2{
+    width: 1360px;
+    height: 410px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+#show2Left{
+    border-radius: 20px;
+    width: 650px;
+    height: 410px;
+    float: left;
+    transition: all 0.4s;
+    background: url("../image/Asm2/imac_large.jpg") no-repeat;
+    background-size: 650px;
+}
+
+#show2Right{
+    border-radius: 20px;
+    width: 650px;
+    height: 410px;
+    float: right;
+    transition: all 0.4s;
+    background: url("../image/Asm2/performance_large.jpg") no-repeat ;
+    background-size: 490px;
+
+}
+#show2Left:hover{
+    transform: scale(1.02);
+    box-shadow: 2px 2px 10px #afc1cb;
+}
+#show2Right:hover{
+    transform: scale(1.02);
+    box-shadow: 2px 2px 10px #afc1cb;
+}
+/*商品栏3完成*/
+#news {
+    background: #f5f5f5;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#news #news-content{
+    width: 1360px;
+    height: 450px;
+    display: flex;
+    justify-content: space-around;
+}
+#news #news-content div{
+    width: 440px;
+    height: 450px;
+    background: white;
+    border-radius: 20px;
+    position: relative;
+}
+#news #news-content div .news-text {
+    position: absolute;
+    left: 20px;
+    font-weight: normal;
+    font-size: 22px;
+    color: #222;
+    line-height: 44px;
+}
+#news #news-content div .news-data{
+    position: absolute;
+    left: 5px;
+    top: 44px;
+}
+/*推荐栏完成*/
+#footer{
+    width: 100%;
+    min-width: 1360px;
+    text-align: center;
+    background: #eb504e;
+}
+#footer #footerContent{
+    width: 1360px;
+    margin: 0 auto;
+}
+#footer #footerContent #footerContentText{
+    display: inline-block;
+    height: 150px;
+    margin-top: 50px;
+    font: normal 2.5em '微软雅黑';
+    color: white;
+}
+#footer #footerContent #footerContentLink{
+    height: 200px;
+}
+#footer #footerContent #link1,#link2,#link3,#link4,#link5,#link6{
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-left: 140px;
+}
+
+#footer #footerContent #link1:hover,#link2:hover,#link3:hover,#link4:hover,#link5:hover,#link6:hover{
+    transform: scale(1.05);
+}
+
+#footer #footerContent #link1{
+    background: url("../image/Asm2/facebook.png") no-repeat;
+    background-size: 100px;
+}
+#footer #footerContent #link2{
+    background: url("../image/Asm2/twitter.png") no-repeat;
+    background-size: 100px;
+}
+#footer #footerContent #link3{
+
+    background: url("../image/Asm2/youtube.png") no-repeat;
+    background-size: 100px;
+}
+#footer #footerContent #link4{
+
+    background: url("../image/Asm2/instagram.png") no-repeat;
+    background-size: 100px;
+}
+#footer #footerContent #link5{
+
+    background: url("../image/Asm2/spotify.png") no-repeat;
+    background-size: 100px;
+}
+#footer #footerContent #link6{
+
+    background: url("../image/Asm2/facebook.png") no-repeat;
+    background-size: 100px;
+}
+

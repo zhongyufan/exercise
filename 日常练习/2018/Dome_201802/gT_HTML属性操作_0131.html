@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取网络图片</title>
+</head>
+<script>
+    window.onload=function () {
+        var oText=document.getElementById('text1');
+        var oBut=document.getElementById('but1');
+        var oImg=document.getElementById('getImg');
+
+        oBut.onclick=function () {
+            oImg.src=oText.value;
+        }
+    }
+</script>
+<body>
+<input type="text" id="text1">
+<input type="button" id="but1" value="点击获取">
+<br>
+<img src="" id="getImg" alt="地址出错" width="300">
+</body>
+</html>

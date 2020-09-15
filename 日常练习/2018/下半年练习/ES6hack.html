@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6</title>
+    <script>
+        // 唯一值
+        // const arr=[1,2,2,4,5,6,7,8,4,4,5,6,7];
+        // const only=[...new Set(arr)];
+        // console.log(only);
+
+        // for循环优化
+        // for(let i=0,length=arr.length;i<length;i++){
+        // }
+
+        // 短路求值
+        // && 与
+        // 可以返回第一个 false
+        // 如果所有操作数的值都是 true，将返回最后一个表达式的值。
+        // || 或
+        // 可以返回第一个 true
+        // 如果所有操作数的值都是 false，将返回最后一个表达式的值。
+
+        // 三元运算符
+        // let x=1000;
+        // x>100?console.log('Above 100'):console.log('Below 100');
+        // x>100?(x>200?console.log('Above 200'):console.log('Between 100-200')):console.log('Below 100');
+
+        let one = 1, two = 2, three = 3;
+
+        console.log(one && two && three);
+        console.log(0 && null);
+        console.log(one || two || three);
+        console.log(0 || null);
+
+        function f() {
+            return (foo || []).length;
+        }
+
+        function ff() {
+            if (this.state.data) {
+                return this.state.data;
+            } else {
+                return 'Fetching Data';
+            }
+            // 等价于
+            return (this.state.data || 'Fetching Date');
+        }
+
+        // 0、“”、null、undefined、NaN 和 false 是假值之外，其他的都是真值。
+
+        // +''转换成字符串 +转换成数字
+        const val = 1 + '';
+        console.log(val);
+        console.log(typeof val);
+
+        // 快速幂运算
+        console.log(Math.pow(2, 4));
+        console.log(2 << 3);
+        console.log(2 ** 4);
+
+        // 快速取整
+        console.log(23.9 | 0);
+        console.log(-23.9 | 0);
+
+        // 格式化JSON
+        console.log(JSON.stringify({a: 'A', b: 'B'}, null, '\t'));
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

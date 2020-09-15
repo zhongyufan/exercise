@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义属性</title>
+    <link rel="stylesheet" href="../css/gT_自定义属性3_0330.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wall {
+            width: 100%;
+            height: 100px;
+        }
+
+        .content {
+            width: 70%;
+            height: 760px;
+            margin: 0 auto;
+            justify-content: center;
+        }
+
+        video {
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        .clik {
+            position: absolute;
+        }
+
+        .clik li {
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            list-style-type: none;
+            margin-top: 10px;
+            position: relative;
+            right: -1400px;
+        }
+
+        .clik .active {
+            background: #cc5839;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('content');
+            var oVideo = oDiv.getElementsByTagName('video')[0];
+            var oBuncing = oDiv.getElementsByTagName('div')[0];
+            var oUl = oDiv.getElementsByTagName('ul')[0];
+            var aLi = oUl.getElementsByTagName('li');
+            //创建数据
+            var aSrc = ['../video/iphone-8.mp4', '../video/XiaoMi6.mp4', '../video/iphone-Xmp4.mp4'];
+            var oldLi=null;
+            //初始化
+//            oBuncing.style.display='none';
+//            oVideo.src=aSrc[num];
+            for (var i = 0; i < aSrc.length; i++) {
+                oUl.innerHTML += '<li></li>';
+            }
+            //随机导入一个li的位置用于记录初始li
+            oldLi=aLi[0];
+
+            for (var i = 0; i < aLi.length; i++) {
+                aLi[i].index = i;
+                aLi[i].onclick = function () {
+                    oBuncing.style.display = 'none';
+                    oVideo.src = aSrc[this.index];
+                    //全部清空，当前添加
+//                    for(var i = 0; i < aLi.length; i++){
+//                        aLi[i].className='';
+//                    }
+//                    this.className='active';
+                    //上个清空，当前添加
+                    oldLi.className='';
+                    oldLi=this;//更新当前li的位置
+                    this.className='active';
+                }
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+<div class="wall"></div>
+<div class="content" id="content">
+    <ul class="clik" id="clik">
+
+    </ul>
+    <div class="bouncing" id="bouncing">
+        <div class="bouncing-loader">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <video autoplay="autoplay"></video>
+</div>
+</body>
+</html>

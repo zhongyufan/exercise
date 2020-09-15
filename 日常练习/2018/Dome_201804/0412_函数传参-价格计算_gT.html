@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型转换</title>
+    <script>
+        window.onload = function () {
+            var oUl = document.getElementById('list');
+            var aLi = oUl.getElementsByTagName('li');
+            var oAf = document.getElementById('all-foods');
+            var oAm = document.getElementById('all-money');
+            var oMe = document.getElementById('most-expensive');
+
+
+            for (var i = 0; i < aLi.length; i++) {
+                aLi[i].index=i;
+                fn1(aLi[i]);
+            }
+            function fn1(oLi) {
+                var aBtn = oLi.getElementsByTagName('input');
+                var aStr = oLi.getElementsByTagName('strong')[0];
+                var aEm = oLi.getElementsByTagName('em')[0];
+                var aSpan = oLi.getElementsByTagName('span')[0];
+                var n1 = Number(aStr.innerHTML);
+                var n2 = parseFloat(aEm.innerHTML);
+                var add = 0;
+                var sub = 0;
+
+                aBtn[0].onclick = function () {
+                    n1--;
+                    if (n1 < 0) {
+                        n1 = 0;
+                    }
+                    aStr.innerHTML = n1;
+                    aSpan.innerHTML = n1 * n2 + '元';
+                    sub=n1;
+//                    oAf.innerHTML = sub;
+                };
+                aBtn[1].onclick = function () {
+                    n1++;
+                    aStr.innerHTML = n1;
+                    aSpan.innerHTML = n1 * n2 + '元';
+                    add=n1;
+//                    oAf.innerHTML = add;
+                };
+                function test() {
+                    
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<ul id="list">
+    <li>
+        <input type="button" value="-">
+        <strong>0</strong>
+        <input type="button" value="+">
+        单价：<em>12.5元</em>
+        小计：<span>0元</span>
+    </li>
+    <li>
+        <input type="button" value="-">
+        <strong>0</strong>
+        <input type="button" value="+">
+        单价：<em>15.5元</em>
+        小计：<span>0元</span>
+    </li>
+    <li>
+        <input type="button" value="-">
+        <strong>0</strong>
+        <input type="button" value="+">
+        单价：<em>10.5元</em>
+        小计：<span>0元</span>
+    </li>
+    <li>
+        <input type="button" value="-">
+        <strong>0</strong>
+        <input type="button" value="+">
+        单价：<em>8.5元</em>
+        小计：<span>0元</span>
+    </li>
+    <li>
+        <input type="button" value="-">
+        <strong>0</strong>
+        <input type="button" value="+">
+        单价：<em>19.5元</em>
+        小计：<span>0元</span>
+    </li>
+    <li>
+        <input type="button" value="-">
+        <strong>0</strong>
+        <input type="button" value="+">
+        单价：<em>10.5元</em>
+        小计：<span>0元</span>
+    </li>
+    <br>
+    商品合计共：<span id="all-foods">0件</span>，共花费了：<span id="all-money">0元</span><br>
+    其中最贵的商品单价是：<span id="most-expensive">0元</span>
+</ul>
+
+</body>
+</html>

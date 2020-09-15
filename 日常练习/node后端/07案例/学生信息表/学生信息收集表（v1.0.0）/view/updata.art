@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>学生档案</title>
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<script src="../js/jquery.js"></script>
+	<script src="../js/bootstrap.js"></script>
+</head>
+
+<body>
+	<header class="col-md-6 offset-md-3">
+		<h1 class="title">修改档案</h1>
+	</header>
+	<section class="col-md-6 offset-md-3">
+		<form action="/updata?id={{@result._id}}" method="POST">
+			<div class="row">
+				<div class="form-group col-md">
+					<label for="name">姓名</label>
+					<input value="{{result.name}}" class="form-control" id="name" type="text" autofocus placeholder="请输入姓名" name="name">
+				</div>
+				<div class="form-group col-md">
+					<label for="age">年龄</label>
+					<input value="{{result.age}}" class="form-control" id="age" type="text" placeholder="请输入年龄" name="age">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col">
+					<label>邮箱地址</label>
+					<input value="{{result.email}}" class="form-control" type="text" placeholder="请输入邮箱地址" name="email">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-2">
+					<label>性别</label>
+					<div>
+						<div class="form-check-inline">
+							<input class="form-check-input" type="radio" name="sex" id="man" value="0" {{result.sex=='0'?'checked':''}}>
+							<label class="form-check-label" for="man">
+								男
+							</label>
+						</div>
+						<div class="form-check-inline">
+							<input class="form-check-input" type="radio" name="sex" id="women" value="1" {{result.sex=='1'?'checked':''}}>
+							<label class="form-check-label" for="women">
+								女
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group col-md-10">
+					<label>发展方向</label>
+					<div>
+						{{each result.direction}}
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value="{{$value}}" name="direction" checked>
+								<label class="form-check-label">
+									{{$value}}
+								</label>
+							</div>
+						{{/each}}
+						{{each notchoose}}
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value="{{$value}}" name="direction">
+								<label class="form-check-label">
+									{{$value}}
+								</label>
+							</div>
+						{{/each}}
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md">
+					<label for="chooes">
+						报名课程
+					</label>
+					<div class="form-group">
+						<select class="form-control" id="chooes" name="class">
+							<option value="前端与移动开发" {{result.class=="前端与移动开发"?'selected':''}}>前端与移动开发</option>
+							<option value="PHP" {{result.class=="PHP"?'selected':''}}>PHP</option>
+							<option value="JAVA" {{result.class=="JAVA"?'selected':''}}>JAVA</option>
+							<option value="Android" {{result.class=="Android"?'selected':''}}>Android</option>
+							<option value="IOS" >IOS</option>
+							<option value="UI设计" {{result.class=="UI设计"?'selected':''}}>UI设计</option>
+							<option value="C++" {{result.class=="C++"?'selected':''}}>C++</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group col-md">
+					<div class="form-group">
+						<label for="date">学习日期</label>
+						<input type="date" value="{{dateformat(result.date,'yyyy-mm-dd')}}" name="date" id="date" class="form-control">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<input type="submit" value="提交" class="btn btn-primary clo-md-6 offset-3" style="width: 50%;">
+			</div>
+		</form>
+	</section>
+</body>
+
+</html>

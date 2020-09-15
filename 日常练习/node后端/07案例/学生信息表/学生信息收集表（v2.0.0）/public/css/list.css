@@ -1,0 +1,52 @@
+table {
+	white-space: nowrap;
+
+
+}
+
+.table td,
+.table th {
+	vertical-align: middle !important;
+}
+
+.table-content {
+	border: 1px solid #ccc;
+	border-radius: 20px;
+	margin-top: 20px;
+}
+
+.add {
+	margin-top: 40px;
+}
+
+.direction {
+	margin-left: 10px;
+}
+
+.nav-item {
+	width: 100%;
+}
+
+.userinfo {
+	text-align: right;
+	margin-top: 40px;
+}
+
+.userImage {
+	width: 50px;
+	height: 50px;
+	margin-right: 20px;
+	text-align: right;
+	position: relative;
+}
+
+.userName {
+	display: inline-block;
+	height: 50px;
+	line-height: 50px;
+	font-size: 1.2rem;
+	vertical-align: middle;
+	margin-right: 10px;
+	color: #aaa;
+	font-family: 'Indie Flower';
+}

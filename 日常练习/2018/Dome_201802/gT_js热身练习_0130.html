@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .div1 {
+            margin: 20px;
+            width: 100px;
+            height: 100px;
+            border: 3px solid #ccc;
+        }
+
+        .but1 {
+            height: 40px;
+            background: red;
+            border: none;
+            color: #ccc;
+        }
+
+        .setting {
+            width: 400px;
+            height: 200px;
+            border: 20px solid rgba(204, 204, 204, 0.4);
+            text-align: center;
+            position: absolute;
+            top: 170px;
+            left: 500px;
+            display: none;
+        }
+        .s{
+                height: 50px;
+            line-height: 50px;
+        }
+        .bg1,.bg2,.bg3,.w{
+            height: 30px;
+            width: 40px;
+            border: none;
+        }
+        .bg1{
+            background: red;
+        }
+        .bg2{
+            background: yellow;
+        }
+        .bg3{
+            background: greenyellow;
+        }
+        .but2{
+            height: 30px;
+            width: 90px;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var oBut1=document.getElementById("but1");
+            var oSet=document.getElementById("set");
+            var oDiv=document.getElementById("div1");
+            var oBg1=document.getElementById("bg1");
+            var oBg2=document.getElementById("bg2");
+            var oBg3=document.getElementById("bg3");
+            var oW1=document.getElementById("w1");
+            var oW2=document.getElementById("w2");
+            var oW3=document.getElementById("w3");
+            var oH1=document.getElementById("h1");
+            var oH2=document.getElementById("h2");
+            var oH3=document.getElementById("h3");
+            var oBut2=document.getElementById("but2");
+            var oBut3=document.getElementById("but3");
+
+            oBut1.onclick=function () {
+                oSet.style.display="block";
+
+            }
+            oBg1.onclick=function () {
+                oDiv.style.background="red";
+            }
+            oBg2.onclick=function () {
+                oDiv.style.background="yellow";
+            }
+            oBg3.onclick=function () {
+                oDiv.style.background="greenyellow";
+            }
+            oW1.onclick=function () {
+                oDiv.style.width="200px";
+            }
+            oW2.onclick=function () {
+                oDiv.style.width="300px";
+            }
+            oW3.onclick=function () {
+                oDiv.style.width="400px";
+            }
+            oH1.onclick=function () {
+                oDiv.style.height="200px";
+            }
+            oH2.onclick=function () {
+                oDiv.style.height="300px";
+            }
+            oH3.onclick=function () {
+                oDiv.style.height="400px";
+            }
+            oBut2.onclick=function () {
+                oDiv.style.width="100px";
+                oDiv.style.height="100px";
+                oDiv.style.background="none";
+            }
+            oBut3.onclick=function () {
+                oSet.style.display="none";
+            }
+        }
+    </script>
+</head>
+<body>
+请为下面DIV设置样式：
+<input type="button" value="点击设置" id="but1" class="but1">
+<div id="div1" class="div1"></div>
+
+<div class="setting" id="set">
+
+    <div class="s">
+        请选择背景颜色：
+        <input type="button" class="bg1" id="bg1" value="红">
+        <input type="button" class="bg2" id="bg2" value="黄">
+        <input type="button" class="bg3" id="bg3" value="绿">
+    </div>
+
+    <div class="s">
+        请选择宽（px）：
+        <input type="button" class="w" id="w1" value="200">
+        <input type="button" class="w" id="w2" value="300">
+        <input type="button" class="w" id="w3" value="400">
+    </div>
+
+    <div class="s">
+        请选择高（px）：
+        <input type="button" class="w" id="h1" value="200">
+        <input type="button" class="w" id="h2" value="300">
+        <input type="button" class="w" id="h3" value="400">
+    </div>
+
+    <div class="s">
+        <input type="button" class="but2" id="but2" value="恢复">
+        <input type="button" class="but2" id="but3" value="确定">
+    </div>
+</div>
+
+</body>
+</html>

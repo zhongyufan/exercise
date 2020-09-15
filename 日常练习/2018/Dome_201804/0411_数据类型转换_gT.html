@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型转换</title>
+    <!--第一个小练习-->
+    <script>
+        //        var arr = ['100px', 'abc' - 6, [], -98765, 34, -2, 0, '300', , function () {
+        //            alert(1)
+        //        }, null, document, [], true, '200px' - 30, '23.45元', 5, Number('abc'), function () {
+        //            alert(3);
+        //        }];
+        //        //找出所有的字符串
+        //        //        fn1();
+        //        function fn1() {
+        //            for (var i in arr) {
+        //                if (typeof arr[i] === 'string') {
+        //                    alert(arr[i]);
+        //                }
+        //            }
+        //        }
+        //        //找出所有的数字
+        //        //        fn2();
+        //        function fn2() {
+        //            for (var i in arr) {
+        //                if (typeof arr[i] === 'string') {
+        //
+        //                }
+        //                else if (parseFloat(arr[i])) {
+        //                    alert(arr[i]);
+        //                }
+        //                else if (arr[i] === 0) {
+        //                    alert(arr[i]);
+        //                }
+        //            }
+        //        }
+        //        //找出所有可以转成数字
+        //        //        fn3();
+        //        function fn3() {
+        //            for (var i in arr) {
+        //                if (parseFloat(arr[i])) {
+        //                    alert(arr[i]);
+        //                }
+        //                else if (arr[i] === 0) {
+        //                    alert(arr[i]);
+        //                }
+        //            }
+        //        }
+        //        //找出所有NAN的位置
+        ////        fn4();
+        //        function fn4() {
+        //            for (var i in arr) {
+        //                if (isNaN(arr[i])) {
+        //                    alert(i);
+        //                }
+        //            }
+        //        }
+    </script>
+    <!--第二个小练习-->
+    <script>
+        window.onload = function () {
+            var oTex = document.getElementById('text');
+            var oBnt = document.getElementById('button');
+
+            oBnt.onclick = function () {
+                if (oTex.value === '') {
+                    alert('请输入你的QQ号码')
+                }
+                else if (isNaN(oTex.value)) {
+                    alert('你的输入有误，请输入数字')
+                }
+
+                else if (oTex.value.charAt(0) === '0') {
+                    alert('你的输入有误，第一个数字不能为0')
+                }
+                else if (parseFloat(oTex.value) > parseInt(oTex.value)) {
+                    alert('你的输入有误，请勿输入小数点')
+                }
+                else if (oTex.value.length < 5 || oTex.value.length > 10) {
+                    alert('你的输入有误，你输入的号码不能少于5位,不能多于10位')
+                }
+                else {
+                    alert('请稍等，系统正在为你转接中...')
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+请输入QQ号码：
+<input type="text" id="text">
+<input type="button" value="判断" id="button">
+</body>
+</html>

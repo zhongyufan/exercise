@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for循环</title>
+    <script>
+
+
+        window.onload = function () {
+            var arrNews = ['《习近平谈治国理政》第二卷 全球发行突破1300万册',
+                '习近平时代观的基本特征 最美基层干部',
+                '记感动吉安人物彭夏英  领航新征程  春运专题',
+                '新一届中央首轮巡视的新看点 新时代新气象新作为',
+                '暴雪中温暖人心的那抹荧黄色  暖新闻',
+                '31省份监察委主任均为当地纪委书记',
+                '国家将制定一项重磅计划，与你生活有关',
+                '省纪委监委通报7起违规收受礼金典型案例',
+                '中国首次实现脉冲数最小安全距离最长新量子密钥',
+                '十九大后首轮中央巡视 这些新看点值得关注'];
+            var oBut = document.getElementById('but1');
+            var oUl = document.getElementById('list');
+            var onOff = true;
+
+
+            oBut.onclick = function () {
+                if (onOff) {
+                    for (var i = 0; i < arrNews.length; i++) {
+                        oUl.innerHTML += '<li>' + arrNews[i] + '</li>';
+                    }
+                    onOff = false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="获取今日新闻" id="but1">
+<ul id="list">
+
+</ul>
+
+</body>
+</html>

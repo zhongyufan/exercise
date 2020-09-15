@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>学员信息</title>
+	<meta name="viewport"
+		content="width=device-width,heght=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="./css/list.css">
+	<link rel="stylesheet" href="./css/bootstrap.css">
+	<script src="./js/jquery.js"></script>
+	<script src="./js/bootstrap.js"></script>
+	<style>
+		.userInfo {
+			height: 50px;
+			margin: 40px 0;
+		}
+
+		.user {
+			height: 50px;
+			right: 40px;
+		}
+
+		.user img {
+			width: 50px;
+			height: 50px;
+		}
+
+		.user span {
+			margin-left: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="row">
+		<div class="col-md-10 offset-md-1">
+			<div class="userInfo position-relative">
+				<div class="user d-inline-block position-absolute">
+					<img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1589105782&di=9cb259de382d13a26b78f85fb8c23569&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg"
+						alt="" class="border rounded-circle">
+					<span class="align-middle">admin</span>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="table-content col-md-10 offset-md-1">
+		<div class="table-responsive-md">
+			<table class="table table-hover">
+				<caption>学员信息</caption>
+				<thead>
+					<tr class="center">
+						<th scope="col">学号</th>
+						<th scope="col">姓名</th>
+						<th scope="col">年龄</th>
+						<th scope="col">性别</th>
+						<th scope="col">邮箱地址</th>
+						<th scope="col">发展方向</th>
+						<th scope="col">报名课程</th>
+						<th scope="col">学习日期</th>
+						<th scope="col">更多操作</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>zyf</td>
+						<td>Mark</td>
+						<td>Otto</td>
+						<td>@mdo</td>
+						<td>@mdo</td>
+						<td>@mdo</td>
+						<td>@mdo</td>
+						<td>
+							<button class="btn btn-primary">修改</button>
+							<button class="btn btn-danger">删除</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="col-md-4 offset-md-4 add">
+		<input type="submit" value="添加" class="btn btn-primary" style="width:100%;">
+	</div>
+</body>
+
+</html>

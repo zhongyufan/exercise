@@ -1,0 +1,13 @@
+table {
+	white-space: nowrap;
+}
+
+.table-content {
+	border: 1px solid #ccc;
+	border-radius: 20px;
+	/* margin-top: 40px; */
+}
+
+.add {
+	margin-top: 40px;
+}

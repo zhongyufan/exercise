@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义属性</title>
+    <link rel="stylesheet" href="../css/gT_自定义属性3_0330.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wall {
+            height: 200px;
+        }
+
+        .content {
+            width: 500px;
+            height: 450px;
+            margin: 0 auto;
+            justify-content: center;
+        }
+
+        img {
+            border-radius: 10px;
+            width: 500px;
+            height: 450px;
+            text-align: center;
+
+        }
+
+        .clik {
+            position: absolute;
+        }
+
+        .clik li {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            list-style-type: none;
+            margin-top: 10px;
+            position: relative;
+            left: 550px;
+        }
+
+        .clik .active {
+            border: 1px solid red;
+        }
+
+        #hidden-show {
+            width: 160px;
+            height: 144px;
+            border-radius: 5px;
+            /*background: url("../image/bg2-1.png") no-repeat;*/
+            /*background-size: 160px 144px;*/
+            position: relative;
+            top: -500px;
+            left: 1350px;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('content');
+            var oImag = oDiv.getElementsByTagName('img')[0];
+            var oBuncing = oDiv.getElementsByTagName('div')[0];
+            var oUl = oDiv.getElementsByTagName('ul')[0];
+            var aLi = oUl.getElementsByTagName('li');
+            var oHs = document.getElementById('hidden-show');
+
+            //创建数据
+            var aSrc = ['../image/bg2-1.png', '../image/bg3-1.png', '../image/bg4-1.png', '../image/bg5-1.png', '../image/bg6-1.png', '../image/bg7-1.png'];
+            var oldLi = null;
+            //初始化
+//            oBuncing.style.display='none';
+//            oVideo.src=aSrc[num];
+            for (var i = 0; i < aSrc.length; i++) {
+                oUl.innerHTML += '<li></li>';
+            }
+            //随机导入一个li的位置用于记录初始li
+            oldLi = aLi[0];
+            for (var i = 0; i < aLi.length; i++) {
+                aLi[i].index = i;
+                aLi[i].onclick = function () {
+                    oBuncing.style.display = 'none';
+                    oImag.src = aSrc[this.index];
+                    //上个清空，当前添加
+                    oldLi.className = '';
+                    oldLi = this;//更新当前li的位置
+                    this.className = 'active';
+                };
+                aLi[i].onmouseover = function () {
+                    var imgSrc=aSrc[this.index];
+                    oHs.style.display = 'block';
+                    oHs.style.background='url("../image/bg2-1.png") no-repeat';
+                    oHs.style.backgroundSize=' 160px 144px';
+                };
+                aLi[i].onmouseout = function () {
+                    oHs.style.display = 'none';
+                }
+            }
+
+        }
+
+
+    </script>
+</head>
+<body>
+<div class="wall"></div>
+<div class="content" id="content">
+    <ul class="clik" id="clik">
+    </ul>
+    <div class="bouncing" id="bouncing">
+        <div class="bouncing-loader">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <img src="" alt="">
+</div>
+<div id="hidden-show">
+
+</div>
+
+</body>
+</html>

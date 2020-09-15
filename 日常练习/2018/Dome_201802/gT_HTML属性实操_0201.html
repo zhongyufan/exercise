@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟手机发短信</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .photo {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        height: 600px;
+        width: 300px;
+        margin: 0 auto;
+        margin-top: 40px;
+        background: #000;
+    }
+
+    .content {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        height: 580px;
+        width: 296px;
+        margin: 0 auto;
+        margin-top: 10px;
+        background: white;
+    }
+    .contentDisplay{
+        height: 530px;
+        width: 296px;
+        border-radius: 10px 10px 0px 0px;
+        background: #eeeeee;
+        border-bottom: 1px solid #ccc;
+    }
+    p{
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+    }
+    .input{
+        height: 25px;
+        width: 180px;
+    }
+    .but1{
+        height: 25px;
+        width: 50px;
+        background: green;
+        border: none;
+        color: white;
+    }
+</style>
+<script>
+window.onload=function () {
+    var oCon=document.getElementById('content');
+    var oP=document.getElementById('people');
+    var oInput=document.getElementById('input');
+    var oBut=document.getElementById('but1');
+
+    oBut.onclick=function () {
+        if (oInput.value==''){
+            alert("请输入文字!!");
+        }
+        else {
+            oCon.innerHTML += oP.innerHTML + oInput.value + "<br/>";
+            oInput.value = '';
+        }
+    }
+}
+</script>
+<body>
+<div class="photo">
+    <div class="content" >
+        <div class="contentDisplay" id="content">
+
+        </div>
+        <div class="contentInput">
+            <P id="people" class="people">大白:</P>
+            <input type="text" id="input" class="input">
+            <input type="button" id="but1" class="but1" value="发送">
+        </div>
+    </div>
+</div>
+</body>
+</html>

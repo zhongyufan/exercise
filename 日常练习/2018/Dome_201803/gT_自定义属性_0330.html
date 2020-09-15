@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义属性</title>
+    <style>
+        li {
+            background: url("../image/top1.png") no-repeat;
+            width: 300px;
+            height: 350px;
+            margin-right: 20px;
+            list-style-type: none;
+            float: left;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var aLi = document.getElementsByTagName('li');
+            for(var i in aLi){
+                aLi[i].onOff=true;
+                aLi[i].onclick=function () {
+                    if (this.onOff===true){
+                        this.style.background='url("../image/top3.png")no-repeat';
+                        this.onOff=false;
+                    }
+                    else {
+                        this.style.background='url("../image/top1.png") no-repeat';
+                        this.onOff=true;
+                    }
+                }
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

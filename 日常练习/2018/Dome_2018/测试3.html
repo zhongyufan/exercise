@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 0;
+        }
+
+        #header #nav li {
+            float: left;
+        }
+
+        #header {
+
+            height: 50px;
+            width: 100%;
+            min-width: 1360px;
+            background: #333333;
+        }
+
+        #header #nav {
+            width: 1360px;
+            margin: 0 auto;
+            height: 50px;
+        }
+
+        #header #nav ul {
+            float: right;
+            color: white;
+            list-style-type: none;
+        }
+
+        #header #nav li {
+            font: 15px "微软雅黑";
+            width: 120px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        #header #nav a {
+            display: inline-block;
+            width: 120px;
+            height: 50px;
+            color: white;
+            text-decoration: none;
+        }
+
+        #header #nav a:hover {
+            background: #eb504e;
+            color: white;
+        }
+
+        #header #nav span {
+            color: black;
+        }
+        /*导航栏结束*/
+        #btn {
+            width: 100%;
+            height: 100%;
+            position:fixed;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        #btn #btn-content{
+            display: flex;
+            border-radius: 20px;
+        }
+        #btn #btn-content .div1{
+            width: 300px;
+            height: 400px;
+            border-radius: 20px;
+            margin-left: 50px;
+            transition: all 0.4s;
+        }
+        #btn #btn-content .div1 a{
+            width: 300px;
+            height: 400px;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+        }
+
+        /*内容按钮结束*/
+        #btn #btn-content .div1:hover{
+            transform: scale(1.02);
+
+        }
+        /*鼠标动画*/
+        .mouse-cursor-gradient-tracking {
+        position: relative;
+        background: #eb504e;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        border: none;
+        color: white;
+        cursor: pointer;
+        outline: none;
+        overflow: hidden;
+        }
+        .mouse-cursor-gradient-tracking span {
+        position: relative;
+        }
+        .mouse-cursor-gradient-tracking::before {
+        --size: 0;
+        content: '';
+        position: absolute;
+        left: var(--x);
+        top: var(--y);
+        width: var(--size);
+        height: var(--size);
+        background: radial-gradient(circle closest-side, pink, transparent);
+        transform: translate(-50%, -50%);
+        transition: width 0.2s ease, height 0.2s ease;
+        }
+        .mouse-cursor-gradient-tracking:hover::before {
+        --size: 800px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="header">
+    <div id="nav">
+        <ul>
+            <li><a href="../view/Asmt_index.html">首页</a></li>
+            <li><a href="../view/Asmt_xiaomi6.html" target="_blank">好物</a></li>
+            <li><a href="../view/Asmt_about.html" target="_blank">得心</a></li>
+            <li><a href="../view/Asmt_happy_enjioy_news.html" target="_blank">乐享</a></li>
+            <li><a href="../view/Asmt_Joinus.html" target="_blank">加入我们</a></li>
+        </ul>
+    </div>
+</div>
+<div id="btn">
+    <div id="btn-content">
+        <div class="div1 mouse-cursor-gradient-tracking"><a href="">增加商品</a></div>
+        <div class="div1 mouse-cursor-gradient-tracking"><a href="">删除商品</a></div>
+        <div class="div1 mouse-cursor-gradient-tracking"><a href="">修改商品</a></div>
+    </div>
+</div>
+</body>
+<script>
+    var btn = document.querySelector('.mouse-cursor-gradient-tracking')
+    btn.onmousemove = function(e) {
+        var x = e.pageX - btn.offsetLeft;
+        var y = e.pageY - btn.offsetTop;
+        btn.style.setProperty('--x', x + 'px');
+        btn.style.setProperty('--y', y + 'px');
+    }
+</script>
+</html>

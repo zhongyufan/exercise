@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background: #000;
+        }
+        div{
+            width: 100px;
+            height: 20px;
+            background: greenyellow;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        //多个物体同时运动
+//        window.onload=function () {
+//            var aDiv=document.getElementsByTagName('div');
+//            for (var i=0;i<aDiv.length;i++){
+//                aDiv[i].timer=null;
+//                aDiv[i].onmouseover=function () {
+//                    startMove(this,400);
+//                };
+//                aDiv[i].onmouseout=function () {
+//                    startMove(this,100);
+//                }
+//            }
+//        };
+//       function startMove(obj,iTarget) {
+//           clearInterval(obj.timer);
+//           obj.timer=setInterval( function () {
+//               var speed=(iTarget-obj.offsetWidth)/10;
+//               speed=speed>0?Math.ceil(speed):Math.floor(speed);
+//               if (obj.offsetWidth==iTarget){
+//                   clearInterval(obj.timer);
+//               }
+//               else{
+//                   obj.style.width=obj.offsetWidth+speed+'px';
+//               }
+//           } ,30);
+//        }
+//
+//        window.onload=function () {
+//            var aDiv=document.getElementsByTagName('div');
+//            for (var i=0;i<aDiv.length;i++){
+//                aDiv[i].timer=null;
+//                aDiv[i].onmouseover=function () {
+//                    startMove(this,400);
+//                }
+//                aDiv[i].onmouseout=function () {
+//                    startMove(this,100);
+//                }
+//            }
+//        };
+//
+//
+//        function startMove(obj,iTarget) {
+//            clearInterval(obj.timer);
+//            obj.timer=setInterval(function () {
+//                var speed=(iTarget-obj.offsetWidth)/10;
+//                speed=speed>0?Math.ceil(speed):Math.floor(speed);
+//                if(obj.offsetWidth==iTarget){
+//                    clearInterval(obj.timer);
+//                }
+//                else{
+//                    obj.style.width=obj.offsetWidth+speed+'px';
+//                }
+//            },30);
+//        }
+
+        
+        window.onload=function () {
+            var aDiv=document.getElementsByTagName('div');
+            for(var i in aDiv){
+                aDiv[i].timer=null;
+                aDiv[i].onmouseover=function () {
+                    startMove(this,1000);
+                }
+                aDiv[i].onmouseout=function () {
+                    startMove(this,100);
+                }
+            }
+        }
+
+        function startMove(obj,iTarget) {
+            clearInterval(obj.timer);
+            obj.timer=setInterval(function () {
+                var speed=(iTarget-obj.offsetWidth)/10;
+                speed=speed>0?Math.ceil(speed):Math.floor(speed);
+                if (obj.offsetWidth==iTarget){
+                    clearInterval(obj.timer);
+                }
+                else{
+                    obj.style.width=obj.offsetWidth+speed+'px';
+                }
+            },30);
+        }
+
+    </script>
+</head>
+
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动</title>
+    <style>
+        body, div {
+            margin: 0px;
+            border: 0px;
+        }
+
+        #d1 {
+            width: 980px;
+            margin: 0px auto;
+        }
+
+        .pink1 {
+            width: 250px;
+            height: 100px;
+            background-color: #ffc0cb;
+            float: left;
+        }
+
+        .blue1 {
+            width: 150px;
+            height: 50px;
+            background-color: #87ceeb;
+            float: right;
+        }
+
+        .purple {
+            width: 630px;
+            height: 50px;
+            background-color: #7f007e;
+            float: right;
+        }
+
+        .pink1, .purple {
+            margin-bottom: 10px;
+        }
+
+        .yellow {
+            width: 320px;
+            height: 400px;
+            background-color: #fcff00;
+            float: left;
+        }
+
+        .pink2 {
+            width: 400px;
+            height: 200px;
+            background-color: #ff1394;
+            float: left;
+            margin: 0px 0px 0px 10px;
+        }
+
+        .blue2 {
+            width: 400px;
+            height: 140px;
+            background-color: #00bcfe;
+            float: left;
+            margin: 10px 0px 10px 10px;
+        }
+
+        .green {
+            width: 240px;
+            height: 350px;
+            background-color: #9dcb31;
+            float: right;
+        }
+
+        .brown {
+            width: 650px;
+            height: 40px;
+            background-color: #b38211;
+            float: left;
+            margin: 0px 0px 10px 10px;
+        }
+
+        .orange {
+            width: 980px;
+            height: 40px;
+            background-color: #ff6146;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div id="d1">
+    <div id="header">
+        <div class="pink1"></div>
+        <div class="blue1"></div>
+        <div class="purple"></div>
+    </div>
+    <div id="content">
+        <div class="yellow"></div>
+        <div>
+            <div>
+                <div class="pink2"></div>
+                <div class="blue2"></div>
+            </div>
+            <div class="green"></div>
+            <div class="brown"></div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="orange"></div>
+    </div>
+</div>
+</body>
+</html>

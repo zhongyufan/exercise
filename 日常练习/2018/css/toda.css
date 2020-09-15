@@ -1,0 +1,326 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: #eceff1;
+}
+
+#search {
+    background: #eceff1;
+    height: 150px;
+    width: 100%;
+}
+
+#search #more {
+    width: 1600px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+#search #more #morethan {
+    width: 1200px;
+    height: 50px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+#search #more #morethan #tex {
+    height: 50px;
+    width: 85%;
+    border: none;
+    font: 18px "微软雅黑";
+    text-indent: 1em;
+}
+
+#search #more #morethan #sub {
+    height: 50px;
+    width: 15%;
+    float: right;
+    background: #3385ff;
+    border: none;
+    color: white;
+    font: 18px "微软雅黑";
+}
+
+/*搜索框结束*/
+#content1 {
+    width: 100%;
+    height: 350px;
+}
+
+#content1 #contentwith {
+    background: white;
+    width: 1600px;
+    height: 350px;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+#content1 #contentwith #contentleft {
+    float: left;
+    width: 80%;
+    height: 350px;
+
+}
+
+#content1 #contentwith #contentright {
+    float: right;
+    width: 20%;
+    height: 350px;
+}
+
+#content1 #contentwith #contentright #contentrightimg {
+    height: 300px;
+    width: 215px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+#content1 #contentwith #contentright img {
+    border-radius: 20px;
+    height: 300px;
+    width: 215px;
+}
+
+#content1 #contentwith #contentleft #contentleftbr {
+    width: 95%;
+    margin: 0 auto;
+    border: 1px solid #cccccc;
+}
+
+#content1 #contentwith #contentleft h1 {
+    color: black;
+    text-indent: 1em;
+    padding: 30px 0px 20px 40px;
+}
+
+#content1 #contentwith #contentleft p {
+    text-indent: 2em;
+    font: 18px "微软雅黑";
+    line-height: 1.5em;
+    padding-top: 10px;
+    padding-left: 40px;
+}
+
+/*内容介绍完成*/
+#morecontent {
+    width: 100%;
+    height: 2450px;
+}
+
+#morecontent #character {
+    width: 1600px;
+    height: 500px;
+    margin: 0 auto;
+}
+#morecontent #actor{
+    width: 1600px;
+    height: 1450px;
+    margin: 0 auto;
+}
+#morecontent #music{
+    width: 1600px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+#morecontent .morecontentwall1 {
+    width: 1000px;
+    height: 50px;
+}
+
+/*小点墙*/
+#morecontent #character #characterwall {
+    width: 1600px;
+    height: 50px;
+}
+
+#morecontent #character #characterwall #characterwallleft {
+    float: left;
+    width: 50px;
+    height: 20px;
+    margin-top: 15px;
+    background: #3385ff;
+    border-radius: 10px 0 0 10px;
+}
+
+#morecontent #character #characterwall #characterwallright {
+    float: left;
+    width: 200px;
+    height: 50px;
+    margin-left: 20px;
+    font: 25px "微软雅黑";
+    line-height: 50px;
+}
+
+/*小点墙结束*/
+#morecontent #character #characterwall #charactercontent {
+    height: 450px;
+    width: 1600px;
+
+}
+
+#morecontent #character #characterwall #charactercontent #character1, #character2, #character3, #character4 {
+    width: 350px;
+    height: 450px;
+    float: left;
+    margin-left: 40px;
+}
+
+#morecontent #character #characterwall #charactercontent .charactername {
+    width: 350px;
+    height: 50px;
+    transition: all 0.4s;
+}
+
+#morecontent #character #characterwall #charactercontent .charactername:hover {
+    margin-top: -50px;
+    transform: scale(1.1);
+    color: rgba(0, 0, 0, 0);
+}
+
+#morecontent #character #characterwall #charactercontent span {
+    font: 18px "微软雅黑";
+    line-height: 50px;
+    width: 350px;
+    height: 50px;
+    display: inline-block;
+    text-align: center;
+}
+
+#morecontent #character #characterwall #charactercontent img {
+    width: 300px;
+    height: 400px;
+    margin-left: 25px;
+    border-radius: 20px;
+}
+
+/*演员介绍完成*/
+/*小点墙*/
+#morecontent #actor #actorwall {
+    width: 1600px;
+    height: 50px;
+}
+
+#morecontent #actor #actorwall #actorwallleft {
+    float: left;
+    width: 50px;
+    height: 20px;
+    margin-top: 15px;
+    background: #3385ff;
+    border-radius: 10px 0 0 10px;
+}
+
+#morecontent #actor #actorwall #actorwallright {
+    float: left;
+    width: 200px;
+    height: 50px;
+    margin-left: 20px;
+    font: 25px "微软雅黑";
+    line-height: 50px;
+}
+
+/*小点墙结束*/
+#morecontent #actor #actorwall #actor1,#actor2,#actor3{
+    border-bottom: 1px  solid #cccccc;
+    height: 300px;
+    width: 1600px;
+}
+#morecontent #actor #actorwall  #actor4{
+    height: 300px;
+    width: 1600px;
+}
+#morecontent #actor #actorwall  .actorimg{
+    width: 350px;
+    height: 300px;
+    float: left;
+    margin-left: 40px;
+}
+#morecontent #actor #actorwall  .actorimg img{
+    width: 200px;
+    height: 280px;
+    margin-left: 75px;
+    border-radius: 20px;
+}
+#morecontent #actor #actorwall  .actortext{
+    width: 1100px;
+    height: 300px;
+    float: left;
+    margin-left: 40px;
+}
+
+#morecontent #actor #actorwall  .a1{
+    width: 1100px;
+    height: 50px;
+    font: 18px "微软雅黑";
+    line-height: 50px;
+    color: #393b3c;
+}
+#morecontent #actor #actorwall  .a2{
+    width: 1000px;
+    height: 150px;
+    margin: 0 auto;
+    font: 20px "微软雅黑";
+    text-indent: 2em;
+
+}
+/*角色介绍结束*/
+/*小点墙*/
+#morecontent #music #musicwall {
+    width: 1600px;
+    height: 50px;
+}
+
+#morecontent #music #musicwall #musicwallleft {
+    float: left;
+    width: 50px;
+    height: 20px;
+    margin-top: 15px;
+    background: #3385ff;
+    border-radius: 10px 0 0 10px;
+}
+
+#morecontent #music #musicwall #musicwallright {
+    float: left;
+    width: 200px;
+    height: 50px;
+    margin-left: 20px;
+    font: 25px "微软雅黑";
+    line-height: 50px;
+}
+/*小点墙结束*/
+#musiccontent{
+    width: 1600px;
+    height: 200px;
+    margin-top: 20px;
+}
+#music #musiccontent p{
+    text-indent: 2em;
+    font: 18px "微软雅黑";
+    line-height: 30px;
+}
+
+#wall{
+    height: 2450px;
+}
+#footer {
+
+    width: 100%;
+    height: 80px;
+    background: black;
+}
+
+#footer p {
+    color: #cccccc;
+    text-align: center;
+    padding-top: 30px;
+}
+
+#footer p a {
+    color: #cccccc;
+    text-decoration: none;
+}
+
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>文件上传</title>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+	<form action="http://127.0.0.1/upload/single" method="POST" enctype="multipart/form-data">
+		<input type="file" name="singleFile" />
+		<input type="submit" value="提交" />
+	</form>
+	<div id="app"></div>
+	<!-- <input type="file" name="singleFile" />
+	<input type="submit" value="提交" /> -->
+</body>
+
+</html>

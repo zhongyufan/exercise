@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>重学前端16-19 JS的执行</title>
+    <script>
+      let arr = [1, 4, 7, 9, 2, 5, 3, 8, 6];
+      for (let i = 0; i < arr.length - 1; i++) {
+        // 是否进行了位置交换
+        let done = true;
+        // 先找出最大的数字并且扔到最后
+        for (let j = 0; j < arr.length - i - 1; j++) {
+          // 进行位置交换
+          if (arr[j] > arr[j + 1]) {
+            let temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+            // 位置交换了
+            done = false;
+          }
+        }
+        if (done) {
+          break;
+        }
+      }
+      console.log(arr);
+    </script>
+  </head>
+  <body></body>
+</html>

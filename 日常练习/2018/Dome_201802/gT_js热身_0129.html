@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .lis a {
+            display: block;
+            text-decoration: none;
+            width: 100px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            border: 1px solid #ccc;
+            background: #ccc;
+        }
+
+        ul ul {
+            border: 1px solid #ccc;
+            width: 150px;
+            height: 180px;
+            display: none;
+
+        }
+
+        ul ul li {
+            width: 150px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+        }
+    </style>
+    <script>
+
+        window.onload = function () {
+
+            var oLi = document.getElementById("lis");
+            var oUl = document.getElementById("ul1");
+            var oA = document.getElementById("link");
+
+            oLi.onmouseover = function () {
+                oUl.style.display = "block";
+                oA.style.background = "yellow";
+            };
+            oLi.onmouseout = function () {
+                oUl.style.display = "none";
+                oA.style.background = "#flflfl";
+            };
+        }
+    </script>
+</head>
+<body>
+<ul>
+    <li id="lis" class="lis">
+        <a id="link" href="#">微博</a>
+        <ul id="ul1">
+            <li>私信</li>
+            <li>评论</li>
+            <li>@我</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

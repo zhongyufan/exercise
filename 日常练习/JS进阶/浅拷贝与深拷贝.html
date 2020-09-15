@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 浅拷贝
+      var obj = {
+        name: "xixi",
+        age: 18,
+      };
+      console.log("--------浅拷贝--------");
+      var newObj = obj;
+      console.log("初始的：");
+      console.log(obj);
+      console.log("拷贝的：");
+      console.log(newObj);
+      obj.age = 20;
+      console.log("初始修改后的：");
+      console.log(obj);
+      console.log("初始修改后拷贝的：");
+      console.log(newObj);
+
+      // 深拷贝
+      var Lobj = {
+        name: "haha",
+        age: 20,
+      };
+      console.log("--------深拷贝--------");
+      function clone(obj) {
+        let result;
+        fn(obj);
+
+        function fn(obj) {
+          if (typeof obj != "object" || obj == null) {
+            return obj;
+          }
+          if (obj instanceof Array) {
+            result = [];
+          } else {
+            result = {};
+          }
+          for (let key in obj) {
+            // 保证key不是原型的属性
+            if (obj.hasOwnProperty(key)) {
+              // 递归
+              result[key] = fn(obj[key]);
+            }
+          }
+          return result;
+        }
+        return result;
+      }
+      //   function clone(obj) {
+      //     if (typeof obj != "object" || obj == null) {
+      //       return obj;
+      //     }
+      //     let result;
+      //     if (obj instanceof Array) {
+      //       result = [];
+      //     } else {
+      //       result = {};
+      //     }
+      //     for (let key in obj) {
+      //       // 保证key不是原型的属性
+      //       if (obj.hasOwnProperty(key)) {
+      //         // 递归
+      //         result[key] = arguments.callee(obj[key]);
+      //       }
+      //     }
+      //     return result;
+      //   }
+      var newLObj = clone(Lobj);
+      console.log("初始的：");
+      console.log(Lobj);
+      console.log("拷贝的：");
+      console.log(newLObj);
+      Lobj.age = 25;
+      console.log("初始修改后的：");
+      console.log(Lobj);
+      console.log("初始修改后拷贝的：");
+      console.log(newLObj);
+    </script>
+  </body>
+</html>

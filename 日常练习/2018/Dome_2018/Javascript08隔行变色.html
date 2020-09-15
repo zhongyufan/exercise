@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var oTab = document.getElementById('tab1');
+            var color='';
+            for (var i = 0; i < oTab.tBodies[0].rows.length; i++) {
+                oTab.tBodies[0].rows[i].onmouseover=function () {
+                    color=this.style.background;
+                    this.style.background='green';
+                }
+                oTab.tBodies[0].rows[i].onmouseout=function () {
+                    this.style.background=color;
+                }
+                if (i % 2) {
+                    oTab.tBodies[0].rows[i].style.background = 'yellow';
+                }
+                else {
+                    oTab.tBodies[0].rows[i].style.background = 'red';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<table id="tab1" border="1" width="600">
+    <thead>
+        <td>ID</td>
+        <td>姓名</td>
+        <td>性别</td>
+    </thead>
+    <tbody>
+    <tr>
+        <td>001</td>
+        <td>老王</td>
+        <td>女</td>
+    </tr>
+    <tr>
+        <td>002</td>
+        <td>老黄</td>
+        <td>女</td>
+    </tr>
+    <tr>
+        <td>003</td>
+        <td>老黑</td>
+        <td>男</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="3">总结</td>
+    </tr>
+    </tfoot>
+</table>
+</body>
+</html>

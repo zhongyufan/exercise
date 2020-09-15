@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding:0px;
+        }
+
+        body{
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        var canvas=document.querySelector('canvas');
+        var ctx=canvas.getContext('2d');
+        var wW=window.innerWidth;
+        var wH=window.innerHeight;
+        canvas.width=wW;
+        canvas.height=wH;
+
+        var x=100,y=100;
+
+        setInterval(render,30);
+        function render() {
+            x++;
+            y++;
+
+            ctx.arc(x, y, 100, 0, Math.PI * 2);
+            ctx.fillStyle = '#222';
+            ctx.fill();
+        }
+    </script>
+</head>
+<body>
+    <canvas></canvas>
+</body>
+</html>

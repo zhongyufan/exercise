@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登陆</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/vue.js"></script>
+    <script src="../js/axios.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="login-form">
+            <h1>登陆</h1>
+            <div class="txtb">
+                <input id="user" type="email" name="email" v-model="loginInfo.email" class="form-control"
+                    :class="{'is-invalid':userErr,'focus':userRemove}" autocomplete="off" @input="userShow">
+                <span data-placeholder="邮箱"></span>
+                <i class="iconfont" id="userTips"></i>
+                <div class="invalid-feedback">
+                    {{userMsg}}
+                </div>
+            </div>
+            <div class="txtb">
+                <input id="pwd" type="password" name="password" v-model="loginInfo.password" class="form-control"
+                    :class="{'is-invalid':pwdErr,'focus':pwdRemove}" autocomplete="off" @input="pwdShow">
+                <span data-placeholder="密码"></span>
+                <i class="iconfont" id="pwdTips"></i>
+                <div class="invalid-feedback">
+                    {{pwdMsg}}
+                </div>
+            </div>
+            <input type="button" class="logbtn" id="sub" value="登陆" @click="login" />
+            <!-- <div class="bottom-text">
+                还没有账号？<a href="javacript:;">注册</a>
+            </div> -->
+        </div>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                loginInfo: {},
+                userErr: false,
+                pwdErr: false,
+                userMsg: '',
+                pwdMsg: '',
+                userRemove: false,
+                pwdRemove: false
+            },
+            methods: {
+                userShow() {
+                    if (this.loginInfo.email) {
+                        this.userRemove = true;
+                        return;
+                    }
+                    this.userRemove = false;
+
+                },
+                pwdShow() {
+                    if (this.loginInfo.password) {
+                        this.pwdRemove = true;
+                        return;
+                    }
+                    this.pwdRemove = false;
+                },
+                login() {
+                    const _this = this;
+                    axios.post('http://localhost/log/login', {
+                            email: this.loginInfo.email,
+                            password: this.loginInfo.password
+                        })
+                        .then((res) => {
+                            if (res.data.state == 1) {
+                                window.location = '/user/list';
+                            } else if (res.data.state == 2) {
+                                this.userErr = true;
+                                this.userMsg = res.data.msg;
+                            } else if (res.data.state == 3) {
+                                this.pwdErr = true;
+                                this.pwdMsg = res.data.msg;
+                            } else if (res.data.state == 4) {
+                                this.userErr = true;
+                                this.userMsg = res.data.msg;
+                            } else {
+                                this.userErr = true;
+                                this.pwdErr = true;
+                                this.userMsg = '未知错误，请联系管理员';
+                                this.pwdMsg = '未知错误，请联系管理员';
+                            }
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        })
+
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

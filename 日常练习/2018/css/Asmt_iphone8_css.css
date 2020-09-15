@@ -1,0 +1,60 @@
+
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    border: 0;
+}
+
+
+#header #nav li {
+    float: left;
+}
+
+#header {
+
+    height: 50px;
+    width: 100%;
+    min-width: 1360px;
+    background: #333333;
+}
+
+#header #nav {
+    width: 1360px;
+    margin: 0 auto;
+    height: 50px;
+}
+
+#header #nav ul {
+    float: right;
+    color: white;
+    list-style-type: none;
+}
+
+#header #nav li {
+    font: 15px "微软雅黑";
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+#header #nav a {
+    display: inline-block;
+    width: 120px;
+    height: 50px;
+    color: white;
+    text-decoration: none;
+}
+
+#header #nav a:hover {
+    background: #eb504e;
+    color: white;
+}
+
+#header #nav span {
+    color: black;
+}
+
+
+/*导航栏结束*/

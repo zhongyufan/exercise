@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS面试题</title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- <script src="./10_JS基础考点.js"></script> -->
+<script src="./10_异步和单线程.js"></script>
+
+<script>
+    // console.log(Math.abs(0.1 + 0.2 - 0.3) <= Number.EPSILON);
+
+    // String.prototype.hello = () => {
+    //     console.log('hello')
+    // }
+    // var b = '123';
+
+    // var symbolObject = (function () {
+    //     return this;
+    // }).call(Symbol('a'));
+
+    // console.log(typeof symbolObject);
+    // console.log(symbolObject instanceof Symbol);
+    // console.log(symbolObject.constructor == Symbol);
+
+    // var symbolObject1 = Object(Symbol('a'));
+    // console.log(typeof symbolObject1);
+    // console.log(symbolObject1 instanceof Symbol);
+    // console.log(symbolObject1.constructor == Symbol);
+    // console.log(Object.prototype.toString.call(symbolObject))
+
+    // var o = {
+    //     toString: () => {
+    //         console.log('toString');
+    //         return {}
+    //     },
+    //     valueOf: () => {
+    //         console.log('valueOf');
+    //         return {}
+    //     }
+    // }
+    // o[Symbol.toPrimitive] = () => {
+    //     console.log('toPrimitive');
+    //     return "hello";
+    // }
+    // console.log(o + '');
+
+    // var n = {};
+    // Object.defineProperty(n, "name", {
+    //     value: 'zhongyufan',
+    //     writable: false,
+    //     enumerable: true,
+    //     configurable: true,
+    //     get: () => {
+    //         console.log('你读取我啦');
+    //     },
+    //     set: () => {
+    //         console.log('你改变我啦');
+    //     }
+    // });
+    // console.log(Object.getOwnPropertyDescriptor(n, "name"));
+
+
+    // var a = {
+    //     name: 'zhongyufan'
+    // };
+    // a.age = 18;
+    // console.log(Object.getOwnPropertyDescriptor(a, "name"));
+
+
+    // function c1() {
+    //     this.p1 = 1;
+    //     this.p2 = function () {
+    //         console.log(this.p1);
+    //     }
+    // }
+    // var o1 = new c1;
+    // o1.p2();
+
+    // function c2() {};
+    // c2.prototype.p1 = 1;
+    // c2.prototype.p2 = function () {
+    //     console.log(this.p1);
+    // };
+    // var o2 = new c2;
+    // o2.p2();
+
+    class xxx {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+        // getter
+        get area() {
+            return this.good();
+        }
+        // method
+        good() {
+            return this.width + this.height;
+        }
+    }
+    // 继承
+    class zzz extends xxx {
+        constructor(width, height, all) {
+            super(width, height);
+            this.all = all;
+        }
+        result() {
+            console.log(this.width * this.height + this.all);
+        }
+    }
+    const bbb = new zzz(100, 200, '1');
+    bbb.result();
+</script>
+
+
+<body>
+
+
+</body>
+
+</html>

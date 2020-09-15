@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: yellowgreen;
+            position: absolute;
+            left: 0;
+            top: 50px;
+        }
+        #div2{
+            width: 1px;
+            height: 300px;
+            position: absolute;
+            left: 600px;
+            background: #000;
+        }
+    </style>
+    <script>
+        function startMover() {
+            setInterval(function () {
+                var oDiv=document.getElementById('div1');
+                var speed=(600-oDiv.offsetLeft)/10;
+                speed=speed>0?Math.ceil(speed):Math.floor(speed); //既可以往左又可以往右 兼容性
+                oDiv.style.left=oDiv.offsetLeft+speed+'px';
+            },30);
+        }
+    </script>
+</head>
+<body>
+   
+    <input type="button" value="开始运动" id="btn1" onclick="startMover()">
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+</html>

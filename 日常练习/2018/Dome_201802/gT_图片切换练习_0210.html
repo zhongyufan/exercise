@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片切换</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .show {
+            width: 1000px;
+            height: 650px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .show img {
+            width: 1000px;
+            height: 650px;
+        }
+
+        .show ul {
+            position: absolute;
+            top: 10px;
+            right: -60px;
+        }
+
+        .show li {
+            border: 1px solid #ccc;
+            width: 50px;
+            height: 50px;
+            list-style-type: none;
+        }
+
+        .show .active {
+            background: red;
+        }
+
+        .show p, .show span {
+            width: 1000px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            position: absolute;
+            background: red;
+            filter: alpha(opacity=5);
+            opacity: 0.5;
+            color: white;
+        }
+
+        .show p {
+            bottom: 0;
+        }
+
+        .show span {
+            top: 0;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            //创建数据
+            var aSrc=['../image/UNIQCL-1.jpg','../image/UNIQCL-2.jpg','../image/UNIQCL-3.jpg','../image/UNIQCL-4.jpg'];
+            var aText=['UNIQCL正门','UNIQCL收银台','UNIQCL展示台','UNIQCL侧门'];
+            var num=0;
+            var oldLi=null;
+
+            //创建入口
+            var oImg=document.getElementsByTagName('img')[0];
+            var oP=document.getElementsByTagName('p')[0];
+            var oSpan=document.getElementsByTagName('span')[0];
+            var oUl=document.getElementsByTagName('ul')[0];
+            var aLi=oUl.getElementsByTagName('li');
+
+            //动态添加列表
+            for(var i=0;i<aSrc.length;i++){
+                oUl.innerHTML+='<li></li>';
+            }
+            oldLi = aLi[num];
+
+            //初始化
+            oImg.src=aSrc[num];
+            oP.innerHTML=aText[num];
+            oSpan.innerHTML=num+1+'/'+aSrc.length;
+            aLi[num].className='active';
+
+            //点击事件
+            for(var i=0;i<aLi.length;i++){
+                //创建索引
+                aLi[i].index=i;
+                //li的点击事件
+                aLi[i].onclick = function () {
+                    //循环事件
+                    oImg.src = aSrc[this.index];
+                    oP.innerHTML = aText[this.index];
+                    oSpan.innerHTML = this.index + 1 + '/' + aSrc.length;
+
+                    //li样式控制（清空上个，当前添加）
+                    oldLi.className = '';
+                    oldLi = this;
+                    this.className = 'active';
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div class="show">
+    <img src="">
+    <p>
+
+    </p>
+    <span>
+
+    </span>
+    <ul>
+
+    </ul>
+</div>
+
+</body>
+</html>

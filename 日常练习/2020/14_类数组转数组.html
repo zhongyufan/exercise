@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>类数组转数组</title>
+  </head>
+  <body>
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+    <script>
+      // 常见的类数组有: 函数的参数 arguments, DOM 对象列表(比如通过 document.querySelectorAll 得到的列表), jQuery 对象 (比如 $(“div”))
+      // 类数组 仅有length 和 可遍历 没有数组的任何方法
+
+      let dom = document.querySelectorAll("input");
+      // 将伪数组转换为数组
+      // 方式一：
+      console.log(Array.prototype.slice.call(dom));
+      // 方式二：
+      console.log([...dom]);
+      // 方式三：
+      console.log(Array.from(dom));
+      // 方式四：
+      console.log(
+        (function() {
+          let arr = [];
+          for (let item of dom) {
+            arr.push(item);
+          }
+          return arr;
+        })()
+      );
+      // 方式五：
+      console.log([].concat.apply([], dom));
+    </script>
+  </body>
+</html>

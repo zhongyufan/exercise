@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            float: left;
+            background: red;
+            filter: alpha(opacity:30);
+            opacity: 0.3;
+        }
+    </style>
+    <script>
+
+        //多物体运动框架中  任何东西都不能共用
+        var alpha=30;
+        function startMave(obj,iTarget) {
+            clearInterval(obj.timer);
+            obj.timer=setInterval(function () {
+                var speed=(iTarget-alpha)/6;
+                speed=speed>0?Math.ceil(speed):Math.floor(speed);
+
+            },30);
+        }
+    </script>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>
