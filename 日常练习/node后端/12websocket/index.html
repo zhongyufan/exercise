@@ -2,72 +2,49 @@
 <html>
 
 <head>
-    <title>Socket.IO chat</title>
+    <title>消息通知</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        body {
-            font: 13px Helvetica, Arial;
-        }
-
-        form {
-            background: #000;
-            padding: 3px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        form input {
-            border: 0;
-            padding: 10px;
-            width: 90%;
-            margin-right: 0.5%;
-        }
-
-        form button {
-            width: 9%;
-            background: rgb(130, 224, 255);
-            border: none;
-            padding: 10px;
-        }
-
-        #messages {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        #messages li {
-            padding: 5px 10px;
-        }
-
-        #messages li:nth-child(odd) {
-            background: #eee;
-        }
     </style>
 </head>
 
 <body>
-    <ul id="messages"></ul>
-    <form action="">
-        <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <div id="app"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
     <script>
-        $(function () {
-            var socket = io();
-            $('form').submit(function (e) {
-                e.preventDefault(); // prevents page reloading
-                socket.emit('chat message', $('#m').val());
-                $('#m').val('');
-                return false;
-            });
+        let oDiv = document.getElementById('app');
+        let noRead = 0;
+        oDiv.innerHTML = '服务器连接中...';
+        // const socket = io('http://10.0.0.126:3000');
+        const socket = io('http://127.0.0.1:3000');
+
+        socket.on('connect_error', () => {
+            oDiv.innerHTML = `连接错误，尝试重新连接中...`;
+            setTimeout(() => {
+                oDiv.innerHTML = '服务器连接中...';
+            }, 500)
+        })
+        socket.on('connect', () => {
+            oDiv.innerHTML = '服务器连接成功！';
+        })
+
+        socket.on('connection', ({ msg, noRead }) => {
+            // oDiv.innerHTML = msg;
+            setTimeout(item => {
+                oDiv.innerHTML = `未读消息${noRead}`;
+            }, 1000);
+        })
+        socket.on('count', ({ state, noRead }) => {
+            if (state === 1) {
+                oDiv.innerHTML = `有新消息！`;
+                setTimeout(() => {
+                    oDiv.innerHTML = `未读消息${noRead}`;
+                }, 1000);
+            }
         });
     </script>
 </body>
