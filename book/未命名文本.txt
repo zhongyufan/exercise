@@ -1,0 +1,477 @@
+https://www.npmjs.com/package/socket.io | socket.io - npm
+https://socket.io/docs/client-connection-lifecycle/ | Connection lifecycle | Socket.IO
+https://www.npmjs.com/package/connect-redis | connect-redis - npm
+https://www.cnblogs.com/dfsxh/p/6509828.html | Redis开启远程登录连接。 - 林台山人 - 博客园
+https://support.apple.com/zh-cn/HT204063 | 重置 Mac 上的 NVRAM 或 PRAM - Apple 支持
+https://github.com/fuchengwei/deploy-cli-service | fuchengwei/deploy-cli-service: 前端自动部署脚手架服务
+https://blog.csdn.net/c347087870/article/details/108621088 | 前端项目一键打包自动部署_c347087870的博客-CSDN博客
+https://www.npmjs.com/package/shelljs | shelljs - npm
+https://pm2.keymetrics.io/docs/usage/startup/ | PM2 - Startup Script
+https://element.eleme.cn/#/zh-CN/component/form | 组件 | Element
+http://10.0.1.63:8080/#/login | 联欣智能商品管理系统
+file:///Users/zhong/Desktop/%E7%BA%BF%E4%B8%8B%E6%94%AF%E4%BB%9820200922/%E5%90%8E%E5%8F%B0%E7%BA%BF%E4%B8%8B%E6%94%AF%E4%BB%98%E5%8E%9F%E5%9E%8B%E9%9C%80%E6%B1%82%E8%AF%B4%E6%98%8E20200922/start.html#g=1&p=__-0918 | 添加-0918
+https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener | EventTarget.addEventListener() - Web API 接口参考 | MDN
+
+https://github.com/vuejs/vue-next | vuejs/vue-next: Repo for Vue 3.0 (currently in RC)
+https://v3.vuejs.org/guide/introduction.html#what-is-vue-js | Introduction | Vue.js
+http://www.alloyteam.com/nav/ | Web前端导航
+https://75.team/ | 75team首页 - 奇舞团博客
+https://spritejs.org/#/ | SpriteJS ~ Next - 下一代 SpriteJS
+https://spritejs.org/demo/#/doc/resolution_scale | SpriteJS/next - The next generation of spritejs.
+https://zcfy.cc/article/hot | 翻译，从此起步 - 众成翻译
+https://cnodejs.org/?tab=good | CNode：Node.js专业中文社区
+https://developer.mozilla.org/zh-CN/docs/Web/API/WebGL_API | WebGL - Web API 接口参考 | MDN
+https://blog.csdn.net/adzcsx2/article/details/50503506 | 图片头文件信息解析_adzcsx2的博客-CSDN博客
+https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestIdleCallback | requestIdleCallback - Web API 接口参考 | MDN
+https://github.com/shengxinjing/file-upload | shengxinjing/file-upload: 面试造火箭系列
+
+http://121.32.88.181:9091/zentao/www/index.php?m=my&f=task | 我的地盘::我的任务 - 禅道
+https://element.eleme.cn/#/zh-CN/component/pagination | 组件 | Element
+https://developer.mozilla.org/zh-CN/docs/Web/API/UIEvent/layerY | UIEvent.layerY-Web API接口参考| MDN
+https://caniuse.com/?search=WebSocket | Can I use... Support tables for HTML5, CSS3, etc
+https://www.freenas.org/ | FreeNAS Storage Operating System | Open Source - FreeNAS - Open Source Storage Operating System
+https://translate.google.com/#view=home&op=translate&sl=auto&tl=zh-CN&text=Filter | Google 翻译
+https://cn.vuejs.org/v2/api/#v-bind | API — Vue.js
+https://www.lodashjs.com/docs/lodash.debounce | lodash.debounce | Lodash 中文网
+https://files.alicdn.com/tpsservice/1d172845b1b1aa70cbabfc98901d87cb.pdf | 1d172845b1b1aa70cbabfc98901d87cb.pdf
+https://www.bilibili.com/video/BV1LZ4y1N7tG | 【别丧了】看完这些纪录片你会发现人间值得！励志向纪录片TOP10_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili
+https://github.com/search?q=vits&type= | Search · vits
+http://10.0.1.63:8080/#/otb/init/otb_buscheck_notice | 通知中心——联欣智能商品管理系统
+https://socket.io/get-started/chat/#Introduction | Get started | Socket.IO
+https://www.jianshu.com/p/2b284d98c7e2 | Mac 微信备份文件在哪儿 - 简书
+https://mp.weixin.qq.com/s/w984xYm5DlcRAM2Jgd9g_g | 面向未来的前端构建工具-vite
+https://pm2.keymetrics.io/ | PM2 - Home
+
+https://www.jianshu.com/p/ee23bc2f7154 | iTerm2 常用快捷键 - 简书
+https://element.eleme.cn/#/zh-CN/component/tree | 组件 | Element
+https://segmentfault.com/q/1010000014104469 | vue.js - [Vue warn] Cannot read property 'focus' of undefined" - SegmentFault 思否
+https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=cannot%20read%20property%20%27focus%27%20of%20undefined&oq=%2526lt%253Bannot%2520read%2520property%2520%2526%252339%253Bfocus%2526%252339%253B%2520of%2520undefined%2526quot%253B&rsv_pq=83a7d31a000084ce&rsv_t=72ba1pbQY1rQns8hS5Z36Og0OxG3Je0CBcX7me%2BgUldiyA4McRJLpijrmr8&rqlang=cn&rsv_enter=1&rsv_dl=tb&rsv_sug3=1&bs=Cannot%20read%20property%20%27focus%27%20of%20undefined%22 | cannot read property 'focus' of undefined_百度搜索
+https://github.com/ | GitHub
+http://10.0.1.63:8081/#/wel/index | 首页——联欣智能商品管理系统
+http://121.32.88.181:9091/zentao/www/index.php?m=bug&f=view&bugID=11534 | BUG #11534 模型制定_输入的数据为整数，偶尔点击整数的数据会变成小数 - k7智能商品管理系统 - 禅道
+https://juejin.im/frontend/JavaScript | 前端 - 掘金
+
+http://10.0.1.63:8080/#/wel/index | 首页——联欣智能商品管理系统
+http://121.32.88.181:9091/zentao/www/index.php?m=my&f=index | 我的地盘 - 禅道
+https://juejin.im/post/6844903497897345032 | Nodejs文件上传 - 掘金
+https://xieyufei.com/2017/03/29/Project-Summary.html | 记一次项目总结 | 谢小飞的网站
+
+https://element.eleme.cn/#/zh-CN/component/message-box | 组件 | Element
+http://121.32.88.181:9091/zentao/www/index.php?m=my&f=effort | 我的地盘::我的日志 - 禅道
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions | 正则表达式 - JavaScript | MDN
+https://www.runoob.com/regexp/regexp-syntax.html | 正则表达式 – 语法 | 菜鸟教程
+
+http://10.0.0.126:60005/doc.html#/lenx-ams-manager-api/otb%E6%B3%A2%E6%AE%B5%E8%AE%BE%E7%BD%AE/saveOtbBandSettingUsingPOST | lenx Swagger API
+https://element.eleme.cn/#/zh-CN/component/message-box | 组件 | Element
+https://www.liaoxuefeng.com/wiki/1022910821149312/1023024381818112 | generator - 廖雪峰的官方网站
+http://nodejs.cn/api/fs.html#fs_fs_writefile_file_data_options_callback | fs | Node.js API 文档
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise | Promise - JavaScript | MDN
+https://mp.weixin.qq.com/s?__biz=Mzg2NDAzMjE5NQ==&mid=2247486389&idx=1&sn=d7cea46f224b9c0ca5d4fb30a8d35951&chksm=ce6ecf19f919460f50aac37b59a3fe17fffb8c4b7df871bc2845ba091a2e1f5b439b4866d26e&scene=90&xtrack=1&sessionid=1598178010&subscene=93&clicktime=1598178020&ascene=56&devicetype=iOS14.0&version=17000e2e&nettype=3G+&abtest_cookie=AAACAA%3D%3D&lang=zh_CN&fontScale=100&exportkey=AzACDykmVhvgVCvvwFigxc0%3D&pass_ticket=69eNPdcpyNZfnDXVL0wb7VqusRZ3zvD09b5Dy887sEKCW9r00e%2BEe3NOsdh8g69I&wx_header=1 | 前端组件设计原则
+https://sspai.com/ | 少数派 - 高效工作，品质生活
+https://sspai.com/post/62332 | 给你的静态博客带来 RSS 订阅 - 少数派
+https://www.bootcss.com/p/git-guide/ | git 使用简易指南
+https://www.liaoxuefeng.com/wiki/896043488029600/896067074338496 | 安装Git - 廖雪峰的官方网站
+https://fanyi.baidu.com/?aldtype=16047#zh/en/%E8%AF%86%E5%88%AB%E7%A0%81 | 百度翻译-200种语言互译、沟通全世界！
+https://www.jianshu.com/p/3d9edcd023d7 | MAC查看和杀死进程 - 简书
+https://cn.vuejs.org/v2/guide/events.html#%E6%8C%89%E9%94%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6 | 事件处理 — Vue.js
+
+https://www.bilibili.com/ | 哔哩哔哩 (゜-゜)つロ 干杯~-bilibili
+https://www.baidu.com/s?ie=UTF-8&wd=express%20%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 | express 文件上传_百度搜索
+https://blog.csdn.net/byhage1/article/details/103875316 | express 实现文件上传。_BYH的博客-CSDN博客_express文件上传
+https://www.cnblogs.com/youcong/p/10462910.html | node.js使用express框架进行文件上传 - 挑战者V - 博客园
+https://www.npmjs.com/package/multer | multer - npm
+
+https://element.eleme.cn/#/zh-CN/component/loading | 组件 | Element
+https://fanyi.baidu.com/#zh/en/%E6%A0%91%E7%8A%B6%E5%9B%BE | 百度翻译
+http://127.0.0.1:32768/start.html#id=n7m1zc&p=%E9%94%80%E5%94%AE%E6%8C%87%E6%A0%87%EF%BC%88%E5%8D%95%E5%BA%97%EF%BC%89&g=1 | 销售指标（单店）
+http://121.32.88.181:9091/zentao/www/index.php?m=my&f=merits | 我的地盘::绩效 - 禅道
+http://121.32.88.181:9091/zentao/www/index.php?m=my&f=effort&t=html&date=20200803 | 我的地盘::我的日志 - 禅道
+https://echarts.apache.org/zh/option.html#series-pie.stillShowZeroSum | Documentation - Apache ECharts(incubating)
+https://cn.vuejs.org/v2/api/#vm-listeners | API — Vue.js
+https://pilotmoon.com/popclip/extensions/ | PopClip Extensions
+http://10.0.0.121/dashboard/groups | Groups · Dashboard · GitLab
+https://www.jianshu.com/p/a927bcecdbc0 | Node版本管理控制器n - 简书
+https://www.runoob.com/docker/docker-tutorial.html | Docker 教程 | 菜鸟教程
+https://blog.csdn.net/duola8789/article/details/78492971?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~first_rank_v2~rank_v25-3-78492971.nonecase | JS28 判断对象是空对象_多啦的博客-CSDN博客
+https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense | 路径智能感知-Visual Studio市场
+https://blog.csdn.net/qq_36688143/article/details/81287535 | Vue.js中 watch(深度监听)的最易懂的解释_FromNowOnUntilTheEnd-CSDN博客
+https://fanyi.baidu.com/?aldtype=16047#zh/en/%E5%AD%A3%E5%BA%A6 | 百度翻译
+https://www.baidu.com/s?ie=UTF-8&wd=%E8%8E%B7%E5%8F%96%E6%95%B0%E7%BB%84%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E6%95%B0 | 获取数组最后一个数_百度搜索
+https://www.cnblogs.com/sirdong/p/11746200.html | js 获取数组最后一个元素 - sirdong - 博客园
+http://10.0.1.17:8080/#/otb/selltarget/otn_sell_target_shop | 销售指标(店铺)——联欣智能商品管理系统
+
+https://cn.vuejs.org/v2/guide/reactivity.html | 深入响应式原理 — Vue.js
+https://codesandbox.io/index2 | CodeSandbox: Online IDE for Rapid Web Development
+https://www.runoob.com/react/react-jsx.html | React JSX | 菜鸟教程
+
+https://fanyi.baidu.com/?aldtype=16047#en/zh/remote%3A%20Invalid%20username%20or%20password. | 百度翻译
+https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=remote%3A%20Invalid%20username%20or%20password&oq=remote%253A%2520Invalid%2520username%2520or%2520password.&rsv_pq=d3936f5300002bb3&rsv_t=3cd7LCGz94tnHQHZQafOVi5JCJ5j6t%2FPst%2FuhIN4AD6MegzTAMJhTOxLhF8&rqlang=cn&rsv_enter=1&rsv_dl=tb&rsv_sug3=3&rsv_sug2=0&rsv_btype=t&inputT=226&rsv_sug4=1562 | remote: Invalid username or password_百度搜索
+https://blog.csdn.net/ITLISHUANG/article/details/102959748 | 远程无效的用户名或密码：remote: Invalid username or password解决过程记录_ITLISHUANG的博客-CSDN博客
+https://blog.csdn.net/xuesuoziluoshu/article/details/106725834?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight | Git上传错误——remote: Invalid username or password._xuesuoziluoshu的博客-CSDN博客_git密码没有错但是remote: invalid username or password.
+https://www.baidu.com/s?ie=UTF-8&wd=github%20%E6%96%B0%E5%A2%9Eshh%E5%AF%86%E9%92%A5 | github 新增shh密钥_百度搜索
+https://www.cnblogs.com/zolich/p/12906838.html | GitHub使用SSH连接以及生成修改添加密钥详细过程 - zolich - 博客园
+https://github.com/settings/keys | SSH and GPG keys
+https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=sourcetree%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8token&oq=sourcetree&rsv_pq=91b81f55000746e3&rsv_t=90eeTelASSf1un9JNQY%2FN9KZauvG%2F%2BdlBOtFkebeou8jMEahiXU6Gtygn5Q&rqlang=cn&rsv_enter=1&rsv_dl=tb&rsv_sug3=18&rsv_sug1=3&rsv_sug7=100&rsv_sug2=0&rsv_btype=t&inputT=3366&rsv_sug4=4103 | sourcetree如何使用token_百度搜索
+https://www.cnblogs.com/fisherbook/p/11397168.html | SourceTree安装与使用 - fisherbook - 博客园
+https://www.sourcetreeapp.com/ | Sourcetree | Free Git GUI for Mac and Windows
+https://community.atlassian.com/t5/Sourcetree/ct-p/sourcetree
+https://www.baidu.com/s?wd=git%20orgin&rsv_spt=1&rsv_iqid=0xbe238c01000431a2&issp=1&f=8&rsv_bp=1&rsv_idx=2&ie=utf-8&rqlang=cn&tn=baiduhome_pg&rsv_enter=1&rsv_dl=tb&oq=origin&rsv_btype=t&inputT=628&rsv_t=ef49r1qkkEFicANod4226aP7IJ9D82t07n7pFQWvxJJRq33z7fB546TzIJZHNH2ccQS6&rsv_sug3=10&rsv_sug1=5&rsv_sug7=100&rsv_pq=e691251d00004570&rsv_sug2=0&prefixsug=git%2520orgin&rsp=3&rsv_sug4=1739 | git orgin_百度搜索
+https://www.jianshu.com/p/7b2b152cd03f | Git 里面的 origin 理解 - 简书
+
+http://10.0.1.17:8080/#/otb/channel/otn_channel_store_model_store_ration | 店铺定量——联欣智能商品管理系统
+https://element.eleme.cn/#/zh-CN/component/progress | 组件 | Element
+http://121.32.88.181:9091/zentao/www/index.php?m=my&f=task | 我的地盘::我的任务 - 禅道
+http://10.0.0.126:60005/doc.html#/lenx-ams-manager-api/OTB%E7%AD%96%E7%95%A5%E8%AE%BE%E7%BD%AE/getStrategySettingUsingGET | lenx Swagger API
+https://cn.vuejs.org/v2/guide/render-function.html | 渲染函数 & JSX — Vue.js
+https://cn.vuejs.org/v2/guide/components-props.html#%E7%A6%81%E7%94%A8-Attribute-%E7%BB%A7%E6%89%BF | Prop — Vue.js
+https://www.bilibili.com/video/BV1DZ4y1u7Ye | 【盘点】看完后能改变你人生的纪录片TOP10 提升自我 改变人生轨迹_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili
+https://www.runoob.com/js/js-errors.html | JavaScript 错误 – Throw、Try 和 Catch | 菜鸟教程
+https://www.jsdelivr.com/?docs=gh | jsDelivr - A free, fast, and reliable CDN for open source
+https://jsdoc.zcopy.site/about-getting-started.html#adding-documentation-comments-to-your-code | 开始使用 JSDoc 3 | JSDoc中文文档 | JSDoc中文网
+https://echarts.apache.org/examples/zh/index.html?theme=light#chart-type-bar | Examples - Apache ECharts (incubating)
+http://127.0.0.1:32767/start.html#id=n7m1zc&p=%E9%94%80%E5%94%AE%E6%8C%87%E6%A0%87%EF%BC%88%E5%8D%95%E5%BA%97%EF%BC%89&g=1 | 销售指标（单店）
+https://www.baidu.com/s?ie=UTF-8&wd=echarts%20vue | echarts vue_百度搜索
+https://g2.antv.vision/zh/docs/manual/getting-started#%E5%9C%A8-react--vue--angular-%E4%B8%AD%E4%BD%BF%E7%94%A8-g2 | 快速上手 | G2
+https://www.baidu.com/s?ie=UTF-8&wd=vue%E4%BD%BF%E7%94%A8g2 | vue使用g2_百度搜索
+https://www.jianshu.com/p/377a52a2aabb | vue中使用G2(一) - 简书
+https://www.baidu.com/s?ie=UTF-8&wd=vue%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0%E7%9A%84%E9%95%BF%E5%BA%A6 | vue获取元素的长度_百度搜索
+https://www.cnblogs.com/lymconch/p/11286971.html | vue 获取元素高度 - 一只螺 - 博客园
+https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=transition&oq=transition%25E5%25BB%25B6%25E8%25BF%259F&rsv_pq=eb42462100052db2&rsv_t=12fbHoKETQVg0fWASdGAdrPISiN0ugv4xddjKjG9ZWjURp8cEZFBvT3T%2BNM&rqlang=cn&rsv_enter=0&rsv_dl=tb&rsv_btype=t&inputT=130&rsv_sug3=18&rsv_sug1=16&rsv_sug7=100&rsv_sug2=0&prefixsug=transition&rsp=0&rsv_sug4=251 | transition_百度搜索
+https://www.w3school.com.cn/cssref/pr_transition.asp | CSS3 transition 属性
+http://127.0.0.1:32767/start.html#id=d0og3m&p=%E5%BA%97%E9%93%BA%E5%AE%9A%E9%87%8F%EF%BC%88%E6%80%BB%E9%83%A8%EF%BC%89&g=1 | 店铺定量（总部）
+https://fanyi.baidu.com/?aldtype=16047#zh/en/%E5%AD%98%E5%9C%A8%E6%95%B0%E6%8D%AE | 百度翻译
+
+https://www.jianshu.com/p/541d8b18cf95 | ElementUI多个子组件表单的校验管理 - 简书
+https://blog.csdn.net/sinat_36521655/article/details/107389233?%3E | ElementUI如何校验表格单元格内容？其实很简单_随风丶逆风的博客-CSDN博客_vxe-table
+https://cn.vuejs.org/v2/guide/components-custom-events.html#sync-%E4%BF%AE%E9%A5%B0%E7%AC%A6 | 自定义事件 — Vue.js
+https://www.runoob.com/nodejs/nodejs-fs.html | Node.js 文件系统 | 菜鸟教程
+http://nodejs.cn/api/fs.html | fs | Node.js API 文档
+http://localhost:8081/ | vmodel
+https://www.lodashjs.com/docs/lodash.divide | lodash.divide | Lodash 中文网
+https://www.cnblogs.com/jianxian/p/11278108.html | 浅谈JS之Error对象 - 剑仙6 - 博客园
+https://www.cnblogs.com/minigrasshopper/p/8056674.html | js 错误Error对象详解 - 狂奔的小马扎 - 博客园
+https://www.jianshu.com/p/b3932211ff05 | 理解js中的Error - 简书
+https://www.w3school.com.cn/js/jsref_split.asp | JavaScript split() 方法
+https://www.cnblogs.com/waitingbar/p/3794636.html | js分割数字 - 小老虎网络 - 博客园
+https://www.baidu.com/s?ie=UTF-8&wd=js%20%E5%AE%9E%E7%8E%B0%E6%95%B0%E5%AD%97%E5%8D%83%E5%88%86%E4%BD%8D | js 实现数字千分位_百度搜索
+https://www.cnblogs.com/fengff/p/8073834.html | js实现数字千分位 - 枫飞飞 - 博客园
+https://developers.google.com/speed/docs/insights/v5/get-started?utm_source=lh-chrome-ext | Get Started with the PageSpeed Insights API  |  Google Developers
+https://www.baidu.com/s?ie=UTF-8&wd=lighthouse | lighthouse_百度搜索
+https://www.cnblogs.com/zengfp/p/9888048.html | Lighthouse前端性能优化测试工具 - 雨吻蝶 - 博客园
+
+http://10.0.0.126:60005/doc.html#/lenx-ams-manager-api/otb%E5%88%9D%E5%A7%8B%E5%8C%96/createOtbInitConfigUsingPOST | lenx Swagger API
+http://10.0.0.126:60005/doc.html#/lenx-ams-manager-api/%E8%B4%A7%E5%93%81%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C%E7%AE%A1%E7%90%86/saveDetailUsingPOST | lenx Swagger API
+https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7 | 计算属性和侦听器 — Vue.js
+https://www.runoob.com/jsref/jsref-find.html | JavaScript find() 方法 | 菜鸟教程
+http://121.32.88.181:9091/zentao/www/index.php?m=task&f=view&taskID=23201 | TASK#23201 【前端开发】经营设置页面开发 / 智能商品-OTB - 禅道
+https://element.eleme.cn/#/zh-CN/component/input | 组件 | Element
+https://www.cnblogs.com/jsgoshu/p/11444404.html | 深入理解await与async - jsgoshu - 博客园
+https://cn.vuejs.org/v2/guide/computed.html | 计算属性和侦听器 — Vue.js
+https://aotu.io/ | Aotu.io「凹凸实验室」
+https://www.lodashjs.com/docs/lodash.difference | lodash.difference | Lodash 中文网
+https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/file#files | <input type="file"> - HTML（超文本标记语言） | MDN
+file:///Users/zhong/Desktop/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/ggs/%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/index.html? | 文件上传
+https://3jq2fz.axshare.com/prototype/login/3jq2fz | AxShare - Prototype Password
+https://www.jianshu.com/p/a0c67f4e145e | axios拦截器 - 简书
+https://www.cnblogs.com/xbzhu/p/11810384.html | axios全局配置及拦截器 - 小水皮 - 博客园
+http://127.0.0.1:32767/start.html#id=y3wuj7&p=%E7%BB%8F%E8%90%A5%E8%AE%BE%E7%BD%AE&g=1 | 经营设置
+https://fanyi.baidu.com/?aldtype=16047#zh/en/%E9%97%B4%E9%9A%94 | 百度翻译
+
+http://localhost:8080/?#/wel/index | 首页——Lenx智能商品管理系统
+http://121.32.88.181:9091/zentao/www/index.php?m=bug&f=view&bugID=11308 | BUG #11308 一键提货_点击一键提货后点击弹窗的取消，页面一直处于加载状态 - k7智能商品管理系统 - 禅道
+https://element.eleme.cn/#/zh-CN/component/drawer | 组件 | Element
+http://10.0.0.122:9999/doc.html#/lenx-upc-manager/%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86/acceptSysVersionUsingPOST | lenx Swagger API
+https://cn.vuejs.org/v2/guide/events.html#%E6%8C%89%E9%94%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6 | 事件处理 — Vue.js
+https://router.vuejs.org/zh/ | 介绍 | Vue Router
+https://sspai.com/post/42921 | 让键盘变成你想要的样子：改键利器 Karabiner-Elements - 少数派
+https://www.jianshu.com/p/d14226c27296 | mac外接显示器 字体发虚解决方案 - 简书
+https://sspai.com/post/57549 | 为 macOS 10.15 开启 HiDPI，让 2K 显示器更舒适 - 少数派
+https://www.cnblogs.com/huge1122/p/11346115.html | 关于在vue项目中使用wangEditor - 萌新求解 - 博客园
+https://www.kancloud.cn/wangfupeng/wangeditor3/335777 | 配置菜单 · wangEditor3使用手册 · 看云
+
+https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=mac%E5%A4%96%E6%8E%A51k%E5%B1%8F%E5%8F%91%E8%99%9A&oq=mac%25E5%25A4%2596%25E6%258E%25A5%25E5%25B1%258F%25E5%25B9%2595%25E5%258F%2591%25E8%2599%259A&rsv_pq=858d27e5002c3259&rsv_t=272fZcDo9GQMIHkVumGJDiUoanZiMXpXTsFWksRJWUeuIihve49s5feVogo&rqlang=cn&rsv_enter=1&rsv_dl=tb&rsv_sug3=29&rsv_sug1=9&rsv_sug7=100&rsv_sug2=0&rsv_btype=t&prefixsug=mac%25E5%25A4%2596%25E6%258E%25A51k%25E5%25B1%258F%25E5%258F%2591%25E8%2599%259A&rsp=1&inputT=8345&rsv_sug4=9208 | mac外接1k屏发虚_百度搜索
+https://www.jianshu.com/p/6274253b78d8 | 可能是目前解决Mac外接显示器字体发虚的最好方法 - 简书
+https://blog.csdn.net/static_void_james/article/details/75221408?utm_source=blogxgwz2 | macbook 外接显示器 模糊问题解决_static_void_james的博客-CSDN博客_mac外接显示器模糊
+
+http://localhost:8080/#/newProd//movesug/index | 移仓建议单——Lenx智能商品管理系统
+http://10.0.0.122:9999/doc.html#/lenx-ams-manager-api/%E4%B8%8A%E5%B8%82%E7%A7%BB%E4%BB%93%E5%8D%95%E7%AE%A1%E7%90%86/updateSizeQtyUsingPOST | lenx Swagger API
+file:///Users/zhong/Desktop/%E4%B8%8A%E5%B8%82%E9%85%8D%E5%8F%910522/index.html#g=1&p=%E9%9C%80%E6%B1%82%E6%98%8E%E7%BB%86 | 需求明细
+http://121.32.88.181:9091/zentao/www/index.php?m=my&f=merits | 我的地盘::绩效 - 禅道
+https://www.sojson.com/ | JSON在线 | JSON解析格式化—SO JSON在线工具
+https://www.jianshu.com/p/88982fef7472 | element-ui 如何获取select组件的label值？ - 简书
+http://www.imooc.com/wenda/detail/472153 | element-ui 如何获取select组件的label值？_慕课猿问
+https://element.eleme.cn/#/zh-CN/component/message | 组件 | Element
+https://cn.vuejs.org/v2/guide/forms.html#lazy | 表单输入绑定 — Vue.js
+http://www.form-create.com/v2/guide/ | 介绍 | form-create
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign | Object.assign() - JavaScript | MDN
+https://editorconfig.org/ | EditorConfig
+https://www.processon.com/diagraming/5ee0cee1f346fb1ae558beff | 未命名文件 - ProcessOn
+https://blog.csdn.net/weixin_34241036/article/details/88834420 | vue父组件在created中传值给子组件，子组件去监听props变化_weixin_34241036的博客-CSDN博客
+https://www.cnblogs.com/chen-yi-yi/p/10998907.html | 父组件向子组件传值时，值已经传过来却没有触发子组件的watch监听，解决~ - love编程的小可爱 - 博客园
+https://www.baidu.com/s?ie=UTF-8&wd=.sync | .sync_百度搜索
+https://cn.vuejs.org/v2/guide/components-custom-events.html#sync-%E4%BF%AE%E9%A5%B0%E7%AC%A6 | 自定义事件 — Vue.js
+
+https://juejin.im/post/5ed37b57518825434c3d9677 | 聊聊前端开发日常的协作工具（全） - 掘金
+https://juejin.im/post/5e83f8ad6fb9a03c5e0ccccc | 微前端那些事 - 掘金
+https://juejin.im/post/5eba0684e51d454da077bcc1 | 《前端那些事》如何更好管理 Api 接口 - 掘金
+https://juejin.im/post/5eaa2cb3f265da7ba0581c84 | 前端表单数据那些事 - 掘金
+https://juejin.im/post/5ecdd954e51d45786d3fd8de | 《前端那些事》从0到1开发动态表单 - 掘金
+https://github.com/woai3c/vue-form-maker | woai3c/vue-form-maker: vue表单生成器 动态生成表单组件
+https://dream2023.gitee.io/vue-ele-form-generator/ | 示例表单 | 表单生成器
+https://cn.vuejs.org/v2/guide/list.html#%E6%98%BE%E7%A4%BA%E8%BF%87%E6%BB%A4-%E6%8E%92%E5%BA%8F%E5%90%8E%E7%9A%84%E7%BB%93%E6%9E%9C | 列表渲染 — Vue.js
+
+http://localhost:8081/ | test
+https://cn.vuejs.org/v2/guide/list.html#%E6%95%B0%E7%BB%84%E6%9B%B4%E6%96%B0%E6%A3%80%E6%B5%8B | 列表渲染 — Vue.js
+https://www.w3school.com.cn/js/js_array_methods.asp | JavaScript 数组方法
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array#%E5%B1%9E%E6%80%A7 | Array - JavaScript | MDN
+https://cn.vuejs.org/v2/api/#vm-watch | API — Vue.js
+https://www.lodashjs.com/docs/lodash.debounce | lodash.debounce | Lodash 中文网
+https://weibanzhushou.com/ | 企业微信营销_企业微信会话存档_私域流量运营-微伴助手官网
+https://reactnative.cn/ | React Native 中文网 · 使用React来编写原生应用的框架
+https://www.baidu.com/s?ie=utf-8&f=3&rsv_bp=1&tn=baidu&wd=diff%E7%AE%97%E6%B3%95&oq=diff&rsv_pq=cf1114c000766a89&rsv_t=02e27p%2FkLvQac4rgroQmR3W9SYRQl1gctq2n7wZUKXF13cdWY5XCPR%2FG0QQ&rqlang=cn&rsv_enter=1&rsv_dl=ts_2&rsv_sug3=1&rsv_sug1=2&rsv_sug7=100&rsv_sug2=0&rsv_btype=t&prefixsug=diff&rsp=2&inputT=616&rsv_sug4=7528 | diff算法_百度搜索
+https://www.jianshu.com/p/cdb4ad82df20 | Diff算法 - 简书
+http://www.ruanyifeng.com/blog/2012/08/how_to_read_diff.html | 读懂diff - 阮一峰的网络日志
+https://sspai.com/post/40626 | 专业的高颜值 GIF 录制应用：Gifox - 少数派
+https://www.iplaysoft.com/ | 异次元软件世界 - 软件改变生活！
+
+https://npm.taobao.org/mirrors?spm=a2c6h.14029880.0.0.735975d7mg6w8j | NPM, Node.js, Node.js RC, Node.js Nightly, io.js, alinode, nsolid, Python, PhantomJS, electron, electron-builder-binaries, atom-shell, node-chakracore, git-for-windows, nwjs, atom, ChromeDriver, OperaDriver, geckodriver, selenium, node-inspector, fsevents, node-sass, leveldown, leveldown-hyper, mknod, rabin, sodium-prebuilt, utp-native, node-tk5, couchbase, fuse-bindings, zmq-prebuilt, gl, hackrf, sqlite3, sqlcipher, chromium-browser-snapshots, grpc, nodegit, canvas-prebuilt, cypress, flow, poi, libjpeg-turbo, moby, yarn, utf-8-validate, jpegtran-bin, pngquant-bin, zopflipng-bin, gifsicle-bin, mozjpeg-bin, cwebp-bin, optipng-bin, jpegoptim-bin, pngcrush-bin, guetzli-bin, gif2webp-bin, pngout-bin, advpng-bin, jpeg-recompress-bin, zeromq, minikube, sentry-cli, sharp-libvips, sharp, tfjs-models, node-canvas-prebuilt, node-swc Mirrors
+https://www.bilibili.com/video/BV187411y7hF | 【狂神说Java】Linux最通俗易懂的教程阿里云真实环境学习_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili
+https://www.bilibili.com/?spm_id_from=333.788.b_696e7465726e6174696f6e616c486561646572.1 | 哔哩哔哩 (゜-゜)つロ 干杯~-bilibili
+https://www.bilibili.com/ranking?spm_id_from=333.851.b_7072696d61727950616765546162.3 | 热门视频排行榜 - 哔哩哔哩 (゜-゜)つロ 干杯~-bilibili
+https://www.runoob.com/linux/linux-intro.html | Linux 简介 | 菜鸟教程
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy | Proxy - JavaScript | MDN
+https://www.jianshu.com/p/2df6dcddb0d7 | 实现双向绑定Proxy比defineproperty优劣如何 - 简书
+https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch | 使用 Fetch - Web API 接口参考 | MDN
+https://element.eleme.cn/#/zh-CN/component/drawer | 组件 | Element
+https://cn.vuejs.org/v2/guide/syntax.html | 模板语法 — Vue.js
+https://cn.vuejs.org/v2/api/#vm-root | API — Vue.js
+http://localhost:8080/#/login | Lenx智能商品管理系统
+
+https://www.apple.com.cn/iphone-se/ | iPhone SE - Apple (中国大陆)
+https://leetcode-cn.com/ | 力扣（LeetCode）官网 - 全球极客挚爱的技术成长平台
+https://sort.hust.cc/ | Introduction - 十大经典排序算法
+https://labuladong.gitbook.io/algo/ | labuladong的算法小抄 - labuladong的算法小抄
+https://github.com/fighting41love/funNLP | fighting41love/funNLP: 中英文敏感词、语言检测、中外手机/电话归属地/运营商查询、名字推断性别、手机号抽取、身份证抽取、邮箱抽取、中日文人名库、中文缩写库、拆字词典、词汇情感值、停用词、反动词表、暴恐词表、繁简体转换、英文模拟中文发音、汪峰歌词生成器、职业名称词库、同义词库、反义词库、否定词库、汽车品牌词库、汽车零件词库、连续英文切割、各种中文词向量、公司名字大全、古诗词库、IT词库、财经词库、成语词库、地名词库、历史名人词库、诗词词库、医学词库、饮食词库、法律词库、汽车词库、动物词库、中文聊天语料、中文谣言数据、百度中文问答数据集、句子相似度匹配算法集合、bert资源、文本生成&摘要相关工具、cocoNLP信息抽取工具、国内电话号码正则匹配、清华大学XLORE:中英文跨语言百科知识图谱、清华大学人工智能技术系列报告、自然语言生成、NLU太难了系列、自动对联数据及机器人、用户名黑名单列表、罪名法务名词及分类模型、微信公众号语料、cs224n深度学习自然语言处理课程、中文手写汉字识别、中文自然语言处理 语料/数据集、变量命名神器、分词语料库+代码、任务型对话英文数据集、ASR 语音数据集 + 基于深度学习的中文语音识别系统、笑声检测器、Microsoft多语言数字/单位/如日期时间识别包、中华新华字典数据库及api(包括常用歇后语、成语、词语和汉字)、文档图谱自动生成、SpaCy 中文模型、Common Voice语音识别数据集新版、神经网络关系抽取、基于bert的命名实体识别、关键词(Keyphrase)抽取包pke、基于医疗领域知识图谱的问答系统、基于依存句法与语义角色标注的事件三元组抽取、依存句法分析4万句高质量标注数据、cnocr：用来做中文OCR的Python3包、中文人物关系知识图谱项目、中文nlp竞赛项目及代码汇总、中文字符数据、speech-aligner: 从“人声语音”及其“语言文本”产生音素级别时间对齐标注的工具、AmpliGraph: 知识图谱表示学习(Python)库：知识图谱概念链接预测、Scattertext 文本可视化(python)、语言/知识表示工具：BERT & ERNIE、中文对比英文自然语言处理NLP的区别综述、Synonyms中文近义词工具包、HarvestText领域自适应文本挖掘工具（新词发现-情感分析-实体链接等）、word2word：(Python)方便易用的多语言词-词对集：62种语言/3,564个多语言对、语音识别语料生成工具：从具有音频/字幕的在线视频创建自动语音识别(ASR)语料库、构建医疗实体识别的模型（包含词典和语料标注）、单文档非监督的关键词抽取、Kashgari中使用gpt-2语言模型、开源的金融投资数据提取工具、文本自动摘要库TextTeaser: 仅支持英文、人民日报语料处理工具集、一些关于自然语言的基本模型、基于14W歌曲知识库的问答尝试--功能包括歌词接龙and已知歌词找歌曲以及歌曲歌手歌词三角关系的问答、基于Siamese bilstm模型的相似句子判定模型并提供训练数据集和测试数据集、用Transformer编解码模型实现的根据Hacker News文章标题自动生成评论、用BERT进行序列标记和文本分类的模板代码、LitBank：NLP数据集——支持自然语言处理和计算人文学科任务的100部带标记英文小说语料、百度开源的基准信息抽取系统、虚假新闻数据集、Facebook: LAMA语言模型分析，提供Transformer-XL/BERT/ELMo/GPT预训练语言模型的统一访问接口、CommonsenseQA：面向常识的英文QA挑战、中文知识图谱资料、数据及工具、各大公司内部里大牛分享的技术文档 PDF 或者 PPT、自然语言生成SQL语句（英文）、中文NLP数据增强（EDA）工具、英文NLP数据增强工具 、基于医药知识图谱的智能问答系统、京东商品知识图谱、基于mongodb存储的军事领域知识图谱问答项目、基于远监督的中文关系抽取、语音情感分析、中文ULMFiT-情感分析-文本分类-语料及模型、一个拍照做题程序、世界各国大规模人名库、一个利用有趣中文语料库 qingyun 训练出来的中文聊天机器人、中文聊天机器人seqGAN、省市区镇行政区划数据带拼音标注、教育行业新闻语料库包含自动文摘功能、开放了对话机器人-知识图谱-语义理解-自然语言处理工具及数据、中文知识图谱：基于百度百科中文页面-抽取三元组信息-构建中文知识图谱、masr: 中文语音识别-提供预训练模型-高识别率、Python音频数据增广库、中文全词覆盖BERT及两份阅读理解数据、ConvLab：开源多域端到端对话系统平台、中文自然语言处理数据集、基于最新版本rasa搭建的对话系统、基于TensorFlow和BERT的管道式实体及关系抽取、一个小型的证券知识图谱/知识库、复盘所有NLP比赛的TOP方案、OpenCLaP：多领域开源中文预训练语言模型仓库、UER：基于不同语料+编码器+目标任务的中文预训练模型仓库、中文自然语言处理向量合集、基于金融-司法领域(兼有闲聊性质)的聊天机器人、g2pC：基于上下文的汉语读音自动标记模块、Zincbase 知识图谱构建工具包、诗歌质量评价/细粒度情感诗歌语料库、快速转化「中文数字」和「阿拉伯数字」、百度知道问答语料库、基于知识图谱的问答系统、jieba_fast 加速版的jieba、正则表达式教程、中文阅读理解数据集、基于BERT等最新语言模型的抽取式摘要提取、Python利用深度学习进行文本摘要的综合指南、知识图谱深度学习相关资料整理、维基大规模平行文本语料、StanfordNLP 0.2.0：纯Python版自然语言处理包、NeuralNLP-NeuralClassifier：腾讯开源深度学习文本分类工具、端到端的封闭域对话系统、中文命名实体识别：NeuroNER vs. BertNER、新闻事件线索抽取、2019年百度的三元组抽取比赛：“科学空间队”源码、基于依存句法的开放域文本知识三元组抽取和知识库构建、中文的GPT2训练代码、ML-NLP - 机器学习(Machine Learning)NLP面试中常考到的知识点和代码实现、nlp4han:中文自然语言处理工具集(断句/分词/词性标注/组块/句法分析/语义分析/NER/N元语法/HMM/代词消解/情感分析/拼写检查、XLM：Facebook的跨语言预训练语言模型、用基于BERT的微调和特征提取方法来进行知识图谱百度百科人物词条属性抽取、中文自然语言处理相关的开放任务-数据集-当前最佳结果、CoupletAI - 基于CNN+Bi-LSTM+Attention 的自动对对联系统、抽象知识图谱、MiningZhiDaoQACorpus - 580万百度知道问答数据挖掘项目、brat rapid annotation tool: 序列标注工具、大规模中文知识图谱数据：1.4亿实体、数据增强在机器翻译及其他nlp任务中的应用及效果、allennlp阅读理解:支持多种数据和模型、PDF表格数据提取工具 、 Graphbrain：AI开源软件库和科研工具，目的是促进自动意义提取和文本理解以及知识的探索和推断、简历自动筛选系统、基于命名实体识别的简历自动摘要、中文语言理解测评基准，包括代表性的数据集&基准模型&语料库&排行榜、树洞 OCR 文字识别 、从包含表格的扫描图片中识别表格和文字、语声迁移、Python口语自然语言处理工具集(英文)、 similarity：相似度计算工具包，java编写、海量中文预训练ALBERT模型 、Transformers 2.0 、基于大规模音频数据集Audioset的音频增强 、Poplar：网页版自然语言标注工具、图片文字去除，可用于漫画翻译 、186种语言的数字叫法库、Amazon发布基于知识的人-人开放领域对话数据集 、中文文本纠错模块代码、繁简体转换 、 Python实现的多种文本可读性评价指标、类似于人名/地名/组织机构名的命名体识别数据集 、东南大学《知识图谱》研究生课程(资料)、. 英文拼写检查库 、 wwsearch是企业微信后台自研的全文检索引擎、CHAMELEON：深度学习新闻推荐系统元架构 、 8篇论文梳理BERT相关模型进展与反思、DocSearch：免费文档搜索引擎、 LIDA：轻量交互式对话标注工具 、aili - the fastest in-memory index in the East 东半球最快并发索引 、知识图谱车音工作项目、自然语言生成资源大全 、中日韩分词库mecab的Python接口库、中文文本摘要/关键词提取、汉字字符特征提取器 (featurizer)，提取汉字的特征（发音特征、字形特征）用做深度学习的特征、中文生成任务基准测评 、中文缩写数据集、中文任务基准测评 - 代表性的数据集-基准(预训练)模型-语料库-baseline-工具包-排行榜、PySS3：面向可解释AI的SS3文本分类器机器可视化工具 、中文NLP数据集列表、COPE - 格律诗编辑程序、doccano：基于网页的开源协同多语言文本标注工具 、PreNLP：自然语言预处理库、简单的简历解析器，用来从简历中提取关键信息、用于中文闲聊的GPT2模型：GPT2-chitchat、基于检索聊天机器人多轮响应选择相关资源列表(Leaderboards、Datasets、Papers)、(Colab)抽象文本摘要实现集锦(教程 、词语拼音数据、高效模糊搜索工具、NLP数据增广资源集、微软对话机器人框架 、 GitHub Typo Corpus：大规模GitHub多语言拼写错误/语法错误数据集、TextCluster：短文本聚类预处理模块 Short tex
+https://github.com/jobbole/awesome-programming-books | jobbole/awesome-programming-books: 经典编程书籍大全，涵盖：计算机系统与网络、系统架构、算法与数据结构、前端开发、后端开发、移动开发、数据库、测试、项目与团队、程序员职业修炼、求职面试等
+https://cn.vuejs.org/v2/guide/forms.html#lazy | 表单输入绑定 — Vue.js
+https://cli.vuejs.org/zh/guide/creating-a-project.html#%E4%BD%BF%E7%94%A8%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%95%8C%E9%9D%A2 | 创建一个项目 | Vue CLI
+https://space.bilibili.com/451368848?spm_id_from=333.788.b_765f7570696e666f.1 | CodingStartup起码课的个人空间 - 哔哩哔哩 ( ゜- ゜)つロ 乾杯~ Bilibili
+https://www.bilibili.com/video/BV1JA411t7E9 | iPhone SE 产品网页之旋转特效_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili
+https://www.baidu.com/s?ie=UTF-8&wd=clientHeight | clientHeight_百度搜索
+https://blog.csdn.net/qq_42445490/article/details/88819048 | 浅谈JS各种宽高（clientHeight、scrollHeight、offsetHeight等）_javascript_骆小胖~-CSDN博客
+https://segmentfault.com/a/1190000018577416 | Lottie-前端实现AE动效 - TAFE - 腾讯动漫前端开发团队 - SegmentFault 思否
+https://airbnb.design/lottie/ | Lottie
+https://lottiefiles.com/ | LottieFiles - Free animation files built for Lottie
+https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=html%20canvas&oq=canvas&rsv_pq=e66c350f00332136&rsv_t=5d33MKyCxgHbgi5KcRmWnNBrmyIEzqy4GGULKgow31jgMAolq3xvfJ4T028&rqlang=cn&rsv_enter=1&rsv_dl=tb&rsv_btype=t&inputT=9993&rsv_sug3=25&rsv_sug1=17&rsv_sug7=100&rsv_sug2=0&rsv_sug4=11818 | html canvas_百度搜索
+https://www.runoob.com/html/html5-canvas.html | HTML5 Canvas | 菜鸟教程
+https://www.w3school.com.cn/tags/tag_canvas.asp | HTML <canvas> 标签
+https://www.w3school.com.cn/html5/html_5_canvas.asp | HTML 5 Canvas
+file:///Users/zhong/Desktop/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/ggs/%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0/%E7%94%BB%E7%AC%94/canvas/canvas.html | Canvas
+https://www.bilibili.com/ | 哔哩哔哩 (゜-゜)つロ 干杯~-bilibili
+https://space.bilibili.com/95256449?spm_id_from=333.788.b_765f7570696e666f.1 | 遇见狂神说的个人空间 - 哔哩哔哩 ( ゜- ゜)つロ 乾杯~ Bilibili
+https://www.bilibili.com/video/BV1FE411P7B3?t=307 | 【狂神说Java】Git最新教程通俗易懂_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili
+
+https://cn.vuejs.org/v2/guide/ | 介绍 — Vue.js
+https://cli.vuejs.org/zh/guide/prototyping.html | 快速原型开发 | Vue CLI
+https://vuex.vuejs.org/zh/ | Vuex 是什么？ | Vuex
+https://leetcode-cn.com/ | 力扣 (LeetCode) 官网 - 全球极客挚爱的技术成长平台
+https://www.baidu.com/s?ie=UTF-8&wd=leetcode | leetcode_百度搜索
+https://leetcode-cn.com/?utm_source=LCUS&utm_medium=banner_redirect&utm_campaign=transfer2china | (22) 力扣（LeetCode）官网 - 全球极客挚爱的技术成长平台
+https://leetcode-cn.com/circle/article/9EZfRE/?utm_campaign=daily_question&utm_medium=banner&utm_source=homepage&gio_link_id=a9a7L1MP | 「每日 1 题」5 月打卡再继续！ - 力扣（LeetCode）
+https://leetcode-cn.com/problems/find-the-duplicate-number/ | 287. 寻找重复数 - 力扣（LeetCode）
+https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=js%20287.%20%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E6%95%B0&oq=287.%2520%25E5%25AF%25BB%25E6%2589%25BE%25E9%2587%258D%25E5%25A4%258D%25E6%2595%25B0&rsv_pq=8b6fbcbd0038f19e&rsv_t=095ekU649tso3Ft3%2F%2F1AuxahmtyCOpW54EcXeiKejKSAQh1V1Wq6A0FTExs&rqlang=cn&rsv_enter=1&rsv_dl=tb&rsv_sug3=4&rsv_sug2=0&rsv_btype=t&inputT=801&rsv_sug4=1585 | js 287. 寻找重复数_百度搜索
+https://blog.csdn.net/lunhui1994_/article/details/106353146 | JavaScript：leetcode_287. 寻找重复数（二分法）_寻找重复数,二分法_Eighteen Z-CSDN博客
+
+https://developers.weixin.qq.com/miniprogram/dev/component/image.html | image | 微信开放文档
+https://www.w3cplus.com/svg/svg-on-the-web.html | SVG应用指南_SVG, SVG指南 教程_w3cplus
+https://www.baidu.com/s?ie=UTF-8&wd=%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96 | 前端性能优化_百度搜索
+https://blog.csdn.net/mahoking/article/details/51472697 | web前端性能优化总结_前端_HOKING的专栏-CSDN博客
+https://www.baidu.com/s?ie=UTF-8&wd=concat | concat_百度搜索
+https://www.w3school.com.cn/jsref/jsref_concat_array.asp | JavaScript concat() 方法
+https://www.baidu.com/s?ie=UTF-8&wd=%E7%B1%BB%E6%95%B0%E7%BB%84%E8%BD%AC%E6%95%B0%E7%BB%84 | 类数组转数组_百度搜索
+https://www.cnblogs.com/yangai/p/11158693.html | 类数组对象转换为数组的六种方法 - 霓裳依旧 - 博客园
+https://blog.csdn.net/weixin_42733155/article/details/81107716 | 如何将类数组转换为真正的数组_java_weixin_42733155的博客-CSDN博客
+https://www.runoob.com/jsref/jsref-obj-array.html | JavaScript Array 对象 | 菜鸟教程
+
+https://github.com/chrisvfritz/prerender-spa-plugin | chrisvfritz/prerender-spa-plugin: Prerenders static HTML in a single-page application.
+
+https://wepyjs.github.io/wepy-docs/ | WePY | 小程序组件化开发框架
+https://www.google.com/search?sxsrf=ALeKk024vlUjt_7CWRXg2Qm2FqC0DBWNoQ%3A1590378012394&source=hp&ei=HD7LXuzrFZyUr7wPgLWBgAc&q=MpVue&oq=MpVue&gs_lcp=CgZwc3ktYWIQAzICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCABQmApYmApg8gtoAHAAeACAAZMBiAGTAZIBAzAuMZgBAKABAqABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwjs6fDji87pAhUcyosBHYBaAHAQ4dUDCAc&uact=5 | MpVue - Google 搜索
+http://mpvue.com/
+https://www.cnblogs.com/ysocean/p/9384877.html | Nginx（一）------简介与安装 - YSOcean - 博客园
+https://www.runoob.com/linux/nginx-install-setup.html | Nginx 安装配置 | 菜鸟教程
+
+https://www.webpackjs.com/concepts/loaders/ | loader | webpack 中文网
+https://www.cnblogs.com/xiaohuochai/p/6847939.html | Commonjs规范及Node模块实现 - 小火柴的蓝色理想 - 博客园
+https://www.w3cschool.cn/zobyhd/1ldb4ozt.html | CommonJS_w3cschool
+https://www.jianshu.com/p/dd08f4095a49 | CommonJS规范 - 简书
+https://www.wondercv.com/cvs/g1kgTN8/editor### | 超级简历 WonderCV
+https://www.52cv.com/editorCv | 预览式编辑中 - 职徒简历
+https://www.sise.com.cn/ | 广州大学华软软件学院
+https://www.liaoxuefeng.com/wiki/1022910821149312/1023024413276544 | Promise - 廖雪峰的官方网站
+https://baike.baidu.com/item/CSS3/4059544?fr=aladdin | CSS3_百度百科
+https://www.electronjs.org/ | Electron | 使用 JavaScript，HTML 和 CSS 构建跨平台的桌面应用程序。
+https://baike.baidu.com/item/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/7769950?fr=aladdin | 交互设计（一种设计）_百度百科
+https://www.npmjs.com/package/mysql | mysql - npm
+https://cn.vuejs.org/? | Vue.js
+https://www.runoob.com/html/html5-websocket.html | HTML5 WebSocket | 菜鸟教程
+https://www.jianshu.com/p/9067fdda1425 | vue预渲染 - 简书
+
+https://www.baidu.com/s?ie=UTF-8&wd=layui | layui_百度搜索
+https://taro.aotu.io/ | Taro | 多端统一开发解决方案
+https://taro-docs.jd.com/taro/docs/README.html | Taro 介绍 · Taro
+https://mkt.kaikeba.com/vipcourse/medalWeb | 开课吧-互联网人升职加薪，先来开课吧！
+https://mkt.kaikeba.com/vipcourse/webjs | 开课吧-互联网人升职加薪，先来开课吧！
+https://www.kaikeba.com/vipcourse/web | Web全栈架构师-开课吧
+https://class.imooc.com/sale/webfullstack?mc_marking=1eb5ce0be2ada8da4a6387b391f00b92&mc_channel=syzcjj1 | 大前端_更高层面架构前端-慕课网
+https://mooc.study.163.com/smartSpec/detail/1202851605.htm | 高级前端开发工程师 - 网易云课堂
+http://www.atguigu.com/web/ | web前端_尚硅谷web前端培训_web前端培训机构
+http://web.tedu.cn/courses/ | 达内web前端培训课程_网页制作课程_web前端开发课程_达内Web培训
+http://www.itcast.cn/subject/webzly/#apxkc | web前端开发培训班_小程序开发培训_前端工程师培训机构-传智播客
+http://www.itheima.com/course/webtext.html | 前端课程大纲|前端培训课程体系|黑马前端课程表
+http://www.mobiletrain.org/page/html5.html?guangzhou=webbdtg=qfjyszbd-lly-wap=xkc=200119879&jzl_kwd=158617443303&jzl_ctv=36113544010&jzl_mtt=2&jzl_adt=cl4&jzl_ch=11&jzl_act=29390358&jzl_cpg=121431271&jzl_adp=4567056392&jzl_sty=50&jzl_dv=1&bd_vid=4530654620796500359 | 权威的HTML5培训课程|WEB前端培训|H5培训-千锋教育
+https://study.miaov.com/study | 学习首页 - 妙味课堂
+https://www.iqiyi.com/v_19ry9novhg.html#curid=16097589000_5c1e58b70caca7b08036d4f6c68e0415 | 青春有你第2季 2020-05-14：第19期下 LISA Ella分享女团经历 金靖空降联欢会
+
+https://v4.bootcss.com/docs/components/buttons/ | Buttons · Bootstrap
+https://cn.vuejs.org/v2/guide/forms.html | 表单输入绑定 — Vue.js
+http://www.axios-js.com/docs/ | axios
+https://www.npmjs.com/package/express-session | express-session - npm
+https://translate.google.com/#view=home&op=translate&sl=auto&tl=zh-CN&text=throw%20new%20ERR_HTTP_INVALID_STATUS_CODE(originalStatusCode)%3B | Google 翻译
+
+https://www.npmjs.com/package/dateformat | dateformat - npm
+http://localhost:3000/listresult | localhost:3000/listresult
+https://v4.bootcss.com/docs/getting-started/introduction/ | 简介 · Bootstrap
+https://cn.vuejs.org/v2/api/#v-cloak | API — Vue.js
+http://www.mongoosejs.net/docs/index.html | Mongoose 5.0 中文文档
+https://www.tonymacx86.com/buyersguide/building-a-customac-hackintosh-the-ultimate-buyers-guide/ | Building a CustoMac Hackintosh: The Ultimate Buyer's Guide | tonymacx86.com
+http://bbs.pcbeta.com/ | 论坛 - 远景论坛 - 微软极客社区
+https://blog.daliansky.net/ | 黑果小兵的部落阁
+
+https://www.baidu.com/s?ie=UTF-8&wd=echear | echear_百度搜索
+https://echarts.apache.org/zh/tutorial.html#ECharts%20%E4%B8%AD%E7%9A%84%E6%A0%B7%E5%BC%8F%E7%AE%80%E4%BB%8B | ECharts Documentation
+file:///Users/zhong/Desktop/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/ggs/%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/echart/%E5%85%A5%E9%97%A8/%E7%AE%80%E5%8D%95%E5%9B%BE%E6%A0%87.html | 简单图表
+https://cdnjs.com/libraries/echarts | echarts - cdnjs.com - The best FOSS CDN for web related libraries to speed up your websites!
+https://www.iqiyi.com/ | 爱奇艺-在线视频网站-海量正版高清视频在线观看
+https://so.iqiyi.com/so/q_%E9%9D%92%E6%98%A5%E6%9C%89%E4%BD%A0?source=history&sr=284241213108 | 青春有你_视频在线观看-爱奇艺搜索
+https://hao.uisdc.com/ | 优设导航 - 学设计从这里开始！
+https://www.52cv.com/editorCv | 预览式编辑中 - 职徒简历
+https://resume.shixiseng.com/resume/grp_pzypucqrjlu7?lan=chinese | 实习僧
+https://www.baidu.com/s?ie=UTF-8&wd=dicom | dicom_百度搜索
+https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=webgl&oq=webcl&rsv_pq=e54bbb2e000cd205&rsv_t=0f40D4%2BPL4WGNfhpEBHHQemZd4vHy%2B6R6M5KbMvNus6w0CxItDjzPSrj7rs&rqlang=cn&rsv_enter=1&rsv_dl=tb&rsv_sug3=6&rsv_sug1=5&rsv_sug7=100&rsv_sug2=0&rsv_btype=t&inputT=865&rsv_sug4=1303 | webgl_百度搜索
+https://uniapp.dcloud.io/quickstart?id=%e5%88%9b%e5%bb%bauni-app | 快速上手 - uni-app官网
+https://panjiachen.github.io/vue-element-admin-site/zh/ | vue-element-admin
+http://mpvue.com/
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/ | Install MongoDB Community Edition on macOS — MongoDB Manual
+https://www.npmjs.com/package/express-art-template | express-art-template - npm
+https://www.nuxtjs.cn/ | Nuxt.js - Vue.js 通用应用框架 | Nuxt.js 中文网
+https://blog.csdn.net/liuyingv8/article/details/83013624 | 关于Vue SSR不可不知的问题_JavaScript_liuyingv8的博客-CSDN博客
+http://expressjs.com/en/api.html#res.sendFile | Express 4.x - API Reference
+https://cn.vuejs.org/v2/guide/instance.html | Vue 实例 — Vue.js
+http://www.mongoosejs.net/docs/queries.html | Mongoose 5.0 中文文档
+
+https://www.npmjs.com/package/mysql | mysql - npm
+https://www.52cv.com/editorCv | 预览式编辑中 - 职徒简历
+https://www.wondercv.com/cvs/g1kgTN8/editor | 超级简历 WonderCV
+https://www.zhiyeapp.com/cv/edit | 知页简历-高颜值简历模板，智能简历制作工具，专业中英文简历模板免费下载|个人简历|求职简历
+https://eggjs.org/zh-cn/intro/egg-and-koa.html | Egg.js 与 Koa - 为企业级框架和应用而生
+https://www.jianshu.com/p/eb1875c62ad3 | BFF —— Backend For Frontend - 简书
+https://www.cnblogs.com/best/p/10076782.html | 30分钟学会前端模块化开发 - 张果 - 博客园
+
+https://www.bilibili.com/video/av56941331/ | AWTRIX硬件最终版 大幅优化供电与屏幕_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili
+https://segmentfault.com/a/1190000017571288?utm_source=tag-newest | Gulp 4: gulp.parallel gulp.series -- 全新的任务执行体系 - 个人文章 - SegmentFault 思否
+https://cv.utrainee.com/myResume | 职徒简历 - 我的文件
+https://www.wondercv.com/cvs | 超级简历WonderCV - HR推荐简历模板,智能简历制作工具,专业中英文简历模板免费下载
+https://nodejs.org/docs/latest/api/path.html | Path | Node.js v14.2.0 Documentation
+http://www.ruanyifeng.com/blog/2014/05/restful_api.html | RESTful API 设计指南 - 阮一峰的网络日志
+https://aui.github.io/art-template/zh-cn/docs/syntax.html#%E5%BE%AA%E7%8E%AF | 语法 - art-template
+https://www.expressjs.com.cn/ | Express - 基于 Node.js 平台的 web 应用开发框架 - Express 中文文档 | Express 中文网
+https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=%E5%B9%BF%E5%B7%9E%E6%9C%ACb%E5%AD%A6%E6%A0%A1&oq=%25E5%25B9%25BF%25E5%25B7%259E%25E5%25AD%25A6%25E6%25A0%25A1&rsv_pq=d5fdeb8d00036653&rsv_t=b7665uWK2jTx71Ng4jba3nm84NhiQobaHonoQZS6%2B2bjZI4Hv%2FRvqwGD5zc&rqlang=cn&rsv_enter=1&rsv_dl=tb&rsv_sug3=14&rsv_sug1=6&rsv_sug7=100&rsv_sug2=0&rsv_btype=t&inputT=2476&rsv_sug4=2686 | 广州本b学校_百度搜索
+https://www.kaikeba.com/ | 开课吧-泛互联网人职业提升平台
+https://www.kaikeba.com/vipcourse/web | Web全栈架构师-开课吧
+https://www.yuque.com/search?q=%E5%BC%80%E8%AF%BE%E5%90%A7 | 搜索 · 语雀
+https://mkt.kaikeba.com/vipcourse/webjs | 开课吧-互联网人升职加薪，先来开课吧！
+https://www.baidu.com/s?ie=UTF-8&wd=nodejs%E6%8E%A7%E5%88%B6mysql | nodejs控制mysql_百度搜索
+https://www.runoob.com/nodejs/nodejs-mysql.html | Node.js 连接 MySQL | 菜鸟教程
+https://www.npmjs.com/package/mysql | mysql - npm
+https://www.jfh.com/jfalm/pages/ad/codeCheckServiceIntro.html | 解放号，可信的IT服务众包平台
+https://www.clouderwork.com/ | 云沃客_远程工作_在线商机_软件开发一站式云工作平台
+https://www.expressjs.com.cn/resources/middleware.html | Express middleware - Express 中文文档 | Express 中文网
+https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=mac%20%E5%90%AF%E5%8A%A8mongodb&oq=mac%2520%25E5%2590%25AF%25E5%258A%25A8mongodb%25E5%2590%25AF%25E5%258A%25A8%25E6%259C%258D%25E5%258A%25A1&rsv_pq=b882537500022abc&rsv_t=c992h3gLteMug2emQuXsIWWKXXWXDekQXUjgPJvNSZ8JsBgFk7msWp9Srn8&rqlang=cn&rsv_enter=1&rsv_dl=tb&rsv_btype=t&inputT=109&rsv_sug3=14&rsv_sug2=0&rsv_sug4=109&rsv_sug=1 | mac 启动mongodb_百度搜索
+
+https://www.right.com.cn/forum/ | 恩山无线论坛 - Powered by Discuz!
+https://codepen.io/pen/?editors=1111 | A Pen by zhongyufan
+https://www.iconfont.cn/search/index?q=%E7%AD%BE%E5%88%B0 | Iconfont-阿里巴巴矢量图标库
+https://github.com/ftlabs/fastclick | ftlabs/fastclick: Polyfill to remove click delays on browsers with touch UIs
+http://www.superslide2.com/ | SuperSlide | TouchSlide 官方网站 大话主席
+https://github.com/cubiq/iscroll | cubiq/iscroll: Smooth scrolling for the web
+https://www.swiper.com.cn/ | Swiper中文网
+https://github.com/ireaderlab/zyMedia | ireaderlab/zyMedia: zyMedia是掌阅科技开源的一款基于HTML5的、轻量级的、实现移动端全平台统一UI的多媒体播放器，该播放器已经在千万级设备上适配使用
+https://linnk.net/my/?#/all?keyword=h5 | Linnk - all bookmarks
+https://videojs.com/ | Video.js - Make your player yours | Video.js
+http://www.jq22.com/ | jQuery插件库-收集最全最新最好的jQuery插件
+http://www.htmleaf.com/ | jQuery之家-自由分享jQuery、html5、css3的插件库
+https://app.gitbook.com/@495241088/s/workspace/jquery-and-ajax | jQuery and AJAX - 前端开发学习笔记
+https://chrisniael.gitbooks.io/gitbook-documentation/content/ | 介绍 | GitBook文档（中文版）
+https://book.zhongyufan.club/ | HTML - 前端开发学习笔记
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode | 严格模式 - JavaScript | MDN
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions | 正则表达式 - JavaScript | MDN
+https://tool.oschina.net/regex | 在线正则表达式测试
+https://www.wenshushu.cn/signin?redirect=%2Frecords%2F | 文叔叔 - 传文件，找文叔叔（大文件、永不限速）
+https://www.wenshushu.cn/mall | 文叔叔 - 传文件，找文叔叔（大文件、永不限速）
+https://movie.douban.com/subject/34670218/ | 大赢家 (豆瓣)
+https://www.jianshu.com/p/a2ee8f61a8ca | node 版本切换工具 n 的使用 - 简书
+https://www.npmjs.com/package/gulp-babel | gulp-babel - npm
+https://www.webpackjs.com/ | webpack 中文文档 | webpack 中文网
+
+https://yuanliao.info/t/utools | 猿料
+https://icomoon.io/ | Icon Font & SVG Icon Sets ❍ IcoMoon
+http://necolas.github.io/normalize.css/ | Normalize.css: Make browsers render all elements more consistently.
+https://www.sass.hk/docs/ | Sass教程 Sass中文文档 | Sass中文网
+https://www.cnblogs.com/wan-fei/p/8309264.html | 手淘的flexible.js解决手机适配问题 - 不止于学 - 博客园
+http://www.alloyteam.com/ | AlloyTeam|腾讯全端 AlloyTeam 团队
+http://www.alloyteam.com/nav/ | Web前端导航
+https://fed.taobao.org/ | 淘系前端团队
+https://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html | 使用Flexible实现手淘H5页面的终端适配_双11前端技术连载, Layout, mobile, 会员专栏 教程_w3cplus
+https://v3.bootcss.com/css/#code-block | 全局 CSS 样式 · Bootstrap v3 中文文档
+https://www.electronjs.org/ | Electron | 使用 JavaScript，HTML 和 CSS 构建跨平台的桌面应用程序。
+http://cordova.axuer.com/ | Cordova中文网
+https://ruff.io/ | Ruff.io
+https://www.cocos.com/ | Cocos引擎_游戏开发引擎_html5游戏开发_Android游戏开发 - 游戏开发引擎_html5游戏开发_Android游戏开发
+https://www.baidu.com/s?ie=UTF-8&wd=clientX | clientX_百度搜索
+
+http://39.107.58.112:17091/database | 宝塔Linux面板
+https://www.baidu.com/s?ie=UTF-8&wd=js%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96 | js性能优化_百度搜索
+https://underscorejs.net/ | Underscore.js中文网
+http://underscorejs.org/ | Underscore.js
+https://github.com/typicode/json-server#add-custom-routes | typicode/json-server: Get a full fake REST API with zero coding in less than 30 seconds (seriously)
+https://www.youtube.com/watch?v=x7txfxxqhNQ | (219) 睡前消息107：要求学生行作揖礼，衢州想要争“儒家圣地”？ - YouTube
+http://www.meinigui.com/# | 没你贵-资源共享平台
+https://www.itjc8.com/forum.php?mod=viewthread&tid=7204&extra=page%3D1%26filter%3Dauthor%26orderby%3Ddateline | 【新提醒】IT教程吧-后D人Javascript零基础系统学习视频课程[46G] 全 2019 - www.itjc8.com
+https://www.itjc8.com/thread-6982-1-1.html | 【新提醒】IT教程吧-PHP入门到全栈开发工程师93G 价值5700 PC端与移动端开发[全] - www.itjc8.com
+
+https://www.zhipin.com/job_detail/b14c1166bdc611090HF90968F1E~.html?ka=comp_joblist_7 | 「前端开发工程师招聘」_编程猫招聘-BOSS直聘
+https://www.wondercv.com/cvs/g1kgTN8/editor | 超级简历 WonderCV
+
+https://www.itjc8.com/forum.php?mod=forumdisplay&fid=36&orderby=dateline&orderby=dateline&filter=author&page=1 | IT教程吧-编程开发-web前端
+https://www.itjc8.com/forum.php?mod=viewthread&tid=5520&extra=page%3D1%26filter%3Dlastpost%26orderby%3Dlastpost | IT教程吧-React+node.js全栈项目开发大型企业站实战2019年6月最新 - www.itjc8.com
+https://www.itjc8.com/forum.php?mod=viewthread&tid=7887&extra=page%3D1%26filter%3Dlastpost%26orderby%3Dlastpost | IT教程吧-2020年3月最新某马带你用vue开发微信小程序（完整版） - www.itjc8.com
+https://www.itjc8.com/forum.php?mod=viewthread&tid=7668&extra=page%3D1%26filter%3Dlastpost%26orderby%3Dlastpost | IT教程吧-基于Vue Element与Node.js开发后台管理系统 2019 - www.itjc8.com
+http://www.iocoder.cn/?bilibili&BV1PJ411X7Jp | 芋道源码 —— 纯源码解析博客
+http://momentjs.cn/ | Moment.js 中文网
+https://sspai.com/ | 少数派 - 高效工作，品质生活
+https://class.imooc.com/sale/webfullstack | 大前端_更高层面架构前端-慕课网
+
+https://www.2faka.cn/ | 发卡平台 - 业界领先的专业爱发卡自动发卡平台
+https://www.optimizely.com/platform/experimentation/ | 从Optimizely进行Web实验
+https://gohugo.io/ | The world’s fastest framework for building websites | Hugo
+
+https://space.bilibili.com/119952518 | 么么么么么么白的个人空间 - 哔哩哔哩 ( ゜- ゜)つロ 乾杯~ Bilibili
+http://nodejs.cn/api/http.html | http | Node.js API 文档
+https://www.youzack.com/ | Listening exercise -youzack
+http://www.baihuizy.com/seojc | seo基础入门教程-百汇资源网
+https://www.csdn.net/ | CSDN-专业IT技术社区
+https://blog.csdn.net/Mr_Quinn/article/details/88565830?ops_request_misc=&request_id=&biz_id=102&utm_source=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-4 | （Web前端）优秀的后台管理框架收集（很多模板超级好用，简单实用）_Java_Mr_Quinn的博客-CSDN博客
+https://www.gitbook.com/ | GitBook - Document Everything!
+https://panjiachen.github.io/vue-element-admin-site/zh/ | vue-element-admin
+https://www.renfei.net/posts | Posts - The RenFei Blog

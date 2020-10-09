@@ -27,3 +27,6 @@ yarn-error.log*
 # Lock File
 package-lock.json
 yarn.lock
+
+# git-book
+_book
