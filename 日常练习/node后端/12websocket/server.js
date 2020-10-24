@@ -27,38 +27,59 @@ app.use(
     })
 )
 
-let num = 0;
-
-redisClient.lrange('NOTICE_MSG:1:1', 0, -1, (err, reply) => {
-    console.log(reply);
-});
+let num = 0; // 连接数
 
 // 启动服务
 io.on('connect', socket => {
+    let tenandId = null; // 租户ID
+    let userId = null; // 用户ID
+    let msgNum = null; // 新消息数量
+    let time = null; // 计时器
     num++;
     console.log('连接数：', num);
     socket.emit('connection', { msg: '服务器连接成功...', noRead: 0 });
-    let msgNum = 0;
-    let variety = false;
-    setInterval(() => {
-        redisClient.get('message', (err, reply) => {
-            if (msgNum != reply) {
-                msgNum = reply;
-                variety = true;
-            }
-        });
-        if (variety) {
-            variety = false;
-            socket.emit('count', { state: 1, noRead: msgNum });
-        } else {
-            socket.emit('count', { state: 0, noRead: msgNum });
-        }
+    // 获取前端发送的用户数据
+    socket.on('userInfo', (data) => {
+        tenandId = data.tenandId;
+        userId = data.userId;
+        getNewMsg(socket);
+    });
+    time = setInterval(() => {
+        getNewMsg(socket);
+        console.log(msgNum)
     }, 1000);
     socket.on('disconnect', () => {
         num--;
+        clearInterval(time);
         console.log('服务断开，当前连接数：', num);
     })
+    // 查询 redis 数据
+    function getNewMsg(socket) {
+        if (tenandId == null) {
+            socket.emit('customError', { state: 4, msg: 'tenandId不能为空', data: {} });
+            return;
+        }
+        if (userId == null) {
+            socket.emit('customError', { state: 4, msg: 'userId不能为空', data: {} });
+            return;
+        }
+        redisClient.get(`${tenandId}:AMS_NOTICE_MESSAGE_VALUE:${userId}`, (err, reply) => {
+            if (err) {
+                socket.emit('customError', { state: 4, msg: 'Redis查询出错', data: err });
+                return;
+            }
+            if (msgNum === reply) return;
+            msgNum = reply;
+            socket.emit('findMessage', { state: 2, msg: 'Redis查询成功', data: { msgNum: reply } });
+        });
+    };
 });
 server.listen(3000);
 
+
 console.log('服务器启动成功');
+
+/**
+ * @param {2-成功 4-错误} state
+ *
+ */
