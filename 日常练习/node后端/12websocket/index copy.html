@@ -21,8 +21,8 @@
         let oDiv = document.getElementById('app');
         let noRead = 0;
         oDiv.innerHTML = '服务器连接中...';
-        // const socket = io('http://10.0.0.126:3000');
-        const socket = io('http://127.0.0.1:3000');
+        const socket = io('http://10.0.0.126:3000');
+        // const socket = io('http://127.0.0.1:3000');
 
         socket.emit('userInfo', {
             tenandId: 1,

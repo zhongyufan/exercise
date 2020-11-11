@@ -21,22 +21,24 @@
         let oDiv = document.getElementById('app');
         let noRead = 0;
         oDiv.innerHTML = '服务器连接中...';
-        const socket = io('http://10.0.0.126:3000');
-        // const socket = io('http://127.0.0.1:3000');
+        // const socket = io('http://10.0.0.126:30000');
+        const socket = io('http://127.0.0.1:30000', {
+            transports: ['websocket', 'polling']
+        });
 
-        socket.emit('userInfo', {
-            tenandId: 1,
-            userId: 3170,
+        socket.on('connect', () => {
+            socket.emit('userInfo', {
+                tenantId: 1,
+                userId: 3170,
+            })
+            oDiv.innerHTML = '服务器连接成功！';
         })
 
         socket.on('connect_error', err => console.log(err));
 
-        socket.on('connect', () => {
-            oDiv.innerHTML = '服务器连接成功！';
-        })
-
         socket.on('findMessage', res => {
             oDiv.innerHTML = '有新消息，请查看!';
+            console.log(res);
             setTimeout(() => {
                 oDiv.innerHTML = `未读消息${res.data.msgNum}`;
             }, 1000);
