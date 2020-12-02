@@ -1,0 +1,40 @@
+<!--
+ * @Author: your name
+ * @LastEditTime: 2020-11-30 22:25:43
+ * @Date: 2020-11-30 22:18:00
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /exercise/日常练习/Vue/vue源码/new.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button></button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        function create(Component, props) {
+            const vm = new Vue({
+                render: h => h(Component, { props }),
+            }).$mount();
+            document.body.appendChild(vm.$el);
+            const comp = vm.$children[0];
+            // 删除释放内存
+            comp.remove = function () {
+                document.body.removeChild(vm.$el);
+                vm.$destroy();
+            }
+            return comp;
+        }
+    </script>
+</body>
+
+</html>

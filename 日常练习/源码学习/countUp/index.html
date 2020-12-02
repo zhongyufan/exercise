@@ -1,0 +1,31 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-11-19 11:54:47
+ * @LastEditTime: 2020-11-19 12:10:00
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /项目/exercise/日常练习/源码学习/countUp/index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滚动数字</title>
+</head>
+
+<body>
+    <div id="app">0</div>
+    <script src="./countUp.js"></script>
+    <script>
+        const countUp = new CountUp('app', 5234);
+        if (!countUp.error) {
+            countUp.start();
+        } else {
+            console.error(countUp.error);
+        }
+    </script>
+</body>
+
+</html>
