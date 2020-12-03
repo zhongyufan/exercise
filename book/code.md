@@ -233,6 +233,12 @@ inheritAtrrs:false // 设置为false避免v-bind:$attrs设置到根元素上
 $on // 可以直接去执行$emit事件
 
 // 组件构建函数 1.Vue.extend() 2.render
+
+data(){
+  return {
+    $$test: '' // vue 不代理
+  }
+}
 ```
 
  
@@ -333,4 +339,20 @@ class 类
 // Mixin模式
   
 ```
+
+ 
+
+### Mac快捷键
+
+Mac 自带屏幕截图 `Command` + `Shift` + `5`
+
+全屏幕  Cmd+Shift+3
+
+区域 Cmd+Shift+4
+
+快速显示或隐藏程序坞 `Command` + `Option` + `D`
+
+最小化窗口 `Command` + `M`
+
+隐藏当前窗口 `Command` + `H`
 

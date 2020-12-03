@@ -14,6 +14,10 @@ class ZVueRouter {
         window.addEventListener('hashchange', this.onHashchange.bind(this));
         // 监控页面刷新
         window.addEventListener('load', this.onHashchange.bind(this));
+
+        // 创建一个路由映射表
+        this.routeMap = {}
+        options.routes.forEach(route => this.routeMap[route.path] = route);
     }
 
     onHashchange() {
@@ -57,13 +61,8 @@ ZVueRouter.install = function (_Vue) {
     })
     Vue.component('router-view', {
         render(h) {
-            let component = null;
-            // 找到组件
-            this.$router.$options.routes.forEach(route => {
-                if (route.path === this.$router.current) {
-                    component = route.component
-                }
-            })
+            const { routeMap, current } = this.$router;
+            let component = routeMap[current].component || null;
             return h(component)
         }
     })

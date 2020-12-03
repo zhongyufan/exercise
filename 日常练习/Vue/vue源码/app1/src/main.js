@@ -8,7 +8,8 @@ import create from './utils/create'
 import router from './zrouter'
 
 // import store from './store'
-import store from './kstore'
+// import store from './kstore'
+import store from './zstore'
 
 Vue.config.productionTip = false
 // 事件总线
