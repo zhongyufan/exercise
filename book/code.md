@@ -490,3 +490,8 @@ Vue3 对比 Vue2 到底提升了什么
 
 
 使用 Promise.all 来接收所有的promise
+
+
+
+如果定时器里cb的this丢失了了。可以采用这种方法`function(){}.bind(this)`或者是箭头函数
+
