@@ -495,3 +495,66 @@ Vue3 对比 Vue2 到底提升了什么
 
 如果定时器里cb的this丢失了了。可以采用这种方法`function(){}.bind(this)`或者是箭头函数
 
+
+
+函数是在被调用的时候绑定this，箭头函数的this固定不变指向定义函数
+
+
+
+this绑定规则
+
+```javascript
+// 1、默认绑定
+function test(){ console.log(this.a) };
+var a = 1;
+test();
+
+// 2、隐式绑定
+function test(){ console.log(this.a) };
+var obj = {a:1,test:test};
+obj.test();
+// 2.1、隐式丢失
+// ... 2的代码
+var bar = obj.test; // 虽然是引用，但是引用函数本身，因此被调用
+var a = "xixi";
+bar(); // xixi 
+// ... 继续
+var doTest(fn){ fn() };
+var a = 'xixi';
+doTest(obj.test); // 	xixi 参数传递也是隐式赋值
+
+// 3、显式调用
+call() apply() 
+// 如果传入原始值 会被转换成 new String(...)... 这就是装箱
+bind() // 硬绑定
+// 实现bind
+function add(val){
+  console.log(this.num,val);
+  return this.a + val;
+};
+var obj = { a:2 };
+var bind = function(){
+  return add.apply(obj,arguments);
+}
+var b = bind(3);
+// ⬇️ 抽象版本
+function bind(fn,obj){
+  return function(){
+    return fn.apply(obj,arguments);
+  }
+}
+// bind() 会返回一个新函数
+
+// 4、new绑定
+// 构造函数 被 new 操作符调用的普通函数
+
+// 优先级
+默认绑定 < 隐式绑定 < 显式绑定 < new绑定
+
+```
+
+### 网络协议
+
+GET 和 POST 都是TCP链接
+
+GET会产生一个TCP数据包（header data 一起发），POST则产生两个TCP数据包（先发header 再发data）
