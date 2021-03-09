@@ -344,19 +344,7 @@ class 类
 
  
 
-### Mac快捷键
 
-Mac 自带屏幕截图 `Command` + `Shift` + `5`
-
-全屏幕  Cmd+Shift+3
-
-区域 Cmd+Shift+4
-
-快速显示或隐藏程序坞 `Command` + `Option` + `D`
-
-最小化窗口 `Command` + `M`
-
-隐藏当前窗口 `Command` + `H`
 
 
 
@@ -558,3 +546,13 @@ function bind(fn,obj){
 GET 和 POST 都是TCP链接
 
 GET会产生一个TCP数据包（header data 一起发），POST则产生两个TCP数据包（先发header 再发data）
+
+### JS
+
+```javascript
+// 1、在进行强转字符串类型时将优先调用toString方法，强转为数字时优先调用valueOf
+// 2、在有运算操作符的情况下，valueOf的优先级高于toString
+valueOf(); // 返回最适合该对象类型的原始值
+toString(); // 将该对象的原始值以字符串形式返回
+```
+

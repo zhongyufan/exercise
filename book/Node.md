@@ -115,3 +115,14 @@ egg-mongoose
 
 2. 
 
+
+
+### 单元测试 `test:unit` 
+
+项目未使用过单元测试，现在加上 安装了 `vue add @vue/unit-jest`
+
+但是运行报错  `Test suite failed to run`
+
+发现问题所在 。。。 跟名字有关系
+
+babel-jest

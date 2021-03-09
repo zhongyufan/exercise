@@ -42,3 +42,52 @@ graph TD;
 
 
 localhost
+
+
+
+
+
+1、得物开发平台  要求商家
+
+2、抓数据  签名算法无
+
+3、安卓机+auto.js
+
+
+
+收集目前手上有二维码的店铺，收集特价店铺的信息 奥特莱斯
+
+
+
+
+
+存入整单
+
+前端划分数据
+
+
+
+
+
+如何从react 如何从js转ts
+
+1、安装依赖
+
+```
+npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+```
+
+2、删除node_modules
+
+3、`npm i`
+
+默认支持jsx tsx 共存 `tsconfig.json文件中的"allowJs": true`
+
+
+
+使用Pro-table的时候遇到了“Cannot read property 'Provider' of undefined
+
+这个问题是因为antd的版本太低 Pro-table版本太高，无法支持 升级下antd即可
+
+https://github.com/ant-design/pro-components/issues/1844
+

@@ -1,0 +1,87 @@
+{
+  "main": {
+    "id": "804de925d9afc01b",
+    "type": "split",
+    "children": [
+      {
+        "id": "445128b6465bcbcb",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "graph",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3d0ecdb5bc95b701",
+    "type": "split",
+    "children": [
+      {
+        "id": "ac102ecdfcd04bd4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0800b2c8de70d5c6",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "114c54e546c08c09",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "572cffd7c0a899bd",
+    "type": "split",
+    "children": [
+      {
+        "id": "1ec73f8e873e9814",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7465209cbc2972d7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "lastOpenFiles": [
+    "2020年度总结.md"
+  ]
+}
