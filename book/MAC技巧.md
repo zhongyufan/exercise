@@ -76,3 +76,8 @@ netstat -aon|findstr "8080"(端口号)
 taskkill /pid 4136(进程号)  -t -f
 ```
 
+
+
+### Git clone 太慢
+
+github.com换成github.com.cnpmjs.org
