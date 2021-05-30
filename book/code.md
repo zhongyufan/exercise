@@ -556,3 +556,35 @@ valueOf(); // 返回最适合该对象类型的原始值
 toString(); // 将该对象的原始值以字符串形式返回
 ```
 
+
+
+### 性能优化
+
+1. 先会检查是否是网络请求太多，导致数据返回较慢，可以适当做一些缓存
+2. 也有可能是某块资源的bundle太大，可以考虑拆分一下
+3. 然后排查一下js代码，是不是某处有过多循环导致占用主线程时间过长
+4. 浏览器某帧渲染的东西太多，导致的卡顿
+5. 在页面渲染过程中，可能有很多重复的重排重绘
+6. 内存泄露
+   1. 闭包使用不当引起内存泄漏
+   2. 全局变量
+   3. 分离的DOM节点
+   4. 控制台的打印
+   5. 遗忘的定时器
+
+
+
+### 调试
+
+`try...catch`  ✅同步 ❌异步 ❌语法
+
+`window.onerror()`  ✅同步 ✅异步 ✅iframe ❌语法 ❌请求
+
+`window.addEventListener('error',()=>{})`  ✅请求
+
+`window.addEventListener("unhandledrejection",()=>{})`  ✅promise
+
+`"Script Error"一般为跨域错误 crossorigin `
+
+`window.addEventListener('load''beforeunload',()=>{}) || Service Worker-navigator.serviceWorker.controller.postMessage API` 网页崩溃监控
+

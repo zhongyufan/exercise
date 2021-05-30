@@ -81,3 +81,39 @@ taskkill /pid 4136(进程号)  -t -f
 ### Git clone 太慢
 
 github.com换成github.com.cnpmjs.org
+
+git reset –-soft xxx(版本号) 回退到某个版本
+
+git reset -–hard xxx(版本号) 彻底回退到某个版本
+
+
+
+### egg-Mongoose
+
+https://www.cnblogs.com/wxw1314/p/10339775.html
+
+https://blog.csdn.net/weixin_34010949/article/details/88750591
+
+
+
+### [RESTful API](http://www.ruanyifeng.com/blog/2014/05/restful_api.html)
+
+
+
+### NPM
+
+比如：`node-sass`、`puppeteer`、`chromedriver`、`electron` 等。可以通过 `.npmrc` 文件设置具体依赖包的国内镜像。该文件在项目 `npm install` 时会被加载读取，优先级高于 `npm` 全局设置。
+
+```
+registry=https://registry.npm.taobao.org/
+sass_binary_site=http://npm.taobao.org/mirrors/node-sass
+chromedriver_cdnurl=http://npm.taobao.org/mirrors/chromedriver
+electron_mirror=http://npm.taobao.org/mirrors/electron/ npm install -g electron
+puppeteer_download_host=http://npm.taobao.org/mirrors/chromium-browser-snapshots/
+```
+
+
+
+
+
+http://1256653845.vod2.myqcloud.com/88a3e8afvodcq1256653845/09943d495285890816537214550/playlist.m3u8

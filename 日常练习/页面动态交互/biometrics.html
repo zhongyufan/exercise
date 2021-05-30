@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="touchIDLogin()">生物识别</button>
+    <text id="text"></text>
+    <script>
+        async function touchIDLogin(certificate, touchId) {
+            // 校验设备是否支持touchID
+            const hasTouchID = await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable();
+
+            document.getElementById('text').innerHTML = hasTouchID;
+
+            // await navigator.credentials.get();
+            // if (hasTouchID) {
+            //     // 更新登录凭证
+            //     this.touchIDLoginOptions.publicKey.challenge = this.base64ToArrayBuffer(
+            //         certificate
+            //     );
+            //     // 更新touchID
+            //     this.touchIDLoginOptions.publicKey.allowCredentials[0].id = this.base64ToArrayBuffer(
+            //         touchId
+            //     );
+            //     // 开始校验指纹
+            //     await navigator.credentials.get(this.touchIDLoginOptions);
+            //     // 调用指纹登录接口
+            //     this.$api.touchIdLogingAPI
+            //         .touchIdLogin({
+            //             touchId: touchId,
+            //             certificate: certificate
+            //         })
+            //         .then((res: responseDataType) => {
+            //             if (res.code == 0) {
+            //                 // 存储当前用户信息
+            //                 localStorage.setItem("token", res.data.token);
+            //                 localStorage.setItem("refreshToken", res.data.refreshToken);
+            //                 localStorage.setItem("profilePicture", res.data.avatarSrc);
+            //                 localStorage.setItem("userID", res.data.userID);
+            //                 localStorage.setItem("username", res.data.username);
+            //                 const certificate = res.data.certificate;
+            //                 localStorage.setItem("certificate", certificate);
+            //                 // 跳转消息组件
+            //                 this.$router.push({
+            //                     name: "message"
+            //                 });
+            //                 return;
+            //             }
+            //             // 切回登录界面
+            //             this.isLoginStatus = loginStatusEnum.NOT_LOGGED_IN;
+            //             alert(res.msg);
+            //         });
+            // }
+        }
+        function start() {
+            alert("开始进行人脸识别")
+        }
+    </script>
+</body>
+
+</html>
